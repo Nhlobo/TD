@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapengo Innovations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s ease; /* Navbar background color transition */
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s, transform 0.3s; /* Color and scale transition */
+}
+
+.nav-links a:hover {
+    color: #0056b3;
+    transform: scale(1.1); /* Scale link on hover */
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s; /* Button color and scale transition */
+}
+
+.cta-btn:hover {
+    background-color: #155bb5;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 30px;
+    background-color: #e9f5ff;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    opacity: 0;
+    animation: slideInLeft 1s ease forwards; /* Slide-in effect */
+    animation-delay: 0.2s;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 span {
+    color: #1a73e8;
+}
+
+.hero-text p {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    opacity: 0;
+    animation: slideInRight 1s ease forwards; /* Slide-in effect for hero image */
+    animation-delay: 0.5s;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards; /* Buttons fade-in from bottom */
+    animation-delay: 0.7s;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    color: #1a73e8;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for icons */
+}
+
+.social-icons a:hover {
+    color: #155bb5;
+    transform: scale(1.2); /* Scale icon on hover */
+}
+
+/* Background Overlay */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('animated-pattern.svg') repeat;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .cta-btn {
+        padding: 8px 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Your Logo">
+        </div>
+        <nav>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Mapengo Innovations<br><span>Innovative Web and App Solutions</span>.</h1>
+                <p>Let’s Bring Your Vision to Life!
+Contact us today to transform your ideas into reality.</p>
+                <div class="social-icons">
+    <a href="https://www.facebook.com/your-profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/your-profile" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com/your-profile" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.tiktok.com/@your-profile" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="hero-buttons">
+    <button class="cta-btn" onclick="location.href='#Contact'">Got a Project?</button>
+    <a href="#Contact" class="cta-btn">Tell Us About It</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="IMG-20241015-WA0023.png" alt="Technology Graphic">
+            </div>
+        </div>
+    </section>
+
+    <div class="background-overlay"></div> <!-- Background overlay -->
+
+<!-- ================= ABOUT US ================= -->
+<section id="about" class="container">
+    <h2 class="section-title">About Us</h2>
+    <p>Mapengo Innovations is a forward-thinking software company based in Johannesburg. Our mission is to deliver innovative technology solutions that empower businesses to thrive in a competitive landscape. We believe in the power of technology to transform the way companies operate and engage with their customers.</p>
+    <p>Our team is driven by passion, creativity, and a commitment to excellence, ensuring that every project we undertake reflects our core values of integrity, collaboration, and innovation.</p>
+</section>
+    
+    <!-- ================= SERVICES SECTION ================= -->
+    <section id="services" class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <h3>Website Development</h3>
+                <p>We develop responsive and interactive websites that meet your business needs and look great on all devices.</p>
+            </div>
+            <div class="service-item">
+                <h3>App Development</h3>
+                <p>We build mobile applications that are fast, user-friendly, and scalable for iOS and Android platforms.</p>
+            </div>
+            <div class="service-item">
+                <h3>Maintenance & Support</h3>
+                <p>Ongoing support and maintenance for your apps and websites to keep everything running smoothly.</p>
+            </div>
+            <div class="service-item">
+                <h3>Consulting</h3>
+                <p>Expert advice on technology integration and project management to optimize your business processes.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ================= WHY CHOOSE US ================= -->
+<section id="why-choose-us" class="container">
+    <h2 class="section-title">Why Choose Mapengo Innovations?</h2>
+    <p>At Mapengo Innovations, we prioritize your success. Here’s why you should partner with us:</p>
+    <ul>
+        <li><strong>Expert Team:</strong> Our talented developers and designers are dedicated to delivering high-quality solutions tailored to your business needs.</li>
+        <li><strong>Customer-Centric Approach:</strong> We listen to your needs and work collaboratively to ensure our solutions align with your vision.</li>
+        <li><strong>Innovative Solutions:</strong> We leverage the latest technologies to create innovative products that drive business growth.</li>
+        <li><strong>Reliable Support:</strong> Our commitment doesn’t end at launch. We offer ongoing support to ensure your project remains successful.</li>
+        <li><strong>Proven Track Record:</strong> We have successfully completed projects for a diverse range of clients, earning their trust and satisfaction.</li>
+    </ul>
+</section>
+
+   <!-- ================= OUR VALUES SECTION ================= -->
+    <section id="our-values" class="container">
+        <h2 class="section-title">Our Values</h2>
+        <ul>
+            <li>Integrity</li>
+            <li>Quality</li>
+            <li>Innovation</li>
+            <li>Collaboration</li>
+        </ul>
+    </section>
+    
+    <!-- ================= PORTFOLIO ================= -->
+<section id="portfolio" class="container">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-container">
+        <!-- Portfolio Items -->
+        <div class="portfolio-item websites">
+            <img src="assets/img/projects/Calculator.png" alt="Calculator">
+            <h4>Calculator</h4>
+            <a href="https://nhlobo.github.io/calculator/" class="button">View Project</a>
+        </div>
+        <div class="portfolio-item websites">
+            <img src="assets/img/projects/Weather Forecast App.png" alt="Weather Forecast App">
+            <h4>Weather Forecast App</h4>
+            <a href="https://weather-ebon-beta.vercel.app/" class="button">View Project</a>
+        </div>
+        <div class="portfolio-item apps">
+            <img src="assets/img/projects/Calendar App.png" alt="Calendar App">
+            <h4>Calendar App</h4>
+            <a href="https://test2-4-dxs5.onrender.com" class="button">View Project</a>
+        </div>
+        <div class="portfolio-item apps">
+            <img src="assets/img/projects/Quran Knowledge Quiz.png" alt="Quran Knowledge Quiz">
+            <h4>Quran Knowledge Quiz</h4>
+            <a href="https://nhlobo.github.io/quran-knowledge-quiz/" class="button">View Project</a>
+        </div>
+    </div>
+
+    <!-- Navigation Arrows and Dots -->
+    <div class="portfolio-navigation">
+        <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+        <div class="dot" onclick="currentSlide(1)"></div>
+        <div class="dot" onclick="currentSlide(2)"></div>
+        <div class="dot" onclick="currentSlide(3)"></div>
+        <div class="dot" onclick="currentSlide(4)"></div>
+        <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+    </div>
+
+    <style>
+        /* Container styling */
+        #portfolio {
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: #333;
+        }
+
+        /* Portfolio item styling */
+        .portfolio-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .portfolio-item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background: linear-gradient(to bottom right, #292929, #1b1b1b);
+            color: #fff;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        .portfolio-item h4 {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+
+        .portfolio-item .button {
+            display: inline-block;
+            padding: 0.5em 1em;
+            background-color: #ff9900;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .portfolio-item .button:hover {
+            background-color: #cc7a00;
+        }
+
+        /* Navigation and dots styling */
+        .portfolio-navigation {
+            position: absolute;
+            bottom: 1em;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio-navigation .dot {
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #999;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .portfolio-navigation .dot.active {
+            background-color: #ff9900;
+        }
+
+        .portfolio-navigation .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .portfolio-navigation .arrow:hover {
+            background-color: #ff9900;
+        }
+
+        .portfolio-navigation .arrow.left {
+            left: 10px;
+        }
+
+        .portfolio-navigation .arrow.right {
+            right: 10px;
+        }
+    </style>
+
+    <script>
+        let currentSlideIndex = 1;
+        showSlides(currentSlideIndex);
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("portfolio-item");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { currentSlideIndex = 1 }
+            if (n < 1) { currentSlideIndex = slides.length }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[currentSlideIndex - 1].style.display = "block";
+            dots[currentSlideIndex - 1].className += " active";
+        }
+
+        function nextSlide() {
+            showSlides(currentSlideIndex += 1);
+        }
+
+        function prevSlide() {
+            showSlides(currentSlideIndex -= 1);
+        }
+
+        function currentSlide(n) {
+            showSlides(currentSlideIndex = n);
+        }
+    </script>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section id="testimonials" class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-item">
+                <p>"Mapengo Innovations delivered a top-notch app for our business. Their professionalism and attention to detail were exceptional!"</p>
+                <h4>- John Doe, CEO of TechStart</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"The website they developed for us is exactly what we needed. Affordable and high-quality service!"</p>
+                <h4>- Jane Smith, Owner of LocalBiz</h4>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>What services do you offer?</h3>
+                <p>We offer web development, mobile app development, maintenance & support, and consulting services to help your business thrive.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How much do your services cost?</h3>
+                <p>Our pricing is competitive and tailored to meet the needs of businesses in South Africa. Please visit our <a href="pricing.html">Pricing Page</a> for more details.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long does a project take?</h3>
+                <p>Project timelines vary based on the complexity and requirements. We provide estimated timelines during the consultation phase.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer support after the project is completed?</h3>
+                <p>Yes, we offer maintenance and support packages to ensure your website or app continues to perform optimally.</p>
+            </div>
+            <!-- Add more FAQs as needed -->
+        </div>
+    </section
+        
+<!-- ================= CONTACT ================ -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <span class="section-subtitle">Get in Touch</span>
+
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <form action="https://formspree.io/f/xwpkkvnk" class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50" 
+                    pattern="[a-zA-Z ]+" aria-label="Name field" title="Please enter a valid name (letters and spaces only)">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required aria-label="Email field" title="Please enter a valid email address">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500"
+                    aria-label="Message field" title="Message should be between 10 and 500 characters"></textarea>
+            </div>
+
+            <!-- Privacy Policy and Communication Checkboxes -->
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                <label for="privacyPolicy">
+                    I agree to the <a href="privacy.html">Privacy Policy</a> .
+                </label>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="communicationOptIn" name="communicationOptIn">
+                <label for="communicationOptIn">
+                    I would like to receive updates and promotional communications.
+                </label>
+            </div>
+
+            <button type="submit" class="button contact-button">Send Message</button>
+        </form>
+
+        <!-- Loader and Response -->
+        <div id="loader" style="display:none;" aria-live="polite">
+            <img src="loader.gif" alt="Loading..." />
+        </div>
+        <div id="response" style="display:none;" aria-live="polite"></div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Show loading indicator
+            document.getElementById('loader').style.display = 'block';
+
+            // Validate inputs
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const privacyPolicy = document.getElementById('privacyPolicy').checked;
+
+            // Validate email pattern
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showResponse('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            if (!privacyPolicy) {
+                showResponse('You must agree to the Privacy Policy before submitting.', 'error');
+                return;
+            }
+
+            if (!name || !email || !message) {
+                showResponse('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Check if the user is online
+            if (!navigator.onLine) {
+                showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
+                return;
+            }
+
+            // Submit the form via Fetch API
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    Accept: 'application/json'
+                }
+            })
+            .then(response => {
+                document.getElementById('loader').style.display = 'none'; // Hide loader
+                if (response.ok) {
+                    showResponse('Thank you! Your message has been successfully sent.', 'success');
+                    this.reset(); // Reset the form after successful submission
+                } else {
+                    showResponse('Oops! There was an issue with your submission. Please try again later.', 'error');
+                }
+            })
+            .catch(error => {
+                document.getElementById('loader').style.display = 'none'; // Hide loader
+                if (!navigator.onLine) {
+                    showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
+                } else {
+                    showResponse('There was a problem with your submission. Please try again later.', 'error');
+                }
+            });
+        });
+
+        // Function to show messages dynamically
+        function showResponse(message, type) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.style.display = 'block';
+            responseDiv.textContent = message;
+            responseDiv.className = type === 'success' ? 'success-message' : 'error-message';
+
+            // Optionally hide the message after a few seconds for a better user experience
+            setTimeout(() => {
+                responseDiv.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+<style>
+.contact-form {
+    max-width: 400px; /* Set a max-width for larger screens */
+    width: 90%; /* Allow more width on smaller screens */
+    margin: 20px auto; /* Center the form with some margin */
+    background-color: white; /* Set background to white */
+    border: 2px solid #c3e6cb; /* Add a subtle border */
+    padding: 24px; /* Reduced padding for a more compact look */
+    font-size: 14px;
+    font-family: inherit;
+    color: black; /* Change text color to black for contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+    gap: 15px; /* Adjusted gap for compactness */
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Adjusted gap for form group */
+}
+
+.contact-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #717171;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    width: 100%;
+    max-width: 300px; /* Reduce maximum width for smaller input fields */
+    padding: 8px; /* Adjusted padding for a smaller look */
+    border-radius: 8px;
+    color: black; /* Change text color to black */
+    font-family: inherit;
+    background-color: #f8f9fa; /* Light background for inputs */
+    border: 1px solid #c3e6cb; /* Match border color with the text box */
+}
+
+.contact-form .form-group input::placeholder,
+.contact-form .form-group textarea::placeholder {
+    opacity: 0.5; /* Placeholder opacity */
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+    outline: none;
+    border-color: #80bdff; /* Change focus border color */
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjusted margin */
+    gap: 10px; /* Space between checkbox and label */
+}
+
+/* Updated button styling */
+.contact-form .form-submit-btn {
+    height: 50px; /* Set the height */
+    width: 200px; /* Set the width */
+    position: relative; /* Position relative for pseudo-element */
+    background-color: transparent; /* Transparent background */
+    cursor: pointer; /* Change cursor to pointer */
+    border: 2px solid #c3e6cb; /* Match border color with the text box */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 30px; /* Rounded corners */
+    color: #333; /* Text color */
+    transition: all 0.5s ease-in-out; /* Transition effect */
+    font-weight: 800; /* Bold text */
+    letter-spacing: 4px; /* Spacing between letters */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    margin-top: 8px; /* Maintain margin for spacing */
+}
+
+.contact-form .form-submit-btn::after {
+    content: ""; /* Pseudo-element for background effect */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to left */
+    top: 0; /* Align to top */
+    transition: all 0.5s ease-in-out; /* Transition for the background */
+    background-color: #333; /* Background color on hover */
+    border-radius: 30px; /* Match border radius */
+    visibility: hidden; /* Hide by default */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    z-index: -1; /* Place behind the text */
+    transform: scale(0); /* Start scaled down */
+}
+
+.contact-form .form-submit-btn:hover {
+    box-shadow: 1px 1px 200px #252525; /* Add shadow effect on hover */
+    color: #fff; /* Change text color on hover */
+    border: none; /* Remove border on hover */
+}
+
+.contact-form .form-submit-btn:hover::after {
+    visibility: visible; /* Show on hover */
+    transform: scale(1); /* Scale to full size */
+}
+
+/* Error Message */
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin-top: 10px;
+}
+
+/* Privacy Policy and Terms */
+.privacy-terms {
+    font-size: 12px; /* Adjust font size as needed */
+    color: #c3e6cb; /* Match border color */
+    text-decoration: underline; /* Underline text */
+    margin-top: 10px; /* Space from the button */
+    text-align: center; /* Center text */
+}
+
+/* Loader */
+#loader {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#loader img {
+    width: 50px; /* Adjust size for the loader image */
+    height: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 16px; /* Reduce padding */
+    }
+
+    .contact-form .form-submit-btn {
+        width: 100%; /* Full width on smaller screens */
+
+
+<!-- ================= FOOTER SECTION ================= -->
+<footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+
+        <div class="footerNav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footerBottom">
+        <p class="footer-copy">© 2024 Mapengo Innovations. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Inline CSS -->
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    footer {
+        background-color: #111;
+    }
+
+    .footerContainer {
+        width: 100%;
+        padding: 70px 30px 20px;
+    }
+
+    .socialIcons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .socialIcons a {
+        text-decoration: none;
+        padding: 10px;
+        background-color: white;
+        margin: 10px;
+        border-radius: 50%;
+    }
+
+    .socialIcons a i {
+        font-size: 2em;
+        color: black;
+        opacity: 0.9;
+    }
+
+    .socialIcons a:hover {
+        background-color: #111;
+        transition: 0.5s;
+    }
+
+    .socialIcons a:hover i {
+        color: white;
+        transition: 0.5s;
+    }
+
+    .footerNav {
+        margin: 30px 0;
+    }
+
+    .footerNav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+    }
+
+    .footerNav ul li a {
+        color: white;
+        margin: 20px;
+        text-decoration: none;
+        font-size: 1.3em;
+        opacity: 0.7;
+        transition: 0.5s;
+    }
+
+    .footerNav ul li a:hover {
+        opacity: 1;
+    }
+
+    .footerBottom {
+        background-color: #000;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footerBottom p {
+        color: white;
+    }
+
+    @media (max-width: 700px) {
+        .footerNav ul {
+            flex-direction: column;
+        }
+
+        .footerNav ul li {
+            width: 100%;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .socialIcons a {
+            padding: 8px;
+            margin: 4px;
+        }
+    }
+</style>
+
+<!-- Font Awesome Icons (for social media icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
