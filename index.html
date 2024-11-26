@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapengo Innovations</title>
-    <!-- Link to the Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -16,7 +15,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif; /* Apply 'Inter' font for the entire body */
+            font-family: 'Inter', sans-serif;
             background-color: #fff;
             color: #333;
             line-height: 1.6;
@@ -25,7 +24,7 @@
         }
 
         h1, h2, h3, p {
-            font-family: 'Inter', sans-serif; /* Ensure all text uses 'Inter' */
+            font-family: 'Inter', sans-serif;
         }
 
         /* Navbar Styles */
@@ -39,6 +38,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            flex-wrap: wrap;
         }
 
         .logo img {
@@ -55,7 +55,7 @@
             color: #333;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 500; /* Slightly lighter weight for a smooth effect */
+            font-weight: 500;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
@@ -74,6 +74,7 @@
             background-color: #fff;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .hero-content {
@@ -81,16 +82,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 30px;
-            text-align: center;
-            animation: fadeInUp 1.5s ease-out;
+            gap: 20px; /* Adjusted spacing */
         }
 
         .hero-text {
             color: #333;
             font-size: 3.5rem;
-            font-weight: 700; /* Bold weight for the main title */
-            margin-bottom: 15px;
+            font-weight: 700;
+            margin-bottom: 10px; /* Adjusted margin */
             letter-spacing: 1px;
             opacity: 0;
             animation: fadeIn 2s ease forwards;
@@ -98,6 +97,13 @@
 
         .hero-text span {
             color: #1a73e8;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #555;
+            margin-top: 20px;
         }
 
         .hero-buttons {
@@ -180,6 +186,13 @@
             .navbar {
                 flex-direction: column;
                 padding: 20px;
+                align-items: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
             }
 
             .hero {
@@ -188,7 +201,11 @@
             }
 
             .hero-text {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Adjusted font size for smaller screens */
+            }
+
+            .hero-subtext {
+                font-size: 1.125rem;
             }
 
             .hero-buttons {
@@ -201,6 +218,22 @@
                 margin-top: 30px;
                 right: 0;
                 bottom: 0;
+            }
+
+            .cta-btn {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text {
+                font-size: 2rem; /* Adjusted for smaller mobile screens */
+            }
+
+            .cta-btn {
+                padding: 10px 20px;
+                font-size: 13px;
             }
         }
     </style>
@@ -229,7 +262,9 @@
             <div class="hero-text">
                 Mapengo Innovations<br><span>Web & App Solutions</span>
             </div>
-            <p>Bringing Your Vision to Life with Clean, Simple, and Effective Technology Solutions.</p>
+            <div class="hero-subtext">
+                Bringing Your Vision to Life with Clean, Simple, and Effective Technology Solutions.
+            </div>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
