@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapengo Innovations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
     <style>
-        /* Global Styles */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -17,11 +15,12 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #f1f1f1;
-            color: #fff;
-            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
             overflow-x: hidden;
+            margin: 0;
         }
 
         h1, h2, h3, p {
@@ -34,13 +33,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: transparent;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease;
         }
 
         .logo img {
@@ -54,16 +51,17 @@
         }
 
         .nav-links a {
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            text-transform: uppercase;
+            color: #333;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .nav-links a:hover {
             color: #1a73e8;
+            transform: translateY(-5px);
         }
 
         /* Hero Section */
@@ -71,29 +69,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 100px 50px;
             height: 100vh;
-            background: url('background-image.jpg') no-repeat center center/cover;
+            background-color: #fff;
             position: relative;
-            padding: 80px 50px;
-            color: #fff;
-            text-align: center;
             overflow: hidden;
         }
 
         .hero-content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
             animation: fadeInUp 1.5s ease-out;
-            position: relative;
-            z-index: 2;
         }
 
         .hero-text {
-            font-size: 4rem;
-            font-weight: 700;
+            color: #333;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
             letter-spacing: 1px;
+            opacity: 0;
             animation: fadeIn 2s ease forwards;
         }
 
@@ -102,24 +101,23 @@
         }
 
         .hero-buttons {
-            margin-top: 30px;
+            display: flex;
+            gap: 20px;
             opacity: 0;
             animation: fadeInUp 2s ease forwards;
             animation-delay: 1.2s;
-            display: flex;
-            gap: 20px;
         }
 
         .cta-btn {
             padding: 15px 30px;
             background-color: #1a73e8;
-            border-radius: 50px;
-            font-weight: 600;
             color: #fff;
-            text-transform: uppercase;
+            font-weight: 600;
             border: none;
+            border-radius: 30px;
             cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .cta-btn:hover {
@@ -127,19 +125,33 @@
             transform: translateY(-5px);
         }
 
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            padding: 40px;
-            transition: all 0.3s ease;
+        /* Hero Image */
+        .hero-image {
+            display: block;
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            animation: fadeInUp 2s ease-out;
+            opacity: 0;
         }
 
-        .glass:hover {
-            backdrop-filter: blur(20px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+        .hero-image img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Social Icons */
+        .social-icons a {
+            color: #333;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1a73e8;
+            transform: scale(1.2);
         }
 
         /* Animations */
@@ -155,7 +167,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -163,37 +175,16 @@
             }
         }
 
-        /* Social Icons */
-        .social-icons a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin-right: 20px;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-            color: #1a73e8;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #222;
-            padding: 30px 50px;
-            text-align: center;
-            color: #fff;
-            margin-top: 50px;
-        }
-
-        .footer p {
-            font-size: 14px;
-        }
-
         /* Responsive Styles */
         @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+            }
+
             .hero {
+                padding: 80px 30px;
                 height: auto;
-                padding: 60px 30px;
             }
 
             .hero-text {
@@ -202,23 +193,23 @@
 
             .hero-buttons {
                 flex-direction: column;
-                gap: 15px;
             }
 
-            .cta-btn {
-                padding: 12px 25px;
-                font-size: 14px;
+            .hero-image {
+                display: block;
+                position: relative;
+                margin-top: 30px;
+                right: 0;
+                bottom: 0;
             }
         }
-
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
+    <!-- Header Section -->
     <header class="navbar">
         <div class="logo">
-            <img src="assets/logo.png" alt="Mapengo Innovations">
+            <img src="john-doe.jpg" alt="Mapengo Innovations">
         </div>
         <nav>
             <ul class="nav-links">
@@ -232,40 +223,27 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Main Content Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
                 Mapengo Innovations<br><span>Web & App Solutions</span>
             </div>
-            <p>We help bring your vision to life with cutting-edge, simple, and effective technology solutions. Let us power your business with the latest in web and app development!</p>
-
+            <p>Bringing Your Vision to Life with Clean, Simple, and Effective Technology Solutions.</p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
-
             <div class="hero-buttons">
-                <button class="cta-btn" onclick="window.location.href='#contact'">Get In Touch</button>
-                <a href="#services" class="cta-btn">Explore Services</a>
+                <button class="cta-btn" onclick="location.href='#contact'">Get In Touch</button>
+                <a href="#contact" class="cta-btn">Let's Collaborate</a>
             </div>
         </div>
-        <div class="hero-image glass">
-            <img src="John-doe.jpg" alt="Technology Graphic">
+        <div class="hero-image">
+            <img src="IMG-20241015-WA0023.png" alt="Technology Graphic">
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Mapengo Innovations | All Rights Reserved</p>
-    </footer>
-
-    <script>
-        // GSAP Animation for smooth scroll and fade-in effects
-        gsap.from(".hero-text", { opacity: 0, duration: 2, y: 50 });
-        gsap.from(".hero-buttons", { opacity: 0, duration: 2, delay: 1, y: 50 });
-    </script>
 </body>
 </html>
