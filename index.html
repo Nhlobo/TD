@@ -16,11 +16,10 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #fff;
-            color: #333;
+            background-color: #121212;
+            color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
-            padding: 0;
         }
 
         h1, h2, h3, p {
@@ -32,108 +31,87 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px 40px;
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.3s ease;
         }
 
         .logo img {
             height: 50px;
+            filter: brightness(0) invert(1);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: #333;
+            color: #bbb;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 600;
             text-transform: uppercase;
+            font-weight: 700;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .nav-links a:hover {
             color: #1a73e8;
-            transform: translateY(-2px);
+            transform: translateY(-5px);
         }
 
         /* Hero Section */
         .hero {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 100px 50px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
-            min-height: 80vh;
+            background: linear-gradient(135deg, #1a73e8, #3c8dff);
+            height: 100vh;
             position: relative;
+            overflow: hidden;
+            z-index: 0;
         }
 
         .hero-content {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 50px;
-            animation: fadeIn 1s ease-out;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
         }
 
         .hero-text {
-            flex: 1;
-            max-width: 650px;
-            animation: slideInLeft 1s ease-out forwards;
-            opacity: 0;
-            animation-delay: 0.2s;
-        }
-
-        .hero-text h1 {
+            color: #fff;
             font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            animation: slideInFromLeft 1s ease-out forwards;
+        }
+
+        .hero-text span {
+            color: #ff6600;
             font-weight: 700;
-            color: #1a73e8;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            max-width: 600px;
-            animation: slideInRight 1s ease-out forwards;
-            opacity: 0;
-            animation-delay: 0.5s;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .hero-buttons {
             display: flex;
             gap: 20px;
+            animation: fadeInUp 2s ease-out;
             opacity: 0;
-            animation: fadeInUp 1s ease-out forwards;
-            animation-delay: 0.7s;
         }
 
         .cta-btn {
             padding: 15px 30px;
-            background-color: #1a73e8;
+            background-color: #ff6600;
             color: #fff;
             font-weight: 600;
             border: none;
@@ -143,49 +121,64 @@
         }
 
         .cta-btn:hover {
-            background-color: #155bb5;
-            transform: translateY(-3px);
+            background-color: #e64a00;
+            transform: translateY(-5px);
         }
 
-        .cta-btn:focus {
-            outline: none;
+        /* Hero Image */
+        .hero-image {
+            display: none;
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            animation: fadeInUp 2s ease-out;
+            opacity: 0;
         }
 
-        .social-icons a {
-            color: #1a73e8;
-            font-size: 1.6rem;
-            margin-right: 20px;
-            transition: color 0.3s ease, transform 0.3s ease;
+        .hero-image img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .social-icons a:hover {
-            color: #155bb5;
-            transform: scale(1.2);
-        }
-
-        /* Background Overlay */
-        .background-overlay {
+        /* Background Pattern */
+        .background-pattern {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('animated-pattern.svg') repeat;
-            opacity: 0.1;
+            background: url('pattern.png') repeat;
+            opacity: 0.2;
             z-index: -1;
         }
 
+        /* Social Icons */
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1a73e8;
+            transform: scale(1.2);
+        }
+
         /* Animations */
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        @keyframes slideInLeft {
+        @keyframes slideInFromLeft {
             from {
                 opacity: 0;
                 transform: translateX(-50px);
@@ -196,76 +189,32 @@
             }
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* Responsive Styles */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                align-items: center;
                 padding: 20px;
             }
 
-            .nav-links {
-                flex-direction: column;
-                gap: 15px;
-                margin-top: 20px;
-            }
-
             .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 60px 30px;
+                padding: 80px 30px;
+                height: auto;
             }
 
-            .hero-text h1 {
+            .hero-text {
                 font-size: 2.5rem;
             }
 
-            .hero-text p {
-                font-size: 1.1rem;
-            }
-
             .hero-buttons {
-                justify-content: center;
+                flex-direction: column;
             }
 
             .hero-image {
+                display: block;
+                position: relative;
                 margin-top: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .cta-btn {
-                padding: 10px 25px;
-            }
-
-            .social-icons a {
-                font-size: 1.4rem;
+                right: 0;
+                bottom: 0;
             }
         }
     </style>
@@ -289,28 +238,28 @@
     </header>
 
     <!-- Main Content Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Mapengo Innovations<br><span>Transforming Ideas into Reality</span></h1>
-                <p>Innovative Web and App Solutions tailored for your business success.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/your-profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/your-profile" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/your-profile" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.tiktok.com/@your-profile" target="_blank"><i class="fab fa-tiktok"></i></a>
-                </div>
-                <div class="hero-buttons">
-                    <button class="cta-btn" onclick="location.href='#Contact'">Got a Project?</button>
-                    <a href="#Contact" class="cta-btn">Let's Talk</a>
-                </div>
+                Mapengo Innovations<br><span>AI-driven Web and App Solutions</span>
             </div>
-            <div class="hero-image">
-                <img src="IMG-20241015-WA0023.png" alt="Technology Graphic">
+            <p>Innovate your business with cutting-edge technologies. Let’s build something incredible together.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
+            <div class="hero-buttons">
+                <button class="cta-btn" onclick="location.href='#contact'">Got a Project?</button>
+                <a href="#contact" class="cta-btn">Let’s Talk</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="IMG-20241015-WA0023.png" alt="Technology Graphic">
         </div>
     </section>
 
-    <div class="background-overlay"></div> <!-- Background overlay -->
+    <div class="background-pattern"></div>
 </body>
 </html>
