@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Styles */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -16,10 +16,11 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #121212;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            margin: 0;
         }
 
         h1, h2, h3, p {
@@ -31,18 +32,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a1a1a;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s ease;
         }
 
         .logo img {
             height: 50px;
-            filter: brightness(0) invert(1);
         }
 
         .nav-links {
@@ -52,7 +51,7 @@
         }
 
         .nav-links a {
-            color: #bbb;
+            color: #333;
             text-decoration: none;
             font-size: 16px;
             text-transform: uppercase;
@@ -71,11 +70,10 @@
             justify-content: center;
             align-items: center;
             padding: 100px 50px;
-            background: linear-gradient(135deg, #1a73e8, #3c8dff);
             height: 100vh;
+            background-color: #fff;
             position: relative;
             overflow: hidden;
-            z-index: 0;
         }
 
         .hero-content {
@@ -89,45 +87,47 @@
         }
 
         .hero-text {
-            color: #fff;
+            color: #333;
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 15px;
             letter-spacing: 1px;
-            animation: slideInFromLeft 1s ease-out forwards;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
         }
 
         .hero-text span {
-            color: #ff6600;
-            font-weight: 700;
+            color: #1a73e8;
         }
 
         .hero-buttons {
             display: flex;
             gap: 20px;
-            animation: fadeInUp 2s ease-out;
             opacity: 0;
+            animation: fadeInUp 2s ease forwards;
+            animation-delay: 1.2s;
         }
 
         .cta-btn {
             padding: 15px 30px;
-            background-color: #ff6600;
+            background-color: #1a73e8;
             color: #fff;
             font-weight: 600;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .cta-btn:hover {
-            background-color: #e64a00;
+            background-color: #005bb5;
             transform: translateY(-5px);
         }
 
         /* Hero Image */
         .hero-image {
-            display: none;
+            display: block;
             position: absolute;
             right: 50px;
             bottom: 50px;
@@ -138,24 +138,12 @@
         .hero-image img {
             width: 300px;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Background Pattern */
-        .background-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('pattern.png') repeat;
-            opacity: 0.2;
-            z-index: -1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Social Icons */
         .social-icons a {
-            color: #fff;
+            color: #333;
             font-size: 1.5rem;
             margin-right: 20px;
             transition: color 0.3s ease, transform 0.3s ease;
@@ -167,6 +155,15 @@
         }
 
         /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -175,17 +172,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
             }
         }
 
@@ -241,9 +227,9 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                Mapengo Innovations<br><span>AI-driven Web and App Solutions</span>
+                Mapengo Innovations<br><span>Web & App Solutions</span>
             </div>
-            <p>Innovate your business with cutting-edge technologies. Let’s build something incredible together.</p>
+            <p>Bringing Your Vision to Life with Clean, Simple, and Effective Technology Solutions.</p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -251,15 +237,13 @@
                 <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
             <div class="hero-buttons">
-                <button class="cta-btn" onclick="location.href='#contact'">Got a Project?</button>
-                <a href="#contact" class="cta-btn">Let’s Talk</a>
+                <button class="cta-btn" onclick="location.href='#contact'">Get In Touch</button>
+                <a href="#contact" class="cta-btn">Let's Collaborate</a>
             </div>
         </div>
         <div class="hero-image">
             <img src="IMG-20241015-WA0023.png" alt="Technology Graphic">
         </div>
     </section>
-
-    <div class="background-pattern"></div>
 </body>
 </html>
