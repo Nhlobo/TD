@@ -21,6 +21,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             margin: 0;
+            transition: background-color 0.3s ease;
         }
 
         h1, h2, h3, p {
@@ -35,11 +36,9 @@
             padding: 20px 50px;
             background-color: #fff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000; /* Ensure the navbar stays on top */
+            z-index: 1000;
             flex-wrap: wrap;
             transition: top 0.3s ease;
         }
@@ -89,13 +88,14 @@
             align-items: center;
             padding: 100px 50px;
             height: 100vh;
-            background-color: #fff;
+            background: linear-gradient(to right, #ffffff, #f8f9fa);
             position: relative;
-            overflow: hidden;
             text-align: center;
+            overflow: hidden;
             transition: margin-top 0.3s ease;
-            margin-top: 0; /* Start below the fixed navbar */
-            transition: margin-top 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            animation: fadeInBackground 3s ease-out forwards;
         }
 
         .hero-content {
@@ -104,16 +104,17 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
+            animation: fadeIn 2s ease forwards;
         }
 
         .hero-text {
             color: #333;
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
-            margin-bottom: 10px;
             letter-spacing: 1px;
             opacity: 0;
-            animation: fadeIn 2s ease forwards;
+            animation: slideUp 1s ease forwards;
+            margin-bottom: 10px;
         }
 
         .hero-text span {
@@ -125,14 +126,13 @@
             font-weight: 400;
             color: #555;
             margin-top: 20px;
+            animation: fadeInUp 2s ease 1s forwards;
         }
 
         .hero-buttons {
             display: flex;
             gap: 20px;
-            opacity: 0;
-            animation: fadeInUp 2s ease forwards;
-            animation-delay: 1.2s;
+            animation: fadeInUp 2s ease 1.5s forwards;
         }
 
         .cta-btn {
@@ -163,13 +163,13 @@
             max-width: 300px;
             width: 100%;
             height: auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .hero-image img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Social Icons */
@@ -195,6 +195,17 @@
             }
         }
 
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -203,6 +214,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInBackground {
+            from {
+                background-color: #ffffff;
+            }
+            to {
+                background-color: #f8f9fa;
             }
         }
 
