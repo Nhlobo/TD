@@ -39,6 +39,7 @@
             top: 0;
             z-index: 1000;
             flex-wrap: wrap;
+            transition: top 0.3s ease;
         }
 
         .logo img {
@@ -273,7 +274,7 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="logo">
             <img src="john-doe.jpg" alt="Mapengo Innovations">
         </div>
@@ -324,6 +325,21 @@
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
+
+        // Hide navbar when scrolling down, show when scrolling up
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function() {
+            const navbar = document.getElementById("navbar");
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = "-80px";  // Hide navbar when scrolling down
+            } else {
+                navbar.style.top = "0";  // Show navbar when scrolling up
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
     </script>
 </body>
 </html>
