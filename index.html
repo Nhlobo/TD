@@ -4,353 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapengo Innovations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Reset */
-        * {
+        body, h1, h2, p, ul, li, a {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fff;
+            background: #f4f4f4;
             color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
-            margin: 0;
-            transition: background-color 0.3s ease;
         }
 
-        h1, h2, h3, p {
-            font-family: 'Inter', sans-serif;
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to right, #ff0000, #0048ff);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
         }
 
-        /* Updated Gradient Text */
-        .gradient-text {
-            font-size: 3rem;
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero .logo-image {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 10px 25px;
+            background: white;
+            color: #0048ff;
             font-weight: bold;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #9e1c1c, #000000, #003c8f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
         }
 
-        /* Navbar Styles */
+        .cta:hover {
+            background: #0048ff;
+            color: white;
+        }
+
+        /* Navbar */
         .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            flex-wrap: wrap;
-            transition: top 0.3s ease;
         }
 
-        .logo img {
-            height: 50px;
+        .navbar .logo {
+            font-size: 1.5rem;
+            color: white;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
 
         .nav-links a {
-            color: #333;
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: color 0.3s ease, transform 0.3s ease;
+            color: white;
+            font-weight: bold;
         }
 
-        .nav-links a:hover {
-            color: #1a73e8;
-            transform: translateY(-5px);
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 100px 50px;
-            height: 100vh;
-            background: linear-gradient(to right, #ffffff, #f8f9fa);
-            position: relative;
+        /* Sections */
+        #services, #about, #contact {
+            padding: 50px;
             text-align: center;
-            overflow: hidden;
-            transition: margin-top 0.3s ease;
-            background-size: cover;
-            background-position: center;
-            animation: fadeInBackground 3s ease-out forwards;
         }
 
-        .hero-content {
+        .service-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
             gap: 20px;
-            animation: fadeIn 2s ease forwards;
+            flex-wrap: wrap;
         }
 
-        .hero-text {
-            color: #333;
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            opacity: 0;
-            animation: slideUp 1s ease forwards;
-            margin-bottom: 10px;
+        .service {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
 
-        .hero-text span {
-            color: #1a73e8;
+        #about {
+            background: #fff;
         }
 
-        .hero-subtext {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #555;
-            margin-top: 20px;
-            animation: fadeInUp 2s ease 1s forwards;
+        #contact {
+            background: #f9f9f9;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            animation: fadeInUp 2s ease 1.5s forwards;
-        }
-
-        .cta-btn {
-            padding: 15px 30px;
-            background-color: #1a73e8;
-            color: #fff;
-            font-weight: 600;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-btn:hover {
-            background-color: #005bb5;
-            transform: translateY(-5px);
-        }
-
-        /* Hero Image */
-        .hero-image {
-            display: block;
-            position: absolute;
-            right: 50px;
-            bottom: 50px;
-            animation: fadeInUp 2s ease-out;
-            opacity: 0;
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInBackground {
-            from {
-                background-color: #ffffff;
-            }
-            to {
-                background-color: #f8f9fa;
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 20px;
-                align-items: center;
-                background-color: transparent;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-                width: 100%;
-                margin-top: 20px;
-            }
-
-            .nav-links a {
-                padding: 10px 0;
-                font-size: 18px;
-                width: 100%;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                padding: 80px 30px;
-                height: auto;
-            }
-
-            .hero-text {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtext {
-                font-size: 1.125rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .hero-image {
-                display: block;
-                position: relative;
-                margin-top: 30px;
-                right: 0;
-                bottom: 0;
-            }
-
-            .cta-btn {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text {
-                font-size: 2rem;
-            }
-
-            .cta-btn {
-                padding: 10px 20px;
-                font-size: 13px;
-            }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="navbar" id="navbar">
-        <div class="logo">
-            <img src="john-doe.jpg" alt="Mapengo Innovations">
-        </div>
-        <nav>
+    <header class="hero">
+        <nav class="navbar">
+            <h1 class="logo">Mapengo Innovations</h1>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <!-- Hamburger Menu -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="hero-content">
+            <img src="your-image-path.jpg" alt="Mapengo Logo" class="logo-image">
+            <h2>Innovate. Transform. Succeed.</h2>
+            <p>We build cutting-edge web and app solutions to drive your business forward.</p>
+            <a href="#services" class="cta">Get Started</a>
         </div>
     </header>
 
-    <!-- Main Content Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text gradient-text">
-                Mapengo Innovations<br><span>Web & App Solutions</span>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <h3>Web Development</h3>
+                <p>Custom websites with modern designs and responsive layouts.</p>
             </div>
-            <p class="hero-subtext">Bringing Your Vision to Life with Clean, Simple, and Effective Technology Solutions.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+            <div class="service">
+                <h3>App Development</h3>
+                <p>Scalable mobile and desktop applications tailored to your needs.</p>
             </div>
-            <div class="hero-buttons">
-                <button class="cta-btn" onclick="location.href='#contact'">Get In Touch</button>
+            <div class="service">
+                <h3>Software Consulting</h3>
+                <p>Expert advice to refine your digital strategy and workflows.</p>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="john-doe.jpg" alt="Technology Graphic">
         </div>
     </section>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        // Hide navbar when scrolling down, show when scrolling up
-        let lastScrollTop = 0;
-        window.addEventListener("scroll", function() {
-            const navbar = document.getElementById("navbar");
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop) {
-                navbar.style.top = "-80px";  // Hide navbar when scrolling down
-            } else {
-                navbar.style.top = "0";  // Show navbar when scrolling up
-            }
-
-            // Close the mobile menu if it's open while scrolling
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        });
-    </script>
-</body>
-</html>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Map
