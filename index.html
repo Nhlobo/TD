@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapengo Innovations</title>
-    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -17,39 +16,33 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333;
             background-color: #fff;
-            position: relative;
+            color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            padding: 0;
         }
 
-        h1, h2, h3 {
-            font-weight: 700;
-            color: #333;
-        }
-
-        p {
-            font-size: 1.1em;
-            color: #555;
+        h1, h2, h3, p {
+            font-family: 'Roboto', sans-serif;
         }
 
         /* Navbar Styles */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 20px 40px;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.5s ease;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .logo img {
-            max-height: 50px;
+            height: 50px;
         }
 
         .nav-links {
@@ -59,31 +52,33 @@
         }
 
         .nav-links a {
+            color: #333;
             text-decoration: none;
-            color: #007bff;
+            font-size: 16px;
             font-weight: 600;
             text-transform: uppercase;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #0056b3;
-            transform: translateY(-3px);
+            color: #1a73e8;
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 80px 50px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.8));
+            align-items: center;
+            padding: 100px 50px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
             min-height: 80vh;
             position: relative;
         }
 
         .hero-content {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -93,37 +88,39 @@
 
         .hero-text {
             flex: 1;
-            max-width: 600px;
+            max-width: 650px;
             animation: slideInLeft 1s ease-out forwards;
             opacity: 0;
             animation-delay: 0.2s;
         }
 
         .hero-text h1 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
             color: #1a73e8;
         }
 
         .hero-text p {
-            margin: 20px 0;
-            font-size: 1.2em;
-            color: #666;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
         }
 
         .hero-image {
             flex: 1;
-            min-width: 280px;
+            min-width: 300px;
             max-width: 600px;
-            opacity: 0;
             animation: slideInRight 1s ease-out forwards;
+            opacity: 0;
             animation-delay: 0.5s;
         }
 
         .hero-image img {
             width: 100%;
             height: auto;
-            border-radius: 15px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .hero-buttons {
@@ -135,13 +132,13 @@
         }
 
         .cta-btn {
-            padding: 12px 30px;
+            padding: 15px 30px;
             background-color: #1a73e8;
             color: #fff;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
             font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
@@ -155,10 +152,9 @@
         }
 
         .social-icons a {
-            margin-right: 15px;
             color: #1a73e8;
-            text-decoration: none;
-            font-size: 1.5em;
+            font-size: 1.6rem;
+            margin-right: 20px;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
@@ -227,13 +223,13 @@
             .navbar {
                 flex-direction: column;
                 align-items: center;
+                padding: 20px;
             }
 
             .nav-links {
                 flex-direction: column;
-                align-items: center;
-                gap: 10px;
-                margin-top: 15px;
+                gap: 15px;
+                margin-top: 20px;
             }
 
             .hero {
@@ -243,11 +239,11 @@
             }
 
             .hero-text h1 {
-                font-size: 2.5em;
+                font-size: 2.5rem;
             }
 
             .hero-text p {
-                font-size: 1.1em;
+                font-size: 1.1rem;
             }
 
             .hero-buttons {
@@ -261,7 +257,7 @@
 
         @media (max-width: 480px) {
             .hero-text h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
 
             .cta-btn {
@@ -269,7 +265,7 @@
             }
 
             .social-icons a {
-                font-size: 1.3em;
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -278,7 +274,7 @@
     <!-- Header Section -->
     <header class="navbar">
         <div class="logo">
-            <img src="assets/logo.png" alt="Your Logo">
+            <img src="assets/logo.png" alt="Mapengo Innovations">
         </div>
         <nav>
             <ul class="nav-links">
@@ -296,8 +292,8 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Mapengo Innovations<br><span>Innovative Web and App Solutions</span>.</h1>
-                <p>Let’s Bring Your Vision to Life! Contact us today to transform your ideas into reality.</p>
+                <h1>Mapengo Innovations<br><span>Transforming Ideas into Reality</span></h1>
+                <p>Innovative Web and App Solutions tailored for your business success.</p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/your-profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/your-profile" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -306,7 +302,7 @@
                 </div>
                 <div class="hero-buttons">
                     <button class="cta-btn" onclick="location.href='#Contact'">Got a Project?</button>
-                    <a href="#Contact" class="cta-btn">Tell Us About It</a>
+                    <a href="#Contact" class="cta-btn">Let's Talk</a>
                 </div>
             </div>
             <div class="hero-image">
