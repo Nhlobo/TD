@@ -64,6 +64,21 @@
             transform: translateY(-5px);
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
         /* Hero Section */
         .hero {
             display: flex;
@@ -82,14 +97,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 20px; /* Adjusted spacing */
+            gap: 20px;
         }
 
         .hero-text {
             color: #333;
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 10px; /* Adjusted margin */
+            margin-bottom: 10px;
             letter-spacing: 1px;
             opacity: 0;
             animation: fadeIn 2s ease forwards;
@@ -139,10 +154,14 @@
             bottom: 50px;
             animation: fadeInUp 2s ease-out;
             opacity: 0;
+            max-width: 300px; /* Max size of the technology graphic */
+            width: 100%; /* Ensures it scales well */
+            height: auto; /* Maintain aspect ratio */
         }
 
         .hero-image img {
-            width: 300px;
+            width: 100%;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -187,12 +206,26 @@
                 flex-direction: column;
                 padding: 20px;
                 align-items: center;
+                background-color: transparent; /* Navbar becomes transparent */
             }
 
             .nav-links {
+                display: none;
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .nav-links a {
+                padding: 10px 0;
+                font-size: 18px;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .hero {
@@ -201,7 +234,7 @@
             }
 
             .hero-text {
-                font-size: 2.5rem; /* Adjusted font size for smaller screens */
+                font-size: 2.5rem;
             }
 
             .hero-subtext {
@@ -228,7 +261,7 @@
 
         @media (max-width: 480px) {
             .hero-text {
-                font-size: 2rem; /* Adjusted for smaller mobile screens */
+                font-size: 2rem;
             }
 
             .cta-btn {
@@ -242,7 +275,7 @@
     <!-- Header Section -->
     <header class="navbar">
         <div class="logo">
-            <img src="LOGO.jpg" alt="Mapengo Innovations">
+            <img src="john-doe.jpg" alt="Mapengo Innovations">
         </div>
         <nav>
             <ul class="nav-links">
@@ -254,6 +287,12 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <!-- Main Content Section -->
@@ -273,12 +312,18 @@
             </div>
             <div class="hero-buttons">
                 <button class="cta-btn" onclick="location.href='#contact'">Get In Touch</button>
-                <a href="#contact" class="cta-btn">Let's Collaborate</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="HERO PIC.jpg" alt="Technology Graphic">
+            <img src="john-doe.jpg" alt="Technology Graphic">
         </div>
     </section>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
