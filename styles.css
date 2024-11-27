@@ -213,6 +213,14 @@
         font-size: 1rem;
       }
     }
+.mobile-menu {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
 /* APP S*/
 * {
   margin: 0;
