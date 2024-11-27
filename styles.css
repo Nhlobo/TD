@@ -385,8 +385,165 @@ body {
                 font-size: 0.9rem;
             }
         }
-     
-/* APP S*/
+
+ /* Website */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff; /* Clean white background */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Section header styling */
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 32px;
+      color: #333;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* Card container styling */
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Individual card styling */
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px); /* Subtle hover effect */
+    }
+
+    /* Fixed image at the top */
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Card info styling with gradient from white to black */
+    .card-info {
+      padding: 20px;
+      background: linear-gradient(to bottom, #fff, #000);
+      color: #fff;
+    }
+
+    .card-info h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .features li {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    /* View button styling */
+    .view-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-header h2 {
+        font-size: 28px;
+      }
+
+      .section-header p {
+        font-size: 16px;
+      }
+
+      .card-info h3 {
+        font-size: 22px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .features li {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 90%;
+      }
+
+      .card-info h3 {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+
+      .features li {
+        font-size: 10px;
+      }
+    }
+/* APPS*/
 * {
   margin: 0;
   padding: 0;
@@ -519,6 +676,8 @@ body {
     height: 30px;           /* Adjust height for mobile */
   }
 }
+
+
 /* Hide WhatsApp icon by default */
 .whatsapp-icon {
     position: fixed;
