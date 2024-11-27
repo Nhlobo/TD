@@ -18,16 +18,6 @@
       background-color: #f9f9f9;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #007bff;
-    }
-
     /* Header Section */
     header {
       position: fixed;
@@ -50,15 +40,10 @@
       max-height: 50px;
     }
 
-    /* Navigation for Larger Screens */
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
-    }
-
-    .nav-links li {
-      font-size: 1rem;
     }
 
     .nav-links li a {
@@ -71,70 +56,28 @@
       background: #f1f1f1;
     }
 
-    /* Hamburger Menu for Small Screens */
     .hamburger {
       display: none;
-      flex-direction: column;
-      gap: 0.3rem;
-      cursor: pointer;
     }
 
-    .hamburger span {
-      width: 30px;
-      height: 3px;
-      background: #333;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
 
-    /* Mobile Menu */
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 80%;
-      height: 100%;
-      background: #ffffff;
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: right 0.3s ease;
-      z-index: 999;
-    }
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        cursor: pointer;
+      }
 
-    .mobile-menu.active {
-      right: 0;
-    }
-
-    .mobile-menu ul {
-      list-style: none;
-      text-align: center;
-    }
-
-    .mobile-menu li {
-      margin: 1rem 0;
-    }
-
-    .mobile-menu li a {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .mobile-menu li a:hover {
-      color: #007bff;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      cursor: pointer;
-      color: #333;
+      .hamburger span {
+        width: 30px;
+        height: 3px;
+        background: #333;
+        border-radius: 2px;
+      }
     }
 
     /* Hero Section */
@@ -174,7 +117,7 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       color: #fff;
-      animation: fadeIn 1s ease-in-out;
+      animation: slideIn 1.5s ease-in-out;
     }
 
     .hero-content p {
@@ -182,7 +125,7 @@
       margin-bottom: 2rem;
       line-height: 1.6;
       color: #eaeaea;
-      animation: fadeIn 1.5s ease-in-out;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .hero-content .btn {
@@ -200,24 +143,24 @@
       transform: translateY(-3px);
     }
 
-    /* Responsive Styles */
-    @media screen and (max-width: 768px) {
-      .nav-links {
-        display: none;
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
       }
-
-      .hamburger {
-        display: flex;
+      100% {
+        opacity: 1;
       }
     }
 
-    @media screen and (max-width: 480px) {
-      .hero-content h1 {
-        font-size: 2rem;
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
       }
-
-      .hero-content p {
-        font-size: 1rem;
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
@@ -239,29 +182,13 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="close-btn" id="closeMenu">×</div>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Welcome to Mapengo Innovations</h1>
+      <h1>Mapengo Innovations</h1>
       <p>Revolutionizing the way websites and apps are built for the future.</p>
       <a href="#services" class="btn">Discover More</a>
     </div>
@@ -290,4 +217,4 @@
     });
   </script>
 </body>
-  </html>
+    </html>
