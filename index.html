@@ -294,7 +294,115 @@
                 height: 30px;
             }
         }
+/* Global Base Styles */
+:root {
+  --light-gray: #f8f8f8;
+  --dark-blue-gray: #1e293b;
+  --dark-gray: #374151;
+  --light-gray-text: #444;
+  --button-blue: #00b0ff;
+  --button-blue-hover: #0088cc;
+  --button-blue-active: #006f99;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --focus-border: #00b0ff;
+}
 
+/* Base Styles for All Sections */
+section {
+  background: #ffffff; /* Removed gradient, set to plain white */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px var(--shadow);
+  padding: 2rem 1rem;
+}
+
+h1, .section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark-blue-gray);
+  margin-bottom: 1.5rem;
+}
+
+h4, p {
+  font-size: 1rem;
+  color: var(--dark-gray);
+}
+/* Testimonials Section */
+#testimonials {
+  padding: 2rem 0.5rem;
+  text-align: center;
+}
+
+.testimonials-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.card {
+  background: #ffffff; /* Solid white background */
+  box-shadow: 0 8px 32px var(--shadow);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  flex-shrink: 0;
+  width: 250px;
+  margin: 1rem;
+  color: #111827;
+  position: relative; /* To position the stars inside the card */
+}
+
+/* Style the rating stars and position them at the top left */
+.rating {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+
+.rating label {
+  font-size: 24px; /* Adjust the size for visibility */
+  color: #ddd; /* Gray for empty stars */
+  cursor: pointer;
+}
+
+.rating label:hover {
+  color: #ff9800; /* Optional: change color when hovered */
+}
+
+/* Make filled stars gold */
+.rating label:nth-child(-n+5) {
+  color: #ff9800; /* Gold color for filled stars */
+}
+
+/* Round the testimonial images */
+.testimonial-img {
+  width: 40px; /* Small size for the images */
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;  /* Optional: white border around the image */
+  margin-top: 10px;
+  object-fit: cover; /* Ensures image remains clear and doesn't stretch */
+}
+
+/* Style the testimonial text */
+.title {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: var(--dark-gray);
+}
+
+@media (min-width: 768px) {
+  .testimonials-container {
+    gap: 1rem;
+  }
+}
     </style>
 </head>
 <body>
