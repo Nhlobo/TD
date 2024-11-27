@@ -221,6 +221,171 @@
 .mobile-menu.active {
   transform: translateX(0);
 }
+/* ABOUT US*/
+body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p, li {
+            margin: 0 0 10px;
+            color: #555;
+        }
+
+        /* Integrated Section Styling */
+        .integrated-section {
+            padding: 80px 40px;
+            text-align: center;
+            background: #f9f9f9;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .grid-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item h2 {
+            color: #000;
+            font-size: 1.5rem;
+        }
+
+        .grid-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .grid-item ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .grid-item ul li::before {
+            content: "•";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 40px;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(to bottom, #fff, #000);
+            position: relative;
+        }
+
+        .cta-section img {
+            max-width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .cta-section a {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            background-color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .cta-section a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .integrated-section {
+                padding: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cta-section {
+                padding: 50px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section p {
+                font-size: 0.9rem;
+            }
+        }
+     
 /* APP S*/
 * {
   margin: 0;
