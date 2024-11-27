@@ -127,6 +127,16 @@
       color: #007bff;
     }
 
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
@@ -135,7 +145,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: url('LOGO.jpg') no-repeat center center / cover;
+      background: url('your-image-placeholder.jpg') no-repeat center center / cover;
       background-attachment: fixed;
       color: #fff;
       text-align: center;
@@ -217,7 +227,7 @@
   <header>
     <div class="nav-container">
       <div class="logo">
-        <img src="LOGO.jpg" alt="Mapengo Innovations Logo">
+        <img src="your-logo-placeholder.png" alt="Mapengo Innovations Logo">
       </div>
       <nav>
         <ul class="nav-links">
@@ -236,6 +246,7 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" id="closeMenu">×</div>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -259,9 +270,23 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
 
+    // Open Menu
     hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
+      mobileMenu.classList.add('active');
+    });
+
+    // Close Menu on Clicking the Close Button
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Close Menu on Clicking Outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
     });
   </script>
 </body>
