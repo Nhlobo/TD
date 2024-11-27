@@ -13,7 +13,105 @@
 
     body {
       font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Global Styles */
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #007bff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    /* Navigation Bar for Larger Screens */
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links li {
+      font-size: 1rem;
+    }
+
+    /* Hamburger Menu for Small Screens */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100%;
+      background: #007bff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.3s ease;
+      z-index: 999;
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    .mobile-menu li {
+      margin: 1rem 0;
+    }
+
+    .mobile-menu a {
+      font-size: 1.2rem;
       color: #fff;
+      font-weight: bold;
     }
 
     /* Hero Section */
@@ -24,8 +122,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: url('HERO PIC.jpg') no-repeat center center / cover;
+      background: url('LOGO.jpg') no-repeat center center / cover;
       background-attachment: fixed;
+      color: #fff;
+      text-align: center;
     }
 
     .hero::after {
@@ -42,19 +142,22 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      text-align: center;
       padding: 20px;
     }
 
     .hero-content h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .hero-content p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.6;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .hero-content .btn {
@@ -65,15 +168,38 @@
       text-decoration: none;
       background: #007bff;
       border-radius: 5px;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .hero-content .btn:hover {
       background: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    /* Keyframes for Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Responsive */
     @media screen and (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
       .hero-content h1 {
         font-size: 2rem;
       }
@@ -82,50 +208,58 @@
         font-size: 1rem;
       }
     }
-
-    @media screen and (max-width: 480px) {
-      .hero-content h1 {
-        font-size: 1.5rem;
-      }
-
-      .hero-content p {
-        font-size: 0.9rem;
-      }
-    }
-
-    /* Lazy Load Effect */
-    [data-bg] {
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    [data-bg].loaded {
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
-  <section class="hero" data-bg="LOGO.jpg">
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">DevSoft</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="hero-content">
-      <h1>Empowering the Future with Innovative Software</h1>
-      <p>We deliver world-class software solutions to help your business thrive in the digital age.</p>
-      <a href="#services" class="btn">Explore Our Services</a>
+      <h1>Innovative Web and App Solutions</h1>
+      <p>Your partner in building cutting-edge software tailored to your needs.</p>
+      <a href="#services" class="btn">Get Started</a>
     </div>
   </section>
 
   <script>
-    // Lazy load background
-    document.addEventListener('DOMContentLoaded', () => {
-      const heroSection = document.querySelector('.hero');
-      const bgImage = heroSection.getAttribute('data-bg');
-      
-      const img = new Image();
-      img.src = bgImage;
-      img.onload = () => {
-        heroSection.style.backgroundImage = `url(${bgImage})`;
-        heroSection.classList.add('loaded');
-      };
+    // Toggle mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
     });
   </script>
 </body>
-</html>
+      </html>
