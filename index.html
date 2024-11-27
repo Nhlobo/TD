@@ -603,7 +603,37 @@ a:hover {
   font-size: 14px;
   text-align: center;
 }
-        
+/* Hide WhatsApp icon by default */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 150px;
+    right: 150px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 60px; /* Adjust the icon size */
+    height: 60px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-icon img {
+        width: 35px;
+        height: 35px;
+    }
+}        
         
     </style>
 </head>
