@@ -1,121 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Home Page</title>
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
-   <style>
-      /* General styles */
-      body {
-         margin: 0;
-         padding: 0;
-         background-color: white; /* White background for the body */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World-Class Software Company</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('your-image-placeholder.jpg') no-repeat center center / cover;
+      background-attachment: fixed;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-content .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 1rem;
+      color: #fff;
+      text-decoration: none;
+      background: #007bff;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .hero-content .btn:hover {
+      background: #0056b3;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
       }
 
-      .hero {
-         position: relative;
-         width: 100vw;
-         height: 100vh;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         overflow: hidden;
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.5rem;
       }
 
-      .hero::before {
-         content: "";
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background: url('HERO PIC.jpg'); /* Replace with your actual image path */
-         background-repeat: no-repeat;
-         background-size: cover;
-         background-position: center center;
-         z-index: -1; /* Ensure the background is behind the content */
+      .hero-content p {
+        font-size: 0.9rem;
       }
+    }
 
-      .hero-content {
-         position: relative;
-         font-family: "Montserrat", sans-serif;
-         color: white;
-         text-align: center;
-         margin: 0.625rem;
-         padding: 0 1rem;
-      }
+    /* Lazy Load Effect */
+    [data-bg] {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
 
-      .hero-title {
-         font-size: 3rem;
-         font-weight: 600;
-         margin-bottom: 0;
-      }
-
-      .hero-subtitle {
-         font-size: 2rem;
-         font-weight: 200;
-         margin-top: 1rem;
-      }
-
-      .hero-button {
-         background-color: #ae2d59;
-         color: white;
-         border: 1px solid #cb376a;
-         margin-top: 5rem;
-         padding: 0.9375rem 1.875rem; /* Add proper padding */
-         font-family: "Montserrat", sans-serif;
-         font-size: 1.125rem;
-         font-weight: 200;
-         cursor: pointer;
-         text-transform: uppercase;
-         transition: background-color 0.3s ease, border-color 0.3s ease;
-      }
-
-      .hero-button:hover {
-         background-color: #cb376a;
-         border: 1px solid #db7598;
-      }
-
-      /* Responsive styles */
-      @media (max-width: 768px) {
-         .hero-title {
-            font-size: 2.5rem; /* Reduce title font size on smaller screens */
-         }
-
-         .hero-subtitle {
-            font-size: 1.5rem; /* Reduce subtitle font size on smaller screens */
-         }
-
-         .hero-button {
-            padding: 0.75rem 1.5rem; /* Adjust padding for smaller screens */
-            font-size: 1rem; /* Slightly reduce button font size */
-         }
-      }
-
-      @media (max-width: 480px) {
-         .hero-title {
-            font-size: 2rem; /* Further reduce title font size */
-         }
-
-         .hero-subtitle {
-            font-size: 1.25rem; /* Further reduce subtitle font size */
-         }
-
-         .hero-button {
-            padding: 0.625rem 1.25rem; /* Further reduce button padding */
-            font-size: 0.9rem; /* Reduce button font size */
-         }
-      }
-   </style>
+    [data-bg].loaded {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-   <div class="hero">
-      <div class="hero-content">
-         <h1 class="hero-title">Mapengo Innovations</h1>
-         <p class="hero-subtitle">Explore the world of endless possibilities</p>
-         <button class="hero-button">Get Started</button>
-      </div>
-   </div>
+  <section class="hero" data-bg="lazy-background.jpg">
+    <div class="hero-content">
+      <h1>Empowering the Future with Innovative Software</h1>
+      <p>We deliver world-class software solutions to help your business thrive in the digital age.</p>
+      <a href="#services" class="btn">Explore Our Services</a>
+    </div>
+  </section>
+
+  <script>
+    // Lazy load background
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroSection = document.querySelector('.hero');
+      const bgImage = heroSection.getAttribute('data-bg');
+      
+      const img = new Image();
+      img.src = bgImage;
+      img.onload = () => {
+        heroSection.style.backgroundImage = `url(${bgImage})`;
+        heroSection.classList.add('loaded');
+      };
+    });
+  </script>
 </body>
 </html>
