@@ -471,6 +471,139 @@ h4, p {
   max-height: 100px;
   padding: 15px 20px;
 }
+/* Contact Section */
+.contact {
+  background: #f0f4f8; /* Solid light gray background instead of gradient */
+  padding: 60px 20px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #ffffff; /* Solid white background instead of semi-transparent */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #00b0ff;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #00b0ff;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0088cc;
+}
+
+button:active {
+  background-color: #006f99;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+a {
+  color: #00b0ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0088cc;
+}
+
+/* Loader */
+#loader {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#loader img {
+  width: 50px;
+  height: auto;
+}
+
+.success-message {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#response {
+  display: none;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+        
         
     </style>
 </head>
