@@ -238,50 +238,32 @@
             border-radius: 16px;
         }
 
-       
         .arrow-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
 
-.arrow-button button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; /* Keep the size of the button */
-    height: 40px; /* Keep the size of the button */
-    font-size: 16px;
-    padding: 8px;
-    border: 1px solid #F2BED1; /* Border color */
-    background-color: #3498db; /* Button background color */
-    color: white; /* Text color */
-    border-radius: 50%; /* Makes the button round */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s linear; /* Smooth transition for hover effect */
-}
+        .arrow-button button {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            padding: 8px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.arrow-button button > svg {
-    width: 16px; /* Size of the icon */
-    height: 16px; /* Size of the icon */
-    margin-left: 5px; /* Spacing between button and icon */
-    transition: all 0.4s ease-in; /* Icon transition on hover */
-}
-
-/* Hover effects for the button */
-.arrow-button button:hover {
-    box-shadow: 10px 10px 40px #d1d1d1; /* Shadow on hover */
-    transform: translateY(-5px); /* Slight movement upwards */
-}
-
-.arrow-button button:hover > svg {
-    font-size: 1.2em; /* Increase icon size on hover */
-    transform: translateX(6px); /* Move the icon slightly to the right */
-}
-
-             
+        .arrow-button svg {
+            width: 16px;
+            height: 16px;
+        }
 
         .store-buttons {
             display: flex;
