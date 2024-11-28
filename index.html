@@ -237,34 +237,32 @@
             border: none;
             border-radius: 16px;
         }
+       
+.arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border-radius: 10px;
+  border: 1px solid #F2BED1;
+  padding: 10px 20px;
+}
 
-        .arrow-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 20px;
-        }
+.arrow-button > svg {
+  margin-left: 5px;
+  transition: all 0.4s ease-in;
+}
 
-        .arrow-button button {
-            width: 40px;
-            height: 40px;
-            font-size: 16px;
-            padding: 8px;
-            border: none;
-            background-color: #3498db;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.arrow-button:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(6px);
+}
 
-        .arrow-button svg {
-            width: 16px;
-            height: 16px;
-        }
-
+ .arrow-button:hover {
+  box-shadow: 10px 10px 40px #d1d1d1;
+  transform: translateY(-5px);
+}
         .store-buttons {
             display: flex;
             justify-content: center;
@@ -852,9 +850,10 @@ footer {
                 </div>
             </div>
         </div>
-        <div class="arrow-button" onclick="nextApp()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-        </div>
+         <div class="arrow-button" onclick="nextApp()">
+            <svg width="15" height="15" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linejoin="round" stroke-linecap="round"></path>
+</svg>
         <div class="store-buttons">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
             <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Apple App Store">
