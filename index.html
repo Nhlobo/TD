@@ -246,25 +246,40 @@
             margin-top: 20px;
         }
 
-        .arrow-button button {
-            width: 40px;
-            height: 40px;
-            font-size: 16px;
-            padding: 8px;
-            border: none;
-            background-color: #3498db;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        .arrow-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
 
-        .arrow-button svg {
-            width: 16px;
-            height: 16px;
-        }
+.arrow-button button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Adds space between the button and the text */
+}
 
+.arrow-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Text next to the button */
+.arrow-button .next-text {
+    font-size: 16px;
+    color: #3498db;
+    font-weight: 600;
+}
         .store-buttons {
             display: flex;
             justify-content: center;
@@ -854,6 +869,8 @@ footer {
         </div>
         <div class="arrow-button" onclick="nextApp()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+             </button>
+    <span class="next-text">Next</span> 
         </div>
         <div class="store-buttons">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Store">
