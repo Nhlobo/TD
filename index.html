@@ -3,60 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Showcase</title>
+  <title>Professional Project Showcase</title>
   <style>
     /* General Styling */
     body {
-      background: #000;
+      background: #fff;
       font-family: 'Roboto', sans-serif;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      color: #fff;
+      color: #000;
     }
 
     /* Card Styling */
     .card-container {
-      background: #111;
+      background: #f9f9f9;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
       width: 90%;
       max-width: 400px;
       text-align: center;
     }
 
-    /* Icon Styling */
-    .icon img {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 15px;
-    }
-
-    /* Title and Text */
+    /* Title Styling */
     .card-container h2 {
+      font-size: 1.8em;
       margin: 10px 0;
-      font-size: 1.5em;
-    }
-
-    .card-container p {
-      font-size: 1em;
-      line-height: 1.5;
-      margin-bottom: 20px;
+      font-weight: bold;
     }
 
     /* Image Display */
     .image-display img {
-      width: 100%;
-      max-width: 300px;
+      width: 100px;
+      height: 100px;
+      margin: 20px 0;
       border-radius: 8px;
-      display: none;
-    }
-
-    .image-display img.active {
-      display: block;
+      border: 2px solid #ddd;
     }
 
     /* Carousel Navigation */
@@ -68,10 +53,10 @@
     }
 
     .carousel-nav button {
-      background: none;
+      background: #000;
       color: #fff;
-      border: 1px solid #fff;
-      padding: 8px 16px;
+      border: none;
+      padding: 10px 20px;
       cursor: pointer;
       border-radius: 5px;
       font-size: 1em;
@@ -79,25 +64,7 @@
     }
 
     .carousel-nav button:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    .view-btn {
-      background: #fff;
-      color: #000;
-      border: none;
-      padding: 8px 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 1em;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .view-btn:hover {
-      background: #ddd;
-      color: #000;
+      background: #333;
     }
 
     /* Responsive Design */
@@ -106,17 +73,12 @@
         padding: 15px;
       }
 
-      .card-container p {
-        font-size: 0.9em;
+      .card-container h2 {
+        font-size: 1.5em;
       }
 
       .carousel-nav button {
-        padding: 6px 12px;
-        font-size: 0.9em;
-      }
-
-      .view-btn {
-        padding: 6px 12px;
+        padding: 8px 16px;
         font-size: 0.9em;
       }
     }
@@ -124,28 +86,17 @@
 </head>
 <body>
   <div class="card-container">
-    <!-- Icon Section -->
-    <div class="icon">
-      <img src="https://via.placeholder.com/40" alt="Icon">
-    </div>
-
     <!-- Title -->
-    <h2>Project Showcase</h2>
-
-    <!-- Description -->
-    <p>Explore our cutting-edge projects, each designed to inspire and innovate.</p>
+    <h2>Professional Project Showcase</h2>
 
     <!-- Image Display -->
     <div class="image-display">
-      <img src="https://via.placeholder.com/300x200?text=TechConnect" alt="TechConnect" class="active" id="image-0">
-      <img src="https://via.placeholder.com/300x200?text=Calendar+App" alt="Calendar App" id="image-1">
-      <img src="https://via.placeholder.com/300x200?text=Weather+App" alt="Weather App" id="image-2">
+      <img src="https://via.placeholder.com/100x100" alt="Project Image" id="project-image">
     </div>
 
     <!-- Carousel Navigation -->
     <div class="carousel-nav">
       <button class="prev">←</button>
-      <a href="#" class="view-btn" id="view-link" target="_blank">View</a>
       <button class="next">→</button>
     </div>
   </div>
@@ -154,39 +105,33 @@
     // JavaScript for Carousel Navigation
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
-    const viewLink = document.getElementById('view-link');
-    const images = document.querySelectorAll('.image-display img');
+    const projectImage = document.getElementById('project-image');
 
-    // Project Links Array
-    const projectLinks = [
-      "https://nhlobo.github.io/Landing-page-demo/",
-      "https://nhlobo.github.io/calendar/",
-      "https://weather-ebon-beta.vercel.app/"
+    // Placeholder for project image URLs
+    const projectImages = [
+      "https://via.placeholder.com/100x100?text=Project1", // Placeholder 1
     ];
 
     let currentIndex = 0;
 
-    function updateDisplay(index) {
-      images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-      });
-      viewLink.href = projectLinks[index];
+    function updateImage(index) {
+      projectImage.src = projectImages[index];
     }
 
     // Initialize with the first image
-    updateDisplay(currentIndex);
+    updateImage(currentIndex);
 
     // Previous Button Click
     prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-      updateDisplay(currentIndex);
+      currentIndex = (currentIndex === 0) ? projectImages.length - 1 : currentIndex - 1;
+      updateImage(currentIndex);
     });
 
     // Next Button Click
     nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-      updateDisplay(currentIndex);
+      currentIndex = (currentIndex === projectImages.length - 1) ? 0 : currentIndex + 1;
+      updateImage(currentIndex);
     });
   </script>
 </body>
-  </html>
+        </html>
