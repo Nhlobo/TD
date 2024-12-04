@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechConnect Showcase</title>
+  <title>Project Showcase</title>
   <style>
     /* General Styling */
     body {
-      background: linear-gradient(135deg, #005c97, #363795);
+      background: #000;
       font-family: 'Roboto', sans-serif;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      color: #ffffff;
+      color: #fff;
     }
 
     /* Card Styling */
     .card-container {
-      background: #0e1b2f;
+      background: #111;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
       padding: 20px;
       width: 90%;
       max-width: 400px;
@@ -47,39 +47,57 @@
       margin-bottom: 20px;
     }
 
-    /* Image Grid */
-    .image-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+    /* Image Display */
+    .image-display img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      display: none;
     }
 
-    .image-grid img {
-      width: 100%;
-      max-width: 100px;
-      border-radius: 8px;
+    .image-display img.active {
+      display: block;
     }
 
     /* Carousel Navigation */
     .carousel-nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-top: 20px;
     }
 
     .carousel-nav button {
-      background: #0a74da;
-      color: white;
+      background: none;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-nav button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .view-btn {
+      background: #fff;
+      color: #000;
       border: none;
       padding: 8px 16px;
       cursor: pointer;
       border-radius: 5px;
       font-size: 1em;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    .carousel-nav button:hover {
-      background: #095bb5;
+    .view-btn:hover {
+      background: #ddd;
+      color: #000;
     }
 
     /* Responsive Design */
@@ -96,6 +114,11 @@
         padding: 6px 12px;
         font-size: 0.9em;
       }
+
+      .view-btn {
+        padding: 6px 12px;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
@@ -107,21 +130,22 @@
     </div>
 
     <!-- Title -->
-    <h2>TechConnect Showcase</h2>
+    <h2>Project Showcase</h2>
 
     <!-- Description -->
-    <p>Explore our innovative projects designed with modern technology, user-centric design, and seamless functionality.</p>
+    <p>Explore our cutting-edge projects, each designed to inspire and innovate.</p>
 
-    <!-- Image Grid -->
-    <div class="image-grid">
-      <img src="https://via.placeholder.com/100" alt="TechConnect">
-      <img src="https://via.placeholder.com/100" alt="Calendar App">
-      <img src="https://via.placeholder.com/100" alt="Weather App">
+    <!-- Image Display -->
+    <div class="image-display">
+      <img src="https://via.placeholder.com/300x200?text=TechConnect" alt="TechConnect" class="active" id="image-0">
+      <img src="https://via.placeholder.com/300x200?text=Calendar+App" alt="Calendar App" id="image-1">
+      <img src="https://via.placeholder.com/300x200?text=Weather+App" alt="Weather App" id="image-2">
     </div>
 
     <!-- Carousel Navigation -->
     <div class="carousel-nav">
       <button class="prev">←</button>
+      <a href="#" class="view-btn" id="view-link" target="_blank">View</a>
       <button class="next">→</button>
     </div>
   </div>
@@ -130,29 +154,39 @@
     // JavaScript for Carousel Navigation
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
-    const images = document.querySelectorAll('.image-grid img');
+    const viewLink = document.getElementById('view-link');
+    const images = document.querySelectorAll('.image-display img');
+
+    // Project Links Array
+    const projectLinks = [
+      "https://nhlobo.github.io/Landing-page-demo/",
+      "https://nhlobo.github.io/calendar/",
+      "https://weather-ebon-beta.vercel.app/"
+    ];
+
     let currentIndex = 0;
 
-    function updateImages(index) {
+    function updateDisplay(index) {
       images.forEach((img, i) => {
-        img.style.display = i === index ? 'block' : 'none';
+        img.classList.toggle('active', i === index);
       });
+      viewLink.href = projectLinks[index];
     }
 
     // Initialize with the first image
-    updateImages(currentIndex);
+    updateDisplay(currentIndex);
 
     // Previous Button Click
     prevButton.addEventListener('click', () => {
       currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-      updateImages(currentIndex);
+      updateDisplay(currentIndex);
     });
 
     // Next Button Click
     nextButton.addEventListener('click', () => {
       currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-      updateImages(currentIndex);
+      updateDisplay(currentIndex);
     });
   </script>
 </body>
-        </html>
+  </html>
