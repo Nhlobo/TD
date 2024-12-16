@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <title>Menu | Shaif's Cuisine</title>
-  
+
   <!-- AOS Library CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   
@@ -17,10 +17,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
+      background-color: #f4f4f9;
+      color: #333;
     }
     img {
       max-width: 100%;
@@ -28,11 +29,15 @@
 
     /* Navigation */
     .nav {
-      background-color: #333;
+      background-color: #2C3E50;
       padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .container {
-      width: 80%;
+      width: 85%;
       margin: 0 auto;
     }
     .nav__wrapper {
@@ -40,74 +45,113 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav__icon svg {
-      fill: white;
+    .nav__logo img {
+      max-height: 60px;
+      transition: transform 0.3s ease;
+    }
+    .nav__logo img:hover {
+      transform: scale(1.1);
     }
     .nav__list {
       list-style-type: none;
       display: flex;
-      gap: 20px;
+      gap: 30px;
+      font-size: 16px;
     }
     .nav__link {
-      color: white;
+      color: #fff;
       text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s ease, padding-bottom 0.3s ease;
     }
     .nav__link:hover {
       color: #ff8c00;
+      padding-bottom: 15px;
     }
-    .nav__close svg {
-      fill: white;
-      cursor: pointer;
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #ff8c00;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .nav__link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
 
     /* Page Title */
     #page__title {
-      background-color: #333;
-      color: white;
-      padding: 60px 0;
+      background-color: #1a242f;
+      color: #fff;
+      padding: 80px 0;
       text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
     #page__title h2 {
-      font-size: 36px;
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
 
     /* Special Menu Section */
     #ourSpecials {
-      padding: 60px 0;
+      padding: 80px 0;
       background-color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     .ourSpecials__title {
-      font-size: 28px;
-      margin-bottom: 30px;
-      text-align: center;
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 60px;
+      color: #2C3E50;
     }
     .ourSpecials__wrapper {
       display: flex;
       gap: 30px;
       justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
     .ourSpecials__item {
-      background-color: #f4f4f4;
-      padding: 20px;
+      background-color: #f9f9f9;
+      padding: 25px;
       width: 300px;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ourSpecials__item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
     .ourSpecials__item__img img {
-      max-height: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .ourSpecials__item__img img:hover {
+      transform: scale(1.05);
     }
     .ourSpecials__item__title {
-      font-size: 22px;
-      margin: 10px 0;
+      font-size: 24px;
+      margin: 15px 0;
+      font-weight: 600;
+      color: #2C3E50;
     }
     .ourSpecials__item__price {
       color: #ff8c00;
-      font-size: 20px;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
     .ourSpecials__item__stars img {
       width: 20px;
@@ -116,13 +160,15 @@
 
     /* Dish Grid */
     #dishGrid {
-      padding: 60px 0;
-      background-color: #f9f9f9;
+      padding: 80px 0;
+      background-color: #f4f4f9;
+      text-align: center;
     }
     .dishGrid__title {
-      font-size: 28px;
-      margin-bottom: 30px;
-      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+      font-weight: 600;
+      color: #2C3E50;
     }
     .dishGrid__wrapper {
       display: grid;
@@ -132,24 +178,36 @@
     }
     .dishGrid__item {
       background-color: #fff;
-      padding: 20px;
-      text-align: center;
-      width: 280px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dishGrid__item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
     .dishGrid__item__img img {
-      max-height: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .dishGrid__item__img img:hover {
+      transform: scale(1.05);
     }
     .dishGrid__item__title {
-      font-size: 22px;
-      margin: 10px 0;
+      font-size: 24px;
+      margin: 15px 0;
+      font-weight: 600;
+      color: #2C3E50;
     }
     .dishGrid__item__price {
       color: #ff8c00;
-      font-size: 20px;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
     .dishGrid__item__stars img {
       width: 20px;
@@ -158,14 +216,17 @@
 
     /* Footer */
     footer {
-      background-color: #333;
-      color: white;
-      padding: 60px 0;
+      background-color: #2C3E50;
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
     }
     .footer__wrapper {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 40px;
     }
     .footer__col1,
     .footer__col2,
@@ -174,32 +235,33 @@
       width: 22%;
     }
     .footer__logo img {
-      max-width: 150px;
+      max-height: 60px;
+      margin-bottom: 20px;
     }
     .footer__desc {
-      margin: 20px 0;
-      font-size: 14px;
+      font-size: 16px;
+      margin: 10px 0;
     }
     .footer__socials__list {
       list-style-type: none;
       display: flex;
       gap: 15px;
+      justify-content: center;
     }
     .footer__socials__list li a svg {
-      fill: white;
+      fill: #fff;
+      width: 24px;
+      height: 24px;
+      transition: fill 0.3s ease;
     }
-    .footer__socials__list li a:hover {
-      color: #ff8c00;
-    }
-    .footer__text {
-      list-style-type: none;
+    .footer__socials__list li a:hover svg {
+      fill: #ff8c00;
     }
     .footer__text a {
-      color: white;
+      color: #fff;
       text-decoration: none;
       font-size: 14px;
       margin: 5px 0;
-      display: block;
     }
     .footer__text a:hover {
       color: #ff8c00;
@@ -207,27 +269,26 @@
 
     /* Copyright */
     #copyright {
-      background-color: #333;
-      color: white;
+      background-color: #1a242f;
+      color: #fff;
       padding: 20px 0;
       text-align: center;
+      font-size: 14px;
     }
 
-    /* Responsive Styles */
-    @media screen and (max-width: 768px) {
+    /* Media Queries */
+    @media (max-width: 1024px) {
       .dishGrid__wrapper {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .dishGrid__wrapper {
+        grid-template-columns: 1fr;
       }
       .footer__wrapper {
         flex-direction: column;
-        align-items: center;
-      }
-      .footer__col1,
-      .footer__col2,
-      .footer__col3,
-      .footer__col4 {
-        width: 100%;
-        margin-bottom: 20px;
+        text-align: center;
       }
     }
   </style>
@@ -235,63 +296,39 @@
 
 <body>
 
-  <!-- Nav Section -->
-  <div class="nav">
+  <!-- Navigation -->
+  <header class="nav">
     <div class="container">
       <div class="nav__wrapper">
-        <a href="./index.html" class="logo">
-          <img src="./images/logo.svg" alt="shaif's cuisine">
-        </a>
-        <nav>
-          <div class="nav__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="feather feather-menu">
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </div>
-          <div class="nav__bgOverlay"></div>
-          <ol class="nav__list">
-            <div class="nav__close">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-x">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </div>
-            <div class="nav__list__wrapper">
-              <li><a class="nav__link" href="./index.html">Home</a></li>
-              <li><a class="nav__link" href="./menu.html">Menu</a></li>
-              <li><a class="nav__link" href="./about.html">About</a></li>
-              <li><a class="nav__link" href="./contact.html">Contact</a></li>
-              <li><a href="./booking.html" class="btn primary-btn">Book Table</a></li>
-            </div>
-          </ol>
-        </nav>
+        <div class="nav__logo">
+          <img src="./images/logo.svg" alt="Shaif's Cuisine">
+        </div>
+        <ul class="nav__list">
+          <li><a href="#" class="nav__link">Home</a></li>
+          <li><a href="#ourSpecials" class="nav__link">Our Specials</a></li>
+          <li><a href="#dishGrid" class="nav__link">Our Dishes</a></li>
+          <li><a href="#" class="nav__link">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-  <!-- End Nav Section -->
+  </header>
 
-  <!-- page Title -->
+  <!-- Page Title -->
   <section id="page__title">
     <div class="container">
       <h2>Our Menu</h2>
     </div>
   </section>
-  <!-- End Page Title -->
 
   <!-- Special Section -->
   <section id="ourSpecials">
     <div class="container">
       <h3 class="ourSpecials__title">Our Specials</h3>
       <div class="ourSpecials__wrapper">
+        <!-- Special Dish 1 -->
         <div class="ourSpecials__item" data-aos="fade-up">
           <div class="ourSpecials__item__img">
-            <img src="./images/our-specials-1.jpg" alt="Special Dish">
+            <img src="./images/our-specials-1.jpg" alt="Shaif's Chicken">
           </div>
           <h4 class="ourSpecials__item__title">Shaif's Chicken</h4>
           <p class="ourSpecials__item__price">$20.00</p>
@@ -304,9 +341,10 @@
           </div>
         </div>
 
+        <!-- Special Dish 2 -->
         <div class="ourSpecials__item" data-aos="fade-up" data-aos-delay="100">
           <div class="ourSpecials__item__img">
-            <img src="./images/our-specials-2.jpg" alt="Special Dish">
+            <img src="./images/our-specials-2.jpg" alt="Shaif's Special Salad">
           </div>
           <h4 class="ourSpecials__item__title">Shaif's Special Salad</h4>
           <p class="ourSpecials__item__price">$15.00</p>
@@ -319,9 +357,10 @@
           </div>
         </div>
 
+        <!-- Special Dish 3 -->
         <div class="ourSpecials__item" data-aos="fade-up" data-aos-delay="200">
           <div class="ourSpecials__item__img">
-            <img src="./images/our-specials-3.jpg" alt="Special Dish">
+            <img src="./images/our-specials-3.jpg" alt="Shaif's Beef Steak">
           </div>
           <h4 class="ourSpecials__item__title">Shaif's Beef Steak</h4>
           <p class="ourSpecials__item__price">$30.00</p>
@@ -336,16 +375,16 @@
       </div>
     </div>
   </section>
-  <!-- End Special Section -->
 
   <!-- Dish Grid Section -->
   <section id="dishGrid">
     <div class="container">
       <h3 class="dishGrid__title">Our Dishes</h3>
       <div class="dishGrid__wrapper">
+        <!-- Dish 1 -->
         <div class="dishGrid__item" data-aos="fade-up">
           <div class="dishGrid__item__img">
-            <img src="./images/dish-1.jpg" alt="Dish">
+            <img src="./images/dish-1.jpg" alt="Grilled Salmon">
           </div>
           <h4 class="dishGrid__item__title">Grilled Salmon</h4>
           <p class="dishGrid__item__price">$25.00</p>
@@ -358,9 +397,10 @@
           </div>
         </div>
 
+        <!-- Dish 2 -->
         <div class="dishGrid__item" data-aos="fade-up" data-aos-delay="100">
           <div class="dishGrid__item__img">
-            <img src="./images/dish-2.jpg" alt="Dish">
+            <img src="./images/dish-2.jpg" alt="Vegetarian Pizza">
           </div>
           <h4 class="dishGrid__item__title">Vegetarian Pizza</h4>
           <p class="dishGrid__item__price">$18.00</p>
@@ -373,9 +413,10 @@
           </div>
         </div>
 
+        <!-- Dish 3 -->
         <div class="dishGrid__item" data-aos="fade-up" data-aos-delay="200">
           <div class="dishGrid__item__img">
-            <img src="./images/dish-3.jpg" alt="Dish">
+            <img src="./images/dish-3.jpg" alt="Beef Burger">
           </div>
           <h4 class="dishGrid__item__title">Beef Burger</h4>
           <p class="dishGrid__item__price">$15.00</p>
@@ -390,7 +431,6 @@
       </div>
     </div>
   </section>
-  <!-- End Dish Grid Section -->
 
   <!-- Footer Section -->
   <footer>
