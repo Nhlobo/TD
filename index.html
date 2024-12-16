@@ -3,186 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Showcase</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Software Company Portfolio</title>
   <style>
-    /* General Styling */
     body {
-      background: #fff;
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    #portfolio {
+      padding: 60px 0;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .tabs {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .tab-button {
+      background-color: #fff;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .tab-button.active {
+      background-color: #007bff;
       color: #fff;
     }
 
-    /* Card Styling */
-    .card-container {
-      background: #111;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    /* Icon Styling */
-    .icon img {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 15px;
-    }
-
-    /* Title and Text */
-    .card-container h2 {
-      margin: 10px 0;
-      font-size: 1.5em;
-    }
-
-    .card-container p {
-      font-size: 1em;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    /* Image Display */
-    .image-display img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
+    .portfolio-section {
       display: none;
     }
 
-    .image-display img.active {
-      display: block;
-    }
-
-    /* Carousel Navigation */
-    .carousel-nav {
+    .portfolio-section.active {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
     }
 
-    .carousel-nav button {
-      background: none;
-      color: #000;
-      border: 1px solid #000;
-      padding: 8px 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 1em;
-      transition: all 0.3s ease;
+    .portfolio-item {
+      width: 45%;
+      margin-bottom: 30px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
     }
 
-    .carousel-nav button:hover {
-      background: #fff;
-      color: #fff;
+    .portfolio-item:hover {
+      transform: translateY(-10px);
     }
 
-    .view-btn {
-      background: #000;
-      color: #fff;
-      border: none;
-      padding: 8px 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 1em;
-      text-decoration: none;
-      transition: all 0.3s ease;
+    .portfolio-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
 
-    .view-btn:hover {
-      background: #ddd;
-      color: #fff;
+    .portfolio-info {
+      padding: 20px;
     }
 
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      .card-container {
-        padding: 15px;
-      }
+    .portfolio-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-      .card-container p {
-        font-size: 0.9em;
-      }
-
-      .carousel-nav button {
-        padding: 6px 12px;
-        font-size: 0.9em;
-      }
-
-      .view-btn {
-        padding: 6px 12px;
-        font-size: 0.9em;
-      }
+    .portfolio-description {
+      font-size: 1rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="card-container">
-    <!-- Icon Section -->
-    <div class="icon">
-      <img src="whatsapp_icon.png" alt="Icon">
+
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Our Portfolio</h2>
+      <p class="section-subtitle">A showcase of our work in both Apps and Websites</p>
+
+      <!-- Tabs for switching between apps and websites -->
+      <div class="tabs">
+        <button class="tab-button active" id="apps-tab" onclick="showTab('apps')">Mobile Apps</button>
+        <button class="tab-button" id="websites-tab" onclick="showTab('websites')">Websites</button>
+      </div>
+
+      <!-- Portfolio Sections -->
+      <div id="apps" class="portfolio-section active">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/400x300" alt="App 1" class="portfolio-image">
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">App Title 1</h3>
+            <p class="portfolio-description">A brief description of what this app does and its impact.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/400x300" alt="App 2" class="portfolio-image">
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">App Title 2</h3>
+            <p class="portfolio-description">A brief description of what this app does and its impact.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="websites" class="portfolio-section">
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/400x300" alt="Website 1" class="portfolio-image">
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">Website Title 1</h3>
+            <p class="portfolio-description">A brief description of this website and how it serves the business.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://via.placeholder.com/400x300" alt="Website 2" class="portfolio-image">
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">Website Title 2</h3>
+            <p class="portfolio-description">A brief description of this website and how it serves the business.</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Title -->
-    <h2>Project Showcase</h2>
-
-    <!-- Description -->
-    <p>Explore our cutting-edge projects, each designed to inspire and innovate.</p>
-
-    <!-- Image Display -->
-    <div class="image-display">
-      <img src="Techconnect.png" alt="TechConnect" class="active" id="image-0">
-    </div>
-
-    <!-- Carousel Navigation -->
-    <div class="carousel-nav">
-      <button class="prev">←</button>
-      <a href="#" class="view-btn" id="view-link" target="_blank">View</a>
-      <button class="next">→</button>
-    </div>
-  </div>
+  </section>
 
   <script>
-    // JavaScript for Carousel Navigation
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const viewLink = document.getElementById('view-link');
-    const images = document.querySelectorAll('.image-display img');
-
-    // Project Links Array
-    const projectLinks = [
-      "https://nhlobo.github.io/Landing-page-demo/"
-];
-
-    let currentIndex = 0;
-
-    function updateDisplay(index) {
-      images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
+    function showTab(tab) {
+      // Hide all sections
+      document.querySelectorAll('.portfolio-section').forEach(function(section) {
+        section.classList.remove('active');
       });
-      viewLink.href = projectLinks[index];
+
+      // Remove active class from all tabs
+      document.querySelectorAll('.tab-button').forEach(function(button) {
+        button.classList.remove('active');
+      });
+
+      // Show selected section
+      document.getElementById(tab).classList.add('active');
+
+      // Add active class to the clicked tab
+      document.getElementById(tab + '-tab').classList.add('active');
     }
-
-    // Initialize with the first image
-    updateDisplay(currentIndex);
-
-    // Previous Button Click
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-      updateDisplay(currentIndex);
-    });
-
-    // Next Button Click
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-      updateDisplay(currentIndex);
-    });
   </script>
+
 </body>
-  </html>
+</html>
