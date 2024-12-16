@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shaif's Cuisine</title>
 
-  <!-- Link to Google Fonts (Inter and Roboto) -->
+  <!-- Google Fonts (Inter and Roboto) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Base Styling -->
@@ -19,14 +19,14 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #fafafa;
+      background-color: #f4f4f9;
       color: #333;
       line-height: 1.6;
     }
 
     h1, h2, h3, h4 {
       font-family: 'Roboto', sans-serif;
-      color: #333;
+      color: #222;
     }
 
     a {
@@ -36,13 +36,15 @@
     /* Main Container */
     .container {
       width: 90%;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     /* Navigation */
     header {
-      background: #222;
-      padding: 20px 0;
+      background: #2b2d42;
+      padding: 15px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .nav__wrapper {
@@ -52,16 +54,13 @@
     }
 
     .nav__logo img {
-      width: 120px;
+      width: 140px;
     }
 
     .nav__list {
       display: flex;
       list-style: none;
-    }
-
-    .nav__list li {
-      margin-left: 20px;
+      gap: 30px;
     }
 
     .nav__link {
@@ -70,7 +69,27 @@
       text-transform: uppercase;
       font-size: 14px;
       letter-spacing: 1px;
-      transition: color 0.3s;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #ff8c00;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    .nav__link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
 
     .nav__link:hover {
@@ -79,34 +98,36 @@
 
     /* Main Content */
     section {
-      padding: 60px 0;
+      padding: 80px 0;
     }
 
     h2 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 40px;
+      font-weight: 600;
+      color: #333;
     }
 
-    /* Dish Grid Layout */
     .dishGrid__wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 30px;
       justify-items: center;
     }
 
     .dishGrid__item {
       background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .dishGrid__item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
     .dishGrid__item__img img {
@@ -121,40 +142,43 @@
     }
 
     .dishGrid__item__title {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      color: #333;
     }
 
     .dishGrid__item__price {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 500;
       color: #ff8c00;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .dishGrid__item__stars img {
-      width: 20px;
+      width: 22px;
       margin-right: 5px;
     }
 
     /* Footer */
     footer {
-      background-color: #222;
+      background-color: #2b2d42;
       color: #fff;
-      padding: 40px 0;
+      padding: 60px 0;
     }
 
     .footer__wrapper {
       display: flex;
       justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-    .footer__logo img {
-      width: 120px;
+    .footer__col1 img {
+      width: 140px;
     }
 
-    .footer__col1, .footer__col2, .footer__col3, .footer__col4 {
+    .footer__col2, .footer__col3, .footer__col4 {
       width: 24%;
     }
 
@@ -170,16 +194,13 @@
     .footer__socials__list {
       display: flex;
       list-style: none;
-    }
-
-    .footer__socials__list li {
-      margin-right: 10px;
+      gap: 15px;
     }
 
     .footer__socials__list a {
       color: #fff;
-      font-size: 18px;
-      transition: color 0.3s;
+      font-size: 22px;
+      transition: color 0.3s ease;
     }
 
     .footer__socials__list a:hover {
@@ -201,11 +222,11 @@
       .footer__wrapper {
         flex-direction: column;
         align-items: center;
+        text-align: center;
       }
 
       .footer__col1, .footer__col2, .footer__col3, .footer__col4 {
         width: 100%;
-        text-align: center;
         margin-bottom: 20px;
       }
     }
@@ -245,7 +266,7 @@
         <!-- Example Dish Item -->
         <div class="dishGrid__item">
           <div class="dishGrid__item__img">
-            <img src="./images/dish-1.jpg" alt="Dish Name">
+            <img src="./images/dish-1.jpg" alt="Grilled Salmon">
           </div>
           <div class="dishGrid__item__info">
             <h4 class="dishGrid__item__title">Grilled Salmon</h4>
