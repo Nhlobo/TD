@@ -28,19 +28,19 @@
     /* Navbar Styles (for all screens) */
     .navbar {
       display: flex;
-      justify-content: flex-start; /* Adjusted to reduce spacing */
+      justify-content: space-between; /* Adjusted to space between logo and nav links */
       align-items: center;
       padding: 20px 50px;
-      background-color: transparent; /* Transparent for the glassmorphism effect */
+      background-color: transparent;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      position: absolute; /* Position navbar over the hero section */
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      backdrop-filter: blur(15px); /* Glassmorphism effect */
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
-      animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+      backdrop-filter: blur(15px);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+      animation: gradientAnimation 8s ease infinite;
     }
 
     /* Logo Styles */
@@ -69,29 +69,30 @@
       transform: translateY(-3px);
     }
 
-    /* Hamburger Menu (hidden on larger screens) */
+    /* Hamburger Menu (centered on small screens) */
     .toggle-button {
       font-size: 30px;
       cursor: pointer;
       display: none;
+      color: white; /* Set hamburger color to white */
     }
 
     /* Sliding Menu for smaller screens */
     .main-menu {
       position: fixed;
       top: 0;
-      left: -300px; /* Initially hidden */
+      left: -300px;
       width: 300px;
       height: 100%;
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px); /* Glassmorphism effect */
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient with hero */
+      backdrop-filter: blur(15px);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
       color: white;
       transition: left 0.3s ease-in-out;
       padding-top: 80px;
       z-index: 2000;
       box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-      animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+      animation: gradientAnimation 8s ease infinite;
     }
 
     .main-menu.active {
@@ -134,9 +135,9 @@
       text-align: center;
       flex-direction: column;
       position: relative;
-      width: 100%; /* Full width */
-      margin: 0; /* Remove margins */
-      backdrop-filter: blur(15px); /* Glassmorphism effect */
+      width: 100%;
+      margin: 0;
+      backdrop-filter: blur(15px);
     }
 
     /* Gradient background */
@@ -150,7 +151,7 @@
       background: linear-gradient(135deg, #000, #fff);
       background-size: 200% 200%;
       animation: gradientAnimation 8s ease infinite;
-      z-index: 1; /* Position gradient behind text and image */
+      z-index: 1;
     }
 
     /* Hero Image */
@@ -161,7 +162,7 @@
       transform: translate(-50%, -50%);
       max-width: 90%;
       max-height: 80%;
-      z-index: 2; /* Position image in front of gradient */
+      z-index: 2;
     }
 
     @keyframes gradientAnimation {
@@ -176,9 +177,9 @@
       font-weight: 700;
       margin-bottom: 20px;
       letter-spacing: 1px;
-      font-family: 'Poppins', sans-serif; /* Use Poppins font */
-      text-transform: uppercase; /* AI-inspired tech look */
-      z-index: 3; /* Ensure text is in front of the background */
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      z-index: 3;
     }
 
     /* Paragraph Styling */
@@ -186,9 +187,9 @@
       font-size: 1.2rem;
       margin-bottom: 30px;
       max-width: 800px;
-      font-family: 'Roboto', sans-serif; /* Use Roboto font */
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      z-index: 3; /* Ensure text is in front of the background */
+      z-index: 3;
     }
 
     /* Button Styling */
@@ -200,7 +201,7 @@
       text-decoration: none;
       border-radius: 5px;
       transition: background-color 0.3s ease;
-      z-index: 3; /* Ensure button is in front of the background */
+      z-index: 3;
     }
 
     .hero .cta-button:hover {
@@ -218,12 +219,16 @@
       }
 
       .hero img {
-        max-width: 80%; /* Adjust image size on smaller screens */
+        max-width: 80%;
       }
 
       /* Display hamburger icon on smaller screens */
       .toggle-button {
         display: block;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       /* Show menu items */
@@ -242,7 +247,7 @@
       }
 
       .hero img {
-        max-width: 70%; /* Adjust image size on mobile */
+        max-width: 70%;
       }
     }
   </style>
