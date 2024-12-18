@@ -12,64 +12,112 @@
       box-sizing: border-box;
     }
 
-    /* Body and html should take full height */
-    html, body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Hero section styling */
-    .hero-section {
-      position: relative;
-      height: 100vh; /* Full viewport height */
-      background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                  url('LOGO.jpg'); /* Replace with your image URL */
-      background-size: cover; /* Ensure the image covers the whole section */
-      background-position: top left; /* Align the image to the top left */
-      background-attachment: fixed; /* Fixed background for effect */
-      color: white;
+    /* Hero Section */
+    .hero {
       display: flex;
-      justify-content: center; /* Horizontally center content */
-      align-items: center; /* Vertically center content */
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      height: 100vh;
+      color: #fff;
       text-align: center;
+      flex-direction: column;
+      position: relative;
+      width: 100%; /* Full width */
+      margin: 0; /* Remove margins */
+      backdrop-filter: blur(15px); /* Glassmorphism effect */
     }
 
-    /* Hero section content */
-    .hero-section .content {
-      max-width: 90%; /* Ensure content doesn't overflow on small screens */
-      padding: 20px;
+    /* Gradient background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #000, #fff);
+      background-size: 200% 200%;
+      animation: gradientAnimation 8s ease infinite;
+      z-index: 1; /* Position gradient behind text and image */
     }
 
-    /* Heading Styling */
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+    /* Hero Image */
+    .hero img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      max-height: 80%;
+      z-index: 2; /* Position image in front of gradient */
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 100% 100%; }
+      50% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+
+    /* Title Styling */
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
       letter-spacing: 1px;
+      z-index: 3; /* Ensure text is in front of the background */
     }
 
     /* Paragraph Styling */
-    p {
-      font-size: 1.25rem;
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 800px;
+      z-index: 3; /* Ensure text is in front of the background */
+    }
+
+    /* Button Styling */
+    .hero .cta-button {
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #1a73e8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      z-index: 3; /* Ensure button is in front of the background */
+    }
+
+    .hero .cta-button:hover {
+      background-color: #0f58c7;
     }
 
     /* Responsive Typography */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem; /* Smaller font size on tablets and smaller screens */
+      .hero h1 {
+        font-size: 2.5rem;
       }
 
-      p {
-        font-size: 1rem; /* Smaller text for readability */
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero img {
+        max-width: 80%; /* Adjust image size on smaller screens */
       }
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5rem; /* Further reduce heading size on mobile */
+      .hero h1 {
+        font-size: 2rem;
       }
 
-      p {
-        font-size: 0.9rem; /* Adjust paragraph size for mobile */
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .hero img {
+        max-width: 70%; /* Adjust image size on mobile */
       }
     }
 
@@ -78,11 +126,11 @@
 <body>
 
   <!-- Hero Section -->
-  <div class="hero-section">
-    <div class="content">
-      <h1>Your Hero Title</h1>
-      <p>Some description text for the hero section.</p>
-    </div>
+  <div class="hero">
+    <img src="your-image.jpg" alt="Hero Image"> <!-- Replace with your image URL -->
+    <h1>Your Hero Title</h1>
+    <p>Some description text for the hero section.</p>
+    <a href="#" class="cta-button">Call to Action</a>
   </div>
 
 </body>
