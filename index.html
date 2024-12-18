@@ -4,302 +4,289 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Hero Section</title>
-  <!-- Google Fonts link for AI-inspired fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Body Styles */
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f7fc;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar Styles (for all screens) */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: transparent; /* Transparent for the glassmorphism effect */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(15px); /* Glassmorphism effect */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
-    animation: gradientAnimation 8s ease infinite; /* Gradient animation */
-}
-
-/* Logo Styles */
-.logo img {
-    height: 80px;
-    max-width: 160%;
-}
-
-/* Navigation Links (for larger screens) */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #1a73e8;
-    transform: translateY(-3px);
-}
-
-/* Hamburger Menu (hidden on larger screens) */
-.toggle-button {
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-}
-
-/* Sliding Menu for smaller screens */
-.main-menu {
-    position: fixed;
-    top: 0;
-    left: -300px; /* Initially hidden */
-    width: 300px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px); /* Glassmorphism effect */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient with hero */
-    color: white;
-    transition: left 0.3s ease-in-out;
-    padding-top: 80px;
-    z-index: 2000;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-    animation: gradientAnimation 8s ease infinite; /* Gradient animation */
-}
-
-.main-menu.active {
-    left: 0;
-}
-
-.main-menu .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 25px;
-    cursor: pointer;
-    color: white;
-}
-
-.main-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.main-menu ul li {
-    padding: 15px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.main-menu ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    height: 100vh;
-    color: #fff;
-    text-align: center;
-    flex-direction: column;
-    position: relative;
-    width: 100%; /* Full width */
-    margin: 0; /* Remove margins */
-    backdrop-filter: blur(15px); /* Glassmorphism effect */
-}
-
-/* Gradient background */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #000, #fff);
-    background-size: 200% 200%;
-    animation: gradientAnimation 8s ease infinite;
-    z-index: 1; /* Position gradient behind text and image */
-}
-
-/* Hero Image */
-.hero img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 80%;
-    z-index: 2; /* Position image in front of gradient */
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 100% 100%; }
-    50% { background-position: 0% 0%; }
-    100% { background-position: 100% 100%; }
-}
-
-/* Title Styling */
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    font-family: 'Poppins', sans-serif; /* Use Poppins font */
-    text-transform: uppercase; /* AI-inspired tech look */
-    z-index: 3; /* Ensure text is in front of the background */
-}
-
-/* Paragraph Styling */
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 800px;
-    font-family: 'Roboto', sans-serif; /* Use Roboto font */
-    line-height: 1.6;
-    z-index: 3; /* Ensure text is in front of the background */
-}
-
-/* Button Styling */
-.hero .cta-button {
-    padding: 12px 30px;
-    font-size: 16px;
-    background-color: #1a73e8;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    z-index: 3; /* Ensure button is in front of the background */
-}
-
-.hero .cta-button:hover {
-    background-color: #0f58c7;
-}
-
-/* Responsive Typography */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
     }
 
-    .hero p {
-        font-size: 1rem;
+    /* Body Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
-    .hero img {
-        max-width: 80%; /* Adjust image size on smaller screens */
+    /* Navbar Styles (for all screens) */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: transparent; /* Transparent for the glassmorphism effect */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: absolute; /* Position navbar over the hero section */
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(15px); /* Glassmorphism effect */
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
+      animation: gradientAnimation 8s ease infinite; /* Gradient animation */
     }
 
-    /* Display hamburger icon on smaller screens */
-    .toggle-button {
-        display: block;
+    /* Logo Styles */
+    .logo img {
+      height: 80px;
+      max-width: 160%;
     }
 
-    /* Show menu items */
+    /* Navigation Links (for larger screens) */
     .nav-links {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
+      list-style: none;
+      display: flex;
+      gap: 30px;
     }
 
-    .hero p {
-        font-size: 0.9rem;
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
+    .nav-links a:hover {
+      color: #1a73e8;
+      transform: translateY(-3px);
+    }
+
+    /* Hamburger Menu (hidden on larger screens) */
+    .toggle-button {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Sliding Menu for smaller screens */
+    .main-menu {
+      position: fixed;
+      top: 0;
+      left: -300px; /* Initially hidden */
+      width: 300px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px); /* Glassmorphism effect */
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient with hero */
+      color: white;
+      transition: left 0.3s ease-in-out;
+      padding-top: 80px;
+      z-index: 2000;
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+      animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+    }
+
+    .main-menu.active {
+      left: 0;
+    }
+
+    .main-menu .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 25px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .main-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .main-menu ul li {
+      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .main-menu ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      height: 100vh;
+      color: #fff;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+      width: 100%; /* Full width */
+      margin: 0; /* Remove margins */
+      backdrop-filter: blur(15px); /* Glassmorphism effect */
+    }
+
+    /* Gradient background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #000, #fff);
+      background-size: 200% 200%;
+      animation: gradientAnimation 8s ease infinite;
+      z-index: 1; /* Position gradient behind text and image */
+    }
+
+    /* Hero Image */
     .hero img {
-        max-width: 70%; /* Adjust image size on mobile */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      max-height: 80%;
+      z-index: 2; /* Position image in front of gradient */
     }
-}
 
+    @keyframes gradientAnimation {
+      0% { background-position: 100% 100%; }
+      50% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+
+    /* Title Styling */
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      font-family: 'Poppins', sans-serif; /* Use Poppins font */
+      text-transform: uppercase; /* AI-inspired tech look */
+      z-index: 3; /* Ensure text is in front of the background */
+    }
+
+    /* Paragraph Styling */
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 800px;
+      font-family: 'Roboto', sans-serif; /* Use Roboto font */
+      line-height: 1.6;
+      z-index: 3; /* Ensure text is in front of the background */
+    }
+
+    /* Button Styling */
+    .hero .cta-button {
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #1a73e8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      z-index: 3; /* Ensure button is in front of the background */
+    }
+
+    .hero .cta-button:hover {
+      background-color: #0f58c7;
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero img {
+        max-width: 80%; /* Adjust image size on smaller screens */
+      }
+
+      /* Display hamburger icon on smaller screens */
+      .toggle-button {
+        display: block;
+      }
+
+      /* Show menu items */
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .hero img {
+        max-width: 70%; /* Adjust image size on mobile */
+      }
+    }
   </style>
 </head>
 <body>
-
-<header class="navbar" id="navbar">
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
     <div class="logo">
-        <img src="logo-Photoroom.png" alt="Mapengo Innovations">
+      <img src="images/logo.png" alt="Mapengo Innovations">
     </div>
     <nav>
-        <ul class="nav-links">
-            <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
-            <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
-            <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
-            <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
-            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
-            <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
-        </ul>
+      <ul class="nav-links">
+        <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+        <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+        <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+        <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+        <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+        <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
+      </ul>
     </nav>
     <div class="toggle-button" id="toggleButton">&#9776;</div>
-</header>
+  </header>
 
-<!-- Hero Section -->
-<div class="hero">
+  <!-- Hero Section -->
+  <div class="hero">
     <img src="logo-Photoroom.png" alt="Hero Image">
     <h1>Innovate with Confidence</h1>
     <p>We provide cutting-edge software solutions to elevate your business and empower your team to achieve more. Transform your ideas into reality with Mapengo Innovations.</p>
     <a href="#" class="cta-button">Call to Action</a>
-</div>
+  </div>
 
-   <script>
-        const toggleButton = document.querySelector("#toggleButton");
-        const mainMenu = document.querySelector("#mainMenu");
-        const closeMenuButton = document.querySelector("#closeMenuButton");
+  <script>
+    // JavaScript to toggle sliding menu on small screens
+    const toggleButton = document.getElementById('toggleButton');
+    const mainMenu = document.querySelector('.main-menu');
 
-        toggleButton.addEventListener('click', function () {
-            mainMenu.classList.toggle('active');
-            toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
-        });
+    toggleButton.addEventListener('click', () => {
+      mainMenu.classList.toggle('active');
+    });
 
-        closeMenuButton.addEventListener('click', function () {
-            mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;";
-        });
-
-        document.addEventListener('click', function(event) {
-            if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
-                mainMenu.classList.remove('active');
-                toggleButton.innerHTML = "&#9776;";
-            }
-        });
-
-        function closeMenuAndNavigate(target) {
-            mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;";
-            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    function closeMenuAndNavigate(target) {
+      mainMenu.classList.remove('active');
+      document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
