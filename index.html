@@ -26,22 +26,23 @@
     }
 
     /* Navbar Styles (for all screens) */
-    .navbar {
-      display: flex;
-      justify-content: space-between; /* Adjusted to space between logo and nav links */
-      align-items: center;
-      padding: 20px 50px;
-      background-color: transparent;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      backdrop-filter: blur(15px);
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
-      animation: gradientAnimation 8s ease infinite;
-    }
+.navbar {
+  display: flex;
+  justify-content: center; /* Center navigation links */
+  align-items: center;
+  padding: 20px 50px;
+  background-color: transparent; /* Transparent for the glassmorphism effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Position navbar over the hero section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(15px); /* Glassmorphism effect */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
+  animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+}
+
 
     /* Logo Styles */
     .logo img {
