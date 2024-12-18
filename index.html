@@ -8,15 +8,120 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* General reset for padding and margin */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
 
-    /* Hero Section */
-    .hero {
+/* Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles (for all screens) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: transparent; /* Transparent for the glassmorphism effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
+    animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+}
+
+/* Logo Styles */
+.logo img {
+    height: 80px;
+    max-width: 160%;
+}
+
+/* Navigation Links (for larger screens) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1a73e8;
+    transform: translateY(-3px);
+}
+
+/* Hamburger Menu (hidden on larger screens) */
+.toggle-button {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Sliding Menu for smaller screens */
+.main-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Matching gradient with hero */
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding-top: 80px;
+    z-index: 2000;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+}
+
+.main-menu.active {
+    left: 0;
+}
+
+.main-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-menu ul li {
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.main-menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+      .hero {
       display: flex;
       justify-content: center;
       align-items: center;
