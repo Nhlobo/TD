@@ -665,6 +665,61 @@ footer {
         right: 100px;
     }
 }
+    /* Cookie Popup Styles */
+.cookie-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  backdrop-filter: blur(15px);
+  animation: gradientAnimation 8s ease infinite;
+  z-index: 2000;
+  padding: 20px;
+  text-align: center;
+  display: none; /* Hidden by default */
+}
+
+.cookie-popup .cookie-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.cookie-popup .cookie-text {
+  color: white; /* White text */
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.cookie-popup .cookie-text a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.cookie-popup .cookie-btn {
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.cookie-popup .cookie-btn:hover {
+  background-color: #0f58c7;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 100% 100%; }
+  50% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
   </style>
 </head>
 <body>
