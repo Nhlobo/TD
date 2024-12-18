@@ -1,121 +1,89 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
-    <title>Home - Aswakudyeni</title>
-    <link rel="canonical" href="https://aswakudyeni.com/" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Home - Aswakudyeni" />
-    <meta property="og:description" content="We are open for dine-in at our location at Protea Glen Extension 28, Soweto. Check our menu and specials on Facebook! Call for take-out or delivery at 0123456789. Email us at Aswakudyeni@gmail.com." />
-    <meta property="og:url" content="https://aswakudyeni.com/" />
-    <meta property="og:site_name" content="Aswakudyeni" />
-    <meta property="og:image" content="https://aswakudyeni.com/images/restaurant-front.jpg" />
-    <meta property="og:image:secure_url" content="https://aswakudyeni.com/images/restaurant-front.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Home - Aswakudyeni" />
-    <meta name="twitter:description" content="We are open for dine-in at our location at Protea Glen Extension 28, Soweto. Call for take-out or delivery." />
-    <meta name="twitter:image" content="https://aswakudyeni.com/images/restaurant-front.jpg" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Hero Section</title>
+  <style>
+    /* General reset for padding and margin */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body and html should take full height */
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Hero section styling */
+    .hero-section {
+      position: relative;
+      height: 100vh; /* Full viewport height */
+      background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                  url('your-image.jpg'); /* Replace with your image URL */
+      background-size: cover; /* Ensure the image covers the whole section */
+      background-position: top left; /* Align the image to the top left */
+      background-attachment: fixed; /* Fixed background for effect */
+      color: white;
+      display: flex;
+      justify-content: center; /* Horizontally center content */
+      align-items: center; /* Vertically center content */
+      text-align: center;
+    }
+
+    /* Hero section content */
+    .hero-section .content {
+      max-width: 90%; /* Ensure content doesn't overflow on small screens */
+      padding: 20px;
+    }
+
+    /* Heading Styling */
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    /* Paragraph Styling */
+    p {
+      font-size: 1.25rem;
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem; /* Smaller font size on tablets and smaller screens */
+      }
+
+      p {
+        font-size: 1rem; /* Smaller text for readability */
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem; /* Further reduce heading size on mobile */
+      }
+
+      p {
+        font-size: 0.9rem; /* Adjust paragraph size for mobile */
+      }
+    }
+
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Aswakudyeni Logo">
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#reservations">Reservations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to Aswakudyeni</h1>
-            <p>Experience the taste of authentic South African traditional cuisine.</p>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="content">
+      <h1>Your Hero Title</h1>
+      <p>Some description text for the hero section.</p>
+    </div>
+  </div>
 
-    <section id="menu" class="section menu">
-        <h2>Our Menu</h2>
-        <div class="menu-items">
-            <div class="menu-item">
-                <img src="images/food1.jpg" alt="Bunny Chow">
-                <h3>Bunny Chow</h3>
-                <p>A classic South African street food served in a hollowed-out loaf of bread.</p>
-            </div>
-            <div class="menu-item">
-                <img src="images/food2.jpg" alt="Pap and Chakalaka">
-                <h3>Pap and Chakalaka</h3>
-                <p>Traditional maize meal served with spicy vegetable relish.</p>
-            </div>
-            <!-- Add more menu items here -->
-        </div>
-    </section>
-
-    <section id="reservations" class="section reservations">
-        <h2>Make a Reservation</h2>
-        <p>Reserve your table for an authentic South African dining experience at Aswakudyeni.</p>
-        <form action="https://formspree.io/f/maywldpy" method="POST">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="date">Reservation Date</label>
-                <input type="date" id="date" name="date" required>
-            </div>
-            <div class="form-group">
-                <label for="time">Reservation Time</label>
-                <input type="time" id="time" name="time" required>
-            </div>
-            <div class="form-group">
-                <label for="people">Number of People</label>
-                <input type="number" id="people" name="people" min="1" max="10" required>
-            </div>
-            <button type="submit" class="cta-button">Book Table</button>
-        </form>
-    </section>
-
-    <section id="contact" class="section contact">
-        <h2>Contact Us</h2>
-        <p>We are located at: 20122 Danube St, Protea Glen Extension 28, Soweto</p>
-        <p>Email: <a href="mailto:Aswakudyeni@gmail.com">Aswakudyeni@gmail.com</a></p>
-        <p>Phone: 0123456789</p>
-        <p><a href="https://maps.app.goo.gl/dPe7uRSZY6Lj7Joy9" target="_blank">View on Google Maps</a></p>
-
-        <form action="https://formspree.io/f/maywldpy" method="POST">
-            <div class="form-group">
-                <label for="contact-name">Your Name</label>
-                <input type="text" id="contact-name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="contact-email">Your Email</label>
-                <input type="email" id="contact-email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="contact-message">Your Message</label>
-                <textarea id="contact-message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
-    </section>
-
-    <script src="script.js"></script>
 </body>
 </html>
