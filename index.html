@@ -24,233 +24,152 @@
       margin: 0;
       padding: 0;
     }
-
-    /* Navbar Styles (for all screens) */
+/* Navbar Styles (for all screens) */
 .navbar {
   display: flex;
-  justify-content: center; /* Center navigation links */
+  justify-content: space-between; /* Distribute space between logo and menu items */
   align-items: center;
   padding: 20px 50px;
-  background-color: transparent; /* Transparent for the glassmorphism effect */
+  background-color: transparent;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  position: absolute; /* Position navbar over the hero section */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  backdrop-filter: blur(15px); /* Glassmorphism effect */
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
-  animation: gradientAnimation 8s ease infinite; /* Gradient animation */
+  backdrop-filter: blur(15px);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  animation: gradientAnimation 8s ease infinite;
 }
 
+.logo {
+  flex: 1; /* Ensure logo takes as much space as needed */
+}
 
-    /* Logo Styles */
-    .logo img {
-      height: 60px; /* Adjust logo size */
-      max-width: 160%;
-    }
+/* Center the hamburger button on small screens */
+.toggle-button {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001; /* Ensure it's above other elements */
+}
 
-    /* Navigation Links (for larger screens) */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
+/* Navigation Links (for larger screens) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex: 2; /* Ensure menu items take up space and stay on the right */
+}
 
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
 
-    .nav-links a:hover {
-      color: #1a73e8;
-      transform: translateY(-3px);
-    }
+.nav-links a:hover {
+  color: #1a73e8;
+  transform: translateY(-3px);
+}
 
-    /* Hamburger Menu (centered on small screens) */
-    .toggle-button {
-      font-size: 30px;
-      cursor: pointer;
-      display: none;
-      color: white; /* Set hamburger color to white */
-    }
+/* Sliding Menu for smaller screens */
+.main-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  color: white;
+  transition: left 0.3s ease-in-out;
+  padding-top: 80px;
+  z-index: 2000;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  animation: gradientAnimation 8s ease infinite;
+}
 
-    /* Sliding Menu for smaller screens */
-    .main-menu {
-      position: fixed;
-      top: 0;
-      left: -300px;
-      width: 300px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
-      color: white;
-      transition: left 0.3s ease-in-out;
-      padding-top: 80px;
-      z-index: 2000;
-      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-      animation: gradientAnimation 8s ease infinite;
-    }
+.main-menu.active {
+  left: 0;
+}
 
-    .main-menu.active {
-      left: 0;
-    }
+.main-menu .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
 
-    .main-menu .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 25px;
-      cursor: pointer;
-      color: white;
-    }
+.main-menu ul {
+  list-style: none;
+  padding: 0;
+}
 
-    .main-menu ul {
-      list-style: none;
-      padding: 0;
-    }
+.main-menu ul li {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
 
-    .main-menu ul li {
-      padding: 15px;
-      font-size: 20px;
-      text-align: center;
-    }
+.main-menu ul li a {
+  color: white;
+  text-decoration: none;
+}
 
-    .main-menu ul li a {
-      color: white;
-      text-decoration: none;
-    }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 
-    /* Hero Section */
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      height: 100vh;
-      color: #fff;
-      text-align: center;
-      flex-direction: column;
-      position: relative;
-      width: 100%;
-      margin: 0;
-      backdrop-filter: blur(15px);
-    }
+  .hero p {
+    font-size: 1rem;
+  }
 
-    /* Gradient background */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #000, #fff);
-      background-size: 200% 200%;
-      animation: gradientAnimation 8s ease infinite;
-      z-index: 1;
-    }
+  .hero img {
+    max-width: 80%;
+  }
 
-    /* Hero Image */
-    .hero img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 90%;
-      max-height: 80%;
-      z-index: 2;
-    }
+  .nav-links {
+    display: none; /* Hide the regular menu on small screens */
+  }
 
-    @keyframes gradientAnimation {
-      0% { background-position: 100% 100%; }
-      50% { background-position: 0% 0%; }
-      100% { background-position: 100% 100%; }
-    }
+  /* Display hamburger icon on smaller screens */
+  .toggle-button {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
-    /* Title Styling */
-    .hero h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      font-family: 'Poppins', sans-serif;
-      text-transform: uppercase;
-      z-index: 3;
-    }
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-    /* Paragraph Styling */
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      max-width: 800px;
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      z-index: 3;
-    }
+  .hero p {
+    font-size: 0.9rem;
+  }
 
-    /* Button Styling */
-    .hero .cta-button {
-      padding: 12px 30px;
-      font-size: 16px;
-      background-color: #1a73e8;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      z-index: 3;
-    }
+  .hero img {
+    max-width: 70%;
+  }
+}
 
-    .hero .cta-button:hover {
-      background-color: #0f58c7;
-    }
-
-    /* Responsive Typography */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero img {
-        max-width: 80%;
-      }
-
-      /* Display hamburger icon on smaller screens */
-      .toggle-button {
-        display: block;
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      /* Show menu items */
-      .nav-links {
-        display: none;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 0.9rem;
-      }
-
-      .hero img {
-        max-width: 70%;
-      }
-    }
+   
   </style>
 </head>
 <body>
