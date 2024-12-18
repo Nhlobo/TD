@@ -725,6 +725,35 @@ footer {
       document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
     }
   </script>
+  
+   <!-- ================= COOKIE-POPUP ================= -->
+  
+  <div class="cookie-popup" id="cookiePopup">
+  <div class="cookie-content">
+    <p class="cookie-text">We use cookies to improve your experience. By using our site, you consent to our use of cookies. <a href="#">Learn more</a></p>
+    <button class="cookie-btn" id="acceptCookies">Got it!</button>
+  </div>
+</div>
+    
+     <script>
+    // Get elements
+const cookiePopup = document.getElementById('cookiePopup');
+const acceptCookiesButton = document.getElementById('acceptCookies');
+
+// Check if cookie consent is already given (via localStorage)
+if (!localStorage.getItem('cookieConsent')) {
+  // Show the popup if no consent has been given
+  cookiePopup.style.display = 'block';
+}
+
+// Set cookie consent and hide the popup when the button is clicked
+acceptCookiesButton.addEventListener('click', () => {
+  localStorage.setItem('cookieConsent', 'true');
+  cookiePopup.style.display = 'none';
+});
+
+</script>
+     
   <!-- ================= TESTIMONIALS ================= -->
 <section id="testimonials" class="container">
     <h2 class="section-title">What Our Clients Say</h2>
