@@ -28,7 +28,7 @@
     /* Navbar Styles (for all screens) */
     .navbar {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start; /* Adjusted to reduce spacing */
       align-items: center;
       padding: 20px 50px;
       background-color: transparent; /* Transparent for the glassmorphism effect */
@@ -45,7 +45,7 @@
 
     /* Logo Styles */
     .logo img {
-      height: 80px;
+      height: 60px; /* Adjust logo size */
       max-width: 160%;
     }
 
@@ -266,6 +266,19 @@
     <div class="toggle-button" id="toggleButton">&#9776;</div>
   </header>
 
+  <!-- Sliding Menu for small screens -->
+  <div class="main-menu" id="mainMenu">
+    <div class="close-btn" onclick="closeMenu()">X</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
   <!-- Hero Section -->
   <div class="hero">
     <img src="logo-Photoroom.png" alt="Hero Image">
@@ -277,14 +290,18 @@
   <script>
     // JavaScript to toggle sliding menu on small screens
     const toggleButton = document.getElementById('toggleButton');
-    const mainMenu = document.querySelector('.main-menu');
+    const mainMenu = document.getElementById('mainMenu');
 
     toggleButton.addEventListener('click', () => {
       mainMenu.classList.toggle('active');
     });
 
-    function closeMenuAndNavigate(target) {
+    function closeMenu() {
       mainMenu.classList.remove('active');
+    }
+
+    function closeMenuAndNavigate(target) {
+      closeMenu();
       document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
     }
   </script>
