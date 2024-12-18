@@ -236,7 +236,22 @@ body {
   </style>
 </head>
 <body>
-
+ <header class="navbar" id="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Mapengo Innovations">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="closeMenuAndNavigate('#home')">Home</a></li>
+                <li><a href="#about" onclick="closeMenuAndNavigate('#about')">About</a></li>
+                <li><a href="#services" onclick="closeMenuAndNavigate('#services')">Services</a></li>
+                <li><a href="#portfolio" onclick="closeMenuAndNavigate('#portfolio')">Portfolio</a></li>
+                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+                <li><a href="#contact" onclick="closeMenuAndNavigate('#contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-button" id="toggleButton">&#9776;</div>
+    </header>
    <!-- Hero Section -->
   <div class="hero">
     <img src="logo-Photoroom.png" alt="Hero Image"> <!-- Replace with your image URL -->
