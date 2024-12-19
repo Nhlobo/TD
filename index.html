@@ -165,7 +165,21 @@
             border-radius: 5px;
         }
 
-        /* Hide the chatbot icon on scroll */
+        /* Close Button (X) */
+        .close-chat-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close-chat-btn:hover {
+            color: #f00;
+        }
+
+        /* Hide the chatbot icon when user scrolls down */
         .hide-chatbot-icon {
             display: none;
         }
@@ -279,6 +293,9 @@
         </div>
         <!-- Chatbot Window -->
         <div class="chatbot-window" id="chatbot-window">
+            <!-- Close Button (X) to close the chatbot -->
+            <span class="close-chat-btn" id="close-chat-btn">X</span>
+
             <div class="chatbot-messages" id="chatbot-messages">
                 <p><strong>Tomie:</strong> How can I assist you today?</p>
             </div>
@@ -295,6 +312,7 @@
         const chatbotSection = document.getElementById("chatbot-section");
         const chatIcon = document.getElementById("chat-icon");
         const chatbotWindow = document.getElementById("chatbot-window");
+        const closeChatButton = document.getElementById("close-chat-btn");
         const sendMessageButton = document.getElementById("send-message");
         const chatInput = document.getElementById("chat-input");
         const chatbotMessages = document.getElementById("chatbot-messages");
@@ -313,6 +331,12 @@
             chatbotWindow.classList.toggle("active");
         });
 
+        // Close the chatbot window and clear the conversation
+        closeChatButton.addEventListener("click", () => {
+            chatbotWindow.classList.remove("active");
+            chatbotMessages.innerHTML = '';  // Clear the conversation when chat is closed
+        });
+
         // Simulate sending a message
         sendMessageButton.addEventListener("click", () => {
             const message = chatInput.value.trim();
@@ -321,8 +345,9 @@
                 chatbotMessages.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
                 chatInput.value = "";
 
-                // Add chatbot response
+                // Add chatbot response (this is where you can modify the bot's answer)
                 setTimeout(() => {
+                    // Add the chatbot's reply (this is where you can add logic to generate a response)
                     chatbotMessages.innerHTML += `<p><strong>Tomie:</strong> Thanks for your message!</p>`;
                     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
                 }, 1000);
