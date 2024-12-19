@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Chat Bot Popup</title>
+  <title>AI-Inspired Chat Bot Popup</title>
   <style>
     /* Hero Section */
     .hero {
@@ -29,7 +29,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #000, #fff);
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
       background-size: 200% 200%;
       animation: gradientAnimation 8s ease infinite;
       z-index: 1;
@@ -93,15 +93,15 @@
     /* Chatbot Popup Styling */
     .chat-popup {
       position: fixed;
-      bottom: 30px; /* Slightly raised from bottom */
+      bottom: 35px; /* Slightly raised */
       right: 30px;
       display: flex;
       align-items: center;
       background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
-      border-radius: 40px;
-      padding: 20px 30px;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+      border-radius: 50px; /* Circular, sleek look */
+      padding: 18px 24px;
+      backdrop-filter: blur(20px); /* Strong blur for glass effect */
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
@@ -111,8 +111,8 @@
 
     /* Icon and Text Layout */
     .chat-icon {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       margin-right: 15px;
       transition: transform 0.3s ease;
     }
@@ -121,10 +121,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 50%;
     }
 
     .chat-text {
-      font-size: 16px;
+      font-size: 18px;
       font-family: 'Roboto', sans-serif;
       color: #fff;
       font-weight: 600;
@@ -134,11 +135,11 @@
 
     /* Hover Effects for Icon and Text */
     .chat-popup:hover .chat-icon {
-      transform: scale(1.1);
+      transform: scale(1.1); /* Slightly enlarge the icon */
     }
 
     .chat-popup:hover .chat-text {
-      transform: translateX(5px);
+      transform: translateX(8px); /* Slide the text */
     }
 
     /* Smooth Pop-Up Animation */
