@@ -55,24 +55,24 @@
             transform: translateY(-50%) scale(1.05);
         }
 
+        /* Custom Chatbot Icon: Floating chat bubble */
         .chatbot-icon {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 16px;
+            font-size: 24px;
             color: white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             position: relative;
         }
 
-        .arrow {
-            position: absolute;
-            bottom: -5px;
-            font-size: 14px;
+        .chatbot-icon::after {
+            content: "💬";
+            font-size: 28px;
             color: white;
         }
 
@@ -80,8 +80,8 @@
             font-size: 12px;
             color: #fff;
             margin-left: 10px;
-            font-weight: 500; /* Use a medium weight */
-            font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
             max-width: 200px;
         }
 
@@ -98,17 +98,17 @@
 
         /* Chat Icon in Chatbot Section */
         .chat-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #00aaff;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             position: absolute;
             bottom: 30px;
         }
@@ -175,8 +175,7 @@
     <!-- Glassmorphism Chatbot Icon and Text -->
     <div class="chatbot-icon-container" id="chatbot-icon">
         <div class="chatbot-icon">
-            <span>V</span>
-            <div class="arrow">↓</div>
+            <!-- Icon content is now a chat bubble (💬) -->
         </div>
         <div class="chatbot-text">Get quick answers with Tomie Chatbot</div>
     </div>
@@ -184,7 +183,7 @@
     <!-- Chatbot Section -->
     <section id="chatbot-section" class="chatbot-section">
         <div class="chat-icon" id="chat-icon">
-            <span>💬</span>
+            <!-- Chat bubble icon inside chatbot section -->
         </div>
         <!-- Chatbot Window -->
         <div class="chatbot-window" id="chatbot-window">
