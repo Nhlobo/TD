@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Importing Roboto font -->
     <style>
         /* Reset default styling */
         * {
@@ -33,7 +34,7 @@
             text-align: center;
         }
 
-        /* Glassmorphism-style floating icon with gradient animation */
+        /* Glassmorphism-style floating icon with no animation */
         .chatbot-icon-container {
             position: fixed;
             right: 20px;
@@ -43,13 +44,11 @@
             align-items: center;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
             backdrop-filter: blur(10px);
-            padding: 12px 16px;
+            padding: 8px 12px;
             border-radius: 50px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             z-index: 1000;
-            transition: transform 0.3s ease-in-out;
-            animation: gradientAnimation 8s ease infinite; /* Gradient animation */
         }
 
         .chatbot-icon-container:hover {
@@ -57,14 +56,14 @@
         }
 
         .chatbot-icon {
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 20px;
+            font-size: 16px;
             color: white;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -73,29 +72,17 @@
         .arrow {
             position: absolute;
             bottom: -5px;
-            font-size: 18px;
+            font-size: 14px;
             color: white;
         }
 
         .chatbot-text {
-            font-size: 14px;
+            font-size: 12px;
             color: #fff;
             margin-left: 10px;
-            font-weight: bold;
+            font-weight: 500; /* Use a medium weight */
+            font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
             max-width: 200px;
-        }
-
-        /* Animation for the gradient */
-        @keyframes gradientAnimation {
-            0% {
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
-            }
-            50% {
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
-            }
-            100% {
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
-            }
         }
 
         /* Chatbot Section */
