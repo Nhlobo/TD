@@ -38,16 +38,31 @@
         }
 
         .service-item {
+            display: flex;
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .service-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item img {
+            width: 45%; /* Adjust image width to take half of the card */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .service-item .content {
+            width: 50%;
+            padding-left: 20px;
+            text-align: left;
         }
 
         .service-item h3 {
@@ -63,50 +78,25 @@
             line-height: 1.6;
         }
 
-        .package-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 20px;
-        }
-
-        .package-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .package-item h4 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .package-item p {
-            font-size: 1rem;
-            color: #bbb;
-            line-height: 1.6;
-        }
-
-        .package-item a {
-            color: #00b0ff;
-            text-decoration: none;
-        }
-
-        .package-item a:hover {
-            text-decoration: underline;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .corewebgrid {
                 grid-template-columns: 1fr;
             }
 
-            .package-item {
-                padding: 20px;
+            .service-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .service-item img {
+                width: 80%; /* Adjust image size for small screens */
+                margin-bottom: 20px;
+            }
+
+            .service-item .content {
+                width: 100%;
+                padding-left: 0;
             }
         }
 
@@ -123,16 +113,25 @@
         <!-- Core Web Development Services Grid -->
         <div class="w-layout-grid corewebgrid">
             <div class="service-item">
-                <h3>Front-end Development</h3>
-                <p>Our front-end development team excels at creating user-friendly interfaces using HTML, CSS, JavaScript, and React. We ensure seamless interactions that are both visually appealing and functional for a wide range of devices.</p>
+                <img src="Techconnect.png" alt="Front-end Development">
+                <div class="content">
+                    <h3>Front-end Development</h3>
+                    <p>Our front-end development team excels at creating user-friendly interfaces using HTML, CSS, JavaScript, and React. We ensure seamless interactions that are both visually appealing and functional for a wide range of devices.</p>
+                </div>
             </div>
             <div class="service-item">
-                <h3>Back-end Development</h3>
-                <p>We build the backend systems that drive your website, ensuring secure data management, database connections, and user interactions to deliver a robust user experience from start to finish.</p>
+                <img src="Techconnect.png" alt="Back-end Development">
+                <div class="content">
+                    <h3>Back-end Development</h3>
+                    <p>We build the backend systems that drive your website, ensuring secure data management, database connections, and user interactions to deliver a robust user experience from start to finish.</p>
+                </div>
             </div>
             <div class="service-item">
-                <h3>Content Management Systems</h3>
-                <p>We implement CMS platforms like <a href="/Services/ContentManagementSystems" class="paragraphlink">Webflow</a> and WordPress, or custom CMS solutions to help you manage your content effortlessly without technical knowledge.</p>
+                <img src="Techconnect.png" alt="Content Management Systems">
+                <div class="content">
+                    <h3>Content Management Systems</h3>
+                    <p>We implement CMS platforms like <a href="/Services/ContentManagementSystems" class="paragraphlink">Webflow</a> and WordPress, or custom CMS solutions to help you manage your content effortlessly without technical knowledge.</p>
+                </div>
             </div>
         </div>
 
