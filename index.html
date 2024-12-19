@@ -719,6 +719,80 @@ footer {
   50% { background-position: 0% 0%; }
   100% { background-position: 100% 100%; }
 }
+/* Chatbot Popup Styling */
+.chat-popup {
+  position: fixed;
+  bottom: 20px; /* Not too bottom */
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
+  border-radius: 30px;
+  padding: 15px 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* Smooth Animation for the Chat Icon */
+.chat-popup:hover {
+  animation: popUpAnimation 0.5s ease-in-out;
+}
+
+/* Icon and Text Layout */
+.chat-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chat-text {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Smooth Pop-Up Animation */
+@keyframes popUpAnimation {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Active State for Chat Popup */
+.chat-popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Chat Section */
+.chat-section {
+  height: 500px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  display: none; /* Initially hidden */
+}
+
+.chat-section.active {
+  display: block;
+}
 
   </style>
 </head>
@@ -808,7 +882,22 @@ acceptCookiesButton.addEventListener('click', () => {
 });
 
 </script>
-     
+
+  <!-- Chatbot Popup -->
+<div id="chatPopup" class="chat-popup">
+  <div class="chat-icon">
+    <img src="whatsapp_icon.png" alt="Chat Icon" class="icon-img">
+  </div>
+  <div class="chat-text">
+    Get quick answers with Tomie
+  </div>
+</div>
+
+<!-- Chatbot Section -->
+<div id="chatSection" class="chat-section">
+  <!-- Chat content goes here -->
+</div>
+
   <!-- ================= TESTIMONIALS ================= -->
 <section id="testimonials" class="container">
     <h2 class="section-title">What Our Clients Say</h2>
