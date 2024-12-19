@@ -1,247 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Inspired Chat Bot Popup</title>
-  <style>
-    /* Hero Section */
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      height: 100vh;
-      color: #fff;
-      text-align: center;
-      flex-direction: column;
-      position: relative;
-      width: 100%;
-      margin: 0;
-      backdrop-filter: blur(15px);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <style>
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Gradient background */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      background-size: 200% 200%;
-      animation: gradientAnimation 8s ease infinite;
-      z-index: 1;
-    }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-    /* Hero Image */
-    .hero img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 90%;
-      max-height: 80%;
-      z-index: 2;
-    }
+        .hero h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
 
-    @keyframes gradientAnimation {
-      0% { background-position: 100% 100%; }
-      50% { background-position: 0% 0%; }
-      100% { background-position: 100% 100%; }
-    }
+        .hero p {
+            font-size: 1.5rem;
+            text-align: center;
+        }
 
-    /* Title Styling */
-    .hero h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      font-family: 'Poppins', sans-serif;
-      text-transform: uppercase;
-      z-index: 3;
-    }
+        /* Chatbot Icon */
+        .chatbot-icon {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            background-color: #25d366;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
 
-    /* Hero Paragraph Styling */
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      max-width: 800px;
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      color: #fff;
-      z-index: 3;
-    }
+        .chatbot-icon img {
+            width: 50px;
+            height: 50px;
+        }
 
-    /* Button Styling */
-    .hero .cta-button {
-      padding: 12px 30px;
-      font-size: 16px;
-      background-color: #1a73e8;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      z-index: 3;
-    }
+        /* Chatbot Window */
+        .chatbot-window {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+            opacity: 0;
+        }
 
-    .hero .cta-button:hover {
-      background-color: #0f58c7;
-    }
+        .chatbot-window.show {
+            transform: translateX(-50%) translateY(-100%);
+            opacity: 1;
+        }
 
-    /* Chatbot Popup Styling */
-    .chat-popup {
-      position: fixed;
-      bottom: 35px; /* Slightly raised */
-      right: 30px;
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
-      border-radius: 50px; /* Circular, sleek look */
-      padding: 18px 24px;
-      backdrop-filter: blur(20px); /* Strong blur for glass effect */
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
-      cursor: pointer;
-      z-index: 9999;
-    }
+        .chatbot-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
 
-    /* Icon and Text Layout */
-    .chat-icon {
-      width: 45px;
-      height: 45px;
-      margin-right: 15px;
-      transition: transform 0.3s ease;
-    }
+        .chatbot-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-    .icon-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .chat-text {
-      font-size: 18px;
-      font-family: 'Roboto', sans-serif;
-      color: #fff;
-      font-weight: 600;
-      line-height: 1.4;
-      transition: transform 0.3s ease;
-    }
-
-    /* Hover Effects for Icon and Text */
-    .chat-popup:hover .chat-icon {
-      transform: scale(1.1); /* Slightly enlarge the icon */
-    }
-
-    .chat-popup:hover .chat-text {
-      transform: translateX(8px); /* Slide the text */
-    }
-
-    /* Smooth Pop-Up Animation */
-    @keyframes popUpAnimation {
-      0% {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    /* Active State for Chat Popup */
-    .chat-popup.active {
-      opacity: 1;
-      visibility: visible;
-      transform: scale(1);
-    }
-
-    /* Chat Section */
-    .chat-section {
-      height: 500px;
-      background-color: #f1f1f1;
-      padding: 20px;
-      display: none; /* Initially hidden */
-    }
-
-    .chat-section.active {
-      display: block;
-    }
-
-    /* Responsive Typography */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero img {
-        max-width: 80%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 0.9rem;
-      }
-
-      .hero img {
-        max-width: 70%;
-      }
-    }
-  </style>
+        /* Add padding to chatbot content */
+        .chatbot-content {
+            padding: 10px;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to Our Website</h1>
-    <p>Get quick answers with Tomie, your friendly chatbot.</p>
-    <a href="#chatSection" class="cta-button">Start Chatting</a>
-    <img src="hero-image.png" alt="Hero Image">
-  </section>
 
-  <!-- Chatbot Popup -->
-  <div id="chatPopup" class="chat-popup">
-    <div class="chat-icon">
-      <img src="whatsapp_icon.png" alt="Chat Icon" class="icon-img">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Our Website</h1>
+        <p>Scroll down for more details.</p>
+    </section>
+
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon" class="chatbot-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/WhatsApp_icon.png" alt="Chatbot" />
     </div>
-    <div class="chat-text">
-      Get quick answers with Tomie
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="close-chatbot">X</button>
+        </div>
+        <div class="chatbot-content">
+            <p>How can I assist you today?</p>
+            <!-- Chatbot interaction goes here -->
+        </div>
     </div>
-  </div>
 
-  <!-- Chatbot Section -->
-  <div id="chatSection" class="chat-section">
-    <h2>Chatbot Section</h2>
-    <p>This is where the chatbot interaction will occur.</p>
-    <!-- Add chatbot content here -->
-  </div>
+    <script>
+        // Get elements
+        const chatbotIcon = document.getElementById("chatbot-icon");
+        const chatbotWindow = document.getElementById("chatbot-window");
+        const closeButton = document.getElementById("close-chatbot");
 
-  <script>
-    // Smooth Scroll to Chat Section when the popup is clicked
-    document.querySelector('#chatPopup').addEventListener('click', function() {
-      document.querySelector('#chatSection').scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
+        // Toggle chatbot window visibility
+        chatbotIcon.addEventListener("click", () => {
+            // If the window is hidden, show it, otherwise hide it
+            chatbotWindow.classList.toggle("show");
+        });
 
-    // Show the chat popup after page load with animation
-    window.addEventListener('load', () => {
-      const chatPopup = document.getElementById('chatPopup');
-      chatPopup.classList.add('active');
-    });
-  </script>
+        // Close the chatbot window when the close button is clicked
+        closeButton.addEventListener("click", () => {
+            chatbotWindow.classList.remove("show");
+        });
+    </script>
+
 </body>
 </html>
