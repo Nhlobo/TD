@@ -5,98 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Web & App Development Solutions</title>
     <style>
+        /* General Reset & Body Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #121212;
+            padding: 0;
+            margin: 0;
+        }
+
         /* Section Styling */
         .services-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0.2)); /* Darker gradient */
-            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0.2)); /* Elegant gradient */
+            padding: 80px 20px;
             color: white;
             text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .textlarge {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: white;
+            color: #00b0ff;
             margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
         .section-title {
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-size: 2rem;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #00b0ff;
         }
 
         .corewebgrid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .service-item {
             display: flex;
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             align-items: center;
             justify-content: space-between;
+            color: #f2f2f2;
         }
 
         .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .service-item img {
             width: 45%; /* Adjust image width to take half of the card */
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover img {
+            transform: scale(1.05);
         }
 
         .service-item .content {
             width: 50%;
-            padding-left: 20px;
+            padding-left: 25px;
             text-align: left;
         }
 
         .service-item h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
             color: #00b0ff;
             margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
         .service-item p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #ddd;
-            line-height: 1.6;
+            line-height: 1.8;
+        }
+
+        .service-item a {
+            color: #00b0ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .service-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Package Section Styling */
+        .package-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+        }
+
+        .package-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-item h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .package-item p {
+            font-size: 1.1rem;
+            color: #bbb;
+            line-height: 1.8;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .corewebgrid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-item {
-                flex-direction: column;
-                text-align: center;
+                grid-template-columns: 1fr 1fr;
             }
 
             .service-item img {
-                width: 80%; /* Adjust image size for small screens */
-                margin-bottom: 20px;
+                width: 100%;
+                margin-bottom: 15px;
             }
 
             .service-item .content {
                 width: 100%;
                 padding-left: 0;
+                text-align: center;
+            }
+
+            .service-item {
+                flex-direction: column;
+            }
+
+            .package-item {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .corewebgrid {
+                grid-template-columns: 1fr;
+            }
+
+            .textlarge {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
             }
         }
 
@@ -111,26 +195,26 @@
         <div class="section-title">Core Web Development Services</div>
 
         <!-- Core Web Development Services Grid -->
-        <div class="w-layout-grid corewebgrid">
+        <div class="corewebgrid">
             <div class="service-item">
-                <img src="Techconnect.png" alt="Front-end Development">
+                <img src="path/to/your/image1.jpg" alt="Front-end Development">
                 <div class="content">
                     <h3>Front-end Development</h3>
-                    <p>Our front-end development team excels at creating user-friendly interfaces using HTML, CSS, JavaScript, and React. We ensure seamless interactions that are both visually appealing and functional for a wide range of devices.</p>
+                    <p>Our front-end development team excels at creating visually stunning and interactive user interfaces using HTML, CSS, JavaScript, and React. We ensure seamless interactions that are both user-friendly and optimized for performance across devices.</p>
                 </div>
             </div>
             <div class="service-item">
-                <img src="Techconnect.png" alt="Back-end Development">
+                <img src="path/to/your/image2.jpg" alt="Back-end Development">
                 <div class="content">
                     <h3>Back-end Development</h3>
-                    <p>We build the backend systems that drive your website, ensuring secure data management, database connections, and user interactions to deliver a robust user experience from start to finish.</p>
+                    <p>We design robust back-end systems ensuring efficient data management, secure user interactions, and seamless integration with front-end services to deliver powerful, scalable applications.</p>
                 </div>
             </div>
             <div class="service-item">
-                <img src="Techconnect.png" alt="Content Management Systems">
+                <img src="path/to/your/image3.jpg" alt="Content Management Systems">
                 <div class="content">
                     <h3>Content Management Systems</h3>
-                    <p>We implement CMS platforms like <a href="/Services/ContentManagementSystems" class="paragraphlink">Webflow</a> and WordPress, or custom CMS solutions to help you manage your content effortlessly without technical knowledge.</p>
+                    <p>We specialize in CMS platforms such as Webflow, WordPress, and custom CMS solutions to provide user-friendly systems for managing content with ease, empowering you to take control without technical expertise.</p>
                 </div>
             </div>
         </div>
@@ -143,19 +227,19 @@
             <h4>Website Development Packages</h4>
             <div>
                 <strong>Starter Package:</strong>
-                <p>Ideal for individuals, bloggers, and small projects. Includes custom landing page design, contact form integration, SEO setup, and responsive mobile design (1-3 pages).</p>
+                <p>Ideal for individuals and small businesses. Includes custom landing page design, contact form, SEO setup, and responsive design (1-3 pages).</p>
             </div>
             <div>
                 <strong>Standard Package:</strong>
-                <p>Great for small businesses and consultants. Custom homepage, inner page design, gallery or blog, SEO optimization, social media integration, and mobile responsiveness (4-8 pages).</p>
+                <p>Perfect for growing businesses. Includes custom homepage, inner pages, gallery/blog, SEO optimization, and social media integration (4-8 pages).</p>
             </div>
             <div>
                 <strong>Premium Package:</strong>
-                <p>Perfect for growing businesses and organizations. Includes custom homepage and multiple service/product pages, SEO, social media and chat integration, newsletter subscription (8-16 pages).</p>
+                <p>For large businesses and organizations. Includes a custom homepage, multiple service/product pages, SEO, social media/chat integration, and newsletter (8-16 pages).</p>
             </div>
             <div>
                 <strong>E-commerce Package:</strong>
-                <p>Designed for online stores. Features online store setup, payment gateway integration, inventory management, product pages, user accounts, shipping, and taxes (custom pages based on product catalog).</p>
+                <p>Complete e-commerce solution with store setup, payment integration, inventory management, product pages, user accounts, and shipping/tax handling (custom pages based on catalog).</p>
             </div>
         </div>
 
@@ -164,15 +248,15 @@
             <h4>App Development Packages</h4>
             <div>
                 <strong>Basic App:</strong>
-                <p>Simple apps with essential features, such as user login, basic UI/UX, form submission, and optional push notifications.</p>
+                <p>Simple apps with essential features like user login, form submission, and optional push notifications.</p>
             </div>
             <div>
                 <strong>Standard App:</strong>
-                <p>Medium complexity apps featuring user profiles, custom UI/UX design, third-party API integration, in-app messaging, and an admin dashboard for content management.</p>
+                <p>Medium complexity apps with user profiles, custom design, third-party API integration, and in-app messaging features.</p>
             </div>
             <div>
                 <strong>Premium App:</strong>
-                <p>Complex apps with custom features, real-time functionalities (chat, live tracking), multiple integrations (payment gateways, cloud storage), and advanced user roles/permissions with analytics and reports.</p>
+                <p>Advanced apps with real-time functionalities, complex integrations (payment gateways, cloud storage), advanced user roles, and comprehensive analytics/reports.</p>
             </div>
         </div>
     </section>
