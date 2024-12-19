@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Web Development Services</title>
     <style>
-        /* FAQ Section */
-        .faq-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+        /* Darker Gradient Section */
+        .core-services-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.2)); /* Darker gradient */
             margin: 50px auto;
-            max-width: 100%; /* Ensure the section stretches across the page */
+            max-width: 100%;
             padding: 2rem;
             text-align: center;
-            border-radius: 8px; /* Optional: Adds rounded corners */
+            border-radius: 8px;
         }
 
         .textlarge {
@@ -32,7 +32,7 @@
             margin-top: 30px;
         }
 
-        .faq-item {
+        .core-services-item {
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,12 +42,12 @@
             text-align: left;
         }
 
-        .faq-item:hover {
+        .core-services-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .faq-item h3 {
+        .core-services-item h3 {
             font-size: 1.2rem;
             font-weight: 500;
             cursor: pointer;
@@ -57,11 +57,11 @@
             color: #374151;
         }
 
-        .faq-item h3:hover {
+        .core-services-item h3:hover {
             background: #f0f0f0;
         }
 
-        .faq-item p {
+        .core-services-item p {
             padding: 15px 20px;
             font-size: 1rem;
             color: #374151;
@@ -70,25 +70,51 @@
             transition: padding 0.3s ease;
         }
 
-        .faq-item p a {
+        .core-services-item p a {
             color: #00b0ff;
             text-decoration: none;
         }
 
-        .faq-item p a:hover {
+        .core-services-item p a:hover {
             text-decoration: underline;
         }
 
-        .faq-item h3::after {
-            content: "+";
-            font-size: 1.5rem;
-            float: right;
-            color: #00b0ff;
-            transition: transform 0.3s ease;
+        /* Packages Section Styling */
+        .packages-section {
+            margin-top: 40px;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
         }
 
-        .faq-item.active h3::after {
-            transform: rotate(45deg);
+        .package-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .package-item h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .package-item p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .package-item a {
+            color: #00b0ff;
+            text-decoration: none;
+        }
+
+        .package-item a:hover {
+            text-decoration: underline;
         }
 
         /* Optional: Responsive design for smaller screens */
@@ -101,22 +127,65 @@
 </head>
 <body>
 
-    <section class="faq-section">
+    <section class="core-services-section">
         <div class="w-layout-blockcontainer fixedcontainer w-container">
             <h2 class="textlarge centeredtext">Core Web Development Services</h2>
             <div class="w-layout-grid corewebgrid">
-                <div class="faq-item">
+                <div class="core-services-item">
                     <h3>Front-end Development</h3>
-                    <p>Our team uses HTML, CSS, JavaScript, and React to convert our designs into a graphical interface. This allows users to view and interact with the data in a visually appealing and user-friendly way.</p>
+                    <p>We specialize in creating user-friendly interfaces using HTML, CSS, JavaScript, and React. Our front-end development ensures that users can easily navigate and interact with your website, creating a seamless experience across devices.</p>
                 </div>
-                <div class="faq-item">
+                <div class="core-services-item">
                     <h3>Back-end Development</h3>
-                    <p>We create the code that connects the web to a database and manages user connections. Our back-end development works in tandem with the front end to deliver the final product to the end user.</p>
+                    <p>Our back-end developers build robust systems that power your website. We connect your site to databases and manage user connections, ensuring smooth and secure operation for both the front-end and back-end functionalities.</p>
                 </div>
-                <div class="faq-item">
+                <div class="core-services-item">
                     <h3>Content Management Systems</h3>
-                    <p>We build/refresh your site using a <a href="/Services/ContentManagementSystems" class="paragraphlink">content management system</a>, such as <a href="/Capabilities/WebflowDesignAndDevelopment" class="paragraphlink">Webflow</a> and WordPress or <a href="/Capabilities/CustomSolutions" class="paragraphlink">custom</a>, so you don't have to worry about the technical details.</p>
+                    <p>We implement and customize content management systems (CMS) like <a href="/Services/ContentManagementSystems" class="paragraphlink">Webflow</a> and WordPress, as well as custom CMS solutions. This allows you to easily manage and update your content without worrying about the technical aspects.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+        <h2 class="textlarge centeredtext">Website & App Development Packages</h2>
+
+        <!-- Website Development Packages -->
+        <div class="package-item">
+            <h4>Website Development Packages</h4>
+            <div>
+                <strong>Starter Package:</strong>
+                <p>Pages: 1-3 pages. Ideal for individuals, bloggers, personal portfolios, or small projects. Includes custom landing page design, contact form integration, basic SEO setup, and a mobile-friendly, responsive design.</p>
+            </div>
+            <div>
+                <strong>Standard Package:</strong>
+                <p>Pages: 4-8 pages. Best suited for small businesses, consultants, or non-profits. Features custom homepage and inner page design, contact form, gallery, or blog, basic SEO optimization, social media integration, and mobile responsiveness.</p>
+            </div>
+            <div>
+                <strong>Premium Package:</strong>
+                <p>Pages: 8-16 pages. Perfect for growing businesses, service providers, or organizations. Includes custom homepage and service/product pages, blog or portfolio section, advanced SEO setup, social media and chat integration, and a newsletter subscription form.</p>
+            </div>
+            <div>
+                <strong>E-commerce Package:</strong>
+                <p>Pages: Varies depending on the product catalog. Designed for retail businesses, online stores, or product-based companies. Offers online store setup (using platforms like WooCommerce, Shopify, or Wix), payment gateway integration, inventory management, product pages, and basic SEO with user account management, shipping, and taxes.</p>
+            </div>
+        </div>
+
+        <!-- App Development Packages -->
+        <div class="package-item">
+            <h4>App Development Packages</h4>
+            <div>
+                <strong>Basic App:</strong>
+                <p>Ideal for simple apps with limited features. Includes user login and registration, basic UI/UX design, simple functionality (such as form submissions or calculators), and optional push notifications.</p>
+            </div>
+            <div>
+                <strong>Standard App:</strong>
+                <p>Suited for apps with medium complexity. Features user profiles and login systems, advanced UI/UX design with custom features, integration with third-party APIs, in-app messaging or notifications, and an admin dashboard for content management.</p>
+            </div>
+            <div>
+                <strong>Premium App:</strong>
+                <p>Designed for complex apps with custom features. Includes complete custom app design and development, multiple integrations (such as payment gateways or cloud storage), real-time features (e.g., chat or live tracking), advanced user roles, permissions, and an admin control panel with analytics and reports.</p>
             </div>
         </div>
     </section>
