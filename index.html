@@ -36,7 +36,7 @@
             text-align: center;
         }
 
-        /* Glassmorphism-style floating icon with no animation */
+        /* Fixed Chatbot Icon Container */
         .chatbot-icon-container {
             position: fixed;
             right: 20px;
@@ -165,6 +165,11 @@
             border-radius: 5px;
         }
 
+        /* Hide the chatbot icon on scroll */
+        .hide-chatbot-icon {
+            display: none;
+        }
+
         /* Responsive Media Queries */
         @media screen and (max-width: 768px) {
             .hero h1 {
@@ -270,6 +275,7 @@
     <section id="chatbot-section" class="chatbot-section">
         <div class="chat-icon" id="chat-icon">
             <!-- Chat bubble icon inside chatbot section -->
+            💬
         </div>
         <!-- Chatbot Window -->
         <div class="chatbot-window" id="chatbot-window">
@@ -292,6 +298,7 @@
         const sendMessageButton = document.getElementById("send-message");
         const chatInput = document.getElementById("chat-input");
         const chatbotMessages = document.getElementById("chatbot-messages");
+        const chatbotIconContainer = document.querySelector(".chatbot-icon-container");
 
         // Smooth scroll to the chatbot section when the icon is clicked
         chatbotIcon.addEventListener("click", () => {
@@ -319,6 +326,15 @@
                     chatbotMessages.innerHTML += `<p><strong>Tomie:</strong> Thanks for your message!</p>`;
                     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
                 }, 1000);
+            }
+        });
+
+        // Hide the chatbot icon when user scrolls down
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                chatbotIconContainer.classList.add("hide-chatbot-icon");
+            } else {
+                chatbotIconContainer.classList.remove("hide-chatbot-icon");
             }
         });
     </script>
