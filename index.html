@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Importing Roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Reset default styling */
         * {
@@ -22,11 +22,13 @@
             align-items: center;
             flex-direction: column;
             position: relative;
+            padding: 20px;
         }
 
         .hero h1 {
             font-size: 3rem;
             text-align: center;
+            font-weight: 700;
         }
 
         .hero p {
@@ -42,24 +44,24 @@
             transform: translateY(-50%);
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
             backdrop-filter: blur(10px);
             padding: 8px 12px;
             border-radius: 50px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             z-index: 1000;
+            transition: transform 0.3s ease-in-out;
         }
 
         .chatbot-icon-container:hover {
             transform: translateY(-50%) scale(1.05);
         }
 
-        /* Custom Chatbot Icon: Floating chat bubble */
         .chatbot-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -77,12 +79,11 @@
         }
 
         .chatbot-text {
-            font-size: 12px;
+            font-size: 14px;
             color: #fff;
             margin-left: 10px;
             font-weight: 500;
             font-family: 'Roboto', sans-serif;
-            max-width: 200px;
         }
 
         /* Chatbot Section */
@@ -94,13 +95,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-top: 120px;
         }
 
         /* Chat Icon in Chatbot Section */
         .chat-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -161,6 +163,90 @@
             color: white;
             border: none;
             border-radius: 5px;
+        }
+
+        /* Responsive Media Queries */
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .chatbot-icon-container {
+                right: 10px;
+                top: 60%;
+                transform: translateY(-50%);
+                padding: 6px 10px;
+            }
+
+            .chatbot-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .chatbot-text {
+                font-size: 12px;
+                margin-left: 8px;
+            }
+
+            .chatbot-section {
+                padding: 20px;
+            }
+
+            .chat-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .chatbot-window {
+                width: 100%;
+                max-width: 400px;
+                bottom: 60px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .chatbot-icon-container {
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 5px 8px;
+            }
+
+            .chatbot-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+
+            .chatbot-text {
+                font-size: 10px;
+                display: none; /* Hide text on very small screens */
+            }
+
+            .chat-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+            }
+
+            .chatbot-window {
+                width: 100%;
+                max-width: 350px;
+                bottom: 50px;
+            }
         }
     </style>
 </head>
