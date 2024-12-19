@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat Bot Popup</title>
+  <title>Advanced Chat Bot Popup</title>
   <style>
     /* Hero Section */
     .hero {
@@ -93,32 +93,28 @@
     /* Chatbot Popup Styling */
     .chat-popup {
       position: fixed;
-      bottom: 20px; /* Not too bottom */
-      right: 20px;
+      bottom: 30px; /* Slightly raised from bottom */
+      right: 30px;
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
-      border-radius: 30px;
-      padding: 15px 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+      border-radius: 40px;
+      padding: 20px 30px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
       cursor: pointer;
       z-index: 9999;
     }
 
-    /* Smooth Animation for the Chat Icon */
-    .chat-popup:hover {
-      animation: popUpAnimation 0.5s ease-in-out;
-    }
-
     /* Icon and Text Layout */
     .chat-icon {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+      transition: transform 0.3s ease;
     }
 
     .icon-img {
@@ -128,11 +124,21 @@
     }
 
     .chat-text {
-      font-size: 14px;
+      font-size: 16px;
       font-family: 'Roboto', sans-serif;
       color: #fff;
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.4;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover Effects for Icon and Text */
+    .chat-popup:hover .chat-icon {
+      transform: scale(1.1);
+    }
+
+    .chat-popup:hover .chat-text {
+      transform: translateX(5px);
     }
 
     /* Smooth Pop-Up Animation */
@@ -151,6 +157,7 @@
     .chat-popup.active {
       opacity: 1;
       visibility: visible;
+      transform: scale(1);
     }
 
     /* Chat Section */
@@ -207,7 +214,7 @@
   <!-- Chatbot Popup -->
   <div id="chatPopup" class="chat-popup">
     <div class="chat-icon">
-      <img src="whatsapp_icon.png" alt="Chat Icon" class="icon-img">
+      <img src="chat-icon.png" alt="Chat Icon" class="icon-img">
     </div>
     <div class="chat-text">
       Get quick answers with Tomie
