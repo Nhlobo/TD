@@ -20,6 +20,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            position: relative;
         }
 
         .hero h1 {
@@ -32,68 +33,73 @@
             text-align: center;
         }
 
-        /* Chatbot Icon */
-        .chatbot-icon {
+        /* Glassmorphism-style floating icon */
+        .chatbot-icon-container {
             position: fixed;
-            left: 20px;
-            bottom: 20px;
-            background-color: #25d366;
-            border-radius: 50%;
-            padding: 10px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 10px 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             z-index: 1000;
             transition: transform 0.3s ease-in-out;
         }
 
-        .chatbot-icon img {
-            width: 50px;
-            height: 50px;
+        .chatbot-icon-container:hover {
+            transform: translateY(-50%) scale(1.05);
         }
 
-        /* Chatbot Window */
-        .chatbot-window {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100%);
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            width: 300px;
-            max-height: 400px;
-            overflow-y: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            z-index: 999;
-            opacity: 0;
-        }
-
-        .chatbot-window.show {
-            transform: translateX(-50%) translateY(-100%);
-            opacity: 1;
-        }
-
-        .chatbot-header {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
+        .chatbot-icon {
+            width: 40px;
+            height: 40px;
             background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: white;
-            border-radius: 10px 10px 0 0;
+            font-size: 20px;
+            margin-right: 10px;
         }
 
-        .chatbot-header button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .chatbot-text {
+            font-size: 14px;
+            color: #fff;
+            max-width: 200px;
+            font-weight: bold;
         }
 
-        /* Add padding to chatbot content */
-        .chatbot-content {
-            padding: 10px;
-            font-size: 1rem;
+        .arrow {
+            margin-left: 10px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        /* Chatbot Section */
+        .chatbot-section {
+            padding: 40px;
+            background-color: #f1f1f1;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chatbot-window {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
     </style>
 </head>
@@ -105,38 +111,32 @@
         <p>Scroll down for more details.</p>
     </section>
 
-    <!-- Chatbot Icon -->
-    <div id="chatbot-icon" class="chatbot-icon">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/WhatsApp_icon.png" alt="Chatbot" />
+    <!-- Glassmorphism Chatbot Icon and Text -->
+    <div class="chatbot-icon-container" id="chatbot-icon">
+        <div class="chatbot-icon">?</div>
+        <div class="chatbot-text">Get quick answers with Tomie Chatbot</div>
+        <div class="arrow">↓</div>
     </div>
 
-    <!-- Chatbot Window -->
-    <div id="chatbot-window" class="chatbot-window">
-        <div class="chatbot-header">
-            <span>Chatbot</span>
-            <button id="close-chatbot">X</button>
-        </div>
-        <div class="chatbot-content">
+    <!-- Chatbot Section -->
+    <section id="chatbot-section" class="chatbot-section">
+        <div class="chatbot-window">
+            <h2>Chatbot</h2>
             <p>How can I assist you today?</p>
-            <!-- Chatbot interaction goes here -->
         </div>
-    </div>
+    </section>
 
     <script>
         // Get elements
         const chatbotIcon = document.getElementById("chatbot-icon");
-        const chatbotWindow = document.getElementById("chatbot-window");
-        const closeButton = document.getElementById("close-chatbot");
+        const chatbotSection = document.getElementById("chatbot-section");
 
-        // Toggle chatbot window visibility
+        // Smooth scroll to the chatbot section when the icon is clicked
         chatbotIcon.addEventListener("click", () => {
-            // If the window is hidden, show it, otherwise hide it
-            chatbotWindow.classList.toggle("show");
-        });
-
-        // Close the chatbot window when the close button is clicked
-        closeButton.addEventListener("click", () => {
-            chatbotWindow.classList.remove("show");
+            chatbotSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         });
     </script>
 
