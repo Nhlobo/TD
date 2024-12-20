@@ -5,109 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Web Development Services</title>
     <style>
-        /* FAQ Section */
-        .faq-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-            margin: 50px auto;
-            max-width: 100%; /* Ensure the section stretches across the page */
-            padding: 2rem;
-            text-align: center;
-            border-radius: 8px; /* Optional: Adds rounded corners */
-        }
+      /* FAQ Section */
+.faq-section {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+    margin: 50px auto;
+    max-width: 100%; /* Ensure the section stretches across the page */
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
 
-        .textlarge {
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-        }
+.textlarge {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
 
-        .centeredtext {
-            text-align: center;
-        }
+.centeredtext {
+    text-align: center;
+}
 
-        .corewebgrid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
+.corewebgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
 
-        .faq-item {
-            position: relative; /* Allow absolute positioning within the item */
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 20px;
-            text-align: left;
-        }
+.faq-item {
+    position: relative; /* Allow absolute positioning within the item */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: left;
+}
 
-        .faq-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
-        .faq-item h3 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            cursor: pointer;
-            background: #ffffff;
-            margin: 0;
-            transition: background 0.3s ease;
-            color: #374151;
-        }
+.faq-item h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: #ffffff;
+    margin: 0;
+    transition: background 0.3s ease;
+    color: #374151;
+}
 
-        .faq-item h3:hover {
-            background: #f0f0f0;
-        }
+.faq-item h3:hover {
+    background: #f0f0f0;
+}
 
-        .faq-item p {
-            padding: 15px 20px;
-            font-size: 1rem;
-            color: #374151;
-            background: #ffffff;
-            border-top: 1px solid #ccc;
-            transition: padding 0.3s ease;
-        }
+.faq-item p {
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #374151;
+    background: #ffffff;
+    border-top: 1px solid #ccc;
+    transition: padding 0.3s ease;
+}
 
-        .faq-item p a {
-            color: #00b0ff;
-            text-decoration: none;
-        }
+.faq-item p a {
+    color: #00b0ff;
+    text-decoration: none;
+}
 
-        .faq-item p a:hover {
-            text-decoration: underline;
-        }
+.faq-item p a:hover {
+    text-decoration: underline;
+}
 
-        .faq-item h3::after {
-            content: "+";
-            font-size: 1.5rem;
-            float: right;
-            color: #00b0ff;
-            transition: transform 0.3s ease;
-        }
+.faq-item h3::after {
+    content: "+";
+    font-size: 1.5rem;
+    float: right;
+    color: #00b0ff;
+    transition: transform 0.3s ease;
+}
 
-        .faq-item.active h3::after {
-            transform: rotate(45deg);
-        }
+.faq-item.active h3::after {
+    transform: rotate(45deg);
+}
 
-        /* Add an image to the top right of each faq-item */
-        .faq-item img {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 50px; /* Adjust the size of the image */
-            height: auto;
-            border-radius: 50%; /* Optional: Make the image circular */
-        }
+/* Adjust image position to top-right corner of the FAQ item */
+.faq-item img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px; /* Adjust the size of the image */
+    height: 60px; /* Ensure it's a square if you'd like */
+    border-radius: 50%; /* Optional: Make the image circular */
+    object-fit: cover; /* Ensure the image fits well within the circular frame */
+}
 
-        /* Optional: Responsive design for smaller screens */
-        @media (max-width: 768px) {
-            .corewebgrid {
-                grid-template-columns: 1fr;
-            }
-        }
+/* Optional: Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .corewebgrid {
+        grid-template-columns: 1fr;
+    }
+}
+  
     </style>
 </head>
 <body>
