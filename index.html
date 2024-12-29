@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>My Portfolio</title>
     <style>
         /* General Styling */
         body {
@@ -201,58 +201,67 @@
         <div class="container">
             <!-- Portfolio Title & Description -->
             <div class="portfolio-header">
-                <h2 class="section-title">Our Work</h2>
-                <p class="section-description">Take a look at the projects we have developed, ranging from web and mobile apps to e-commerce platforms and more.</p>
+                <h2 class="section-title">My Work</h2>
+                <p class="section-description">Explore the various projects I've developed, ranging from web applications to professional services websites.</p>
             </div>
 
             <!-- Filter Buttons (Dynamic) -->
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn" data-filter="app">Web Apps</button>
+                <button class="filter-btn" data-filter="services">Business Services</button>
             </div>
 
             <!-- Portfolio Grid -->
             <div class="portfolio-grid">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item" data-category="web">
-                    <img src="https://via.placeholder.com/300" alt="Project 1" class="portfolio-image">
+                <!-- Project 1: Madya Swa Nyuku Business Services -->
+                <div class="portfolio-item" data-category="services">
+                    <img src="https://via.placeholder.com/300" alt="Madya Swa Nyuku" class="portfolio-image">
                     <div class="portfolio-overlay">
-                        <h3 class="project-title">Project 1</h3>
-                        <p class="project-description">A modern e-commerce website.</p>
+                        <h3 class="project-title">Madya Swa Nyuku</h3>
+                        <p class="project-description">Eco-friendly pest control solutions for homes and businesses.</p>
                         <button class="view-details-btn" data-modal="modal1">View Details</button>
                     </div>
                 </div>
 
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item" data-category="mobile">
-                    <img src="https://via.placeholder.com/300" alt="Project 2" class="portfolio-image">
+                <!-- Project 2: TechConnect -->
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://via.placeholder.com/300" alt="TechConnect" class="portfolio-image">
                     <div class="portfolio-overlay">
-                        <h3 class="project-title">Project 2</h3>
-                        <p class="project-description">A mobile app for personal productivity.</p>
+                        <h3 class="project-title">TechConnect</h3>
+                        <p class="project-description">A landing page to showcase the latest technology, with real-time updates and job search functionality.</p>
                         <button class="view-details-btn" data-modal="modal2">View Details</button>
                     </div>
                 </div>
 
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item" data-category="ecommerce">
-                    <img src="https://via.placeholder.com/300" alt="Project 3" class="portfolio-image">
+                <!-- Project 3: Weather App -->
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://via.placeholder.com/300" alt="Weather App" class="portfolio-image">
                     <div class="portfolio-overlay">
-                        <h3 class="project-title">Project 3</h3>
-                        <p class="project-description">A sophisticated online store.</p>
+                        <h3 class="project-title">Weather App</h3>
+                        <p class="project-description">Fetches and displays weather data for South African cities using the OpenWeatherMap API.</p>
                         <button class="view-details-btn" data-modal="modal3">View Details</button>
                     </div>
                 </div>
 
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-item" data-category="design">
-                    <img src="https://via.placeholder.com/300" alt="Project 4" class="portfolio-image">
+                <!-- Project 4: Investment Calculator -->
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://via.placeholder.com/300" alt="Investment Calculator" class="portfolio-image">
                     <div class="portfolio-overlay">
-                        <h3 class="project-title">Project 4</h3>
-                        <p class="project-description">A sleek UI/UX design project.</p>
+                        <h3 class="project-title">Investment Calculator</h3>
+                        <p class="project-description">A web-based tool to calculate the future value of investments.</p>
                         <button class="view-details-btn" data-modal="modal4">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Project 5: Quran Quiz -->
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://via.placeholder.com/300" alt="Quran Quiz" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="project-title">Quran Quiz</h3>
+                        <p class="project-description">A quiz to test your knowledge of the Quran.</p>
+                        <button class="view-details-btn" data-modal="modal5">View Details</button>
                     </div>
                 </div>
             </div>
@@ -262,36 +271,45 @@
         <div id="modal1" class="portfolio-modal">
             <div class="modal-content">
                 <span class="close-btn" data-close="modal1">&times;</span>
-                <h3>Project 1 - E-commerce Website</h3>
-                <p>This project was focused on creating a responsive, user-friendly e-commerce platform...</p>
-                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+                <h3>Madya Swa Nyuku - Pest Control</h3>
+                <p>Eco-friendly, safe, and professional pest control solutions for homes and businesses.</p>
+                <a href="https://nhlobo.github.io/MADYASWANYUKU/" target="_blank" class="btn btn-primary">View Live</a>
             </div>
         </div>
 
         <div id="modal2" class="portfolio-modal">
             <div class="modal-content">
                 <span class="close-btn" data-close="modal2">&times;</span>
-                <h3>Project 2 - Mobile App</h3>
-                <p>Our mobile app for personal productivity helps users manage tasks...</p>
-                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+                <h3>TechConnect</h3>
+                <p>A project to showcase the latest technology with real-time updates, user rewards, and job search functionality.</p>
+                <a href="https://nhlobo.github.io/Landing-page-demo/" target="_blank" class="btn btn-primary">View Live</a>
             </div>
         </div>
 
         <div id="modal3" class="portfolio-modal">
             <div class="modal-content">
                 <span class="close-btn" data-close="modal3">&times;</span>
-                <h3>Project 3 - Online Store</h3>
-                <p>This is a fully responsive, feature-rich online store...</p>
-                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+                <h3>Weather App</h3>
+                <p>Displays current weather and 5-day forecast for South African cities using the OpenWeatherMap API.</p>
+                <a href="https://weather-ebon-beta.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
             </div>
         </div>
 
         <div id="modal4" class="portfolio-modal">
             <div class="modal-content">
                 <span class="close-btn" data-close="modal4">&times;</span>
-                <h3>Project 4 - UI/UX Design</h3>
-                <p>Our team designed a user-centric UI/UX layout...</p>
-                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+                <h3>Investment Calculator</h3>
+                <p>A web-based tool to calculate the future value of investments.</p>
+                <a href="https://nhlobo.github.io/calculator/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal5" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal5">&times;</span>
+                <h3>Quran Quiz</h3>
+                <p>A fun and educational quiz to test your knowledge of the Quran.</p>
+                <a href="https://nhlobo.github.io/quran-knowledge-quiz/" target="_blank" class="btn btn-primary">View Live</a>
             </div>
         </div>
     </section>
