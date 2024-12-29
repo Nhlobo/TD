@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Web & App Development Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Body Styles */
         body {
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
             color: #fff;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            font-family: 'Poppins', sans-serif;
+            position: relative;
         }
 
         /* Header Section */
         header {
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
+            background: rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
         }
 
         header h1 {
@@ -39,6 +39,11 @@
             color: #fff;
             text-transform: uppercase;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.1);
         }
 
         header p {
@@ -46,21 +51,24 @@
             color: #ccc;
             max-width: 900px;
             margin: 0 auto;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
         }
 
         /* Glassmorphism Effect Section */
         .glass-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            padding: 60px 20px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-top: 60px;
+            text-align: center;
         }
 
         .glass-section h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 600;
             color: #fff;
             margin-bottom: 20px;
         }
@@ -77,28 +85,34 @@
         .core-services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 50px;
+            transition: transform 0.3s ease;
         }
 
         .core-service {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .core-service:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .core-service img {
             width: 100%;
             height: auto;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .core-service img:hover {
+            transform: scale(1.05);
         }
 
         .core-service h3 {
@@ -115,32 +129,35 @@
 
         /* Showcase Projects Section */
         .showcase {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 100px 20px;
             text-align: center;
-            border-radius: 15px;
             margin-top: 60px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .showcase h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #fff;
             margin-bottom: 20px;
         }
 
         .showcase .section-title {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #bbb;
             margin-bottom: 50px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Showcase Grid */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 40px;
             margin-top: 40px;
+            transition: transform 0.3s ease;
         }
 
         .showcase-item {
@@ -152,14 +169,14 @@
         }
 
         .showcase-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .showcase-item img {
             width: 100%;
             height: auto;
-            display: block;
+            transition: transform 0.3s ease;
         }
 
         .showcase-item .info {
@@ -170,6 +187,7 @@
             font-size: 1.8rem;
             color: #fff;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .showcase-item p {
@@ -239,17 +257,16 @@
         </div>
     </section>
 
-    <!-- Showcase Projects Section -->
+    <!-- Showcase Section -->
     <section class="showcase">
-        <h2>Apps & Websites We’ve Created</h2>
-        <p class="section-title">Showcasing Our Work With Clients</p>
-
+        <h2>Our Recent Projects</h2>
+        <p class="section-title">Showcasing Our Expertise in Web & App Development</p>
         <div class="showcase-grid">
             <div class="showcase-item">
                 <img src="path/to/your/project1-image.jpg" alt="Project 1">
                 <div class="info">
                     <h3>Project One</h3>
-                    <p>Custom website development for an e-commerce platform. Built with React and Node.js, optimized for performance and scalability.</p>
+                    <p>Web app development for an e-commerce platform, including payment gateway integration and advanced product filtering.</p>
                     <p class="client">Client: ABC Corp.</p>
                 </div>
             </div>
