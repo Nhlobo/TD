@@ -48,13 +48,13 @@
             margin: 0 auto;
         }
 
-        /* Main Section */
-        .services-section {
+        /* Showcase Section */
+        .showcase-section {
             padding: 80px 20px;
             text-align: center;
         }
 
-        .services-section h2 {
+        .showcase-section h2 {
             font-size: 3rem;
             font-weight: 700;
             letter-spacing: 2px;
@@ -69,80 +69,55 @@
             text-transform: uppercase;
         }
 
-        /* Core Services Section */
-        .corewebgrid {
+        /* Showcase Grid */
+        .showcase-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
             margin-top: 40px;
         }
 
-        .service-item {
+        .showcase-item {
             background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-item:hover {
+        .showcase-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .service-item img {
-            max-width: 100%;
+        .showcase-item img {
+            width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            display: block;
         }
 
-        .service-item h3 {
-            font-size: 2rem;
+        .showcase-item .info {
+            padding: 20px;
+        }
+
+        .showcase-item h3 {
+            font-size: 1.8rem;
             color: #fff;
             margin-bottom: 15px;
         }
 
-        .service-item p {
+        .showcase-item p {
             font-size: 1.1rem;
             color: #bbb;
-            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
-        /* Abstract Shape Elements */
-        .abstract-shapes {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            width: 200px;
-            height: 200px;
-            z-index: -1;
-            opacity: 0.6;
-        }
-
-        .shape-1 {
-            top: 10%;
-            left: 15%;
-        }
-
-        .shape-2 {
-            top: 30%;
-            left: 60%;
-        }
-
-        .shape-3 {
-            top: 50%;
-            left: 30%;
+        .showcase-item .client {
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         /* Responsive Design */
@@ -151,16 +126,16 @@
                 font-size: 2.5rem;
             }
 
-            .services-section h2 {
+            .showcase-section h2 {
                 font-size: 2.5rem;
             }
 
-            .corewebgrid {
+            .showcase-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
 
-            .service-item {
+            .showcase-item {
                 padding: 20px;
             }
         }
@@ -174,34 +149,36 @@
         <p>Innovative and scalable solutions tailored to your business needs with cutting-edge technology.</p>
     </header>
 
-    <!-- Services Section -->
-    <section class="services-section">
-        <h2>Core Web Development Services</h2>
-        <p class="section-title">Crafting Excellence in Every Line of Code</p>
+    <!-- Showcase Section -->
+    <section class="showcase-section">
+        <h2>Apps & Websites We’ve Created</h2>
+        <p class="section-title">Showcasing Our Work With Clients</p>
 
-        <div class="corewebgrid">
-            <div class="service-item">
-                <img src="path/to/your/image1.jpg" alt="Front-end Development">
-                <h3>Front-end Development</h3>
-                <p>Create visually stunning and interactive interfaces using modern technologies such as HTML, CSS, JavaScript, and React.</p>
+        <div class="showcase-grid">
+            <div class="showcase-item">
+                <img src="path/to/your/project1-image.jpg" alt="Project 1">
+                <div class="info">
+                    <h3>Project One</h3>
+                    <p>Custom website development for an e-commerce platform. Built with React and Node.js, optimized for performance and scalability.</p>
+                    <p class="client">Client: ABC Corp.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <img src="path/to/your/image2.jpg" alt="Back-end Development">
-                <h3>Back-end Development</h3>
-                <p>Design robust systems for secure and efficient data management. Ensuring seamless integration with front-end services.</p>
+            <div class="showcase-item">
+                <img src="path/to/your/project2-image.jpg" alt="Project 2">
+                <div class="info">
+                    <h3>Project Two</h3>
+                    <p>Mobile app development for a travel agency. Integrated with live GPS tracking and payment gateway for seamless user experience.</p>
+                    <p class="client">Client: Travelify</p>
+                </div>
             </div>
-            <div class="service-item">
-                <img src="path/to/your/image3.jpg" alt="Content Management Systems">
-                <h3>Content Management Systems</h3>
-                <p>Build user-friendly platforms to manage content effortlessly, using popular CMS platforms like WordPress, Webflow, and custom solutions.</p>
+            <div class="showcase-item">
+                <img src="path/to/your/project3-image.jpg" alt="Project 3">
+                <div class="info">
+                    <h3>Project Three</h3>
+                    <p>Corporate website redesign for a tech startup. Focused on modern design, fast load times, and easy navigation.</p>
+                    <p class="client">Client: Tech Nexus</p>
+                </div>
             </div>
-        </div>
-
-        <!-- Abstract Shapes for Design -->
-        <div class="abstract-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
         </div>
     </section>
 
