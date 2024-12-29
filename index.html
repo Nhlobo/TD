@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Web & App Development Solutions</title>
     <style>
-        /* General Reset & Body Styles */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,251 +15,136 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #fff;
-            background: #121212;
+            color: #333;
+            background: #f8f9fa;
             padding: 0;
             margin: 0;
         }
 
         /* Section Styling */
         .services-section {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0.2)); /* Elegant gradient */
-            padding: 80px 20px;
-            color: white;
+            padding: 60px 20px;
             text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .textlarge {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: #00b0ff;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            color: #212529;
+            margin-bottom: 20px;
         }
 
         .section-title {
             margin-bottom: 40px;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #00b0ff;
+            color: #6c757d;
         }
 
         .corewebgrid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .service-item {
-            display: flex;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            align-items: center;
-            justify-content: space-between;
-            color: #f2f2f2;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .service-item img {
-            width: 45%; /* Adjust image width to take half of the card */
+            width: 100%;
             height: auto;
-            border-radius: 12px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .service-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .service-item .content {
-            width: 50%;
-            padding-left: 25px;
-            text-align: left;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
         .service-item h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            color: #00b0ff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            color: #212529;
+            margin-bottom: 10px;
         }
 
         .service-item p {
-            font-size: 1.1rem;
-            color: #ddd;
+            font-size: 1rem;
+            color: #495057;
             line-height: 1.8;
         }
 
-        .service-item a {
-            color: #00b0ff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .service-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Package Section Styling */
         .package-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            margin-bottom: 25px;
-        }
-
-        .package-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
         }
 
         .package-item h4 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #212529;
             margin-bottom: 20px;
-            text-transform: uppercase;
         }
 
         .package-item p {
-            font-size: 1.1rem;
-            color: #bbb;
+            font-size: 1rem;
+            color: #495057;
             line-height: 1.8;
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .corewebgrid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .service-item img {
-                width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .service-item .content {
-                width: 100%;
-                padding-left: 0;
-                text-align: center;
-            }
-
-            .service-item {
-                flex-direction: column;
-            }
-
-            .package-item {
-                padding: 20px;
-            }
-        }
-
         @media (max-width: 768px) {
-            .corewebgrid {
-                grid-template-columns: 1fr;
-            }
-
             .textlarge {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .section-title {
                 font-size: 1.5rem;
             }
         }
-
     </style>
 </head>
 <body>
 
-    <section class="services-section">
-        <!-- Section Header -->
-        <h2 class="textlarge">Our Web & App Development Solutions</h2>
+<section class="services-section">
+    <h2 class="textlarge">Our Web & App Development Solutions</h2>
+    <div class="section-title">Core Web Development Services</div>
 
-        <div class="section-title">Core Web Development Services</div>
-
-        <!-- Core Web Development Services Grid -->
-        <div class="corewebgrid">
-            <div class="service-item">
-                <img src="path/to/your/image1.jpg" alt="Front-end Development">
-                <div class="content">
-                    <h3>Front-end Development</h3>
-                    <p>Our front-end development team excels at creating visually stunning and interactive user interfaces using HTML, CSS, JavaScript, and React. We ensure seamless interactions that are both user-friendly and optimized for performance across devices.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="path/to/your/image2.jpg" alt="Back-end Development">
-                <div class="content">
-                    <h3>Back-end Development</h3>
-                    <p>We design robust back-end systems ensuring efficient data management, secure user interactions, and seamless integration with front-end services to deliver powerful, scalable applications.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="path/to/your/image3.jpg" alt="Content Management Systems">
-                <div class="content">
-                    <h3>Content Management Systems</h3>
-                    <p>We specialize in CMS platforms such as Webflow, WordPress, and custom CMS solutions to provide user-friendly systems for managing content with ease, empowering you to take control without technical expertise.</p>
-                </div>
-            </div>
+    <div class="corewebgrid">
+        <div class="service-item">
+            <img src="path/to/your/image1.jpg" alt="Front-end Development">
+            <h3>Front-end Development</h3>
+            <p>Create visually stunning and interactive interfaces using modern technologies.</p>
         </div>
-
-        <!-- Packages Section -->
-        <div class="section-title">Our Development Packages</div>
-
-        <!-- Website Development Packages -->
-        <div class="package-item">
-            <h4>Website Development Packages</h4>
-            <div>
-                <strong>Starter Package:</strong>
-                <p>Ideal for individuals and small businesses. Includes custom landing page design, contact form, SEO setup, and responsive design (1-3 pages).</p>
-            </div>
-            <div>
-                <strong>Standard Package:</strong>
-                <p>Perfect for growing businesses. Includes custom homepage, inner pages, gallery/blog, SEO optimization, and social media integration (4-8 pages).</p>
-            </div>
-            <div>
-                <strong>Premium Package:</strong>
-                <p>For large businesses and organizations. Includes a custom homepage, multiple service/product pages, SEO, social media/chat integration, and newsletter (8-16 pages).</p>
-            </div>
-            <div>
-                <strong>E-commerce Package:</strong>
-                <p>Complete e-commerce solution with store setup, payment integration, inventory management, product pages, user accounts, and shipping/tax handling (custom pages based on catalog).</p>
-            </div>
+        <div class="service-item">
+            <img src="path/to/your/image2.jpg" alt="Back-end Development">
+            <h3>Back-end Development</h3>
+            <p>Design robust systems for secure and efficient data management.</p>
         </div>
-
-        <!-- App Development Packages -->
-        <div class="package-item">
-            <h4>App Development Packages</h4>
-            <div>
-                <strong>Basic App:</strong>
-                <p>Simple apps with essential features like user login, form submission, and optional push notifications.</p>
-            </div>
-            <div>
-                <strong>Standard App:</strong>
-                <p>Medium complexity apps with user profiles, custom design, third-party API integration, and in-app messaging features.</p>
-            </div>
-            <div>
-                <strong>Premium App:</strong>
-                <p>Advanced apps with real-time functionalities, complex integrations (payment gateways, cloud storage), advanced user roles, and comprehensive analytics/reports.</p>
-            </div>
+        <div class="service-item">
+            <img src="path/to/your/image3.jpg" alt="Content Management Systems">
+            <h3>Content Management Systems</h3>
+            <p>Build user-friendly platforms to manage content effortlessly.</p>
         </div>
-    </section>
+    </div>
+
+    <div class="package-item">
+        <h4>Website Development Packages</h4>
+        <p>Various packages tailored to your needs, from starter solutions to e-commerce platforms.</p>
+    </div>
+</section>
 
 </body>
-</html>
+            </html>
