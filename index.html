@@ -26,51 +26,53 @@
 
         /* Header Section */
         header {
-            padding: 120px 20px;
+            padding: 80px 20px;
             text-align: center;
             background: rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
+            border-bottom: 2px solid #fff;
         }
 
         header h1 {
-            font-size: 4rem;
-            letter-spacing: 2px;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
             color: #fff;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
             transition: transform 0.3s ease;
         }
 
         header h1:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         header p {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 900px;
+            font-size: 1.1rem;
+            color: #ddd;
+            max-width: 800px;
             margin: 0 auto;
             letter-spacing: 0.5px;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         /* Glassmorphism Effect Section */
         .glass-section {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            padding: 60px 20px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 50px 20px;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
             margin-top: 60px;
             text-align: center;
         }
 
         .glass-section h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 600;
             color: #fff;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .glass-section p {
@@ -81,122 +83,120 @@
             margin: 0 auto;
         }
 
-        /* Core Services Grid */
-        .core-services {
+        /* Service Grid */
+        .services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
             margin-top: 50px;
-            transition: transform 0.3s ease;
         }
 
-        .core-service {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .service {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .core-service:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        .service:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
-        .core-service img {
+        .service img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: transform 0.3s ease;
         }
 
-        .core-service img:hover {
+        .service img:hover {
             transform: scale(1.05);
         }
 
-        .core-service h3 {
+        .service h3 {
             font-size: 1.8rem;
             color: #fff;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
-        .core-service p {
+        .service p {
             font-size: 1.1rem;
             color: #ddd;
             margin-top: 10px;
         }
 
         /* Showcase Projects Section */
-        .showcase {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 100px 20px;
+        .projects {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 80px 20px;
             text-align: center;
             margin-top: 60px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
-        .showcase h2 {
-            font-size: 3.5rem;
+        .projects h2 {
+            font-size: 3.2rem;
             color: #fff;
             margin-bottom: 20px;
         }
 
-        .showcase .section-title {
-            font-size: 1.5rem;
+        .projects .section-title {
+            font-size: 1.4rem;
             color: #bbb;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         /* Showcase Grid */
-        .showcase-grid {
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 40px;
-            transition: transform 0.3s ease;
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        .showcase-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
+        .project-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .showcase-item:hover {
+        .project-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .showcase-item img {
+        .project-item img {
             width: 100%;
             height: auto;
             transition: transform 0.3s ease;
         }
 
-        .showcase-item .info {
-            padding: 20px;
+        .project-item .info {
+            padding: 25px;
         }
 
-        .showcase-item h3 {
+        .project-item h3 {
             font-size: 1.8rem;
             color: #fff;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             letter-spacing: 1px;
         }
 
-        .showcase-item p {
+        .project-item p {
             font-size: 1.1rem;
             color: #bbb;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .showcase-item .client {
+        .project-item .client {
             font-size: 1rem;
             color: #fff;
             font-weight: 600;
@@ -206,11 +206,11 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .core-services {
+            .services {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .showcase-grid {
+            .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -224,19 +224,19 @@
                 font-size: 2.5rem;
             }
 
-            .core-services {
+            .services {
                 grid-template-columns: 1fr;
             }
 
-            .showcase-grid {
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            .core-service h3, .showcase-item h3 {
-                font-size: 1.5rem;
+            .service h3, .project-item h3 {
+                font-size: 1.6rem;
             }
 
-            .core-service p, .showcase-item p {
+            .service p, .project-item p {
                 font-size: 1rem;
             }
 
@@ -247,7 +247,7 @@
 
         @media (max-width: 480px) {
             header {
-                padding: 80px 20px;
+                padding: 60px 20px;
             }
 
             header h1 {
@@ -258,11 +258,11 @@
                 font-size: 2rem;
             }
 
-            .core-service h3, .showcase-item h3 {
-                font-size: 1.4rem;
+            .service h3, .project-item h3 {
+                font-size: 1.5rem;
             }
 
-            .core-service p, .showcase-item p {
+            .service p, .project-item p {
                 font-size: 0.95rem;
             }
         }
@@ -283,18 +283,18 @@
     </section>
 
     <!-- Core Web Services Grid -->
-    <section class="core-services">
-        <div class="core-service">
+    <section class="services">
+        <div class="service">
             <img src="LOGO.jpg" alt="Front-end Development">
             <h3>Front-end Development</h3>
             <p>Create visually stunning and interactive interfaces using modern technologies.</p>
         </div>
-        <div class="core-service">
+        <div class="service">
             <img src="LOGO.jpg" alt="Back-end Development">
             <h3>Back-end Development</h3>
             <p>Design robust systems for secure and efficient data management.</p>
         </div>
-        <div class="core-service">
+        <div class="service">
             <img src="LOGO.jpg" alt="Content Management Systems">
             <h3>Content Management Systems</h3>
             <p>Build user-friendly platforms to manage content effortlessly.</p>
@@ -302,11 +302,11 @@
     </section>
 
     <!-- Showcase Section -->
-    <section class="showcase">
+    <section class="projects">
         <h2>Our Recent Projects</h2>
         <p class="section-title">Showcasing Our Expertise in Web & App Development</p>
-        <div class="showcase-grid">
-            <div class="showcase-item">
+        <div class="projects-grid">
+            <div class="project-item">
                 <img src="LOGO.jpg" alt="Project 1">
                 <div class="info">
                     <h3>Project One</h3>
@@ -314,7 +314,7 @@
                     <p class="client">Client: ABC Corp.</p>
                 </div>
             </div>
-            <div class="showcase-item">
+            <div class="project-item">
                 <img src="LOGO.jpg" alt="Project 2">
                 <div class="info">
                     <h3>Project Two</h3>
@@ -322,7 +322,7 @@
                     <p class="client">Client: XYZ Inc.</p>
                 </div>
             </div>
-            <div class="showcase-item">
+            <div class="project-item">
                 <img src="LOGO.jpg" alt="Project 3">
                 <div class="info">
                     <h3>Project Three</h3>
