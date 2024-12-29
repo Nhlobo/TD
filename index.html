@@ -90,6 +90,7 @@
             transition: opacity 0.3s ease;
         }
 
+        /* Hover Effects for Image */
         .portfolio-item:hover .portfolio-image {
             opacity: 0.8;
         }
@@ -111,6 +112,27 @@
         }
 
         .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* Add Text/Icons Overlays */
+        .tap-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .tap-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .portfolio-item:hover .tap-text,
+        .portfolio-item:hover .tap-icon {
             opacity: 1;
         }
 
@@ -175,23 +197,6 @@
             cursor: pointer;
             color: #333;
         }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .portfolio-item {
-            animation: fadeIn 0.5s ease-out;
-        }
     </style>
 </head>
 
@@ -217,8 +222,10 @@
             <div class="portfolio-grid">
                 <!-- Project 1: Madya Swa Nyuku Business Services -->
                 <div class="portfolio-item" data-category="services">
-                    <img src="logo-Photoroom.png" alt="Madya Swa Nyuku" class="portfolio-image">
+                    <img src="Techconnect.png" alt="Madya Swa Nyuku" class="portfolio-image">
                     <div class="portfolio-overlay">
+                        <p class="tap-text">Tap for Details</p>
+                        <p class="tap-icon">📖</p>
                         <h3 class="project-title">Madya Swa Nyuku</h3>
                         <p class="project-description">Eco-friendly pest control solutions for homes and businesses.</p>
                         <button class="view-details-btn" data-modal="modal1">View Details</button>
@@ -227,8 +234,10 @@
 
                 <!-- Project 2: TechConnect -->
                 <div class="portfolio-item" data-category="web">
-                    <img src="logo-Photoroom.png" alt="TechConnect" class="portfolio-image">
+                    <img src="https://via.placeholder.com/300" alt="TechConnect" class="portfolio-image">
                     <div class="portfolio-overlay">
+                        <p class="tap-text">Tap for Details</p>
+                        <p class="tap-icon">💻</p>
                         <h3 class="project-title">TechConnect</h3>
                         <p class="project-description">A landing page to showcase the latest technology, with real-time updates and job search functionality.</p>
                         <button class="view-details-btn" data-modal="modal2">View Details</button>
@@ -237,8 +246,10 @@
 
                 <!-- Project 3: Weather App -->
                 <div class="portfolio-item" data-category="app">
-                    <img src="logo-Photoroom.png" alt="Weather App" class="portfolio-image">
+                    <img src="https://via.placeholder.com/300" alt="Weather App" class="portfolio-image">
                     <div class="portfolio-overlay">
+                        <p class="tap-text">Tap for Details</p>
+                        <p class="tap-icon">🌤️</p>
                         <h3 class="project-title">Weather App</h3>
                         <p class="project-description">Fetches and displays weather data for South African cities using the OpenWeatherMap API.</p>
                         <button class="view-details-btn" data-modal="modal3">View Details</button>
@@ -247,8 +258,10 @@
 
                 <!-- Project 4: Investment Calculator -->
                 <div class="portfolio-item" data-category="app">
-                    <img src="logo-Photoroom.png" alt="Investment Calculator" class="portfolio-image">
+                    <img src="https://via.placeholder.com/300" alt="Investment Calculator" class="portfolio-image">
                     <div class="portfolio-overlay">
+                        <p class="tap-text">Tap for Details</p>
+                        <p class="tap-icon">💰</p>
                         <h3 class="project-title">Investment Calculator</h3>
                         <p class="project-description">A web-based tool to calculate the future value of investments.</p>
                         <button class="view-details-btn" data-modal="modal4">View Details</button>
@@ -257,8 +270,10 @@
 
                 <!-- Project 5: Quran Quiz -->
                 <div class="portfolio-item" data-category="app">
-                    <img src="logo-Photoroom.png" alt="Quran Quiz" class="portfolio-image">
+                    <img src="https://via.placeholder.com/300" alt="Quran Quiz" class="portfolio-image">
                     <div class="portfolio-overlay">
+                        <p class="tap-text">Tap for Details</p>
+                        <p class="tap-icon">📚</p>
                         <h3 class="project-title">Quran Quiz</h3>
                         <p class="project-description">A quiz to test your knowledge of the Quran.</p>
                         <button class="view-details-btn" data-modal="modal5">View Details</button>
