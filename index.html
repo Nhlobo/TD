@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Web & App Development Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Global Reset */
         * {
@@ -16,13 +16,11 @@
 
         /* Body Styles */
         body {
-            font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-            color: #e0e0e0;
+            color: #fff;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
             overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* Header Section */
@@ -31,11 +29,13 @@
             text-align: center;
             position: relative;
             z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
         }
 
         header h1 {
             font-size: 4rem;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #fff;
             text-transform: uppercase;
             margin-bottom: 20px;
@@ -44,86 +44,91 @@
         header p {
             font-size: 1.2rem;
             color: #ccc;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Core Web Development Section */
-        section {
-            padding: 80px 20px;
-            text-align: center;
+        /* Glassmorphism Effect Section */
+        .glass-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
         }
 
-        section h2 {
-            font-size: 3rem;
+        .glass-section h2 {
+            font-size: 2.8rem;
             font-weight: 700;
-            color: #004aad;
+            color: #fff;
             margin-bottom: 20px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
-        section p {
+        .glass-section p {
             font-size: 1.2rem;
-            color: #bbb;
-            max-width: 800px;
+            color: #ddd;
+            line-height: 1.8;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Core Web Services Grid */
-        .corewebgrid {
+        /* Core Services Grid */
+        .core-services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 40px;
         }
 
-        .service-item {
+        .core-service {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            padding: 20px;
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-item:hover {
+        .core-service:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .service-item img {
+        .core-service img {
             width: 100%;
             height: auto;
             border-radius: 8px;
         }
 
-        .service-item h3 {
+        .core-service h3 {
             font-size: 1.8rem;
             color: #fff;
             margin-top: 15px;
         }
 
-        .service-item p {
-            font-size: 1rem;
-            color: #bbb;
+        .core-service p {
+            font-size: 1.1rem;
+            color: #ddd;
             margin-top: 10px;
         }
 
-        /* Showcase Section */
-        .showcase-section {
+        /* Showcase Projects Section */
+        .showcase {
+            background: rgba(0, 0, 0, 0.4);
             padding: 80px 20px;
             text-align: center;
+            border-radius: 15px;
+            margin-top: 60px;
         }
 
-        .showcase-section h2 {
+        .showcase h2 {
             font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
             color: #fff;
+            margin-bottom: 20px;
         }
 
-        .showcase-section .section-title {
+        .showcase .section-title {
             font-size: 1.2rem;
             color: #bbb;
             margin-bottom: 50px;
@@ -140,8 +145,8 @@
 
         .showcase-item {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -177,27 +182,26 @@
             font-size: 1rem;
             color: #fff;
             font-weight: 600;
-            letter-spacing: 1px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .core-services {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
             header h1 {
                 font-size: 2.5rem;
             }
 
             section h2 {
                 font-size: 2.5rem;
-            }
-
-            .corewebgrid {
-                grid-template-columns: 1fr;
-            }
-
-            .showcase-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
             }
         }
     </style>
@@ -211,32 +215,32 @@
     </header>
 
     <!-- Core Web Development Section -->
-    <section>
+    <section class="glass-section">
         <h2>Core Web Development Services</h2>
         <p>We offer custom web and app development solutions that empower businesses to scale, increase user engagement, and optimize performance with cutting-edge technologies.</p>
     </section>
 
     <!-- Core Web Services Grid -->
-    <section class="corewebgrid">
-        <div class="service-item">
+    <section class="core-services">
+        <div class="core-service">
             <img src="path/to/your/image1.jpg" alt="Front-end Development">
             <h3>Front-end Development</h3>
             <p>Create visually stunning and interactive interfaces using modern technologies.</p>
         </div>
-        <div class="service-item">
+        <div class="core-service">
             <img src="path/to/your/image2.jpg" alt="Back-end Development">
             <h3>Back-end Development</h3>
             <p>Design robust systems for secure and efficient data management.</p>
         </div>
-        <div class="service-item">
+        <div class="core-service">
             <img src="path/to/your/image3.jpg" alt="Content Management Systems">
             <h3>Content Management Systems</h3>
             <p>Build user-friendly platforms to manage content effortlessly.</p>
         </div>
     </section>
 
-    <!-- Showcase Section -->
-    <section class="showcase-section">
+    <!-- Showcase Projects Section -->
+    <section class="showcase">
         <h2>Apps & Websites We’ve Created</h2>
         <p class="section-title">Showcasing Our Work With Clients</p>
 
@@ -253,16 +257,16 @@
                 <img src="path/to/your/project2-image.jpg" alt="Project 2">
                 <div class="info">
                     <h3>Project Two</h3>
-                    <p>Mobile app development for a travel agency. Integrated with live GPS tracking and payment gateway for seamless user experience.</p>
-                    <p class="client">Client: Travelify</p>
+                    <p>Mobile app development for a social networking platform. Integrated with real-time chat features and seamless UI.</p>
+                    <p class="client">Client: XYZ Inc.</p>
                 </div>
             </div>
             <div class="showcase-item">
                 <img src="path/to/your/project3-image.jpg" alt="Project 3">
                 <div class="info">
                     <h3>Project Three</h3>
-                    <p>Corporate website redesign for a tech startup. Focused on modern design, fast load times, and easy navigation.</p>
-                    <p class="client">Client: Tech Nexus</p>
+                    <p>A CMS for a global news platform. Custom solutions for multilingual content management and real-time updates.</p>
+                    <p class="client">Client: News World</p>
                 </div>
             </div>
         </div>
