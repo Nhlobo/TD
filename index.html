@@ -48,6 +48,67 @@
             margin: 0 auto;
         }
 
+        /* Core Web Development Section */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #004aad;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #bbb;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Core Web Services Grid */
+        .corewebgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-top: 15px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #bbb;
+            margin-top: 10px;
+        }
+
         /* Showcase Section */
         .showcase-section {
             padding: 80px 20px;
@@ -62,7 +123,7 @@
             color: #fff;
         }
 
-        .section-title {
+        .showcase-section .section-title {
             font-size: 1.2rem;
             color: #bbb;
             margin-bottom: 50px;
@@ -126,17 +187,17 @@
                 font-size: 2.5rem;
             }
 
-            .showcase-section h2 {
+            section h2 {
                 font-size: 2.5rem;
+            }
+
+            .corewebgrid {
+                grid-template-columns: 1fr;
             }
 
             .showcase-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
-            }
-
-            .showcase-item {
-                padding: 20px;
             }
         }
     </style>
@@ -146,8 +207,33 @@
     <!-- Header Section -->
     <header>
         <h1>Our Web & App Development Solutions</h1>
-        <p>Innovative and scalable solutions tailored to your business needs with cutting-edge technology.</p>
+        <p>Innovative and scalable solutions tailored to your business needs.</p>
     </header>
+
+    <!-- Core Web Development Section -->
+    <section>
+        <h2>Core Web Development Services</h2>
+        <p>We offer custom web and app development solutions that empower businesses to scale, increase user engagement, and optimize performance with cutting-edge technologies.</p>
+    </section>
+
+    <!-- Core Web Services Grid -->
+    <section class="corewebgrid">
+        <div class="service-item">
+            <img src="path/to/your/image1.jpg" alt="Front-end Development">
+            <h3>Front-end Development</h3>
+            <p>Create visually stunning and interactive interfaces using modern technologies.</p>
+        </div>
+        <div class="service-item">
+            <img src="path/to/your/image2.jpg" alt="Back-end Development">
+            <h3>Back-end Development</h3>
+            <p>Design robust systems for secure and efficient data management.</p>
+        </div>
+        <div class="service-item">
+            <img src="path/to/your/image3.jpg" alt="Content Management Systems">
+            <h3>Content Management Systems</h3>
+            <p>Build user-friendly platforms to manage content effortlessly.</p>
+        </div>
+    </section>
 
     <!-- Showcase Section -->
     <section class="showcase-section">
