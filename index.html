@@ -9,7 +9,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Ensure consistent box sizing */
+            box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
         }
 
@@ -17,7 +17,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-            color: #e0e0e0;  /* Light text color to stand out against the dark background */
+            color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
             margin: 0;
@@ -33,9 +33,9 @@
         header {
             padding: 100px 20px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.5);  /* Semi-transparent background for header */
             position: relative;
             overflow: hidden;
+            z-index: 2;
         }
 
         header h1 {
@@ -66,77 +66,111 @@
             }
         }
 
-        /* Core Web Development Section */
-        .corewebgrid {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            margin-top: 60px;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-
-        .service-item {
-            background: rgba(255, 255, 255, 0.1); /* Slight opacity for glassmorphism */
-            backdrop-filter: blur(10px); /* Frosted glass effect */
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            max-width: 350px;
-            text-align: center;
-            margin: 0 auto;
-            margin-bottom: 40px;
-            width: 100%;
-        }
-
-        .service-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .service-item h3 {
-            font-size: 1.8rem;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .service-item p {
-            font-size: 1rem;
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Gradient Background for "Why Choose Us?" Section */
-        .gradient-background {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)); /* Glassmorphism gradient */
-            backdrop-filter: blur(10px); /* Frosted glass effect */
+        /* Main Section with AI-Inspired Design */
+        .ai-section {
+            position: relative;
             padding: 80px 20px;
-            color: white;
+            background: transparent;
             text-align: center;
+            z-index: 1;
         }
 
-        .gradient-background h2 {
+        .ai-section h2 {
             font-size: 3rem;
             font-weight: 700;
             letter-spacing: 2px;
             margin-bottom: 20px;
+            color: #fff;
+            animation: fadeInUp 1.5s ease-out;
         }
 
-        .gradient-background p {
+        .ai-section p {
             font-size: 1.2rem;
             line-height: 1.8;
             max-width: 900px;
             margin: 0 auto;
             color: #e0e0e0;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Interactive Glowing Effect for Section */
+        .ai-shapes {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .ai-shapes .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: glowing 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Glowing animation for the shapes */
+        @keyframes glowing {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+        }
+
+        /* Shapes Sizes and Animations */
+        .circle-1 {
+            top: 10%;
+            left: 20%;
+            width: 200px;
+            height: 200px;
+            animation-duration: 6s;
+        }
+
+        .circle-2 {
+            top: 30%;
+            left: 50%;
+            width: 250px;
+            height: 250px;
+            animation-duration: 5s;
+        }
+
+        .circle-3 {
+            top: 50%;
+            left: 70%;
+            width: 150px;
+            height: 150px;
+            animation-duration: 7s;
+        }
+
+        /* Footer Section (optional for website) */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            margin-top: 50px;
         }
 
         /* Responsive Design */
@@ -145,18 +179,17 @@
                 font-size: 2.5rem;
             }
 
-            section h2 {
+            .ai-section h2 {
                 font-size: 2.5rem;
             }
 
-            .service-item {
-                padding: 30px 20px;
-                margin-bottom: 20px;
-                width: 100%;
+            .ai-section p {
+                font-size: 1.1rem;
             }
 
-            .gradient-background h2 {
-                font-size: 2rem;
+            .circle-1, .circle-2, .circle-3 {
+                width: 100px;
+                height: 100px;
             }
         }
     </style>
@@ -166,39 +199,26 @@
     <!-- Header Section -->
     <header>
         <h1>Our Web & App Development Solutions</h1>
-        <p>Innovative and scalable solutions tailored to your business needs.</p>
+        <p>Innovative and scalable solutions tailored to your business needs with cutting-edge technology.</p>
     </header>
 
-    <!-- Core Web Development Section -->
-    <section>
-        <h2>Core Web Development Services</h2>
-        <p>We offer custom web and app development solutions that empower businesses to scale, increase user engagement, and optimize performance with cutting-edge technologies.</p>
-    </section>
+    <!-- AI-Inspired Section -->
+    <section class="ai-section">
+        <h2>Transforming the Future of Web Development</h2>
+        <p>We leverage the latest in technology, creating intelligent and interactive experiences for web and mobile platforms. Let's build something that matters.</p>
 
-    <!-- Core Web Services Grid -->
-    <section class="corewebgrid">
-        <div class="service-item">
-            <img src="path/to/your/image1.jpg" alt="Front-end Development">
-            <h3>Front-end Development</h3>
-            <p>Create visually stunning and interactive interfaces using modern technologies.</p>
-        </div>
-        <div class="service-item">
-            <img src="path/to/your/image2.jpg" alt="Back-end Development">
-            <h3>Back-end Development</h3>
-            <p>Design robust systems for secure and efficient data management.</p>
-        </div>
-        <div class="service-item">
-            <img src="path/to/your/image3.jpg" alt="Content Management Systems">
-            <h3>Content Management Systems</h3>
-            <p>Build user-friendly platforms to manage content effortlessly.</p>
+        <!-- AI Shapes for Design -->
+        <div class="ai-shapes">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
         </div>
     </section>
 
-    <!-- Gradient Background Section -->
-    <section class="gradient-background">
-        <h2>Why Choose Us?</h2>
-        <p>We combine performance-driven development with thoughtful design to ensure your applications are not only powerful but also user-friendly and visually stunning. Our solutions are built to grow with your business.</p>
-    </section>
+    <!-- Optional Footer Section -->
+    <footer>
+        <p>&copy; 2024 Web & App Development. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
