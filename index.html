@@ -3,217 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Web & App Development Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Web & App Development Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
 
         /* Body Styles */
         body {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
+            font-size: 16px;
+            padding: 0;
         }
 
         /* Header Section */
         header {
-            padding: 120px 20px;
+            background-color: #4CAF50;
+            color: #fff;
             text-align: center;
-            background: rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 2;
+            padding: 80px 20px;
         }
 
         header h1 {
-            font-size: 4rem;
-            letter-spacing: 2px;
-            color: #fff;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        header h1:hover {
-            transform: scale(1.1);
         }
 
         header p {
             font-size: 1.2rem;
-            color: #ccc;
-            max-width: 900px;
-            margin: 0 auto;
-            letter-spacing: 0.5px;
-            line-height: 1.8;
-        }
-
-        /* Glassmorphism Section */
-        .glass-section {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            padding: 80px 20px;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-            margin-top: 60px;
-            text-align: center;
-        }
-
-        .glass-section h2 {
-            font-size: 3rem;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .glass-section p {
-            font-size: 1.2rem;
             color: #ddd;
-            line-height: 1.8;
             max-width: 900px;
             margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
-        /* Full Width Section (No Cards) */
+        /* Service Section */
         .service-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 80px;
+            padding: 80px 20px;
             text-align: center;
-            padding: 0 20px;
+        }
+
+        .service-section h2 {
+            font-size: 2.8rem;
+            color: #333;
+            margin-bottom: 40px;
         }
 
         .service {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 900px;
+            margin: 0 auto 40px;
             text-align: center;
-        }
-
-        .service:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .service img {
             width: 100%;
             height: auto;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
             margin-bottom: 20px;
-        }
-
-        .service img:hover {
-            transform: scale(1.05);
+            max-width: 600px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .service h3 {
             font-size: 2rem;
-            color: #fff;
-            margin-top: 15px;
-            letter-spacing: 1px;
+            color: #333;
+            margin-bottom: 15px;
         }
 
         .service p {
             font-size: 1.1rem;
-            color: #ddd;
-            margin-top: 10px;
+            color: #777;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
-        /* Showcase Projects Section */
+        /* Showcase Section */
         .showcase {
-            background: rgba(0, 0, 0, 0.6);
+            background-color: #fff;
             padding: 80px 20px;
             text-align: center;
-            margin-top: 60px;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
         .showcase h2 {
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            color: #333;
+            margin-bottom: 40px;
         }
 
-        .showcase .section-title {
-            font-size: 1.5rem;
-            color: #bbb;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Showcase Grid */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
+            gap: 40px;
+            padding: 0 20px;
         }
 
         .showcase-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 10px;
-            overflow: hidden;
-            padding: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .showcase-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background-color: #f9f9f9;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
         }
 
         .showcase-item img {
             width: 100%;
             height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .showcase-item .info {
-            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
         }
 
         .showcase-item h3 {
             font-size: 1.8rem;
-            color: #fff;
+            color: #333;
             margin-bottom: 10px;
-            letter-spacing: 1px;
         }
 
         .showcase-item p {
-            font-size: 1.1rem;
-            color: #bbb;
+            font-size: 1rem;
+            color: #777;
             margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .showcase-item .client {
-            font-size: 1rem;
-            color: #fff;
+            font-size: 0.9rem;
+            color: #888;
             font-weight: 600;
-            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .service-section {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .showcase-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -224,41 +154,30 @@
                 font-size: 2.5rem;
             }
 
-            .glass-section h2 {
-                font-size: 2.5rem;
-            }
-
-            .service-section {
-                grid-template-columns: 1fr;
-            }
-
-            .showcase-grid {
-                grid-template-columns: 1fr;
+            .service-section h2,
+            .showcase h2 {
+                font-size: 2rem;
             }
 
             .service h3, .showcase-item h3 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             .service p, .showcase-item p {
                 font-size: 1rem;
             }
 
-            header p {
-                font-size: 1rem;
+            .showcase-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 480px) {
             header {
-                padding: 80px 20px;
+                padding: 60px 20px;
             }
 
             header h1 {
-                font-size: 2rem;
-            }
-
-            .glass-section h2 {
                 font-size: 2rem;
             }
 
@@ -269,6 +188,10 @@
             .service p, .showcase-item p {
                 font-size: 0.95rem;
             }
+
+            .showcase-item {
+                padding: 30px;
+            }
         }
     </style>
 </head>
@@ -276,63 +199,55 @@
 
     <!-- Header Section -->
     <header>
-        <h1>Our Web & App Development Solutions</h1>
-        <p>Innovative and scalable solutions tailored to your business needs.</p>
+        <h1>Web & App Development Solutions</h1>
+        <p>We create tailor-made solutions that empower your business to scale and thrive in the digital world.</p>
     </header>
 
-    <!-- Core Web Development Section -->
-    <section class="glass-section">
-        <h2>Core Web Development Services</h2>
-        <p>We offer custom web and app development solutions that empower businesses to scale, increase user engagement, and optimize performance with cutting-edge technologies.</p>
-    </section>
-
-    <!-- Core Web Services Section -->
+    <!-- Core Web Development Services Section -->
     <section class="service-section">
+        <h2>Our Core Web Development Services</h2>
+        
         <div class="service">
             <img src="LOGO.jpg" alt="Front-end Development">
             <h3>Front-end Development</h3>
-            <p>Create visually stunning and interactive interfaces using modern technologies.</p>
+            <p>Building responsive and interactive websites with modern design trends and user experience principles.</p>
         </div>
+
         <div class="service">
             <img src="LOGO.jpg" alt="Back-end Development">
             <h3>Back-end Development</h3>
-            <p>Design robust systems for secure and efficient data management.</p>
+            <p>Creating secure, scalable, and efficient server-side solutions to power your web applications.</p>
         </div>
+
         <div class="service">
-            <img src="LOGO.jpg" alt="Content Management Systems">
-            <h3>Content Management Systems</h3>
-            <p>Build user-friendly platforms to manage content effortlessly.</p>
+            <img src="LOGO.jpg" alt="Mobile App Development">
+            <h3>Mobile App Development</h3>
+            <p>Developing feature-rich mobile applications for iOS and Android, ensuring great performance and design.</p>
         </div>
     </section>
 
     <!-- Showcase Section -->
     <section class="showcase">
         <h2>Our Recent Projects</h2>
-        <p class="section-title">Showcasing Our Expertise in Web & App Development</p>
+        
         <div class="showcase-grid">
             <div class="showcase-item">
                 <img src="LOGO.jpg" alt="Project 1">
-                <div class="info">
-                    <h3>Project One</h3>
-                    <p>Web app development for an e-commerce platform, including payment gateway integration and advanced product filtering.</p>
-                    <p class="client">Client: ABC Corp.</p>
-                </div>
+                <h3>Project One</h3>
+                <p>A custom e-commerce platform, complete with secure payment gateway integration and user-friendly design.</p>
+                <p class="client">Client: ABC Corp.</p>
             </div>
             <div class="showcase-item">
                 <img src="LOGO.jpg" alt="Project 2">
-                <div class="info">
-                    <h3>Project Two</h3>
-                    <p>Mobile app development for a social networking platform. Integrated with real-time chat features and seamless UI.</p>
-                    <p class="client">Client: XYZ Inc.</p>
-                </div>
+                <h3>Project Two</h3>
+                <p>Mobile app development for a social networking platform with real-time messaging and notifications.</p>
+                <p class="client">Client: XYZ Inc.</p>
             </div>
             <div class="showcase-item">
                 <img src="LOGO.jpg" alt="Project 3">
-                <div class="info">
-                    <h3>Project Three</h3>
-                    <p>A CMS for a global news platform. Custom solutions for multilingual content management and real-time updates.</p>
-                    <p class="client">Client: News World</p>
-                </div>
+                <h3>Project Three</h3>
+                <p>Custom CMS for a global news outlet, featuring multilingual support and dynamic content management.</p>
+                <p class="client">Client: News World</p>
             </div>
         </div>
     </section>
