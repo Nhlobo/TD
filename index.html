@@ -1,44 +1,352 @@
-<!-- Filter Buttons -->
-<div class="portfolio-filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="web">Web Development</button>
-    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Portfolio Grid (with data-filters) -->
-<div class="portfolio-grid">
-    <div class="portfolio-item" data-category="web">
-        <!-- project card content here -->
-    </div>
-    <div class="portfolio-item" data-category="mobile">
-        <!-- project card content here -->
-    </div>
-    <div class="portfolio-item" data-category="ecommerce">
-        <!-- project card content here -->
-    </div>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
 
-<script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
+        .portfolio {
+            padding: 60px 20px;
+            background-color: #f8f8f8;
+        }
 
-    filterBtns.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.dataset.filter;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-            // Add active class to the clicked filter button
-            filterBtns.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-            // Filter the portfolio items
-            portfolioItems.forEach(item => {
-                if (filter === 'all' || item.dataset.category === filter) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+        .portfolio-header .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .portfolio-header .section-description {
+            font-size: 18px;
+            color: #777;
+        }
+
+        /* Filter Buttons */
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 50px;
+            background-color: white;
+            color: #007bff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            opacity: 0.8;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .view-details-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-details-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styling */
+        .portfolio-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .portfolio-item {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <!-- Portfolio Title & Description -->
+            <div class="portfolio-header">
+                <h2 class="section-title">Our Work</h2>
+                <p class="section-description">Take a look at the projects we have developed, ranging from web and mobile apps to e-commerce platforms and more.</p>
+            </div>
+
+            <!-- Filter Buttons (Dynamic) -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://via.placeholder.com/300" alt="Project 1" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="project-title">Project 1</h3>
+                        <p class="project-description">A modern e-commerce website.</p>
+                        <button class="view-details-btn" data-modal="modal1">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="https://via.placeholder.com/300" alt="Project 2" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="project-title">Project 2</h3>
+                        <p class="project-description">A mobile app for personal productivity.</p>
+                        <button class="view-details-btn" data-modal="modal2">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-category="ecommerce">
+                    <img src="https://via.placeholder.com/300" alt="Project 3" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-description">A sophisticated online store.</p>
+                        <button class="view-details-btn" data-modal="modal3">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-category="design">
+                    <img src="https://via.placeholder.com/300" alt="Project 4" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="project-title">Project 4</h3>
+                        <p class="project-description">A sleek UI/UX design project.</p>
+                        <button class="view-details-btn" data-modal="modal4">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals for Project Details -->
+        <div id="modal1" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal1">&times;</span>
+                <h3>Project 1 - E-commerce Website</h3>
+                <p>This project was focused on creating a responsive, user-friendly e-commerce platform...</p>
+                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal2" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal2">&times;</span>
+                <h3>Project 2 - Mobile App</h3>
+                <p>Our mobile app for personal productivity helps users manage tasks...</p>
+                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal3" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal3">&times;</span>
+                <h3>Project 3 - Online Store</h3>
+                <p>This is a fully responsive, feature-rich online store...</p>
+                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal4" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal4">&times;</span>
+                <h3>Project 4 - UI/UX Design</h3>
+                <p>Our team designed a user-centric UI/UX layout...</p>
+                <a href="https://link-to-project.com" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+
+                // Toggle active class on filter buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter items by category
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
             });
         });
-    });
-</script>
+
+        // Modal functionality
+        const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+        const modals = document.querySelectorAll('.portfolio-modal');
+        const closeBtns = document.querySelectorAll('.close-btn');
+
+        viewDetailsBtns.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const modalId = e.target.dataset.modal;
+                document.getElementById(modalId).style.display = 'flex';
+            });
+        });
+
+        closeBtns.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const modalId = e.target.dataset.close;
+                document.getElementById(modalId).style.display = 'none';
+            });
+        });
+
+        // Close modals when clicking outside the modal content
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('portfolio-modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
