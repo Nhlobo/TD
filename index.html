@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Web & App Development Solutions</title>
     <style>
-        /* General Reset */
+        /* Reset and General Styles */
         * {
             margin: 0;
             padding: 0;
@@ -16,135 +16,168 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
-            padding: 0;
-            margin: 0;
+            background: #f9f9f9;
         }
 
         /* Section Styling */
         .services-section {
-            padding: 60px 20px;
+            background: white;
+            padding: 80px 20px;
             text-align: center;
         }
 
-        .textlarge {
-            font-size: 2.5rem;
+        .services-section h2 {
+            font-size: 3rem;
             font-weight: 700;
-            color: #212529;
+            color: #004aad;
             margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .section-title {
-            margin-bottom: 40px;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #6c757d;
+        .services-section .section-title {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 50px;
+            text-transform: uppercase;
         }
 
-        .corewebgrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        /* Core Services */
+        .core-services {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
         }
 
-        .service-item {
-            background: #fff;
-            padding: 20px;
-            border: 1px solid #e9ecef;
+        .core-service {
+            max-width: 800px;
+            background: #f5f5f5;
+            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        .core-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .service-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .core-service h3 {
+            font-size: 2rem;
+            color: #004aad;
             margin-bottom: 15px;
         }
 
-        .service-item h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #212529;
-            margin-bottom: 10px;
-        }
-
-        .service-item p {
-            font-size: 1rem;
-            color: #495057;
+        .core-service p {
+            font-size: 1.1rem;
+            color: #666;
             line-height: 1.8;
         }
 
-        .package-item {
-            background: #fff;
-            padding: 20px;
-            border: 1px solid #e9ecef;
+        /* Packages */
+        .packages {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .package {
+            background: #f5f5f5;
+            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: left;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .package-item h4 {
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .package h4 {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: #212529;
-            margin-bottom: 20px;
+            color: #004aad;
+            margin-bottom: 15px;
         }
 
-        .package-item p {
+        .package strong {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .package p {
             font-size: 1rem;
-            color: #495057;
-            line-height: 1.8;
+            color: #666;
+            margin: 10px 0;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .textlarge {
-                font-size: 2rem;
+            .services-section h2 {
+                font-size: 2.5rem;
             }
 
-            .section-title {
-                font-size: 1.5rem;
+            .core-service,
+            .package {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <section class="services-section">
+        <h2>Our Web & App Development Solutions</h2>
+        <p class="section-title">Crafting Excellence in Every Line of Code</p>
 
-<section class="services-section">
-    <h2 class="textlarge">Our Web & App Development Solutions</h2>
-    <div class="section-title">Core Web Development Services</div>
-
-    <div class="corewebgrid">
-        <div class="service-item">
-            <img src="path/to/your/image1.jpg" alt="Front-end Development">
-            <h3>Front-end Development</h3>
-            <p>Create visually stunning and interactive interfaces using modern technologies.</p>
+        <!-- Core Web Development Services -->
+        <div class="core-services">
+            <div class="core-service">
+                <h3>Front-end Development</h3>
+                <p>
+                    Our front-end development team excels at creating visually stunning and interactive user interfaces using 
+                    HTML, CSS, JavaScript, and React. We ensure seamless interactions optimized for performance across devices.
+                </p>
+            </div>
+            <div class="core-service">
+                <h3>Back-end Development</h3>
+                <p>
+                    We design robust back-end systems ensuring efficient data management, secure user interactions, and seamless integration with front-end services to deliver powerful, scalable applications.
+                </p>
+            </div>
+            <div class="core-service">
+                <h3>Content Management Systems</h3>
+                <p>
+                    We specialize in CMS platforms such as Webflow, WordPress, and custom CMS solutions to provide user-friendly systems for managing content with ease, empowering you to take control without technical expertise.
+                </p>
+            </div>
         </div>
-        <div class="service-item">
-            <img src="path/to/your/image2.jpg" alt="Back-end Development">
-            <h3>Back-end Development</h3>
-            <p>Design robust systems for secure and efficient data management.</p>
-        </div>
-        <div class="service-item">
-            <img src="path/to/your/image3.jpg" alt="Content Management Systems">
-            <h3>Content Management Systems</h3>
-            <p>Build user-friendly platforms to manage content effortlessly.</p>
-        </div>
-    </div>
 
-    <div class="package-item">
-        <h4>Website Development Packages</h4>
-        <p>Various packages tailored to your needs, from starter solutions to e-commerce platforms.</p>
-    </div>
-</section>
-
+        <!-- Development Packages -->
+        <div class="packages">
+            <div class="package">
+                <h4>Website Development Packages</h4>
+                <strong>Starter Package:</strong>
+                <p>Custom landing page design, contact form, SEO setup, and responsive design (1-3 pages).</p>
+                <strong>Standard Package:</strong>
+                <p>Custom homepage, inner pages, gallery/blog, SEO optimization, and social media integration (4-8 pages).</p>
+                <strong>Premium Package:</strong>
+                <p>Custom homepage, multiple service/product pages, SEO, social media/chat integration, and newsletter (8-16 pages).</p>
+            </div>
+            <div class="package">
+                <h4>App Development Packages</h4>
+                <strong>Basic App:</strong>
+                <p>Simple apps with essential features like user login, form submission, and optional push notifications.</p>
+                <strong>Standard App:</strong>
+                <p>Medium complexity apps with user profiles, custom design, third-party API integration, and in-app messaging features.</p>
+                <strong>Premium App:</strong>
+                <p>Advanced apps with real-time functionalities, complex integrations, advanced user roles, and comprehensive analytics/reports.</p>
+            </div>
+        </div>
+    </section>
 </body>
-            </html>
+    </html>
