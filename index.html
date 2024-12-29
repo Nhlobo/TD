@@ -3,137 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web & App Development</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Web & App Development Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
+            background-color: #f8f9fa;
             font-size: 16px;
             line-height: 1.6;
-            background-color: #f0f0f0;
             color: #333;
         }
 
         /* Full-Width Hero Section */
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(45deg, #007BFF, #6c757d);
             color: #fff;
-            padding: 120px 20px;
+            padding: 150px 20px;
             text-align: center;
         }
 
         header h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 4.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 300;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        /* About Section */
-        .about-section {
-            background-color: #ecf0f1;
-            color: #2c3e50;
-            padding: 80px 20px;
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 100px 20px;
+            background-color: #fff;
             text-align: center;
         }
 
-        .about-section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+        .portfolio-section h2 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 50px;
+            font-weight: 600;
         }
 
-        .about-section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            max-width: 800px;
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Services Section */
-        .services-section {
-            display: flex;
-            justify-content: space-between;
-            padding: 80px 20px;
+        .project-item {
+            position: relative;
             background-color: #fff;
-            color: #2c3e50;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service {
-            width: 48%;
-            padding: 30px;
-            background-color: #34495e;
-            color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
-        .service h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .service p {
-            font-size: 1.1rem;
-        }
-
-        /* Project Showcase Section */
-        .showcase-section {
-            background-color: #ecf0f1;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .showcase-section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-
-        .showcase-section .project {
-            display: inline-block;
-            width: 48%;
-            margin: 0 10px 30px;
-            padding: 30px;
-            background-color: #fff;
-            color: #2c3e50;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .showcase-section .project img {
+        .project-item img {
             width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-item .info {
+            padding: 30px;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-item:hover .info {
+            opacity: 1;
+        }
+
+        .project-item h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .project-item p {
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        /* Project Modal (Lightbox) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .modal img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        .modal h3 {
+            font-size: 2rem;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .modal p {
+            font-size: 1.2rem;
+            color: #555;
             margin-bottom: 20px;
         }
 
-        .showcase-section .project h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+        .modal button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .showcase-section .project p {
-            font-size: 1rem;
-            color: #7f8c8d;
+        .modal button:hover {
+            background-color: #0056b3;
         }
 
         /* Footer Section */
         footer {
-            background-color: #34495e;
+            background-color: #343a40;
             color: #fff;
             padding: 40px 20px;
             text-align: center;
@@ -145,19 +186,24 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .services-section {
-                flex-direction: column;
-                align-items: center;
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
 
-            .service {
-                width: 90%;
-                margin-bottom: 20px;
+            header h1 {
+                font-size: 3rem;
             }
 
-            .showcase-section .project {
-                width: 90%;
-                margin-bottom: 20px;
+            header p {
+                font-size: 1.1rem;
+            }
+
+            .project-item h3 {
+                font-size: 1.6rem;
+            }
+
+            .project-item p {
+                font-size: 1rem;
             }
         }
 
@@ -167,49 +213,74 @@
 
     <!-- Header Section -->
     <header>
-        <h1>Transforming Ideas into Digital Reality</h1>
-        <p>We build seamless web and app solutions that scale with your business. Elevating user experiences with cutting-edge technology.</p>
+        <h1>Our Development Portfolio</h1>
+        <p>Discover how we bring creative ideas to life with beautiful, functional, and innovative web & mobile solutions.</p>
     </header>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <h2>About Us</h2>
-        <p>We are a team of innovative developers and designers, dedicated to creating high-quality digital solutions for businesses of all sizes. Whether it’s building a powerful web application or a mobile platform, we ensure that every project is executed with precision and care.</p>
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <h2>Our Latest Projects</h2>
+        <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <div class="project-item" onclick="openModal(1)">
+                <img src="https://via.placeholder.com/600x400" alt="Project 1">
+                <div class="info">
+                    <h3>Project One</h3>
+                    <p>A modern e-commerce platform built with cutting-edge technologies.</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-item" onclick="openModal(2)">
+                <img src="https://via.placeholder.com/600x400" alt="Project 2">
+                <div class="info">
+                    <h3>Project Two</h3>
+                    <p>Mobile app with a sleek interface and intuitive user experience.</p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-item" onclick="openModal(3)">
+                <img src="https://via.placeholder.com/600x400" alt="Project 3">
+                <div class="info">
+                    <h3>Project Three</h3>
+                    <p>A responsive news platform with real-time updates and multilingual support.</p>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="service">
-            <h3>Web Development</h3>
-            <p>We create responsive, high-performance websites that offer seamless experiences on all devices.</p>
+    <!-- Modal for Project Details -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <img src="https://via.placeholder.com/800x600" alt="Project Image">
+            <h3>Project Title</h3>
+            <p>Project description goes here. This is where you can add more details about the project like features, technologies used, and results achieved.</p>
+            <button onclick="closeModal()">Close</button>
         </div>
-        <div class="service">
-            <h3>Mobile App Development</h3>
-            <p>Crafting intuitive, feature-rich mobile apps for iOS and Android that engage users and grow your business.</p>
-        </div>
-    </section>
-
-    <!-- Project Showcase Section -->
-    <section class="showcase-section">
-        <h2>Our Work</h2>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/600x400" alt="Project 1">
-            <h3>Project One</h3>
-            <p>A custom-built e-commerce platform that integrates secure payments, user-friendly interfaces, and advanced product filtering.</p>
-        </div>
-
-        <div class="project">
-            <img src="https://via.placeholder.com/600x400" alt="Project 2">
-            <h3>Project Two</h3>
-            <p>A social networking mobile app with real-time messaging, interactive features, and personalized user experiences.</p>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Web & App Development Solutions. All rights reserved.</p>
+        <p>&copy; 2024 Web & App Development Portfolio. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'flex';
+
+            // Here, you can dynamically change modal content based on projectId if necessary
+            document.querySelector('.modal-content h3').innerText = "Project " + projectId;
+            document.querySelector('.modal-content p').innerText = "Detailed description of Project " + projectId + " goes here.";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
