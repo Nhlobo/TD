@@ -26,7 +26,7 @@
 
         /* Header Section */
         header {
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             background: rgba(0, 0, 0, 0.5);
             position: relative;
@@ -83,12 +83,13 @@
             margin: 0 auto;
         }
 
-        /* Service Grid */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+        /* Core Web Services Section */
+        .core-services {
+            display: flex;
+            justify-content: space-between;
             margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 30px;
         }
 
         .service {
@@ -97,6 +98,7 @@
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: calc(33% - 30px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -109,27 +111,23 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .service img:hover {
-            transform: scale(1.05);
+            margin-bottom: 15px;
         }
 
         .service h3 {
             font-size: 1.8rem;
             color: #fff;
-            margin-top: 20px;
+            margin-bottom: 10px;
         }
 
         .service p {
             font-size: 1.1rem;
             color: #ddd;
-            margin-top: 10px;
+            line-height: 1.7;
         }
 
-        /* Showcase Projects Section */
-        .projects {
+        /* Showcase Section */
+        .showcase {
             background: rgba(0, 0, 0, 0.6);
             padding: 80px 20px;
             text-align: center;
@@ -138,13 +136,13 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
-        .projects h2 {
+        .showcase h2 {
             font-size: 3.2rem;
             color: #fff;
             margin-bottom: 20px;
         }
 
-        .projects .section-title {
+        .showcase .section-title {
             font-size: 1.4rem;
             color: #bbb;
             margin-bottom: 40px;
@@ -153,50 +151,52 @@
         }
 
         /* Showcase Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .showcase-grid {
+            display: flex;
+            justify-content: space-between;
             gap: 30px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
-        .project-item {
-            background: rgba(255, 255, 255, 0.15);
+        .showcase-item {
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: calc(33% - 30px);
         }
 
-        .project-item:hover {
+        .showcase-item:hover {
             transform: scale(1.05);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .project-item img {
+        .showcase-item img {
             width: 100%;
             height: auto;
             transition: transform 0.3s ease;
         }
 
-        .project-item .info {
-            padding: 25px;
+        .showcase-item .info {
+            padding: 20px;
         }
 
-        .project-item h3 {
+        .showcase-item h3 {
             font-size: 1.8rem;
             color: #fff;
             margin-bottom: 10px;
             letter-spacing: 1px;
         }
 
-        .project-item p {
+        .showcase-item p {
             font-size: 1.1rem;
             color: #bbb;
             margin-bottom: 10px;
         }
 
-        .project-item .client {
+        .showcase-item .client {
             font-size: 1rem;
             color: #fff;
             font-weight: 600;
@@ -206,12 +206,22 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .services {
-                grid-template-columns: repeat(2, 1fr);
+            .core-services {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .showcase-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                width: 80%;
+            }
+
+            .showcase-item {
+                width: 80%;
             }
         }
 
@@ -224,19 +234,21 @@
                 font-size: 2.5rem;
             }
 
-            .services {
-                grid-template-columns: 1fr;
+            .core-services {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .showcase-grid {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .service h3, .project-item h3 {
+            .service h3, .showcase-item h3 {
                 font-size: 1.6rem;
             }
 
-            .service p, .project-item p {
+            .service p, .showcase-item p {
                 font-size: 1rem;
             }
 
@@ -258,11 +270,11 @@
                 font-size: 2rem;
             }
 
-            .service h3, .project-item h3 {
+            .service h3, .showcase-item h3 {
                 font-size: 1.5rem;
             }
 
-            .service p, .project-item p {
+            .service p, .showcase-item p {
                 font-size: 0.95rem;
             }
         }
@@ -282,8 +294,8 @@
         <p>We offer custom web and app development solutions that empower businesses to scale, increase user engagement, and optimize performance with cutting-edge technologies.</p>
     </section>
 
-    <!-- Core Web Services Grid -->
-    <section class="services">
+    <!-- Core Web Services Section -->
+    <section class="core-services">
         <div class="service">
             <img src="LOGO.jpg" alt="Front-end Development">
             <h3>Front-end Development</h3>
@@ -302,11 +314,11 @@
     </section>
 
     <!-- Showcase Section -->
-    <section class="projects">
+    <section class="showcase">
         <h2>Our Recent Projects</h2>
         <p class="section-title">Showcasing Our Expertise in Web & App Development</p>
-        <div class="projects-grid">
-            <div class="project-item">
+        <div class="showcase-grid">
+            <div class="showcase-item">
                 <img src="LOGO.jpg" alt="Project 1">
                 <div class="info">
                     <h3>Project One</h3>
@@ -314,7 +326,7 @@
                     <p class="client">Client: ABC Corp.</p>
                 </div>
             </div>
-            <div class="project-item">
+            <div class="showcase-item">
                 <img src="LOGO.jpg" alt="Project 2">
                 <div class="info">
                     <h3>Project Two</h3>
@@ -322,7 +334,7 @@
                     <p class="client">Client: XYZ Inc.</p>
                 </div>
             </div>
-            <div class="project-item">
+            <div class="showcase-item">
                 <img src="LOGO.jpg" alt="Project 3">
                 <div class="info">
                     <h3>Project Three</h3>
