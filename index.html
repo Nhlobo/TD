@@ -3,155 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web & App Development Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Web & App Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
 
         body {
-            background-color: #f2f2f2;
             font-size: 16px;
-            color: #333;
             line-height: 1.6;
-            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
         }
 
-        /* Header Section */
+        /* Full-Width Hero Section */
         header {
-            background-color: #333;
+            background-color: #2c3e50;
             color: #fff;
-            padding: 80px 20px;
+            padding: 120px 20px;
             text-align: center;
-            position: relative;
         }
 
         header h1 {
-            font-size: 3.8rem;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         header p {
             font-size: 1.2rem;
-            color: #ccc;
+            font-weight: 300;
             max-width: 800px;
             margin: 0 auto;
-            font-weight: 300;
         }
 
         /* About Section */
         .about-section {
-            padding: 100px 20px;
-            background-color: #fff;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 80px 20px;
             text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .about-section h2 {
             font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: #333;
+            margin-bottom: 30px;
         }
 
         .about-section p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
             line-height: 1.8;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         /* Services Section */
         .services-section {
-            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 20px;
+            background-color: #fff;
+            color: #2c3e50;
+        }
+
+        .service {
+            width: 48%;
+            padding: 30px;
+            background-color: #34495e;
             color: #fff;
-            padding: 100px 20px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        .services-section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 40px;
-        }
-
-        .services-section .service {
-            display: inline-block;
-            width: 30%;
-            padding: 40px 30px;
-            background-color: #444;
-            margin: 0 10px 40px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .services-section .service h3 {
+        .service h3 {
             font-size: 2rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .services-section .service p {
+        .service p {
             font-size: 1.1rem;
-            color: #ccc;
         }
 
         /* Project Showcase Section */
         .showcase-section {
-            padding: 100px 20px;
-            background-color: #fff;
+            background-color: #ecf0f1;
+            padding: 80px 20px;
             text-align: center;
         }
 
         .showcase-section h2 {
             font-size: 2.8rem;
             margin-bottom: 40px;
-            color: #333;
+            color: #2c3e50;
         }
 
-        .showcase-section .showcase-item {
+        .showcase-section .project {
             display: inline-block;
-            width: 32%;
-            margin: 0 10px;
+            width: 48%;
+            margin: 0 10px 30px;
             padding: 30px;
-            background-color: #f2f2f2;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            color: #2c3e50;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
             text-align: center;
         }
 
-        .showcase-section .showcase-item img {
+        .showcase-section .project img {
             width: 100%;
-            border-radius: 10px;
+            max-width: 500px;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
 
-        .showcase-section .showcase-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .showcase-section .showcase-item p {
-            font-size: 1rem;
-            color: #555;
+        .showcase-section .project h3 {
+            font-size: 2rem;
             margin-bottom: 15px;
         }
 
-        .showcase-section .showcase-item .client {
-            font-size: 0.9rem;
-            color: #888;
+        .showcase-section .project p {
+            font-size: 1rem;
+            color: #7f8c8d;
         }
 
         /* Footer Section */
         footer {
-            background-color: #333;
+            background-color: #34495e;
             color: #fff;
             padding: 40px 20px;
             text-align: center;
@@ -159,109 +141,68 @@
 
         footer p {
             font-size: 1rem;
-            color: #ccc;
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .services-section .service,
-            .showcase-section .showcase-item {
-                width: 45%;
-            }
-        }
-
         @media (max-width: 768px) {
-            .services-section .service,
-            .showcase-section .showcase-item {
+            .services-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
                 width: 90%;
-                margin: 20px auto;
+                margin-bottom: 20px;
+            }
+
+            .showcase-section .project {
+                width: 90%;
+                margin-bottom: 20px;
             }
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            .services-section .service h3 {
-                font-size: 1.6rem;
-            }
-
-            .services-section .service p {
-                font-size: 1rem;
-            }
-
-            .showcase-section .showcase-item h3 {
-                font-size: 1.5rem;
-            }
-
-            .showcase-section .showcase-item p {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
-        <h1>Web & App Development Solutions</h1>
-        <p>We specialize in custom web and mobile app development solutions that are scalable and user-friendly.</p>
+        <h1>Transforming Ideas into Digital Reality</h1>
+        <p>We build seamless web and app solutions that scale with your business. Elevating user experiences with cutting-edge technology.</p>
     </header>
 
     <!-- About Section -->
     <section class="about-section">
-        <h2>Who We Are</h2>
-        <p>We are a team of innovative developers and designers dedicated to crafting high-quality digital solutions that help businesses thrive in the modern world.</p>
+        <h2>About Us</h2>
+        <p>We are a team of innovative developers and designers, dedicated to creating high-quality digital solutions for businesses of all sizes. Whether it’s building a powerful web application or a mobile platform, we ensure that every project is executed with precision and care.</p>
     </section>
 
     <!-- Services Section -->
     <section class="services-section">
-        <h2>Our Services</h2>
-        
         <div class="service">
             <h3>Web Development</h3>
-            <p>Building fast, scalable, and secure websites that bring your ideas to life.</p>
+            <p>We create responsive, high-performance websites that offer seamless experiences on all devices.</p>
         </div>
-
         <div class="service">
             <h3>Mobile App Development</h3>
-            <p>Creating user-friendly mobile applications for both iOS and Android platforms.</p>
-        </div>
-
-        <div class="service">
-            <h3>UI/UX Design</h3>
-            <p>Designing intuitive and aesthetically pleasing user interfaces that enhance user experience.</p>
+            <p>Crafting intuitive, feature-rich mobile apps for iOS and Android that engage users and grow your business.</p>
         </div>
     </section>
 
     <!-- Project Showcase Section -->
     <section class="showcase-section">
-        <h2>Our Recent Projects</h2>
+        <h2>Our Work</h2>
 
-        <div class="showcase-item">
-            <img src="LOGO.jpg" alt="Project 1">
+        <div class="project">
+            <img src="https://via.placeholder.com/600x400" alt="Project 1">
             <h3>Project One</h3>
-            <p>A custom-built e-commerce platform with secure payment integration and intuitive user experience.</p>
-            <p class="client">Client: ABC Corp.</p>
+            <p>A custom-built e-commerce platform that integrates secure payments, user-friendly interfaces, and advanced product filtering.</p>
         </div>
 
-        <div class="showcase-item">
-            <img src="LOGO.jpg" alt="Project 2">
+        <div class="project">
+            <img src="https://via.placeholder.com/600x400" alt="Project 2">
             <h3>Project Two</h3>
-            <p>A mobile app for a social networking platform with integrated messaging and real-time notifications.</p>
-            <p class="client">Client: XYZ Inc.</p>
-        </div>
-
-        <div class="showcase-item">
-            <img src="LOGO.jpg" alt="Project 3">
-            <h3>Project Three</h3>
-            <p>A custom CMS solution for a global news platform, supporting multilingual content management and real-time updates.</p>
-            <p class="client">Client: News World</p>
+            <p>A social networking mobile app with real-time messaging, interactive features, and personalized user experiences.</p>
         </div>
     </section>
 
