@@ -507,8 +507,7 @@ section p {
             </div>
         </div>
     </section>
-
-   // Filter functionality
+// Filter functionality
 const filterBtns = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -531,41 +530,54 @@ filterBtns.forEach(button => {
     });
 });
 
-// Modal functionality (updated)
+// Modal functionality with positioning
 const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
-const modal = document.querySelector('.portfolio-modal');
-const modalContent = modal.querySelector('.modal-content');
-const closeBtn = modal.querySelector('.close-btn');
+const modals = document.querySelectorAll('.portfolio-modal');
+const closeBtns = document.querySelectorAll('.close-btn');
 
-viewDetailsBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-        const btnRect = btn.getBoundingClientRect(); // Get button's position
-        modal.style.display = 'flex'; // Show the modal
+viewDetailsBtns.forEach(button => {
+    button.addEventListener('click', (e) => {
+        // Get the button's position relative to the viewport
+        const buttonRect = button.getBoundingClientRect();
 
-        // Set modal position over the clicked image
+        // Show the modal
+        const modalId = button.dataset.modal;
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'flex';
+
+        // Get modal content
+        const modalContent = modal.querySelector('.modal-content');
+        
+        // Calculate the center position of the clicked image
+        const modalWidth = modalContent.offsetWidth;
+        const modalHeight = modalContent.offsetHeight;
+
+        // Position the modal over the image
         modalContent.style.position = 'absolute';
-        modalContent.style.top = `${btnRect.top + window.scrollY}px`;
-        modalContent.style.left = `${btnRect.left + window.scrollX}px`;
+        modalContent.style.top = `${buttonRect.top + window.scrollY - modalHeight / 2}px`;
+        modalContent.style.left = `${buttonRect.left + window.scrollX - modalWidth / 2}px`;
 
-        // Add class to show the modal with animation
+        // Optionally add animation for smooth opening
         modal.classList.add('modal-active');
     });
 });
 
 // Close modal functionality
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none'; // Hide the modal
-    modal.classList.remove('modal-active');
+closeBtns.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const modalId = button.dataset.close;
+        document.getElementById(modalId).style.display = 'none';
+    });
 });
 
 // Close modals when clicking outside the modal content
 window.addEventListener('click', (e) => {
     if (e.target.classList.contains('portfolio-modal')) {
-        modal.style.display = 'none';
-        modal.classList.remove('modal-active');
+        e.target.style.display = 'none';
     }
 });
 
+  
 </body>
 
 </html>
