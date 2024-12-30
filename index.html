@@ -294,21 +294,19 @@ section p {
     color: #333; /* Ensure readability */
 }
 
-/* Position the modal exactly over the image */
-.modal-absolute {
-    position: absolute;
+/* Portfolio Modal */
+.portfolio-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: flex-start; /* Start from top */
+    align-items: flex-start; /* Align to top */
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-out; /* Add animation for fading in */
 }
 
 .close-btn {
@@ -510,30 +508,7 @@ section p {
  
     <script>
   
-    // Filter functionality
-const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-filterBtns.forEach(button => {
-    button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
-
-        // Toggle active class on filter buttons
-        filterBtns.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        // Filter items by category
-        portfolioItems.forEach(item => {
-            if (filter === 'all' || item.dataset.category === filter) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
-});
-
-// Modal functionality with positioning
+    // Modal functionality with positioning
 const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
 const modals = document.querySelectorAll('.portfolio-modal');
 const closeBtns = document.querySelectorAll('.close-btn');
@@ -543,9 +518,18 @@ viewDetailsBtns.forEach(button => {
         const modalId = button.dataset.modal;
         const modal = document.getElementById(modalId);
         
-        // Show the modal
+        // Get the position of the clicked button
+        const buttonRect = button.getBoundingClientRect();
+        
+        // Calculate position for the modal based on button's position
         modal.style.display = 'flex';
         modal.classList.add('modal-active');
+        
+        // Position modal content
+        const modalContent = modal.querySelector('.modal-content');
+        modalContent.style.position = 'absolute';
+        modalContent.style.top = `${buttonRect.bottom + window.scrollY}px`; // Below the button
+        modalContent.style.left = `${buttonRect.left + window.scrollX}px`;  // Align with button's left edge
     });
 });
 
@@ -565,18 +549,6 @@ window.addEventListener('click', (e) => {
         e.target.style.display = 'none';
         e.target.classList.remove('modal-active');  // Remove active class when closing
     }
-});
-
-// Optional: Smoothly center the modal content by default without manual positioning
-const modalContents = document.querySelectorAll('.modal-content');
-modalContents.forEach(content => {
-    const modal = content.closest('.portfolio-modal');
-    // Center the modal when it appears (for all screen sizes)
-    modal.addEventListener('transitionend', () => {
-        content.style.position = 'relative';
-        content.style.top = '0';
-        content.style.left = '0';
-    });
 });
 
     
