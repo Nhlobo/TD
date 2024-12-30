@@ -270,10 +270,11 @@ section p {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center the modal content horizontally */
+    align-items: center; /* Center the modal content vertically */
     z-index: 9999;
     animation: fadeIn 0.3s ease-out; /* Add animation for fading in */
+    padding: 20px; /* Some padding around the modal content */
 }
 
 /* Modal content that will appear directly over the image */
@@ -286,6 +287,7 @@ section p {
     color: #333;
     margin: 0 20px; /* Margin for small screens */
     position: relative;
+    text-align: center; /* Center content within modal */
 }
 
 .modal-content h3 {
@@ -294,34 +296,14 @@ section p {
     color: #333; /* Ensure readability */
 }
 
-/* Portfolio Modal */
-.portfolio-modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: flex-start; /* Start from top */
-    align-items: flex-start; /* Align to top */
-    z-index: 9999;
-    animation: fadeIn 0.3s ease-out; /* Add animation for fading in */
-}
-
+/* Close button styling */
 .close-btn {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 10px;
     font-size: 30px;
     cursor: pointer;
     color: #333;
-}
-
-/* Modal appears at specific position based on click */
-.modal-active {
-    display: flex !important;
-    animation: fadeIn 0.5s ease-in;
 }
 
 /* Fade In Animation */
@@ -354,6 +336,9 @@ section p {
     }
 }
 
+        
+
+        
     </style>
 </head>
 
