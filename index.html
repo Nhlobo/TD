@@ -483,56 +483,63 @@ section p {
         </div>
     </section>
 
-    <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+   // Filter functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-        filterBtns.forEach(button => {
-            button.addEventListener('click', () => {
-                const filter = button.dataset.filter;
+filterBtns.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
 
-                // Toggle active class on filter buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+        // Toggle active class on filter buttons
+        filterBtns.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-                // Filter items by category
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Modal functionality
-        const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
-        const modals = document.querySelectorAll('.portfolio-modal');
-        const closeBtns = document.querySelectorAll('.close-btn');
-
-        viewDetailsBtns.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const modalId = e.target.dataset.modal;
-                document.getElementById(modalId).style.display = 'flex';
-            });
-        });
-
-        closeBtns.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const modalId = e.target.dataset.close;
-                document.getElementById(modalId).style.display = 'none';
-            });
-        });
-
-        // Close modals when clicking outside the modal content
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('portfolio-modal')) {
-                e.target.style.display = 'none';
+        // Filter items by category
+        portfolioItems.forEach(item => {
+            if (filter === 'all' || item.dataset.category === filter) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
             }
         });
-    </script>
+    });
+});
+
+// Modal functionality (updated)
+const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+const modal = document.querySelector('.portfolio-modal');
+const modalContent = modal.querySelector('.modal-content');
+const closeBtn = modal.querySelector('.close-btn');
+
+viewDetailsBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        const btnRect = btn.getBoundingClientRect(); // Get button's position
+        modal.style.display = 'flex'; // Show the modal
+
+        // Set modal position over the clicked image
+        modalContent.style.position = 'absolute';
+        modalContent.style.top = `${btnRect.top + window.scrollY}px`;
+        modalContent.style.left = `${btnRect.left + window.scrollX}px`;
+
+        // Add class to show the modal with animation
+        modal.classList.add('modal-active');
+    });
+});
+
+// Close modal functionality
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none'; // Hide the modal
+    modal.classList.remove('modal-active');
+});
+
+// Close modals when clicking outside the modal content
+window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('portfolio-modal')) {
+        modal.style.display = 'none';
+        modal.classList.remove('modal-active');
+    }
+});
 
 </body>
 
