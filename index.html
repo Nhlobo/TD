@@ -276,6 +276,7 @@ section p {
     animation: fadeIn 0.3s ease-out; /* Add animation for fading in */
 }
 
+/* Modal content that will appear directly over the image */
 .modal-content {
     background-color: white;
     padding: 30px;
@@ -284,12 +285,30 @@ section p {
     width: 80%; /* Ensure the width is responsive */
     color: #333;
     margin: 0 20px; /* Margin for small screens */
+    position: relative;
 }
 
 .modal-content h3 {
     margin-top: 0;
     font-size: 24px;
     color: #333; /* Ensure readability */
+}
+
+/* Position the modal exactly over the image */
+.modal-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .close-btn {
@@ -299,6 +318,12 @@ section p {
     font-size: 30px;
     cursor: pointer;
     color: #333;
+}
+
+/* Modal appears at specific position based on click */
+.modal-active {
+    display: flex !important;
+    animation: fadeIn 0.5s ease-in;
 }
 
 /* Fade In Animation */
