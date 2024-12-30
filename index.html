@@ -16,34 +16,22 @@
 
         /* Body Styles */
         body {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.2)); /* Darker and more subtle */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.2)); /* Dark background gradient */
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
             position: relative;
-            animation: backgroundAnimation 20s ease infinite;
+            font-size: 1rem;
         }
 
-        /* Background Gradient Animation */
-        @keyframes backgroundAnimation {
-            0% {
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.2));
-            }
-            50% {
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.4));
-            }
-            100% {
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.2));
-            }
-        }
-
-        /* About & Services Section */
+        /* Sections */
         section {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
-            padding: 60px 20px;
+            padding: 80px 20px;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            margin-top: 60px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
             text-align: center;
             transition: background 0.3s ease, box-shadow 0.3s ease;
         }
@@ -58,19 +46,57 @@
             font-weight: 600;
             color: #fff;
             margin-bottom: 20px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         section p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #ddd;
             line-height: 1.8;
             max-width: 900px;
             margin: 0 auto;
         }
 
+        /* Service List */
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            padding: 30px;
+            flex: 1 1 200px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
         /* Button Styles */
-        .btn-learn-more, .btn-read-more {
+        .btn {
             display: inline-block;
             padding: 12px 30px;
             font-size: 1.1rem;
@@ -84,43 +110,35 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .btn-learn-more:hover, .btn-read-more:hover {
+        .btn:hover {
             background-color: #ffcc00;
             transform: translateY(-5px);
         }
 
-        /* Responsive Design for smaller screens */
+        /* Responsive Design */
         @media (max-width: 768px) {
             section h2 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             section p {
                 font-size: 1rem;
             }
 
-            .btn-learn-more, .btn-read-more {
-                font-size: 1rem;
+            .services-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .btn {
                 padding: 10px 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            section {
-                padding: 50px 20px;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            section p {
-                font-size: 0.95rem;
-            }
-
-            .btn-learn-more, .btn-read-more {
-                font-size: 0.9rem;
-                padding: 8px 20px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -129,39 +147,31 @@
 
     <!-- About Section -->
     <section class="about">
-        <h2>About Us</h2>
+        <h2>We Build What You Need</h2>
         <p>
-            At [Your Company Name], we are passionate about building world-class web and app solutions. 
-            Our team of experienced professionals is committed to delivering top-tier projects that 
-            not only meet your requirements but exceed expectations. With a focus on cutting-edge design, 
-            intuitive user experiences, and flawless functionality, we ensure that every digital product we create 
-            helps your business succeed in the digital world.
+            High-performance websites, mobile apps, and custom digital solutions tailored to drive success.
         </p>
-        <p>
-            From high-performance websites to robust mobile applications, we understand the importance of 
-            delivering solutions that are both scalable and secure. Our mission is to transform your ideas 
-            into reality, ensuring that your brand stands out and your customers are delighted.
-        </p>
-        <a href="about.html" class="btn-learn-more">Learn More</a>
+        <a href="about.html" class="btn">Learn More</a>
     </section>
 
     <!-- Services Section -->
     <section class="services">
-        <h2>Our Services</h2>
-        <p>
-            We offer a comprehensive suite of services designed to help businesses succeed online. Whether you're 
-            looking for a simple website or a complex web application, we’ve got you covered. Our expertise spans 
-            across web development, mobile app development, and custom solutions tailored to meet your needs.
-        </p>
-        <ul>
-            <li><strong>Custom Web Development:</strong> Tailored websites that represent your brand and engage users.</li>
-            <li><strong>Mobile App Development:</strong> Powerful mobile apps for both iOS and Android platforms.</li>
-            <li><strong>E-Commerce Solutions:</strong> End-to-end e-commerce platforms to drive your online sales.</li>
-            <li><strong>SEO & Digital Marketing:</strong> Strategies to improve your online presence and attract more visitors.</li>
-            <li><strong>UI/UX Design:</strong> Modern, user-friendly designs that enhance the user experience.</li>
-            <li><strong>Cloud Solutions & Integrations:</strong> Scalable cloud solutions and API integrations to boost efficiency.</li>
-        </ul>
-        <a href="services.html" class="btn-read-more">Read More</a>
+        <h2>Our Expertise</h2>
+        <div class="services-list">
+            <div class="service-item">
+                <h3>Web Development</h3>
+                <p>Custom websites that look great and perform even better.</p>
+            </div>
+            <div class="service-item">
+                <h3>Mobile Apps</h3>
+                <p>Powerful mobile applications for iOS and Android platforms.</p>
+            </div>
+            <div class="service-item">
+                <h3>E-Commerce</h3>
+                <p>Build your online store with seamless user experience and security.</p>
+            </div>
+        </div>
+        <a href="services.html" class="btn">Read More</a>
     </section>
 
 </body>
