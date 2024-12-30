@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-        /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
+        /* Global Reset */
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Background gradient */
-            color: #fff; /* Text color */
+            box-sizing: border-box; /* Ensure consistent box sizing */
+            font-family: 'Roboto', sans-serif;
         }
 
-        /* Sections */
+        /* Body Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Section Styles */
         section {
+            padding: 80px 20px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
-            padding: 80px 20px;
             border-radius: 15px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             margin-top: 80px;
@@ -49,44 +59,7 @@
             margin: 0 auto;
         }
 
-        /* Service List */
-        .services-list {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .service-item {
-            background: #fff; /* White background for the service cards */
-            color: #333; /* Black text color */
-            border-radius: 10px;
-            padding: 30px;
-            flex: 1 1 200px;
-            max-width: 300px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-item h3 {
-            font-size: 1.8rem;
-            color: #333; /* Black text for the title */
-            margin-bottom: 15px;
-        }
-
-        .service-item p {
-            font-size: 1rem;
-            color: #666; /* Slightly lighter black for description */
-        }
-
-        /* Button Styles */
+        /* Button Styling */
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -106,34 +79,7 @@
             transform: translateY(-5px);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            section h2 {
-                font-size: 2.8rem;
-            }
-
-            section p {
-                font-size: 1rem;
-            }
-
-            .services-list {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .service-item {
-                flex: 1 1 100%;
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .btn {
-                padding: 10px 25px;
-                font-size: 1rem;
-            }
-        }
-
-        /* Portfolio */
+        /* Portfolio Section */
         .portfolio {
             padding: 60px 20px;
             background-color: transparent;
@@ -160,7 +106,6 @@
             color: #ddd;
         }
 
-        /* Filter Buttons */
         .portfolio-filters {
             text-align: center;
             margin-bottom: 40px;
@@ -335,33 +280,6 @@
 </head>
 
 <body>
-
-    <!-- About Section -->
-    <section class="about">
-        <h2>We Build What You Need</h2>
-        <p>High-performance websites, mobile apps, and custom digital solutions tailored to drive success.</p>
-        <a href="about.html" class="btn">Learn More</a>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <h2>Our Expertise</h2>
-        <div class="services-list">
-            <div class="service-item">
-                <h3>Web Development</h3>
-                <p>Custom websites that look great and perform even better.</p>
-            </div>
-            <div class="service-item">
-                <h3>Mobile Apps</h3>
-                <p>Powerful mobile applications for iOS and Android platforms.</p>
-            </div>
-            <div class="service-item">
-                <h3>E-Commerce</h3>
-                <p>Build your online store with seamless user experience and security.</p>
-            </div>
-        </div>
-        <a href="services.html" class="btn">Read More</a>
-    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
