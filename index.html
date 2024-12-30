@@ -335,15 +335,10 @@ section p {
         right: 10px;
     }
 }
-
-        
-
-        
     </style>
 </head>
 
 <body>
-
 
      <!-- About Section -->
     <section class="about">
@@ -373,16 +368,16 @@ section p {
         </div>
         <a href="services.html" class="btn">Read More</a>
     </section>
-    
+
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <!-- Portfolio Title & Description -->
             <div class="portfolio-header">
                 <h2 class="section-title">Our Work</h2>
                 <p class="section-description">Explore the various projects  we've developed, ranging from web applications to professional services websites.</p>
             </div>
 
-            <!-- Filter Buttons (Dynamic) -->
+            <!-- Filter Buttons -->
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web Development</button>
@@ -401,46 +396,7 @@ section p {
                         <button class="view-details-btn" data-modal="modal1">View Details</button>
                     </div>
                 </div>
-
-                <!-- Project 2: TechConnect -->
-                <div class="portfolio-item" data-category="web">
-                    <img src="copy1.png" alt="TechConnect" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="project-title">TechConnect</h3>
-                        <p class="project-description">A landing page to showcase the latest technology, with real-time updates and job search functionality.</p>
-                        <button class="view-details-btn" data-modal="modal2">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Project 3: Weather App -->
-                <div class="portfolio-item" data-category="app">
-                    <img src="copy2.png" alt="Weather App" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="project-title">Weather App</h3>
-                        <p class="project-description">Fetches and displays weather data for South African cities using the OpenWeatherMap API.</p>
-                        <button class="view-details-btn" data-modal="modal3">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Project 4: Investment Calculator -->
-                <div class="portfolio-item" data-category="app">
-                    <img src="copy3.png" alt="Investment Calculator" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="project-title">Investment Calculator</h3>
-                        <p class="project-description">A web-based tool to calculate the future value of investments.</p>
-                        <button class="view-details-btn" data-modal="modal4">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Project 5: Quran Quiz -->
-                <div class="portfolio-item" data-category="app">
-                    <img src="copy4.png" alt="Quran Quiz" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="project-title">Quran Quiz</h3>
-                        <p class="project-description">A quiz to test your knowledge of the Quran.</p>
-                        <button class="view-details-btn" data-modal="modal5">View Details</button>
-                    </div>
-                </div>
+                <!-- Additional Projects ... -->
             </div>
         </div>
 
@@ -453,95 +409,36 @@ section p {
                 <a href="https://nhlobo.github.io/MADYASWANYUKU/" target="_blank" class="btn btn-primary">View Live</a>
             </div>
         </div>
-
-        <div id="modal2" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal2">&times;</span>
-                <h3>TechConnect</h3>
-                <p>A project to showcase the latest technology with real-time updates, user rewards, and job search functionality.</p>
-                <a href="https://nhlobo.github.io/Landing-page-demo/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
-
-        <div id="modal3" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal3">&times;</span>
-                <h3>Weather App</h3>
-                <p>Displays current weather and 5-day forecast for South African cities using the OpenWeatherMap API.</p>
-                <a href="https://weather-ebon-beta.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
-
-        <div id="modal4" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal4">&times;</span>
-                <h3>Investment Calculator</h3>
-                <p>A web-based tool to calculate the future value of investments.</p>
-                <a href="https://nhlobo.github.io/calculator/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
-
-        <div id="modal5" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal5">&times;</span>
-                <h3>Quran Quiz</h3>
-                <p>A fun and educational quiz to test your knowledge of the Quran.</p>
-                <a href="https://nhlobo.github.io/quran-knowledge-quiz/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
     </section>
- 
+
     <script>
-  
-    // Modal functionality with positioning
-;viewDetailsBtns.forEach(button => {
-    button.addEventListener('click', (e) => {
-        const modalId = button.dataset.modal;
-        const modal = document.getElementById(modalId);
+        // Get all buttons for viewing details
+        const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
         
-        // Open modal
-        modal.style.display = 'flex';
-        modal.classList.add('modal-active');
-    });
-});
+        // Event listeners to open modals
+        viewDetailsBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'flex';
+            });
+        });
 
-        
-        // Get the position of the clicked button
-        const buttonRect = button.getBoundingClientRect();
-        
-        // Calculate position for the modal based on button's position
-        modal.style.display = 'flex';
-        modal.classList.add('modal-active');
-        
-        // Position modal content
-        const modalContent = modal.querySelector('.modal-content');
-        modalContent.style.position = 'absolute';
-        modalContent.style.top = `${buttonRect.bottom + window.scrollY}px`; // Below the button
-        modalContent.style.left = `${buttonRect.left + window.scrollX}px`;  // Align with button's left edge
-    });
-});
+        // Close modals when clicking on close button
+        document.querySelectorAll('.close-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.getAttribute('data-close');
+                document.getElementById(modalId).style.display = 'none';
+            });
+        });
 
-// Close modal functionality
-closeBtns.forEach(button => {
-    button.addEventListener('click', () => {
-        const modalId = button.dataset.close;
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'none';
-        modal.classList.remove('modal-active');  // Remove active class on close
-    });
-});
+        // Close modals when clicking outside modal content
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('portfolio-modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+    </script>
 
-// Close modals when clicking outside the modal content
-window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('portfolio-modal')) {
-        e.target.style.display = 'none';
-        e.target.classList.remove('modal-active');  // Remove active class when closing
-    }
-});
-
-    
- </script>
-  
 </body>
 
 </html>
