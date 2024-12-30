@@ -77,7 +77,6 @@
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
-            text-align: center;
         }
 
         .portfolio-item:hover {
@@ -88,6 +87,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            opacity: 0.8;
         }
 
         .portfolio-overlay {
@@ -188,49 +192,6 @@
         .portfolio-item {
             animation: fadeIn 0.5s ease-out;
         }
-
-        /* Tap to View Indicator Styling */
-        .tap-indicator {
-            font-size: 14px;
-            font-weight: bold;
-            color: #007bff;
-            padding: 10px 20px;
-            background-color: transparent;
-            border: 2px solid #007bff;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 10px;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .portfolio-item:hover .tap-indicator {
-            opacity: 1;
-        }
-
-        .tap-indicator::after {
-            content: '↑';
-            display: block;
-            font-size: 18px;
-            margin-top: 5px;
-            color: #007bff;
-            animation: arrow-bounce 0.6s infinite;
-        }
-
-        @keyframes arrow-bounce {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
     </style>
 </head>
 
@@ -262,8 +223,6 @@
                         <p class="project-description">Eco-friendly pest control solutions for homes and businesses.</p>
                         <button class="view-details-btn" data-modal="modal1">View Details</button>
                     </div>
-                    <!-- Tap to View Indicator (Centered Below the Image) -->
-                    <div class="tap-indicator">Tap to View</div>
                 </div>
 
                 <!-- Project 2: TechConnect -->
@@ -274,8 +233,6 @@
                         <p class="project-description">A landing page to showcase the latest technology, with real-time updates and job search functionality.</p>
                         <button class="view-details-btn" data-modal="modal2">View Details</button>
                     </div>
-                    <!-- Tap to View Indicator (Centered Below the Image) -->
-                    <div class="tap-indicator">Tap to View</div>
                 </div>
 
                 <!-- Project 3: Weather App -->
@@ -286,39 +243,75 @@
                         <p class="project-description">Fetches and displays weather data for South African cities using the OpenWeatherMap API.</p>
                         <button class="view-details-btn" data-modal="modal3">View Details</button>
                     </div>
-                    <!-- Tap to View Indicator (Centered Below the Image) -->
-                    <div class="tap-indicator">Tap to View</div>
                 </div>
 
                 <!-- Project 4: Investment Calculator -->
-                <div class="portfolio-item" data-category="web">
+                <div class="portfolio-item" data-category="app">
                     <img src="logo-Photoroom.png" alt="Investment Calculator" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">Investment Calculator</h3>
-                        <p class="project-description">A simple web-based tool for calculating the future value of investments.</p>
+                        <p class="project-description">A web-based tool to calculate the future value of investments.</p>
                         <button class="view-details-btn" data-modal="modal4">View Details</button>
                     </div>
-                    <!-- Tap to View Indicator (Centered Below the Image) -->
-                    <div class="tap-indicator">Tap to View</div>
                 </div>
 
                 <!-- Project 5: Quran Quiz -->
-                <div class="portfolio-item" data-category="web">
+                <div class="portfolio-item" data-category="app">
                     <img src="logo-Photoroom.png" alt="Quran Quiz" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">Quran Quiz</h3>
-                        <p class="project-description">Test your knowledge of the Quran with a fun and educational quiz.</p>
+                        <p class="project-description">A quiz to test your knowledge of the Quran.</p>
                         <button class="view-details-btn" data-modal="modal5">View Details</button>
                     </div>
-                    <!-- Tap to View Indicator (Centered Below the Image) -->
-                    <div class="tap-indicator">Tap to View</div>
                 </div>
             </div>
         </div>
 
         <!-- Modals for Project Details -->
-        <!-- Add the modal content for each project (as you had before) -->
+        <div id="modal1" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal1">&times;</span>
+                <h3>Madya Swa Nyuku - Pest Control</h3>
+                <p>Eco-friendly, safe, and professional pest control solutions for homes and businesses.</p>
+                <a href="https://nhlobo.github.io/MADYASWANYUKU/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
 
+        <div id="modal2" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal2">&times;</span>
+                <h3>TechConnect</h3>
+                <p>A project to showcase the latest technology with real-time updates, user rewards, and job search functionality.</p>
+                <a href="https://nhlobo.github.io/Landing-page-demo/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal3" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal3">&times;</span>
+                <h3>Weather App</h3>
+                <p>Displays current weather and 5-day forecast for South African cities using the OpenWeatherMap API.</p>
+                <a href="https://weather-ebon-beta.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal4" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal4">&times;</span>
+                <h3>Investment Calculator</h3>
+                <p>A web-based tool to calculate the future value of investments.</p>
+                <a href="https://nhlobo.github.io/calculator/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal5" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal5">&times;</span>
+                <h3>Quran Quiz</h3>
+                <p>A fun and educational quiz to test your knowledge of the Quran.</p>
+                <a href="https://nhlobo.github.io/quran-knowledge-quiz/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
     </section>
 
     <script>
