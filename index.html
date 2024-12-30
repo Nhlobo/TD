@@ -509,14 +509,17 @@ section p {
     <script>
   
     // Modal functionality with positioning
-const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
-const modals = document.querySelectorAll('.portfolio-modal');
-const closeBtns = document.querySelectorAll('.close-btn');
-
-viewDetailsBtns.forEach(button => {
+;viewDetailsBtns.forEach(button => {
     button.addEventListener('click', (e) => {
         const modalId = button.dataset.modal;
         const modal = document.getElementById(modalId);
+        
+        // Open modal
+        modal.style.display = 'flex';
+        modal.classList.add('modal-active');
+    });
+});
+
         
         // Get the position of the clicked button
         const buttonRect = button.getBoundingClientRect();
