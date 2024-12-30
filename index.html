@@ -15,6 +15,126 @@
             color: #fff; /* Text color */
         }
 
+/* Sections */
+        section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 80px 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+            text-align: center;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        section h2 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #ddd;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Service List */
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .service-item {
+            background: #fff; /* White background for the service cards */
+            color: #333; /* Black text color */
+            border-radius: 10px;
+            padding: 30px;
+            flex: 1 1 200px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            color: #333; /* Black text for the title */
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #666; /* Slightly lighter black for description */
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffcc00;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section h2 {
+                font-size: 2.8rem;
+            }
+
+            section p {
+                font-size: 1rem;
+            }
+
+            .services-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        
+        
         .portfolio {
             padding: 60px 20px;
             background-color: transparent; /* Make the portfolio section transparent to see the gradient background */
