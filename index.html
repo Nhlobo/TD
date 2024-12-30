@@ -6,351 +6,340 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-       /* General Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Background gradient */
-    color: #fff; /* Text color */
-}
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Background gradient */
+            color: #fff; /* Text color */
+        }
 
-/* Sections */
-section {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    padding: 80px 20px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    margin-top: 80px;
-    text-align: center;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
+        /* Sections */
+        section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 80px 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+            text-align: center;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
 
-section:hover {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-}
+        section:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
 
-section h2 {
-    font-size: 3.5rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
+        section h2 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-section p {
-    font-size: 1.1rem;
-    color: #ddd;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto;
-}
+        section p {
+            font-size: 1.1rem;
+            color: #ddd;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-/* Service List */
-.services-list {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
+        /* Service List */
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
 
-.service-item {
-    background: #fff; /* White background for the service cards */
-    color: #333; /* Black text color */
-    border-radius: 10px;
-    padding: 30px;
-    flex: 1 1 200px;
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .service-item {
+            background: #fff; /* White background for the service cards */
+            color: #333; /* Black text color */
+            border-radius: 10px;
+            padding: 30px;
+            flex: 1 1 200px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
 
-.service-item h3 {
-    font-size: 1.8rem;
-    color: #333; /* Black text for the title */
-    margin-bottom: 15px;
-}
+        .service-item h3 {
+            font-size: 1.8rem;
+            color: #333; /* Black text for the title */
+            margin-bottom: 15px;
+        }
 
-.service-item p {
-    font-size: 1rem;
-    color: #666; /* Slightly lighter black for description */
-}
+        .service-item p {
+            font-size: 1rem;
+            color: #666; /* Slightly lighter black for description */
+        }
 
-/* Button Styles */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    background-color: #FFD700;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.btn:hover {
-    background-color: #ffcc00;
-    transform: translateY(-5px);
-}
+        .btn:hover {
+            background-color: #ffcc00;
+            transform: translateY(-5px);
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    section h2 {
-        font-size: 2.8rem;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section h2 {
+                font-size: 2.8rem;
+            }
 
-    section p {
-        font-size: 1rem;
-    }
+            section p {
+                font-size: 1rem;
+            }
 
-    .services-list {
-        flex-direction: column;
-        align-items: center;
-    }
+            .services-list {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    .service-item {
-        flex: 1 1 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
+            .service-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
 
-    .btn {
-        padding: 10px 25px;
-        font-size: 1rem;
-    }
-}
+            .btn {
+                padding: 10px 25px;
+                font-size: 1rem;
+            }
+        }
 
-/* Portfolio */
-.portfolio {
-    padding: 60px 20px;
-    background-color: transparent; /* Make the portfolio section transparent to see the gradient background */
-}
+        /* Portfolio */
+        .portfolio {
+            padding: 60px 20px;
+            background-color: transparent;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.portfolio-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-.portfolio-header .section-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #fff; /* White text to stand out against the dark gradient */
-}
+        .portfolio-header .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+        }
 
-.portfolio-header .section-description {
-    font-size: 18px;
-    color: #ddd; /* Lighter color for description */
-}
+        .portfolio-header .section-description {
+            font-size: 18px;
+            color: #ddd;
+        }
 
-/* Filter Buttons */
-.portfolio-filters {
-    text-align: center;
-    margin-bottom: 40px;
-}
+        /* Filter Buttons */
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-.filter-btn {
-    padding: 10px 20px;
-    margin: 0 5px;
-    font-size: 16px;
-    border: 2px solid #007bff;
-    border-radius: 50px;
-    background-color: white;
-    color: #007bff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        .filter-btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 50px;
+            background-color: white;
+            color: #007bff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.filter-btn.active,
-.filter-btn:hover {
-    background-color: #007bff;
-    color: white;
-}
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: #007bff;
+            color: white;
+        }
 
-/* Portfolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-.portfolio-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-.portfolio-item:hover {
-    transform: translateY(-10px);
-}
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
 
-.portfolio-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
-/* Ensure images remain untouched */
-.portfolio-item:hover .portfolio-image {
-    transform: scale(1.05); /* Optional zoom on hover */
-}
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.05);
+        }
 
-.portfolio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
-}
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
 
-.project-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-.project-description {
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 20px;
-}
+        .project-description {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.view-details-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
+        .view-details-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
 
-.view-details-btn:hover {
-    background-color: #0056b3;
-}
+        .view-details-btn:hover {
+            background-color: #0056b3;
+        }
 
-/* Modal Styling */
-.portfolio-modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: center; /* Center the modal content horizontally */
-    align-items: center; /* Center the modal content vertically */
-    z-index: 9999;
-    animation: fadeIn 0.3s ease-out; /* Add animation for fading in */
-    padding: 20px; /* Some padding around the modal content */
-}
+        /* Modal Styling */
+        .portfolio-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeIn 0.3s ease-out;
+            padding: 20px;
+        }
 
-/* Modal content that will appear directly over the image */
-.modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    max-width: 600px; /* Set max width */
-    width: 80%; /* Ensure the width is responsive */
-    color: #333;
-    margin: 0 20px; /* Margin for small screens */
-    position: relative;
-    text-align: center; /* Center content within modal */
-}
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 80%;
+            color: #333;
+            margin: 0 20px;
+            position: relative;
+            text-align: center;
+        }
 
-.modal-content h3 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #333; /* Ensure readability */
-}
+        .modal-content h3 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
 
-/* Close button styling */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #333;
-}
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
 
-/* Fade In Animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
 
-/* Responsive Design for Modal */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 90%; /* Ensure the modal takes 90% of the screen on smaller devices */
-        padding: 20px;
-    }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .modal-content h3 {
-        font-size: 20px; /* Smaller heading text for mobile */
-    }
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 90%;
+                padding: 20px;
+            }
 
-    .close-btn {
-        font-size: 25px; /* Smaller close button */
-        top: 5px;
-        right: 10px;
-    }
-}
+            .modal-content h3 {
+                font-size: 20px;
+            }
 
-        
-
-        
+            .close-btn {
+                font-size: 25px;
+                top: 5px;
+                right: 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-
-     <!-- About Section -->
+    <!-- About Section -->
     <section class="about">
         <h2>We Build What You Need</h2>
-        <p>
-            High-performance websites, mobile apps, and custom digital solutions tailored to drive success.
-        </p>
+        <p>High-performance websites, mobile apps, and custom digital solutions tailored to drive success.</p>
         <a href="about.html" class="btn">Learn More</a>
     </section>
 
@@ -373,16 +362,15 @@ section p {
         </div>
         <a href="services.html" class="btn">Read More</a>
     </section>
-    
+
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <!-- Portfolio Title & Description -->
             <div class="portfolio-header">
                 <h2 class="section-title">Our Work</h2>
-                <p class="section-description">Explore the various projects  we've developed, ranging from web applications to professional services websites.</p>
+                <p class="section-description">Explore the various projects we've developed, ranging from web applications to professional services websites.</p>
             </div>
 
-            <!-- Filter Buttons (Dynamic) -->
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web Development</button>
@@ -390,9 +378,8 @@ section p {
                 <button class="filter-btn" data-filter="services">Business Services</button>
             </div>
 
-            <!-- Portfolio Grid -->
             <div class="portfolio-grid">
-                <!-- Project 1: Madya Swa Nyuku Business Services -->
+                <!-- Portfolio Items -->
                 <div class="portfolio-item" data-category="services">
                     <img src="copy.png" alt="Madya Swa Nyuku" class="portfolio-image">
                     <div class="portfolio-overlay">
@@ -402,146 +389,62 @@ section p {
                     </div>
                 </div>
 
-                <!-- Project 2: TechConnect -->
                 <div class="portfolio-item" data-category="web">
                     <img src="copy1.png" alt="TechConnect" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">TechConnect</h3>
-                        <p class="project-description">A landing page to showcase the latest technology, with real-time updates and job search functionality.</p>
+                        <p class="project-description">Showcase technology and job search functionality.</p>
                         <button class="view-details-btn" data-modal="modal2">View Details</button>
                     </div>
                 </div>
 
-                <!-- Project 3: Weather App -->
-                <div class="portfolio-item" data-category="app">
-                    <img src="copy2.png" alt="Weather App" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="project-title">Weather App</h3>
-                        <p class="project-description">Fetches and displays weather data for South African cities using the OpenWeatherMap API.</p>
-                        <button class="view-details-btn" data-modal="modal3">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Project 4: Investment Calculator -->
-                <div class="portfolio-item" data-category="app">
-                    <img src="copy3.png" alt="Investment Calculator" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="project-title">Investment Calculator</h3>
-                        <p class="project-description">A web-based tool to calculate the future value of investments.</p>
-                        <button class="view-details-btn" data-modal="modal4">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Project 5: Quran Quiz -->
-                <div class="portfolio-item" data-category="app">
-                    <img src="copy4.png" alt="Quran Quiz" class="portfolio-image">
-                    <div class="portfolio-overlay">
-                        <h3 class="project-title">Quran Quiz</h3>
-                        <p class="project-description">A quiz to test your knowledge of the Quran.</p>
-                        <button class="view-details-btn" data-modal="modal5">View Details</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modals for Project Details -->
-        <div id="modal1" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal1">&times;</span>
-                <h3>Madya Swa Nyuku</h3>
-                <p>Eco-friendly pest control solutions for homes and businesses.</p>
-                <a href="https://nhlobo.github.io/MADYASWANYUKU/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
-
-        <div id="modal2" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal2">&times;</span>
-                <h3>TechConnect</h3>
-                <p>A project to showcase the latest technology with real-time updates, user rewards, and job search functionality.</p>
-                <a href="https://nhlobo.github.io/Landing-page-demo/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
-
-        <div id="modal3" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal3">&times;</span>
-                <h3>Weather App</h3>
-                <p>Displays current weather and 5-day forecast for South African cities using the OpenWeatherMap API.</p>
-                <a href="https://weather-ebon-beta.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
-
-        <div id="modal4" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal4">&times;</span>
-                <h3>Investment Calculator</h3>
-                <p>A web-based tool to calculate the future value of investments.</p>
-                <a href="https://nhlobo.github.io/calculator/" target="_blank" class="btn btn-primary">View Live</a>
-            </div>
-        </div>
-
-        <div id="modal5" class="portfolio-modal">
-            <div class="modal-content">
-                <span class="close-btn" data-close="modal5">&times;</span>
-                <h3>Quran Quiz</h3>
-                <p>A fun and educational quiz to test your knowledge of the Quran.</p>
-                <a href="https://nhlobo.github.io/quran-knowledge-quiz/" target="_blank" class="btn btn-primary">View Live</a>
+                <!-- Other Portfolio Items -->
             </div>
         </div>
     </section>
- 
+
+    <!-- Modal Templates -->
+    <div id="modal1" class="portfolio-modal">
+        <div class="modal-content">
+            <span class="close-btn" data-close="modal1">&times;</span>
+            <h3>Madya Swa Nyuku</h3>
+            <p>Eco-friendly pest control solutions for homes and businesses.</p>
+            <a href="https://nhlobo.github.io/MADYASWANYUKU/" target="_blank" class="btn">View Live</a>
+        </div>
+    </div>
+
+    <!-- Additional Modals -->
+
     <script>
-  
-    // Modal functionality with positioning
-;viewDetailsBtns.forEach(button => {
-    button.addEventListener('click', (e) => {
-        const modalId = button.dataset.modal;
-        const modal = document.getElementById(modalId);
-        
-        // Open modal
-        modal.style.display = 'flex';
-        modal.classList.add('modal-active');
-    });
-});
+        const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+        const closeBtns = document.querySelectorAll('.close-btn');
 
-        
-        // Get the position of the clicked button
-        const buttonRect = button.getBoundingClientRect();
-        
-        // Calculate position for the modal based on button's position
-        modal.style.display = 'flex';
-        modal.classList.add('modal-active');
-        
-        // Position modal content
-        const modalContent = modal.querySelector('.modal-content');
-        modalContent.style.position = 'absolute';
-        modalContent.style.top = `${buttonRect.bottom + window.scrollY}px`; // Below the button
-        modalContent.style.left = `${buttonRect.left + window.scrollX}px`;  // Align with button's left edge
-    });
-});
+        // Open modal functionality
+        viewDetailsBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.dataset.modal;
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'flex';
+            });
+        });
 
-// Close modal functionality
-closeBtns.forEach(button => {
-    button.addEventListener('click', () => {
-        const modalId = button.dataset.close;
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'none';
-        modal.classList.remove('modal-active');  // Remove active class on close
-    });
-});
+        // Close modal functionality
+        closeBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.dataset.close;
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'none';
+            });
+        });
 
-// Close modals when clicking outside the modal content
-window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('portfolio-modal')) {
-        e.target.style.display = 'none';
-        e.target.classList.remove('modal-active');  // Remove active class when closing
-    }
-});
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('portfolio-modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+    </script>
 
-    
- </script>
-  
 </body>
 
 </html>
