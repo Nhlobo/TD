@@ -6,23 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        /* Body Styles */
+        /* General Styling */
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Background gradient */
+            color: #fff; /* Text color */
         }
 
         .portfolio {
@@ -43,12 +33,12 @@
         .portfolio-header .section-title {
             font-size: 36px;
             font-weight: 700;
-            color: #fff;
+            color: #fff; /* White text to stand out against the dark gradient */
         }
 
         .portfolio-header .section-description {
             font-size: 18px;
-            color: #ddd;
+            color: #ddd; /* Lighter color for description */
         }
 
         /* Filter Buttons */
@@ -230,7 +220,7 @@
             <div class="portfolio-grid">
                 <!-- Project 1: Madya Swa Nyuku Business Services -->
                 <div class="portfolio-item" data-category="services">
-                    <img src="logo-Photoroom.png" alt="Madya Swa Nyuku" class="portfolio-image">
+                    <img src="copy.png" alt="Madya Swa Nyuku" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">Madya Swa Nyuku</h3>
                         <p class="project-description">Eco-friendly pest control solutions for homes and businesses.</p>
@@ -240,7 +230,7 @@
 
                 <!-- Project 2: TechConnect -->
                 <div class="portfolio-item" data-category="web">
-                    <img src="logo-Photoroom.png" alt="TechConnect" class="portfolio-image">
+                    <img src="copy1.png" alt="TechConnect" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">TechConnect</h3>
                         <p class="project-description">A landing page to showcase the latest technology, with real-time updates and job search functionality.</p>
@@ -250,7 +240,7 @@
 
                 <!-- Project 3: Weather App -->
                 <div class="portfolio-item" data-category="app">
-                    <img src="logo-Photoroom.png" alt="Weather App" class="portfolio-image">
+                    <img src="copy2.png" alt="Weather App" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">Weather App</h3>
                         <p class="project-description">Fetches and displays weather data for South African cities using the OpenWeatherMap API.</p>
@@ -260,7 +250,7 @@
 
                 <!-- Project 4: Investment Calculator -->
                 <div class="portfolio-item" data-category="app">
-                    <img src="logo-Photoroom.png" alt="Investment Calculator" class="portfolio-image">
+                    <img src="copy3.png" alt="Investment Calculator" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">Investment Calculator</h3>
                         <p class="project-description">A web-based tool to calculate the future value of investments.</p>
@@ -270,7 +260,7 @@
 
                 <!-- Project 5: Quran Quiz -->
                 <div class="portfolio-item" data-category="app">
-                    <img src="logo-Photoroom.png" alt="Quran Quiz" class="portfolio-image">
+                    <img src="copy4.png" alt="Quran Quiz" class="portfolio-image">
                     <div class="portfolio-overlay">
                         <h3 class="project-title">Quran Quiz</h3>
                         <p class="project-description">A quiz to test your knowledge of the Quran.</p>
@@ -279,19 +269,53 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Modals for Project Details -->
-    <div id="modal1" class="portfolio-modal">
-        <div class="modal-content">
-            <span class="close-btn" data-close="modal1">&times;</span>
-            <h3>Madya Swa Nyuku</h3>
-            <p>Eco-friendly pest control solutions for homes and businesses.</p>
-            <a href="https://nhlobo.github.io/MADYASWANYUKU/" target="_blank" class="btn btn-primary">View Live</a>
+        <!-- Modals for Project Details -->
+        <div id="modal1" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal1">&times;</span>
+                <h3>Madya Swa Nyuku</h3>
+                <p>Eco-friendly pest control solutions for homes and businesses.</p>
+                <a href="https://nhlobo.github.io/MADYASWANYUKU/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Other modals... -->
+        <div id="modal2" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal2">&times;</span>
+                <h3>TechConnect</h3>
+                <p>A project to showcase the latest technology with real-time updates, user rewards, and job search functionality.</p>
+                <a href="https://nhlobo.github.io/Landing-page-demo/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal3" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal3">&times;</span>
+                <h3>Weather App</h3>
+                <p>Displays current weather and 5-day forecast for South African cities using the OpenWeatherMap API.</p>
+                <a href="https://weather-ebon-beta.vercel.app/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal4" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal4">&times;</span>
+                <h3>Investment Calculator</h3>
+                <p>A web-based tool to calculate the future value of investments.</p>
+                <a href="https://nhlobo.github.io/calculator/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+
+        <div id="modal5" class="portfolio-modal">
+            <div class="modal-content">
+                <span class="close-btn" data-close="modal5">&times;</span>
+                <h3>Quran Quiz</h3>
+                <p>A fun and educational quiz to test your knowledge of the Quran.</p>
+                <a href="https://nhlobo.github.io/quran-knowledge-quiz/" target="_blank" class="btn btn-primary">View Live</a>
+            </div>
+        </div>
+    </section>
 
     <script>
         // Filter functionality
