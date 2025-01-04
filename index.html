@@ -15,46 +15,67 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Section with gradient overlay and landscape image */
         .logo-section {
             position: relative;
-            background-image: url('Techconnect.png'); /* Replace with your large background image */
-            background-size: cover;
-            background-position: center;
             height: 80vh; /* Adjust the height of the section */
-            display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Gradient overlay */
         }
 
+        /* Landscape image at the front, fully responsive */
+        .landscape-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire section */
+        }
+
+        /* Logo wrapper with animation */
         .logo-wrapper {
             position: absolute;
             bottom: 20px; /* Position logos towards the bottom */
             display: flex;
-            animation: logoScroll 10s linear infinite;
+            animation: logoScroll 20s linear infinite; /* Slower animation speed for smoothness */
+            z-index: 1; /* Ensure logos are on top of the image */
         }
 
+        /* Individual logo styling */
         .logo {
-            width: 80px; /* Adjust the size of the logos */
-            margin: 0 100px; /* Large space between logos */
-            opacity: 0.8;
+            width: 150px; /* Increased the size of the logos */
+            margin: 0 150px; /* Larger space between logos */
+            opacity: 1; /* Fully visible logos */
         }
 
+        /* Animation for smooth scrolling of logos */
         @keyframes logoScroll {
             0% {
-                transform: translateX(100%);
+                transform: translateX(100%); /* Start off-screen to the right */
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(-100%); /* End off-screen to the left */
+            }
+        }
+
+        /* Ensure responsiveness */
+        @media (max-width: 768px) {
+            .logo {
+                width: 100px; /* Smaller logo size for mobile */
+                margin: 0 80px; /* Smaller space between logos */
             }
         }
     </style>
 </head>
 <body>
     <section class="logo-section">
+        <!-- Landscape Image -->
+        <img src="Techconnect.png" alt="Landscape" class="landscape-image"> <!-- Replace with your landscape image -->
+
+        <!-- Logos moving over the landscape image -->
         <div class="logo-wrapper">
-            <img src="logo-Photoroom.png" alt="Logo 1" class="logo">
+            <img src="logo-Photoroom.png" alt="Logo 1" class="logo"> <!-- Replace with your logos -->
             <img src="logo-Photoroom.png" alt="Logo 2" class="logo">
             <img src="logo-Photoroom.png" alt="Logo 3" class="logo">
             <img src="logo-Photoroom.png" alt="Logo 4" class="logo">
