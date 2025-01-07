@@ -3,187 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logo Scroll</title>
+    <title>Interactive Portfolio</title>
     <style>
         /* Global Reset */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Ensure consistent box sizing */
+            box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
         }
 
         /* Body Styles */
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+            background: #f7f7f7;
             color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
             margin: 0;
             padding: 0;
         }
 
-        /* Section with gradient overlay and landscape image */
-        .logo-section {
-            position: relative;
-            height: 80vh; /* Adjust the height of the section */
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Gradient overlay */
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 50px;
+            background-color: #fff;
+            text-align: center;
         }
 
-        /* Landscape image at the front, fully responsive */
-        .landscape-image {
+        .portfolio-section h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        /* Category Filters */
+        .portfolio-filters {
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-item .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire section */
-            object-position: center; /* Keeps the focus of the image centered */
-        }
-
-        /* Logo wrapper with animation */
-        .logo-wrapper {
-            position: absolute;
-            bottom: 20px; /* Position logos towards the bottom */
-            display: flex;
-            animation: logoScroll 20s linear infinite; /* Slower animation speed for smoothness */
-            z-index: 1; /* Ensure logos are on top of the image */
-        }
-
-        /* Individual logo styling */
-        .logo {
-            width: 150px; /* Uniform logo size */
-            margin: 0 50px; /* Consistent space between logos */
-            opacity: 1; /* Fully visible logos */
-        }
-
-        /* Animation for smooth scrolling of logos */
-        @keyframes logoScroll {
-            0% {
-                transform: translateX(100%); /* Start off-screen to the right */
-            }
-            100% {
-                transform: translateX(-100%); /* End off-screen to the left */
-            }
-        }
-
-        /* Button to trigger the slide-in panel */
-        .btn-slide {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 15px 25px;
-            background-color: #007bff;
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 16px;
-            cursor: pointer;
-            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 20px;
+            text-align: center;
         }
 
-        /* Slide-in panel */
-        .slide-in-panel {
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item .overlay h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
             position: fixed;
             top: 0;
-            right: -300px; /* Initially hidden off-screen */
-            width: 300px;
-            height: 100%;
-            background-color: #fff;
-            box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            transition: right 0.3s ease-in-out;
-            z-index: 3;
-        }
-
-        /* Panel content */
-        .slide-in-panel h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .slide-in-panel p {
-            margin-bottom: 20px;
-        }
-
-        .slide-in-panel form input,
-        .slide-in-panel form textarea {
+            left: 0;
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
         }
 
-        .slide-in-panel form button {
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .close-modal {
             background-color: #007bff;
             color: white;
             padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
+            margin-top: 20px;
         }
 
-        /* Slide-in panel active state */
-        .slide-in-panel.active {
-            right: 0; /* Slide the panel in */
-        }
-
-        /* Responsiveness */
-        @media (max-width: 768px) {
-            .logo {
-                width: 120px; /* Smaller logo size for mobile */
-                margin: 0 40px; /* Smaller space between logos */
-            }
-
-            /* Make the landscape image responsive on small screens */
-            .landscape-image {
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-
-        /* Make the image fully responsive */
-        @media (max-width: 480px) {
-            .landscape-image {
-                object-fit: cover;
-                object-position: center; /* Keep the important part of the image in view */
-            }
+        .close-modal:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <section class="logo-section">
-        <div class="logo-wrapper">
-            <img src="logo-Photoroom.png" alt="Logo 1" class="logo">
-            <img src="bg-dceb5d0c-5ae2-4d5e-91ca-f146a6781687 (1).png" alt="Logo 2" class="logo">
-            <img src="bg-0cc3a803-bfa1-4a52-931d-092d8400927e.png" alt="Logo 3" class="logo">
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <h1>Our Portfolio</h1>
+
+        <!-- Category Filters -->
+        <div class="portfolio-filters">
+            <button class="filter-btn" onclick="filterPortfolio('all')">All</button>
+            <button class="filter-btn" onclick="filterPortfolio('web')">Web Design</button>
+            <button class="filter-btn" onclick="filterPortfolio('graphic')">Graphic Design</button>
+            <button class="filter-btn" onclick="filterPortfolio('photography')">Photography</button>
         </div>
-        <!-- Button to trigger the slide-in panel -->
-        <button class="btn-slide" onclick="togglePanel()">Contact Us</button>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Portfolio Items -->
+            <div class="portfolio-item" data-category="web" onclick="showModal('Web Project 1', 'This is a description of Web Project 1.', 'web-project1.jpg')">
+                <img src="web-project1.jpg" alt="Web Project 1">
+                <div class="overlay">
+                    <h3>Web Project 1</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="graphic" onclick="showModal('Graphic Project 1', 'This is a description of Graphic Project 1.', 'graphic-project1.jpg')">
+                <img src="graphic-project1.jpg" alt="Graphic Project 1">
+                <div class="overlay">
+                    <h3>Graphic Project 1</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="photography" onclick="showModal('Photography Project 1', 'This is a description of Photography Project 1.', 'photography-project1.jpg')">
+                <img src="photography-project1.jpg" alt="Photography Project 1">
+                <div class="overlay">
+                    <h3>Photography Project 1</h3>
+                </div>
+            </div>
+            <!-- Add more portfolio items as needed -->
+        </div>
     </section>
 
-    <!-- Slide-in Panel -->
-    <div class="slide-in-panel" id="slidePanel">
-        <h2>Get in Touch</h2>
-        <p>Have a question? Reach out to us using the form below:</p>
-        <form action="#">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="">
+            <p id="modalDescription"></p>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
     </div>
 
     <script>
-        // Toggle the slide-in panel visibility
-        function togglePanel() {
-            const panel = document.getElementById('slidePanel');
-            panel.classList.toggle('active');
+        // Filter Portfolio Items by Category
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Show Modal with Project Details
+        function showModal(title, description, image) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Close the Modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
         }
     </script>
+
 </body>
 </html>
