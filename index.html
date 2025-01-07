@@ -3,227 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Portfolio</title>
+    <title>Logo Scroll</title>
     <style>
         /* Global Reset */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box; /* Ensure consistent box sizing */
             font-family: 'Roboto', sans-serif;
         }
 
         /* Body Styles */
         body {
             font-family: 'Inter', sans-serif;
-            background: #f7f7f7;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
             color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
         }
 
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 50px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .portfolio-section h1 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-
-        /* Category Filters */
-        .portfolio-filters {
-            margin-bottom: 30px;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .filter-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Portfolio Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 0;
-        }
-
-        .portfolio-item {
+        /* Section with gradient overlay and landscape image */
+        .logo-section {
             position: relative;
+            height: 80vh; /* Adjust the height of the section */
             overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Gradient overlay */
         }
 
-        .portfolio-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .portfolio-item .overlay {
+        /* Landscape image at the front, fully responsive */
+        .landscape-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
+            object-fit: cover; /* Ensures the image covers the entire section */
+            object-position: center; /* Keeps the focus of the image centered */
+        }
+
+        /* Logo wrapper with animation */
+        .logo-wrapper {
+            position: absolute;
+            bottom: 20px; /* Position logos towards the bottom */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
+            animation: logoScroll 20s linear infinite; /* Slower animation speed for smoothness */
+            z-index: 1; /* Ensure logos are on top of the image */
+        }
+
+        /* Individual logo styling */
+        .logo {
+            width: 150px; /* Uniform logo size */
+            margin: 0 50px; /* Consistent space between logos */
+            opacity: 1; /* Fully visible logos */
+        }
+
+        /* Animation for smooth scrolling of logos */
+        @keyframes logoScroll {
+            0% {
+                transform: translateX(100%); /* Start off-screen to the right */
+            }
+            100% {
+                transform: translateX(-100%); /* End off-screen to the left */
+            }
+        }
+
+        /* Button to trigger the slide-in */
+        .slide-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .slide-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Slide-in Panel Styling */
+        .slide-panel {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Initially off-screen */
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            text-align: center;
+            transition: right 0.3s ease-in-out;
+            z-index: 10;
         }
 
-        .portfolio-item:hover .overlay {
-            opacity: 1;
-        }
-
-        .portfolio-item .overlay h3 {
-            margin-bottom: 10px;
+        /* Panel content */
+        .slide-panel h2 {
+            margin-bottom: 20px;
             font-size: 24px;
         }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 10;
-            justify-content: center;
-            align-items: center;
-            overflow-y: auto;
+        .slide-panel p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
         }
 
-        .modal-content {
-            background-color: #fff;
-            padding: 20px;
-            max-width: 800px;
-            width: 90%;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .modal-content img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .close-modal {
+        .close-btn {
+            padding: 10px;
             background-color: #007bff;
             color: white;
-            padding: 10px 20px;
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            margin-top: 20px;
+            font-size: 16px;
         }
 
-        .close-modal:hover {
+        .close-btn:hover {
             background-color: #0056b3;
         }
+
     </style>
 </head>
 <body>
 
     <!-- Portfolio Section -->
-    <section class="portfolio-section">
-        <h1>Our Portfolio</h1>
+    <section class="logo-section">
+        <!-- Landscape image -->
+        <img src="landscape.jpg" alt="Landscape" class="landscape-image">
 
-        <!-- Category Filters -->
-        <div class="portfolio-filters">
-            <button class="filter-btn" onclick="filterPortfolio('all')">All</button>
-            <button class="filter-btn" onclick="filterPortfolio('web')">Web Design</button>
-            <button class="filter-btn" onclick="filterPortfolio('graphic')">Graphic Design</button>
-            <button class="filter-btn" onclick="filterPortfolio('photography')">Photography</button>
+        <!-- Logos moving over the landscape image -->
+        <div class="logo-wrapper">
+            <img src="logo-Photoroom.png" alt="Logo 1" class="logo"> <!-- Replace with your logos -->
+            <img src="bg-dceb5d0c-5ae2-4d5e-91ca-f146a6781687 (1).png" alt="Logo 2" class="logo">
+            <img src="bg-0cc3a803-bfa1-4a52-931d-092d8400927e.png" alt="Logo 3" class="logo">
         </div>
 
-        <!-- Portfolio Grid -->
-        <div class="portfolio-grid" id="portfolioGrid">
-            <!-- Portfolio Items -->
-            <div class="portfolio-item" data-category="web" onclick="showModal('Web Project 1', 'This is a description of Web Project 1.', 'web-project1.jpg')">
-                <img src="web-project1.jpg" alt="Web Project 1">
-                <div class="overlay">
-                    <h3>Web Project 1</h3>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="graphic" onclick="showModal('Graphic Project 1', 'This is a description of Graphic Project 1.', 'graphic-project1.jpg')">
-                <img src="graphic-project1.jpg" alt="Graphic Project 1">
-                <div class="overlay">
-                    <h3>Graphic Project 1</h3>
-                </div>
-            </div>
-            <div class="portfolio-item" data-category="photography" onclick="showModal('Photography Project 1', 'This is a description of Photography Project 1.', 'photography-project1.jpg')">
-                <img src="photography-project1.jpg" alt="Photography Project 1">
-                <div class="overlay">
-                    <h3>Photography Project 1</h3>
-                </div>
-            </div>
-            <!-- Add more portfolio items as needed -->
-        </div>
+        <!-- Button to Trigger Slide-in -->
+        <button class="slide-btn" onclick="toggleSlidePanel()">Get More Info</button>
     </section>
 
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <h2 id="modalTitle"></h2>
-            <img id="modalImage" src="" alt="">
-            <p id="modalDescription"></p>
-            <button class="close-modal" onclick="closeModal()">Close</button>
-        </div>
+    <!-- Slide-in Panel -->
+    <div class="slide-panel" id="slidePanel">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you! Feel free to reach out with any questions or inquiries about our portfolio.</p>
+        
+        <!-- Contact Form (Optional) -->
+        <form>
+            <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;">
+            <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;">
+            <textarea placeholder="Your Message" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;"></textarea>
+            <button type="submit" class="close-btn">Send Message</button>
+        </form>
+        
+        <!-- Close Button -->
+        <button class="close-btn" onclick="toggleSlidePanel()">Close</button>
     </div>
 
     <script>
-        // Filter Portfolio Items by Category
-        function filterPortfolio(category) {
-            const items = document.querySelectorAll('.portfolio-item');
-            items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Show Modal with Project Details
-        function showModal(title, description, image) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalImage').src = image;
-            document.getElementById('modal').style.display = 'flex';
-        }
-
-        // Close the Modal
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
+        // Function to toggle the slide panel
+        function toggleSlidePanel() {
+            const panel = document.getElementById('slidePanel');
+            const panelPosition = panel.style.right === "0px" ? "-300px" : "0px";
+            panel.style.right = panelPosition;
         }
     </script>
 
