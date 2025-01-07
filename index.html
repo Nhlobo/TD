@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logo Scroll</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+       /* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure consistent box sizing */
+  font-family: 'Roboto', sans-serif;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-        }
-
+/* Body Styles */
+body {
+  font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
         /* Section with gradient overlay and landscape image */
         .logo-section {
             position: relative;
@@ -60,30 +68,6 @@
             }
         }
 
-        /* Button Styling */
-        .btn {
-            position: absolute;
-            left: 20px; /* Position the button on the far left */
-            top: 50%; /* Vertically center the button */
-            transform: translateY(-50%); /* Adjust exactly in the middle */
-            padding: 8px 20px; /* Reduced padding for a smaller button */
-            font-size: 0.9rem; /* Slightly smaller font size */
-            text-transform: uppercase;
-            background-color: #FFD700; /* Golden background */
-            color: #333; /* Dark text color */
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 2; /* Make sure the button is above the landscape image */
-        }
-
-        /* Hover effect for Buttons */
-        .btn:hover {
-            background-color: #ffcc00; /* Slightly darker yellow */
-            transform: translateY(-3px); /* Slight hover lift effect */
-        }
-
         /* Ensure responsiveness */
         @media (max-width: 768px) {
             .logo {
@@ -108,9 +92,8 @@
 </head>
 <body>
     <section class="logo-section">
-        <!-- Landscape Image -->
-        <img src="white.jpg" alt="Landscape" class="landscape-image"> <!-- Replace with your landscape image -->
-
+       
+       
         <!-- Logos moving over the landscape image -->
         <div class="logo-wrapper">
             <img src="logo-Photoroom.png" alt="Logo 1" class="logo"> <!-- Replace with your logos -->
