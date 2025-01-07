@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logo Scroll</title>
     <style>
-       /* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Ensure consistent box sizing */
-  font-family: 'Roboto', sans-serif;
-}
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensure consistent box sizing */
+            font-family: 'Roboto', sans-serif;
+        }
 
-/* Body Styles */
-body {
-  font-family: 'Inter', sans-serif;
-background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
+        /* Body Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         /* Section with gradient overlay and landscape image */
         .logo-section {
             position: relative;
@@ -68,12 +69,76 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
             }
         }
 
-        /* Ensure responsiveness */
+        /* Button to trigger the slide-in panel */
+        .btn-slide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        /* Slide-in panel */
+        .slide-in-panel {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Initially hidden off-screen */
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: right 0.3s ease-in-out;
+            z-index: 3;
+        }
+
+        /* Panel content */
+        .slide-in-panel h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .slide-in-panel p {
+            margin-bottom: 20px;
+        }
+
+        .slide-in-panel form input,
+        .slide-in-panel form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .slide-in-panel form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Slide-in panel active state */
+        .slide-in-panel.active {
+            right: 0; /* Slide the panel in */
+        }
+
+        /* Responsiveness */
         @media (max-width: 768px) {
             .logo {
                 width: 120px; /* Smaller logo size for mobile */
                 margin: 0 40px; /* Smaller space between logos */
             }
+
             /* Make the landscape image responsive on small screens */
             .landscape-image {
                 object-fit: cover;
@@ -92,17 +157,33 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
 </head>
 <body>
     <section class="logo-section">
-       
-       
-        <!-- Logos moving over the landscape image -->
         <div class="logo-wrapper">
-            <img src="logo-Photoroom.png" alt="Logo 1" class="logo"> <!-- Replace with your logos -->
+            <img src="logo-Photoroom.png" alt="Logo 1" class="logo">
             <img src="bg-dceb5d0c-5ae2-4d5e-91ca-f146a6781687 (1).png" alt="Logo 2" class="logo">
             <img src="bg-0cc3a803-bfa1-4a52-931d-092d8400927e.png" alt="Logo 3" class="logo">
         </div>
-
-        <!-- Button to View Portfolio -->
-        <a href="portfolio.html" class="btn">View Our Work</a>
+        <!-- Button to trigger the slide-in panel -->
+        <button class="btn-slide" onclick="togglePanel()">Contact Us</button>
     </section>
+
+    <!-- Slide-in Panel -->
+    <div class="slide-in-panel" id="slidePanel">
+        <h2>Get in Touch</h2>
+        <p>Have a question? Reach out to us using the form below:</p>
+        <form action="#">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Toggle the slide-in panel visibility
+        function togglePanel() {
+            const panel = document.getElementById('slidePanel');
+            panel.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
