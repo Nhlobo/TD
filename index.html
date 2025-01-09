@@ -3,176 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logo Scroll</title>
+    <title>Responsive Landscape Picture</title>
     <style>
-        /* Global Reset */
+        /* Basic reset */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Ensure consistent box sizing */
-            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
         }
 
-        /* Body Styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
+        /* Ensure the body takes full height */
+        body, html {
+            height: 100%;
         }
 
-        /* Section with gradient overlay and landscape image */
-        .logo-section {
+        /* Make the section take full width and height */
+        .responsive-image-wrap {
             position: relative;
-            height: 80vh; /* Adjust the height of the section */
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Gradient overlay */
-        }
-
-        /* Landscape image at the front, fully responsive */
-        .landscape-image {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire section */
-            object-position: center; /* Keeps the focus of the image centered */
+            height: 100vh; /* Full screen height */
+            background-image: url('https://via.placeholder.com/1500x800'); /* Example image, replace with your own */
+            background-position: center;
+            background-size: cover; /* Ensures the image covers the whole section */
+            background-repeat: no-repeat;
         }
-
-        /* Logo wrapper with animation */
-        .logo-wrapper {
-            position: absolute;
-            bottom: 20px; /* Position logos towards the bottom */
-            display: flex;
-            animation: logoScroll 20s linear infinite; /* Slower animation speed for smoothness */
-            z-index: 1; /* Ensure logos are on top of the image */
-        }
-
-        /* Individual logo styling */
-        .logo {
-            width: 150px; /* Uniform logo size */
-            margin: 0 50px; /* Consistent space between logos */
-            opacity: 1; /* Fully visible logos */
-        }
-
-        /* Animation for smooth scrolling of logos */
-        @keyframes logoScroll {
-            0% {
-                transform: translateX(100%); /* Start off-screen to the right */
-            }
-            100% {
-                transform: translateX(-100%); /* End off-screen to the left */
-            }
-        }
-
-        /* Button to trigger the slide-in */
-        .slide-btn {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 15px 30px;
-            background-color: #007bff;
-            color: white;
-            font-size: 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .slide-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Slide-in Panel Styling */
-        .slide-panel {
-            position: fixed;
-            top: 0;
-            right: -300px; /* Initially off-screen */
-            width: 300px;
-            height: 100%;
-            background-color: #fff;
-            box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: right 0.3s ease-in-out;
-            z-index: 10;
-        }
-
-        /* Panel content */
-        .slide-panel h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .slide-panel p {
-            margin-bottom: 20px;
-            font-size: 16px;
-            color: #555;
-        }
-
-        .close-btn {
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .close-btn:hover {
-            background-color: #0056b3;
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- Portfolio Section -->
-    <section class="logo-section">
-        <!-- Landscape image -->
-        <img src="landscape.jpg" alt="Landscape" class="landscape-image">
-
-        <!-- Logos moving over the landscape image -->
-        <div class="logo-wrapper">
-            <img src="logo-Photoroom.png" alt="Logo 1" class="logo"> <!-- Replace with your logos -->
-            <img src="bg-dceb5d0c-5ae2-4d5e-91ca-f146a6781687 (1).png" alt="Logo 2" class="logo">
-            <img src="bg-0cc3a803-bfa1-4a52-931d-092d8400927e.png" alt="Logo 3" class="logo">
-        </div>
-
-        <!-- Button to Trigger Slide-in -->
-        <button class="slide-btn" onclick="toggleSlidePanel()">Get More Info</button>
+    <section class="responsive-image-wrap">
+        <!-- Just the image as the background -->
     </section>
-
-    <!-- Slide-in Panel -->
-    <div class="slide-panel" id="slidePanel">
-        <h2>Contact Us</h2>
-        <p>We would love to hear from you! Feel free to reach out with any questions or inquiries about our portfolio.</p>
-        
-        <!-- Contact Form (Optional) -->
-        <form>
-            <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;">
-            <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;">
-            <textarea placeholder="Your Message" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;"></textarea>
-            <button type="submit" class="close-btn">Send Message</button>
-        </form>
-        
-        <!-- Close Button -->
-        <button class="close-btn" onclick="toggleSlidePanel()">Close</button>
-    </div>
-
-    <script>
-        // Function to toggle the slide panel
-        function toggleSlidePanel() {
-            const panel = document.getElementById('slidePanel');
-            const panelPosition = panel.style.right === "0px" ? "-300px" : "0px";
-            panel.style.right = panelPosition;
-        }
-    </script>
 
 </body>
 </html>
