@@ -1,223 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery Section</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | Innovative Digital Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            height: 100%;
+        }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #f8f8f8, #f1f1f1);
-      color: #333;
-      line-height: 1.6;
-    }
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
 
-    h1, h2, h3, h4, h5, p {
-      font-weight: 500;
-    }
+        h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .gallery-section {
-      padding: 60px 0;
-      text-align: center;
-    }
+        .section {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-    .explore-portfolio h2 {
-      font-size: 48px;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('https://via.placeholder.com/1600x900');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
 
-    .explore-btn {
-      padding: 12px 30px;
-      font-size: 18px;
-      background: linear-gradient(45deg, #007bff, #0056b3);
-      color: white;
-      border-radius: 25px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
 
-    .explore-btn:hover {
-      background: linear-gradient(45deg, #0056b3, #007bff);
-      transform: scale(1.1);
-    }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
 
-    .gallery-intro h3 {
-      font-size: 36px;
-      color: #333;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
+        .hero h1 {
+            font-size: 4em;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
 
-    .gallery-intro p {
-      font-size: 18px;
-      color: #777;
-      line-height: 1.8;
-    }
+        .hero p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
 
-    .gallery-items {
-      width: 80%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+        .btn-primary {
+            background-color: #ff6f61;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 20px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
 
-    .item {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      text-align: center;
-    }
+        .btn-primary:hover {
+            background-color: #e85d4c;
+        }
 
-    .item img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
+        /* Portfolio Section */
+        .portfolio-container {
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+        }
 
-    .item p {
-      margin-top: 15px;
-      color: #555;
-      font-size: 16px;
-    }
+        .portfolio-container h2 {
+            font-size: 3.5em;
+            margin-bottom: 40px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
 
-    .gallery-navigation {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 20px;
-    }
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
 
-    .nav-btn {
-      padding: 12px 20px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s ease;
-    }
+        .portfolio-item {
+            position: relative;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
 
-    .nav-btn:hover {
-      background: #0056b3;
-    }
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
 
-    @media screen and (max-width: 768px) {
-      .gallery-items {
-        width: 90%;
-      }
-    }
-  </style>
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-item-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .portfolio-item-info h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .portfolio-item-info p {
+            font-size: 1.1em;
+        }
+
+        /* Project Details */
+        .project-card {
+            display: inline-block;
+            width: 30%;
+            margin: 0 1.5%;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .project-card h4 {
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        .project-card p {
+            font-size: 1.1em;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .view-project-btn {
+            background-color: #ff6f61;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 20px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .view-project-btn:hover {
+            background-color: #e85d4c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer a {
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer p {
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <section class="gallery-section">
-    <div class="explore-portfolio">
-      <h2>Explore Our Portfolio</h2>
-      <a href="#portfolio" class="explore-btn">View Portfolio</a>
-    </div>
-
-    <div class="gallery-intro">
-      <h3>Explore Our Projects</h3>
-      <p>Discover our previous work and get an idea of the websites and apps we've created. Whether you are looking for a landing page, blog, or a full-service website, we have a solution for you.</p>
-    </div>
-
-    <div class="gallery-items" id="galleryItems">
-      <!-- Gallery Item 1 -->
-      <div class="item">
-        <h5>Starter Package</h5>
-        <img src="Clyde-2.jpg" alt="Personal Blog">
-        <p>Custom personal blog design with post categories and responsive layout.</p>
-      </div>
-    </div>
-
-    <div class="gallery-navigation">
-      <button class="nav-btn" id="prevBtn">Previous</button>
-      <button class="nav-btn" id="nextBtn">Next</button>
-    </div>
-  </section>
-
-  <script>
-    let currentIndex = 0;
-
-    const items = [
-      {
-        title: 'Starter Package',
-        img: 'Clyde-2.jpg',
-        desc: 'Custom personal blog design with post categories and responsive layout.',
-      },
-      {
-        title: 'Portfolio Website',
-        img: 'portfolio-website.jpg',
-        desc: 'Portfolio website with clean design to showcase your work.',
-      },
-      {
-        title: 'Landing Page',
-        img: 'landing-page-website.jpg',
-        desc: 'Responsive landing page with clear call-to-action and simple design.',
-      },
-      {
-        title: 'Simple Project Website',
-        img: 'simple-project-website.jpg',
-        desc: 'Perfect for small projects, showcasing basic information and services.',
-      }
-    ];
-
-    const galleryItems = document.getElementById('galleryItems');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    function updateGallery() {
-      const item = items[currentIndex];
-      galleryItems.innerHTML = `
-        <div class="item">
-          <h5>${item.title}</h5>
-          <img src="${item.img}" alt="${item.title}">
-          <p>${item.desc}</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Our Stunning Web & App Projects</h1>
+            <p>Explore the cutting-edge digital solutions we’ve created for our clients</p>
+            <a href="#portfolio" class="btn-primary">View Our Work</a>
         </div>
-      `;
-    }
+    </div>
 
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-      } else {
-        currentIndex = items.length - 1;
-      }
-      updateGallery();
-    });
+    <!-- Portfolio Section -->
+    <div id="portfolio" class="portfolio-container">
+        <h2>Featured Projects</h2>
 
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < items.length - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-      }
-      updateGallery();
-    });
+        <div class="portfolio-items">
+            <!-- Project 1 -->
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/800x500" alt="Project 1">
+                <div class="portfolio-item-info">
+                    <h3>Website Redesign</h3>
+                    <p>Revamping a legacy website into a modern, responsive platform.</p>
+                </div>
+            </div>
 
-    updateGallery();
-  </script>
+            <!-- Project 2 -->
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/800x500" alt="Project 2">
+                <div class="portfolio-item-info">
+                    <h3>Mobile App Development</h3>
+                    <p>Developed a cross-platform mobile app to engage users on the go.</p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/800x500" alt="Project 3">
+                <div class="portfolio-item-info">
+                    <h3>E-Commerce Website</h3>
+                    <p>Built a seamless, user-friendly e-commerce platform for a growing business.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Details Section -->
+        <div class="section">
+            <h2>Our Work in Detail</h2>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                <h4>Custom Web Development</h4>
+                <p>Created a fully custom website tailored to client’s business needs with advanced features and design.</p>
+                <a href="#" class="view-project-btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <h4>Mobile App Design</h4>
+                <p>Designed a seamless mobile experience with intuitive UI and fast performance.</p>
+                <a href="#" class="view-project-btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <h4>E-Commerce Development</h4>
+                <p>Developed a scalable e-commerce website that increased sales and improved user engagement.</p>
+                <a href="#" class="view-project-btn">View Project</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Innovative Digital Agency. All Rights Reserved.</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </footer>
 
 </body>
+
 </html>
