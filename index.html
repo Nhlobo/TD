@@ -6,15 +6,16 @@
     <title>Featured Projects</title>
     <style>
         /* Body Styles */
-body {
-  font-family: 'Inter', sans-serif;
-background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         .featured-projects {
             text-align: center;
             padding: 20px;
@@ -23,17 +24,20 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
         .featured-projects h2 {
             font-size: 24px;
             margin-bottom: 10px;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .featured-projects p {
             font-size: 16px;
             margin-bottom: 20px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .project {
@@ -42,6 +46,11 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
             overflow: hidden;
             position: relative;
             padding-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
         }
 
         .project img {
@@ -64,10 +73,69 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
             text-decoration: none;
             font-size: 16px;
             margin-top: 10px;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .view-site:hover {
             background-color: #555;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .download-section img {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .download-section a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .download-section a:hover {
+            background-color: #555;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -114,6 +182,26 @@ background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)
             </div>
         </div>
     </section>
+
+    <section class="download-section">
+        <img src="app-icon.png" alt="App Icon">
+        <p>Download our latest app on the app store</p>
+        <a href="path/to/apk" class="view-site">
+            <img src="apk-icon.png" alt="APK Icon">
+            Install APK
+        </a>
+        <a href="https://apps.apple.com/us/app/your-app/id1234567890" class="view-site">
+            <img src="app-store-icon.png" alt="App Store Icon">
+            App Store
+        </a>
+        <a href="https://appgallery.huawei.com/app/C12345678" class="view-site">
+            <img src="huawei-icon.png" alt="Huawei Icon">
+            Huawei AppGallery
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.yourapp" class="view-site">
+            <img src="google-play-icon.png" alt="Google Play Icon">
+            Google Play
+        </a>
+    </section>
 </body>
-    </html>
-    
+</html>
