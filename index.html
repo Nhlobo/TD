@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -82,17 +82,58 @@
 
         .download-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 40px;
             padding: 20px;
             animation: fadeInUp 1s ease-in-out;
+        }
+
+        .phone-structure {
+            position: relative;
+            width: 250px;
+            height: 500px;
+            background-color: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            transform: rotate(-15deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .phone-structure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .download-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .download-button:hover {
+            background-color: #555;
         }
 
         .app-stores {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-top: 20px;
         }
 
         .app-stores button {
@@ -122,42 +163,25 @@
             text-align: left;
         }
 
-        .phone-structure {
-            position: relative;
-            width: 200px;
-            height: 400px;
-            background-color: #fff;
-            border-radius: 30px;
-            overflow: hidden;
-            transform: rotate(-15deg);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+        @media (max-width: 600px) {
+            .phone-structure {
+                width: 200px;
+                height: 400px;
+            }
 
-        .phone-structure img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+            .app-stores button {
+                padding: 8px;
+            }
 
-        .download-text {
-            text-align: center;
-            margin-top: 20px;
-        }
+            .app-stores svg {
+                width: 24px;
+                height: 24px;
+            }
 
-        .download-button {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .download-button:hover {
-            background-color: #555;
+            .download-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
         }
 
         @keyframes fadeInDown {
@@ -237,6 +261,15 @@
     </section>
 
     <section class="download-section">
+        <div class="phone-structure">
+            <img src="copy2.png" alt="App Screenshot">
+        </div>
+
+        <div class="download-text">
+            <p>Download our latest app</p>
+            <a href="path/to/apk" class="download-button">Download APK</a>
+        </div>
+
         <div class="app-stores">
             <button>
                 <div>
@@ -276,15 +309,6 @@
                     </div>
                 </div>
             </button>
-        </div>
-
-        <div class="phone-structure">
-            <img src="copy2.png" alt="App Screenshot">
-        </div>
-
-        <div class="download-text">
-            <p>Download our latest app</p>
-            <a href="path/to/apk" class="download-button">Download APK</a>
         </div>
     </section>
 </body>
