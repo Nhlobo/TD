@@ -1,345 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Web & App Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <title>Featured Projects</title>
     <style>
-        /* Global Styles */
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        body, html {
-            font-family: 'Rubik', sans-serif;
-            overflow: hidden;
-            height: 100%;
-            background-color: #111;
-            color: #fff;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .featured-projects {
             text-align: center;
-            z-index: 10;
+            padding: 20px;
         }
 
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            letter-spacing: 5px;
-            color: #ff5e57;
+        .featured-projects h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .featured-projects p {
+            font-size: 16px;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-
-        .btn-primary {
-            padding: 14px 35px;
-            font-size: 1.2rem;
-            background: #ff5e57;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            transition: background 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: #e04d46;
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 120px 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: #222;
-        }
-
-        .portfolio h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            color: #ff5e57;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        /* Canvas Grid */
-        .canvas-grid {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            width: 100%;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-        .canvas-item {
-            position: relative;
+        .project {
+            background-color: #111;
+            border-radius: 10px;
             overflow: hidden;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            cursor: pointer;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.4s ease, box-shadow 0.3s ease;
-        }
-
-        .canvas-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .canvas-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .canvas-item .info {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 2px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .canvas-item:hover .info {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .info h3 {
-            font-size: 1.6rem;
-        }
-
-        .info p {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        /* Parallax Scrolling Effect */
-        .parallax {
             position: relative;
-            background: url('https://via.placeholder.com/1600x900') no-repeat fixed center;
-            background-size: cover;
-            height: 100vh;
-            width: 100%;
-            transform: scale(1.2);
-            z-index: -1;
         }
 
-        .parallax::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: -1;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 800px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal img {
+        .project img {
             width: 100%;
             height: auto;
-            border-radius: 10px;
+            display: block;
         }
 
-        .modal .close-btn {
+        .project h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .view-code {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 2rem;
-            color: #ff5e57;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            padding: 40px;
-            text-align: center;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
             color: #fff;
-        }
-
-        footer a {
-            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 14px;
         }
 
-        footer a:hover {
-            color: #ff5e57;
+        .view-code:hover {
+            background-color: #555;
         }
-
     </style>
 </head>
-
 <body>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Revolutionizing Digital Experiences</h1>
-            <p>Explore our one-of-a-kind Web & App Projects</p>
-            <a href="#portfolio" class="btn-primary">Discover Our Work</a>
-        </div>
-    </section>
-
-    <!-- Parallax Effect Section -->
-    <div class="parallax"></div>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <h2>Our Digital Masterpieces</h2>
-
-        <div class="canvas-grid">
-            <!-- Project 1 -->
-            <div class="canvas-item" onclick="openModal(1)">
-                <img src="copy3.png" alt="Project 1">
-                <div class="info">
-                    <h3>Modern E-Commerce</h3>
-                    <p>Seamless Shopping Experience</p>
-                </div>
+    <section class="featured-projects">
+        <h2>Featured Projects</h2>
+        <p>A showcase of selected projects highlighting my skills and experience.</p>
+        <div class="projects-grid">
+            <!-- Personal Website -->
+            <div class="project">
+                <img src="images/personal-website.jpg" alt="Personal Website">
+                <h3>Personal Website</h3>
+                <a href="#" class="view-code">view code</a>
             </div>
-
-            <!-- Project 2 -->
-            <div class="canvas-item" onclick="openModal(2)">
-                <img src="copy3.png" alt="Project 2">
-                <div class="info">
-                    <h3>Fitness App</h3>
-                    <p>Tracking Your Fitness Journey</p>
-                </div>
+            <!-- Business Website -->
+            <div class="project">
+                <img src="images/business-website.jpg" alt="Business Website">
+                <h3>Business Website</h3>
+                <a href="#" class="view-code">view code</a>
             </div>
-
-            <!-- Project 3 -->
-            <div class="canvas-item" onclick="openModal(3)">
-                <img src="https://via.placeholder.com/600x400" alt="Project 3">
-                <div class="info">
-                    <h3>Corporate Web Design</h3>
-                    <p>Rebranding a Global Presence</p>
-                </div>
+            <!-- E-commerce Website -->
+            <div class="project">
+                <img src="images/ecommerce-website.jpg" alt="E-commerce Website">
+                <h3>E-commerce Website</h3>
+                <a href="#" class="view-code">view code</a>
+            </div>
+            <!-- Basic App -->
+            <div class="project">
+                <img src="images/basic-app.jpg" alt="Basic App">
+                <h3>Basic App</h3>
+                <a href="#" class="view-code">view code</a>
+            </div>
+            <!-- Premium App -->
+            <div class="project">
+                <img src="images/premium-app.jpg" alt="Premium App">
+                <h3>Premium App</h3>
+                <a href="#" class="view-code">view code</a>
+            </div>
+            <!-- Additional App -->
+            <div class="project">
+                <img src="images/additional-app.jpg" alt="Additional App">
+                <h3>Additional App</h3>
+                <a href="#" class="view-code">view code</a>
             </div>
         </div>
     </section>
-
-    <!-- Modal 1 -->
-    <div id="modal-1" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal(1)">×</button>
-            <img src="https://via.placeholder.com/800x500" alt="Project 1">
-            <h2>Modern E-Commerce</h2>
-            <p>This cutting-edge e-commerce platform is designed for optimal shopping experiences, combining modern design with fast performance.</p>
-        </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div id="modal-2" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal(2)">×</button>
-            <img src="https://via.placeholder.com/800x500" alt="Project 2">
-            <h2>Fitness App</h2>
-            <p>A mobile app designed to inspire and track users' fitness goals with personalized recommendations, progress monitoring, and more.</p>
-        </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div id="modal-3" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal(3)">×</button>
-            <img src="https://via.placeholder.com/800x500" alt="Project 3">
-            <h2>Corporate Web Design</h2>
-            <p>This website redesign for a multinational corporation focused on improving user interaction and showcasing their brand identity.</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Digital Innovations. All rights reserved.</p>
-        <a href="#">LinkedIn</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
-    </footer>
-
-    <script>
-        function openModal(projectId) {
-            document.getElementById('modal-' + projectId).style.display = 'flex';
-        }
-
-        function closeModal(projectId) {
-            document.getElementById('modal-' + projectId).style.display = 'none';
-        }
-    </script>
-
 </body>
-
 </html>
