@@ -2,41 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Home Page</title>
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    html, body {
       height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
     .hero {
-      background-image: url('download.jpeg'); /* Replace with your actual image path */
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
       position: relative;
+      height: 100vh;
+      width: 100%;
+      background: url('your-image.jpg') no-repeat center center;
+      background-size: cover;
     }
 
     .overlay {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
-      height: 50%;
       position: absolute;
       top: 0;
+      left: 0;
+      height: 50%;
       width: 100%;
+      background: linear-gradient(to bottom, black, transparent);
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
       flex-direction: column;
-      color: white;
+      justify-content: center;
       padding: 2rem;
+      color: white;
     }
 
     .welcome-text h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: bold;
     }
 
     .welcome-text p {
@@ -55,7 +60,7 @@
       justify-content: center;
       gap: 1rem;
       font-size: 1rem;
-      z-index: 999;
+      z-index: 1000;
       border-bottom: 1px solid #ccc;
     }
 
@@ -76,7 +81,15 @@
 </head>
 <body>
 
-  <!-- Hero Section with Background and Gradient Overlay -->
+  <!-- Cookie Banner -->
+  <div class="cookie-popup" id="cookiePopup">
+    <span class="info-icon">i</span>
+    <p>We use cookies to optimise the user experience.</p>
+    <a href="#" class="btn" id="tellMeMore">Tell me more</a>
+    <a href="#" class="btn" id="dismiss">Dismiss</a>
+  </div>
+
+  <!-- Fullscreen Hero Section -->
   <div class="hero">
     <div class="overlay">
       <div class="welcome-text">
@@ -86,16 +99,7 @@
     </div>
   </div>
 
-  <!-- Cookie Popup -->
-  <div class="cookie-popup" id="cookiePopup">
-    <span class="info-icon">i</span>
-    <p>We use cookies to optimise the user experience.</p>
-    <a href="#" class="btn" id="tellMeMore">Tell me more</a>
-    <a href="#" class="btn" id="dismiss">Dismiss</a>
-  </div>
-
   <script>
-    // Hide cookie popup on dismiss
     document.getElementById("dismiss").onclick = function () {
       document.getElementById("cookiePopup").style.display = "none";
     };
