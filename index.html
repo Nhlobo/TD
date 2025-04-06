@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Physio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – Physio</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:ital,wght@1,500&display=swap');
 
     * {
       margin: 0;
@@ -14,90 +14,85 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
       background-color: #fff;
       color: #000;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
     }
 
-    .about-section {
-      padding: 80px 20px;
-      max-width: 1200px;
+    .about-container {
+      padding: 100px 20px;
+      max-width: 1000px;
       margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .about-text {
-      flex: 1 1 500px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .about-text h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .about-text p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .quote {
-      font-style: italic;
-      font-size: 1rem;
-      color: #666;
-      border-left: 4px solid #000;
-      padding-left: 15px;
-    }
-
-    .about-image {
-      flex: 1 1 400px;
       text-align: center;
-      animation: fadeIn 1s ease-in-out 0.3s;
     }
 
-    .about-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .about-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .mission-values {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .lead-quote-card {
+      background: #000;
+      color: #fff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      margin: 0 auto;
+      max-width: 800px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .lead-quote-card:hover {
+      transform: scale(1.02);
+    }
+
+    .lead-quote-card p {
+      margin-bottom: 15px;
+    }
+
+    .lead-quote-card .author {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      color: #ccc;
     }
 
     @media (max-width: 768px) {
-      .about-section {
-        flex-direction: column;
-        text-align: center;
+      .about-title {
+        font-size: 2.2rem;
       }
 
-      .about-text h2 {
-        font-size: 2rem;
+      .lead-quote-card {
+        font-size: 1.1rem;
+        padding: 30px 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <section class="about-section" id="about">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p><strong>Our Mission:</strong> To provide personalized, high-quality physiotherapy to help every patient achieve their best level of mobility, comfort, and confidence.</p>
-      <p><strong>Our Values:</strong> Compassion, dedication, integrity, and a focus on evidence-based treatment practices.</p>
-      <p>Highly driven and passionate about quality treatment, our team combines knowledge, experience, and care to support each patient's journey toward better health.</p>
-      <p class="quote">"We don't just treat pain, we restore your freedom to move and live fully." – <strong>Jane Doe, Lead Physiotherapist</strong></p>
-    </div>
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1606813908702-4254f53f13e1?auto=format&fit=crop&w=700&q=80" alt="Lead Physiotherapist">
+  <section class="about-container" id="about">
+    <h1 class="about-title">About Us</h1>
+    <p class="mission-values">
+      <strong>Mission:</strong> We’re committed to delivering high-quality physiotherapy tailored to each individual's recovery journey.<br><br>
+      <strong>Values:</strong> Empathy, consistency, innovation, and evidence-based care are at the heart of everything we do.
+    </p>
+
+    <div class="lead-quote-card">
+      <p>“Highly driven and passionate about quality treatment, we don’t just ease pain — we restore movement, confidence, and independence.”</p>
+      <div class="author">— Jane Doe, Lead Physiotherapist</div>
     </div>
   </section>
 
