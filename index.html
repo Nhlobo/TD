@@ -2,146 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Perfect Home Page</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaMba Physiotherapy</title>
 
-    html, body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-    }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    .hero {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      background: url('download.jpeg') no-repeat center center;
-      background-size: cover;
-    }
-
-    .gradient-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
-    }
-
-    .welcome-text {
-      position: absolute;
-      bottom: 5rem;
-      left: 2rem;
-      color: white;
-      max-width: 90%;
-    }
-
-    .welcome-text h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .welcome-text p {
-      font-size: 1.2rem;
-    }
-
-    .cookie-popup {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff;
-      padding: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      font-size: 1rem;
-      z-index: 1000;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .cookie-popup .info-icon {
-      border: 1px solid #000;
-      border-radius: 50%;
-      padding: 0.3rem 0.6rem;
-      font-weight: bold;
-    }
-
-    .cookie-popup .btn {
-      color: #e4572e;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      .welcome-text h1 {
-        font-size: 2rem;
-      }
-
-      .welcome-text p {
-        font-size: 1rem;
-      }
-
-      .welcome-text {
-        bottom: 3rem;
-        left: 1.2rem;
-      }
-
-      .cookie-popup {
-        font-size: 0.9rem;
-        padding: 0.8rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .welcome-text h1 {
-        font-size: 1.6rem;
-      }
-
-      .welcome-text p {
-        font-size: 0.95rem;
-      }
-
-      .cookie-popup {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-      }
-    }
-  </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Cookie Notification -->
-  <div class="cookie-popup" id="cookiePopup">
-    <span class="info-icon">i</span>
-    <p>We use cookies to optimise the user experience.</p>
-    <a href="#" class="btn" id="tellMeMore">Tell me more</a>
-    <a href="#" class="btn" id="dismiss">Dismiss</a>
-  </div>
+  <nav class="smart-nav">
+    <div class="logo">
+      <img src="logo.png" alt="Site Logo" id="logo" />
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-list" id="nav-list">
+      <button class="close-btn" id="close-btn">&times;</button>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#conditions"><i class="fas fa-heartbeat"></i> Conditions Treated</a></li>
+      <li><a href="#facility"><i class="fas fa-clinic-medical"></i> Facility</a></li>
+      <li><a href="#visits"><i class="fas fa-house-user"></i> Home Visits</a></li>
+      <li><a href="pricing.html"><i class="fas fa-coins"></i> Pricing</a></li>
+      <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+      <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
 
-  <!-- Fullscreen Hero Section with Gradient and Text -->
-  <div class="hero">
-    <div class="gradient-overlay"></div>
-    <div class="welcome-text">
-      <h1>Helping You Move Better</h1>
-      <p>Professional physiotherapy care tailored to your needs.</p>
+      <div class="nav-cta">
+        <a href="contact.html"><button class="book-btn">Book Appointment</button></a>
+        <div class="nav-icons">
+          <a href="https://wa.me/27717729736"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:mambadifferance@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+27717729736"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+    </ul>
+  </nav>
+
+  <!-- Banner Feature Area -->
+  <header class="banner-feature">
+    <h1>Book Your Personalized Physiotherapy Session</h1>
+    <p>Professional, experienced, and compassionate care – right where you need it.</p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </header>
+
+  <!-- Physiotherapist Info Section -->
+  <section class="physio-info">
+    <img src="physio.jpg" alt="Physiotherapist">
+    <div class="physio-content">
+      <h2>Your Physiotherapist</h2>
+      <p>Dedicated to helping you recover and regain mobility with tailored treatments just for you.</p>
+      <a href="about.html" class="learn-more">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Conditions Treated -->
+  <section id="conditions" class="conditions-section">
+    <h2>Conditions We Treat</h2>
+    <div class="conditions-gallery">
+      <!-- Add condition images here -->
+      <img src="condition1.jpg" alt="Condition 1">
+      <img src="condition2.jpg" alt="Condition 2">
+      <img src="condition3.jpg" alt="Condition 3">
+    </div>
+  </section>
+
+  <!-- Facility Section with Slider -->
+  <section id="facility" class="facility-section">
+    <h2>Our Facility</h2>
+    <div class="slider-container">
+      <div class="slider">
+        <img src="facility1.jpg" alt="Facility 1" class="slide active">
+        <img src="facility2.jpg" alt="Facility 2" class="slide">
+        <img src="facility3.jpg" alt="Facility 3" class="slide">
+      </div>
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Home Visit Section -->
+  <section id="visits" class="home-visit-section">
+    <div class="visit-content">
+      <h2>We Come To You</h2>
+      <p>Enjoy physiotherapy in the comfort of your own home with our mobile services.</p>
+      <a href="about.html" class="learn-more">Learn More</a>
+    </div>
+    <img src="homevisit.jpg" alt="Home Visit">
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <h2>What Our Patients Say</h2>
+    <div class="testimonials">
+      <!-- Add testimonial cards here -->
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <!-- Add FAQs here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MaMba Physiotherapy. All rights reserved.</p>
+  </footer>
+
+  <!-- Cookie Popup -->
+  <div class="cookie-popup" id="cookiePopup">
+    <div class="cookie-content">
+      <p class="cookie-text">We use cookies to improve your experience. <a href="cookie.html">Learn more</a></p>
+      <button class="cookie-btn" id="acceptCookies">Got it!</button>
     </div>
   </div>
 
+  <!-- Scripts -->
+  <script src="slider.js"></script>
   <script>
-    document.getElementById("dismiss").onclick = function () {
-      document.getElementById("cookiePopup").style.display = "none";
-    };
-  </script>
+    const cookiePopup = document.getElementById('cookiePopup');
+    const acceptCookiesButton = document.getElementById('acceptCookies');
+    if (!localStorage.getItem('cookieConsent')) {
+      cookiePopup.style.display = 'block';
+    }
+    acceptCookiesButton.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'true');
+      cookiePopup.style.display = 'none';
+    });
 
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+    const closeBtn = document.getElementById('close-btn');
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+    closeBtn.addEventListener('click', () => {
+      navList.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
