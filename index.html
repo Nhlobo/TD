@@ -3,156 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MaMba Physiotherapy</title>
+  <title>About Us | Physio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css">
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    .about-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1rem;
+      color: #666;
+      border-left: 4px solid #000;
+      padding-left: 15px;
+    }
+
+    .about-image {
+      flex: 1 1 400px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out 0.3s;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="smart-nav">
-    <div class="logo">
-      <img src="logo.png" alt="Site Logo" id="logo" />
+  <section class="about-section" id="about">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p><strong>Our Mission:</strong> To provide personalized, high-quality physiotherapy to help every patient achieve their best level of mobility, comfort, and confidence.</p>
+      <p><strong>Our Values:</strong> Compassion, dedication, integrity, and a focus on evidence-based treatment practices.</p>
+      <p>Highly driven and passionate about quality treatment, our team combines knowledge, experience, and care to support each patient's journey toward better health.</p>
+      <p class="quote">"We don't just treat pain, we restore your freedom to move and live fully." – <strong>Jane Doe, Lead Physiotherapist</strong></p>
     </div>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-list" id="nav-list">
-      <button class="close-btn" id="close-btn">&times;</button>
-      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a href="#conditions"><i class="fas fa-heartbeat"></i> Conditions Treated</a></li>
-      <li><a href="#facility"><i class="fas fa-clinic-medical"></i> Facility</a></li>
-      <li><a href="#visits"><i class="fas fa-house-user"></i> Home Visits</a></li>
-      <li><a href="pricing.html"><i class="fas fa-coins"></i> Pricing</a></li>
-      <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
-      <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
-
-      <div class="nav-cta">
-        <a href="contact.html"><button class="book-btn">Book Appointment</button></a>
-        <div class="nav-icons">
-          <a href="https://wa.me/27717729736"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:mambadifferance@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+27717729736"><i class="fas fa-phone"></i></a>
-        </div>
-      </div>
-    </ul>
-  </nav>
-
-  <!-- Banner Feature Area -->
-  <header class="banner-feature">
-    <h1>Book Your Personalized Physiotherapy Session</h1>
-    <p>Professional, experienced, and compassionate care – right where you need it.</p>
-    <a href="contact.html" class="book-btn">Book Now</a>
-  </header>
-
-  <!-- Physiotherapist Info Section -->
-  <section class="physio-info">
-    <img src="physio.jpg" alt="Physiotherapist">
-    <div class="physio-content">
-      <h2>Your Physiotherapist</h2>
-      <p>Dedicated to helping you recover and regain mobility with tailored treatments just for you.</p>
-      <a href="about.html" class="learn-more">Learn More</a>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1606813908702-4254f53f13e1?auto=format&fit=crop&w=700&q=80" alt="Lead Physiotherapist">
     </div>
   </section>
 
-  <!-- Conditions Treated -->
-  <section id="conditions" class="conditions-section">
-    <h2>Conditions We Treat</h2>
-    <div class="conditions-gallery">
-      <!-- Add condition images here -->
-      <img src="condition1.jpg" alt="Condition 1">
-      <img src="condition2.jpg" alt="Condition 2">
-      <img src="condition3.jpg" alt="Condition 3">
-    </div>
-  </section>
-
-  <!-- Facility Section with Slider -->
-  <section id="facility" class="facility-section">
-    <h2>Our Facility</h2>
-    <div class="slider-container">
-      <div class="slider">
-        <img src="facility1.jpg" alt="Facility 1" class="slide active">
-        <img src="facility2.jpg" alt="Facility 2" class="slide">
-        <img src="facility3.jpg" alt="Facility 3" class="slide">
-      </div>
-      <div class="slider-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Home Visit Section -->
-  <section id="visits" class="home-visit-section">
-    <div class="visit-content">
-      <h2>We Come To You</h2>
-      <p>Enjoy physiotherapy in the comfort of your own home with our mobile services.</p>
-      <a href="about.html" class="learn-more">Learn More</a>
-    </div>
-    <img src="homevisit.jpg" alt="Home Visit">
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials-section">
-    <h2>What Our Patients Say</h2>
-    <div class="testimonials">
-      <!-- Add testimonial cards here -->
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq">
-      <!-- Add FAQs here -->
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 MaMba Physiotherapy. All rights reserved.</p>
-  </footer>
-
-  <!-- Cookie Popup -->
-  <div class="cookie-popup" id="cookiePopup">
-    <div class="cookie-content">
-      <p class="cookie-text">We use cookies to improve your experience. <a href="cookie.html">Learn more</a></p>
-      <button class="cookie-btn" id="acceptCookies">Got it!</button>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="slider.js"></script>
-  <script>
-    const cookiePopup = document.getElementById('cookiePopup');
-    const acceptCookiesButton = document.getElementById('acceptCookies');
-    if (!localStorage.getItem('cookieConsent')) {
-      cookiePopup.style.display = 'block';
-    }
-    acceptCookiesButton.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'true');
-      cookiePopup.style.display = 'none';
-    });
-
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('nav-list');
-    const closeBtn = document.getElementById('close-btn');
-    hamburger.addEventListener('click', () => {
-      navList.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    });
-    closeBtn.addEventListener('click', () => {
-      navList.classList.remove('active');
-      hamburger.classList.remove('active');
-    });
-  </script>
 </body>
 </html>
