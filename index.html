@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us – Physio</title>
+  <title>Physio Intro</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:ital,wght@1,500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
 
     * {
       margin: 0;
@@ -14,85 +14,80 @@
     }
 
     body {
+      font-family: 'Inter', sans-serif;
       background-color: #fff;
       color: #000;
-      font-family: 'Inter', sans-serif;
     }
 
-    .about-container {
-      padding: 100px 20px;
-      max-width: 1000px;
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      max-width: 1200px;
       margin: auto;
-      text-align: center;
+      gap: 40px;
     }
 
-    .about-title {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: -1px;
-    }
-
-    .mission-values {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      color: #333;
+    .intro-text {
+      flex: 1 1 400px;
+      font-size: 1.1rem;
       line-height: 1.8;
+      color: #333;
     }
 
-    .lead-quote-card {
-      background: #000;
+    .intro-text a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #000;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .intro-text a:hover {
+      background-color: #000;
       color: #fff;
-      padding: 40px 30px;
-      border-radius: 16px;
-      margin: 0 auto;
-      max-width: 800px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      line-height: 1.6;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease;
     }
 
-    .lead-quote-card:hover {
-      transform: scale(1.02);
+    .intro-image {
+      flex: 1 1 500px;
     }
 
-    .lead-quote-card p {
-      margin-bottom: 15px;
-    }
-
-    .lead-quote-card .author {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      font-style: normal;
-      color: #ccc;
+    .intro-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
     @media (max-width: 768px) {
-      .about-title {
-        font-size: 2.2rem;
+      .intro-section {
+        flex-direction: column;
+        text-align: center;
       }
 
-      .lead-quote-card {
-        font-size: 1.1rem;
-        padding: 30px 20px;
+      .intro-text a {
+        margin-top: 25px;
       }
     }
   </style>
 </head>
 <body>
 
-  <section class="about-container" id="about">
-    <h1 class="about-title">About Us</h1>
-    <p class="mission-values">
-      <strong>Mission:</strong> We’re committed to delivering high-quality physiotherapy tailored to each individual's recovery journey.<br><br>
-      <strong>Values:</strong> Empathy, consistency, innovation, and evidence-based care are at the heart of everything we do.
-    </p>
-
-    <div class="lead-quote-card">
-      <p>“Highly driven and passionate about quality treatment, we don’t just ease pain — we restore movement, confidence, and independence.”</p>
-      <div class="author">— Jane Doe, Lead Physiotherapist</div>
+  <section class="intro-section">
+    <div class="intro-text">
+      <p>
+        Highly driven and passionate about quality treatment, we provide specialized physiotherapy services for individuals of all ages — from sports injuries to post-surgical recovery and developmental care.
+      </p>
+      <a href="about-us.html">Read more</a>
+    </div>
+    <div class="intro-image">
+      <img src="download.jpeg" alt="Physiotherapy Clinic Landscape" />
     </div>
   </section>
 
