@@ -3,107 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Physio Intro</title>
+  <title>Conditions Treated</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #fff;
       color: #000;
     }
 
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+    .conditions-section {
       max-width: 1200px;
       margin: auto;
-      gap: 40px;
+      padding: 60px 20px;
     }
 
-    .intro-text {
-      flex: 1 1 400px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #333;
+    .section-title {
+      font-size: 1.5rem;
+      border-left: 5px solid #000;
+      padding-left: 10px;
+      margin-bottom: 40px;
     }
 
-    .intro-text a {
-      display: inline-block;
-      margin-top: 12px;
-      text-decoration: none;
-      color: #000;
-      border: 1px solid #000;
-      padding: 10px 20px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
     }
 
-    .intro-text a:hover {
-      background-color: #000;
-      color: #fff;
-    }
-
-    .intro-image {
-      flex: 1 1 400px;
-    }
-
-    .intro-image img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
+    .condition-card {
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      background-color: #fafafa;
+      transition: transform 0.2s ease;
     }
 
-    /* Small screens */
+    .condition-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .condition-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .condition-label {
+      padding: 15px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
     @media (max-width: 768px) {
-      .intro-section {
-        flex-direction: column;
-        padding: 20px 15px;
-        gap: 20px;
+      .condition-card img {
+        height: 160px;
       }
 
-      .intro-text {
+      .condition-label {
         font-size: 1rem;
-        line-height: 1.6;
-        text-align: center;
-      }
-
-      .intro-text a {
-        margin-top: 12px;
-      }
-
-      .intro-image {
-        margin: 0; /* No extra space around image */
-      }
-
-      .intro-image img {
-        height: 430px; /* Bigger image on small screens */
+        padding: 12px;
       }
     }
   </style>
 </head>
 <body>
 
-  <section class="intro-section">
-    <div class="intro-text">
-      <p>
-        Highly driven and passionate about quality treatment, we provide specialized physiotherapy services for individuals of all ages — from sports injuries to post-surgical recovery and developmental care.
-      </p>
-      <a href="about-us.html">Read more</a>
-    </div>
-    <div class="intro-image">
-      <img src="download (1).jpeg" alt="Physiotherapist Portrait" />
+  <section class="conditions-section">
+    <div class="section-title">Conditions Treated</div>
+    <div class="grid">
+      <div class="condition-card">
+        <img src="https://via.placeholder.com/400x300?text=Back+Pain" alt="Back Pain">
+        <div class="condition-label">Back Pain</div>
+      </div>
+      <div class="condition-card">
+        <img src="https://via.placeholder.com/400x300?text=Shoulder+Pain" alt="Shoulder Pain">
+        <div class="condition-label">Shoulder Pain</div>
+      </div>
+      <div class="condition-card">
+        <img src="https://via.placeholder.com/400x300?text=Neck+Pain" alt="Neck Pain">
+        <div class="condition-label">Neck Pain</div>
+      </div>
+      <div class="condition-card">
+        <img src="https://via.placeholder.com/400x300?text=Sport+Injuries" alt="Sport Injuries">
+        <div class="condition-label">Sport Injuries</div>
+      </div>
+      <div class="condition-card">
+        <img src="https://via.placeholder.com/400x300?text=Spinal+Cord+Injuries" alt="Spinal Cord Injuries">
+        <div class="condition-label">Spinal Cord Injuries</div>
+      </div>
+      <div class="condition-card">
+        <img src="https://via.placeholder.com/400x300?text=Urinary+Incontinence" alt="Urinary Incontinence">
+        <div class="condition-label">Urinary Incontinence</div>
+      </div>
+      <div class="condition-card">
+        <img src="https://via.placeholder.com/400x300?text=Migraine+Headaches" alt="Migraine Headaches">
+        <div class="condition-label">Migraine Headaches</div>
+      </div>
     </div>
   </section>
 
