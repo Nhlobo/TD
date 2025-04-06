@@ -24,7 +24,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
       gap: 40px;
@@ -60,9 +60,9 @@
 
     .intro-image img {
       width: 100%;
-      height: auto;
-      border-radius: 12px;
+      height: 400px; /* Fixed height for a compact section */
       object-fit: cover;
+      border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
@@ -70,7 +70,7 @@
       .intro-section {
         flex-direction: column;
         text-align: center;
-        padding: 40px 20px;
+        padding: 30px 20px;
       }
 
       .intro-text {
@@ -85,6 +85,10 @@
       .intro-text a {
         margin-top: 20px;
       }
+
+      .intro-image img {
+        height: 300px; /* Reduced height on smaller screens */
+      }
     }
   </style>
 </head>
@@ -98,7 +102,7 @@
       <a href="about-us.html">Read more</a>
     </div>
     <div class="intro-image">
-      <img src="download (1).jpeg" alt="Physiotherapist Portrait" />
+      <img src="https://images.unsplash.com/photo-1561948958-ecb1a44bc6ea?crop=entropy&cs=tinysrgb&fit=max&ixid=MXwyMDg5MnwwfDF8c2VhcmNofDIyfHxwaHlzaW90aGVyYXB5fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080" alt="Physiotherapist Portrait" />
     </div>
   </section>
 
