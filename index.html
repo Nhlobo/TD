@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Home Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Perfect Home Page</title>
   <style>
     * {
       margin: 0;
@@ -25,28 +25,29 @@
       background-size: cover;
     }
 
-    .overlay {
+    .gradient-overlay {
       position: absolute;
       top: 0;
       left: 0;
-      height: 50%;
+      height: 100%;
       width: 100%;
-      background: linear-gradient(to bottom, black, transparent);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 2rem;
+      background: linear-gradient(to right, black 0%, transparent 100%);
+    }
+
+    .welcome-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
       color: white;
     }
 
     .welcome-text h1 {
       font-size: 3rem;
-      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
 
     .welcome-text p {
       font-size: 1.2rem;
-      margin-top: 0.5rem;
     }
 
     .cookie-popup {
@@ -81,7 +82,7 @@
 </head>
 <body>
 
-  <!-- Cookie Banner -->
+  <!-- Cookie Notification -->
   <div class="cookie-popup" id="cookiePopup">
     <span class="info-icon">i</span>
     <p>We use cookies to optimise the user experience.</p>
@@ -89,13 +90,12 @@
     <a href="#" class="btn" id="dismiss">Dismiss</a>
   </div>
 
-  <!-- Fullscreen Hero Section -->
+  <!-- Fullscreen Hero Section with Gradient and Text -->
   <div class="hero">
-    <div class="overlay">
-      <div class="welcome-text">
-        <h1>Welcome to My Website</h1>
-        <p>Explore the beauty of technology with us.</p>
-      </div>
+    <div class="gradient-overlay"></div>
+    <div class="welcome-text">
+      <h1>Welcome to My Website</h1>
+      <p>Explore the beauty of technology with us.</p>
     </div>
   </div>
 
