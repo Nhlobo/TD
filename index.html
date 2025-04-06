@@ -13,7 +13,6 @@
 
     html, body {
       height: 100%;
-      overflow: hidden;
       font-family: Arial, sans-serif;
     }
 
@@ -36,9 +35,10 @@
 
     .welcome-text {
       position: absolute;
-      bottom: 2rem;
+      bottom: 5rem;
       left: 2rem;
       color: white;
+      max-width: 90%;
     }
 
     .welcome-text h1 {
@@ -57,6 +57,7 @@
       background: #fff;
       padding: 1rem;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       gap: 1rem;
@@ -77,6 +78,43 @@
       font-weight: bold;
       text-decoration: none;
       cursor: pointer;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .welcome-text h1 {
+        font-size: 2rem;
+      }
+
+      .welcome-text p {
+        font-size: 1rem;
+      }
+
+      .welcome-text {
+        bottom: 3rem;
+        left: 1.2rem;
+      }
+
+      .cookie-popup {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .welcome-text h1 {
+        font-size: 1.6rem;
+      }
+
+      .welcome-text p {
+        font-size: 0.95rem;
+      }
+
+      .cookie-popup {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
