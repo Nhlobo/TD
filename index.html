@@ -84,7 +84,7 @@
     }
 
     /* CONDITIONS SECTION */
-    .conditions-section {
+    .conditions-section, .treatment-section, .special-programs-section {
       background: url('download (1).jpeg') no-repeat center center/cover;
       width: 100%;
     }
@@ -104,14 +104,14 @@
       color: #fff;
     }
 
-    .conditions-grid {
+    .conditions-grid, .treatment-grid, .programs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 10px;
       max-width: 100%;
     }
 
-    .condition-card {
+    .condition-card, .treatment-card, .program-card {
       display: flex;
       align-items: center;
       background: rgba(255, 255, 255, 0.9);
@@ -122,11 +122,11 @@
       transition: 0.2s ease;
     }
 
-    .condition-card:hover {
+    .condition-card:hover, .treatment-card:hover, .program-card:hover {
       transform: scale(1.03);
     }
 
-    .condition-icon {
+    .condition-icon, .treatment-icon, .program-icon {
       width: 26px;
       height: 26px;
       margin-right: 10px;
@@ -135,7 +135,7 @@
       background-color: #fff;
     }
 
-    .condition-label {
+    .condition-label, .treatment-label, .program-label {
       font-weight: 500;
       font-size: 0.92rem;
     }
@@ -145,21 +145,21 @@
         font-size: 1.3rem;
       }
 
-      .condition-icon {
+      .condition-icon, .treatment-icon, .program-icon {
         width: 22px;
         height: 22px;
         margin-right: 8px;
       }
 
-      .condition-card {
+      .condition-card, .treatment-card, .program-card {
         padding: 8px 10px;
       }
 
-      .condition-label {
+      .condition-label, .treatment-label, .program-label {
         font-size: 0.85rem;
       }
 
-      .conditions-grid {
+      .conditions-grid, .treatment-grid, .programs-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -184,41 +184,84 @@
   <section class="conditions-section">
     <div class="overlay">
       <div class="section-title">Conditions Treated</div>
-
       <div class="conditions-grid">
         <div class="condition-card">
           <img src="download (1).jpeg" alt="Body Pain" class="condition-icon" />
           <div class="condition-label">Body & Joint Pains</div>
         </div>
-
         <div class="condition-card">
           <img src="download (1).jpeg" alt="Sports Injuries" class="condition-icon" />
           <div class="condition-label">Sport Related Injuries</div>
         </div>
-
         <div class="condition-card">
           <img src="download (1).jpeg" alt="Migraine" class="condition-icon" />
           <div class="condition-label">Migraine Headache</div>
         </div>
-
         <div class="condition-card">
           <img src="download (1).jpeg" alt="Post-op Rehab" class="condition-icon" />
           <div class="condition-label">Post Operative Rehab</div>
         </div>
-
         <div class="condition-card">
           <img src="download (1).jpeg" alt="Osteoarthritis" class="condition-icon" />
           <div class="condition-label">Osteoarthritis</div>
         </div>
-
         <div class="condition-card">
           <img src="download (1).jpeg" alt="Post Gyne Rehab" class="condition-icon" />
           <div class="condition-label">Post Gynecological Rehab</div>
         </div>
-
         <div class="condition-card">
           <img src="download (1).jpeg" alt="Urinary Incontinence" class="condition-icon" />
           <div class="condition-label">Urinary Incontinence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Types Section -->
+  <section class="treatment-section">
+    <div class="overlay">
+      <div class="section-title">Treatment Types</div>
+      <div class="treatment-grid">
+        <div class="treatment-card">
+          <img src="download (1).jpeg" alt="Massage Therapy" class="treatment-icon" />
+          <div class="treatment-label">Massage Therapy</div>
+        </div>
+        <div class="treatment-card">
+          <img src="download (1).jpeg" alt="Physical Therapy" class="treatment-icon" />
+          <div class="treatment-label">Physical Therapy</div>
+        </div>
+        <div class="treatment-card">
+          <img src="download (1).jpeg" alt="Electrotherapy" class="treatment-icon" />
+          <div class="treatment-label">Electrotherapy</div>
+        </div>
+        <div class="treatment-card">
+          <img src="download (1).jpeg" alt="Hydrotherapy" class="treatment-icon" />
+          <div class="treatment-label">Hydrotherapy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Programs Section -->
+  <section class="special-programs-section">
+    <div class="overlay">
+      <div class="section-title">Special Programs</div>
+      <div class="programs-grid">
+        <div class="program-card">
+          <img src="download (1).jpeg" alt="Senior Care Program" class="program-icon" />
+          <div class="program-label">Senior Care Program</div>
+        </div>
+        <div class="program-card">
+          <img src="download (1).jpeg" alt="Post-Surgical Rehabilitation" class="program-icon" />
+          <div class="program-label">Post-Surgical Rehabilitation</div>
+        </div>
+        <div class="program-card">
+          <img src="download (1).jpeg" alt="Sports Rehab Program" class="program-icon" />
+          <div class="program-label">Sports Rehab Program</div>
+        </div>
+        <div class="program-card">
+          <img src="download (1).jpeg" alt="Child Development Care" class="program-icon" />
+          <div class="program-label">Child Development Care</div>
         </div>
       </div>
     </div>
