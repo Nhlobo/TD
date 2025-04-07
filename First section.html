@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Physio Intro</title>
+  <title>Physio Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
-
     * {
       margin: 0;
       padding: 0;
@@ -19,6 +18,7 @@
       color: #000;
     }
 
+    /* INTRO SECTION */
     .intro-section {
       display: flex;
       flex-wrap: wrap;
@@ -65,7 +65,6 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
-    /* Small screens */
     @media (max-width: 768px) {
       .intro-section {
         flex-direction: column;
@@ -79,22 +78,96 @@
         text-align: center;
       }
 
-      .intro-text a {
-        margin-top: 12px;
-      }
-
-      .intro-image {
-        margin: 0; /* No extra space around image */
-      }
-
       .intro-image img {
-        height: 430px; /* Bigger image on small screens */
+        height: 430px;
+      }
+    }
+
+    /* CONDITIONS SECTION */
+    .conditions-section {
+      background: url('download (1).jpeg') no-repeat center center/cover;
+      width: 100%;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 15px;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      max-width: 100%;
+    }
+
+    .condition-card {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      color: #222;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .condition-card:hover {
+      transform: scale(1.03);
+    }
+
+    .condition-icon {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+      border-radius: 50%;
+      object-fit: contain;
+      background-color: #fff;
+    }
+
+    .condition-label {
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      .condition-icon {
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
+      }
+
+      .condition-card {
+        padding: 8px 10px;
+      }
+
+      .condition-label {
+        font-size: 0.85rem;
+      }
+
+      .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Intro Section -->
   <section class="intro-section">
     <div class="intro-text">
       <p>
@@ -104,6 +177,50 @@
     </div>
     <div class="intro-image">
       <img src="download (1).jpeg" alt="Physiotherapist Portrait" />
+    </div>
+  </section>
+
+  <!-- Conditions Treated Section -->
+  <section class="conditions-section">
+    <div class="overlay">
+      <div class="section-title">Conditions Treated</div>
+
+      <div class="conditions-grid">
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Body Pain" class="condition-icon" />
+          <div class="condition-label">Body & Joint Pains</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Sports Injuries" class="condition-icon" />
+          <div class="condition-label">Sport Related Injuries</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Migraine" class="condition-icon" />
+          <div class="condition-label">Migraine Headache</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Post-op Rehab" class="condition-icon" />
+          <div class="condition-label">Post Operative Rehab</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Osteoarthritis" class="condition-icon" />
+          <div class="condition-label">Osteoarthritis</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Post Gyne Rehab" class="condition-icon" />
+          <div class="condition-label">Post Gynecological Rehab</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Urinary Incontinence" class="condition-icon" />
+          <div class="condition-label">Urinary Incontinence</div>
+        </div>
+      </div>
     </div>
   </section>
 
