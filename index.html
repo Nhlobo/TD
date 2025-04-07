@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Conditions Treated</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physio Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,20 +14,84 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #222;
+      background-color: #fff;
+      color: #000;
     }
 
-    .conditions-section {
-      background: url('background.jpeg') no-repeat center center/cover;
+    /* INTRO SECTION */
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .intro-text {
+      flex: 1 1 400px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .intro-text a {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #000;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .intro-text a:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .intro-image {
+      flex: 1 1 400px;
+    }
+
+    .intro-image img {
       width: 100%;
-      padding: 0;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .intro-section {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 20px;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .intro-image img {
+        height: 430px;
+      }
+    }
+
+    /* CONDITIONS SECTION */
+    .conditions-section {
+      background: url('download (1).jpeg') no-repeat center center/cover;
+      width: 100%;
     }
 
     .overlay {
       background: rgba(0, 0, 0, 0.6);
       padding: 30px 15px;
-      border-radius: 0;
       max-width: 100%;
       width: 100%;
     }
@@ -94,48 +158,66 @@
       .condition-label {
         font-size: 0.85rem;
       }
+
+      .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Intro Section -->
+  <section class="intro-section">
+    <div class="intro-text">
+      <p>
+        Highly driven and passionate about quality treatment, we provide specialized physiotherapy services for individuals of all ages — from sports injuries to post-surgical recovery and developmental care.
+      </p>
+      <a href="about-us.html">Read more</a>
+    </div>
+    <div class="intro-image">
+      <img src="download (1).jpeg" alt="Physiotherapist Portrait" />
+    </div>
+  </section>
+
+  <!-- Conditions Treated Section -->
   <section class="conditions-section">
     <div class="overlay">
       <div class="section-title">Conditions Treated</div>
 
       <div class="conditions-grid">
         <div class="condition-card">
-          <img src="images/body.png" alt="Body Pain" class="condition-icon" />
+          <img src="download (1).jpeg" alt="Body Pain" class="condition-icon" />
           <div class="condition-label">Body & Joint Pains</div>
         </div>
 
         <div class="condition-card">
-          <img src="images/sport.png" alt="Sports Injuries" class="condition-icon" />
+          <img src="download (1).jpeg" alt="Sports Injuries" class="condition-icon" />
           <div class="condition-label">Sport Related Injuries</div>
         </div>
 
         <div class="condition-card">
-          <img src="images/migraine.png" alt="Migraine" class="condition-icon" />
+          <img src="download (1).jpeg" alt="Migraine" class="condition-icon" />
           <div class="condition-label">Migraine Headache</div>
         </div>
 
         <div class="condition-card">
-          <img src="images/rehab.png" alt="Post-op Rehab" class="condition-icon" />
+          <img src="download (1).jpeg" alt="Post-op Rehab" class="condition-icon" />
           <div class="condition-label">Post Operative Rehab</div>
         </div>
 
         <div class="condition-card">
-          <img src="images/arthritis.png" alt="Osteoarthritis" class="condition-icon" />
+          <img src="download (1).jpeg" alt="Osteoarthritis" class="condition-icon" />
           <div class="condition-label">Osteoarthritis</div>
         </div>
 
         <div class="condition-card">
-          <img src="images/women-health.png" alt="Post Gyne Rehab" class="condition-icon" />
+          <img src="download (1).jpeg" alt="Post Gyne Rehab" class="condition-icon" />
           <div class="condition-label">Post Gynecological Rehab</div>
         </div>
 
         <div class="condition-card">
-          <img src="images/urinary.png" alt="Urinary Incontinence" class="condition-icon" />
+          <img src="download (1).jpeg" alt="Urinary Incontinence" class="condition-icon" />
           <div class="condition-label">Urinary Incontinence</div>
         </div>
       </div>
