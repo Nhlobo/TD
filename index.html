@@ -87,7 +87,7 @@
             margin-top: 3rem;
         }
 
-        .download-btn, .print-btn {
+        .download-btn {
             display: inline-block;
             padding: 0.8rem 2rem;
             margin: 0.5rem;
@@ -96,20 +96,12 @@
             font-size: 1rem;
             border: 1px solid #000;
             border-radius: 25px;
+            background-color: #fff;
+            color: #000;
             transition: all 0.3s ease;
         }
 
-        .download-btn {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .print-btn {
-            background-color: #fff;
-            color: #000;
-        }
-
-        .download-btn:hover, .print-btn:hover {
+        .download-btn:hover {
             background-color: #f0f0f0;
             border-color: #333;
         }
@@ -165,9 +157,8 @@
             </div>
 
             <div class="download-brochure">
-                <p>Download our brochure or view a printable version of our services:</p>
-                <a href="#" class="download-btn">Download Brochure</a>
-                <a href="#" class="print-btn" target="_blank">Print Services</a>
+                <p>Download our brochure to learn more about our services:</p>
+                <a href="path-to-your-pdf-file.pdf" class="download-btn" download>Download Brochure</a>
             </div>
         </div>
     </section>
