@@ -1,228 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Physio Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Us</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #000;
-    }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
 
-    /* INTRO SECTION */
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-      gap: 40px;
-    }
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding: 4rem 0;
+        }
 
-    .intro-text {
-      flex: 1 1 400px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #333;
-    }
+        .why-choose-us h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #111;
+        }
 
-    .intro-text a {
-      display: inline-block;
-      margin-top: 12px;
-      text-decoration: none;
-      color: #000;
-      border: 1px solid #000;
-      padding: 10px 20px;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-    }
+        .why-choose-us p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
 
-    .intro-text a:hover {
-      background-color: #000;
-      color: #fff;
-    }
+        /* Stats Counter */
+        .stats-counter {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
 
-    .intro-image {
-      flex: 1 1 400px;
-    }
+        .stat-item {
+            text-align: center;
+        }
 
-    .intro-image img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
+        .stat-item h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
 
-    @media (max-width: 768px) {
-      .intro-section {
-        flex-direction: column;
-        padding: 20px 15px;
-        gap: 20px;
-      }
+        .stat-item h3 span {
+            font-size: 2rem;
+            color: #000;
+        }
 
-      .intro-text {
-        font-size: 1rem;
-        line-height: 1.6;
-        text-align: center;
-      }
+        /* Download Brochure */
+        .download-brochure {
+            margin-top: 3rem;
+        }
 
-      .intro-image img {
-        height: 430px;
-      }
-    }
+        .download-btn, .print-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 2px solid #000;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
 
-    /* CONDITIONS SECTION */
-    .conditions-section {
-      background: url('download (1).jpeg') no-repeat center center/cover;
-      width: 100%;
-    }
+        .download-btn {
+            background-color: #000;
+            color: #fff;
+        }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px 15px;
-      max-width: 100%;
-      width: 100%;
-    }
+        .print-btn {
+            background-color: #fff;
+            color: #000;
+        }
 
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 20px;
-      color: #fff;
-    }
+        .download-btn:hover, .print-btn:hover {
+            background-color: #f0f0f0;
+            border-color: #333;
+        }
 
-    .conditions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 10px;
-      max-width: 100%;
-    }
+        @media (max-width: 768px) {
+            .stats-counter {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    .condition-card {
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.9);
-      color: #222;
-      padding: 10px 12px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-    }
-
-    .condition-card:hover {
-      transform: scale(1.03);
-    }
-
-    .condition-icon {
-      width: 26px;
-      height: 26px;
-      margin-right: 10px;
-      border-radius: 50%;
-      object-fit: contain;
-      background-color: #fff;
-    }
-
-    .condition-label {
-      font-weight: 500;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 480px) {
-      .section-title {
-        font-size: 1.3rem;
-      }
-
-      .condition-icon {
-        width: 22px;
-        height: 22px;
-        margin-right: 8px;
-      }
-
-      .condition-card {
-        padding: 8px 10px;
-      }
-
-      .condition-label {
-        font-size: 0.85rem;
-      }
-
-      .conditions-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+            .stat-item {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <p>We are dedicated to providing you with the highest quality care. Here’s why we’re the best choice for your physiotherapy needs:</p>
+            
+            <div class="stats-counter">
+                <div class="stat-item">
+                    <h3><span id="experience-years">15</span>+ Years of Experience</h3>
+                </div>
+                <div class="stat-item">
+                    <h3><span id="patients-treated">5000</span>+ Patients Treated</h3>
+                </div>
+                <div class="stat-item">
+                    <h3>Avg. Recovery Time: <span id="avg-recovery-time">6</span> Weeks</h3>
+                </div>
+            </div>
 
-  <!-- Intro Section -->
-  <section class="intro-section">
-    <div class="intro-text">
-      <p>
-        Highly driven and passionate about quality treatment, we provide specialized physiotherapy services for individuals of all ages — from sports injuries to post-surgical recovery and developmental care.
-      </p>
-      <a href="about-us.html">Read more</a>
-    </div>
-    <div class="intro-image">
-      <img src="download (1).jpeg" alt="Physiotherapist Portrait" />
-    </div>
-  </section>
-
-  <!-- Conditions Treated Section -->
-  <section class="conditions-section">
-    <div class="overlay">
-      <div class="section-title">Conditions Treated</div>
-
-      <div class="conditions-grid">
-        <div class="condition-card">
-          <img src="download (1).jpeg" alt="Body Pain" class="condition-icon" />
-          <div class="condition-label">Body & Joint Pains</div>
+            <div class="download-brochure">
+                <p>Download our brochure or view a printable version of our services:</p>
+                <a href="#" class="download-btn">Download Brochure</a>
+                <a href="#" class="print-btn" target="_blank">Print Services</a>
+            </div>
         </div>
-
-        <div class="condition-card">
-          <img src="download (1).jpeg" alt="Sports Injuries" class="condition-icon" />
-          <div class="condition-label">Sport Related Injuries</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="download (1).jpeg" alt="Migraine" class="condition-icon" />
-          <div class="condition-label">Migraine Headache</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="download (1).jpeg" alt="Post-op Rehab" class="condition-icon" />
-          <div class="condition-label">Post Operative Rehab</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="download (1).jpeg" alt="Osteoarthritis" class="condition-icon" />
-          <div class="condition-label">Osteoarthritis</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="download (1).jpeg" alt="Post Gyne Rehab" class="condition-icon" />
-          <div class="condition-label">Post Gynecological Rehab</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="download (1).jpeg" alt="Urinary Incontinence" class="condition-icon" />
-          <div class="condition-label">Urinary Incontinence</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+    </section>
 </body>
 </html>
