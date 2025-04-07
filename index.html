@@ -19,38 +19,26 @@
       padding: 0 20px;
     }
 
-    /* 👇 NEW clean heading style */
     .section-title {
       font-size: 1.8rem;
       font-weight: 600;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       color: #111;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      height: 2px;
-      width: 60px;
-      background-color: #000;
-      margin: 12px auto 0;
-      border-radius: 4px;
     }
 
     .conditions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
     }
 
     .condition-card {
       display: flex;
       align-items: center;
       background: #f5f5f5;
-      padding: 10px 15px;
-      border-radius: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       transition: transform 0.2s ease;
     }
@@ -60,9 +48,9 @@
     }
 
     .condition-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 16px;
+      width: 36px;
+      height: 36px;
+      margin-right: 12px;
       border-radius: 50%;
       object-fit: contain;
       background-color: #fff;
@@ -74,14 +62,18 @@
     }
 
     @media (max-width: 480px) {
+      .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .condition-card {
-        padding: 12px 16px;
+        padding: 10px 12px;
       }
 
       .condition-icon {
-        width: 36px;
-        height: 36px;
-        margin-right: 12px;
+        width: 32px;
+        height: 32px;
+        margin-right: 10px;
       }
 
       .condition-label {
@@ -97,37 +89,37 @@
 
     <div class="conditions-grid">
       <div class="condition-card">
-        <img src="download.jpeg" alt="Body Pain" class="condition-icon" />
+        <img src="images/body.png" alt="Body Pain" class="condition-icon" />
         <div class="condition-label">Body & Joint Pains</div>
       </div>
 
       <div class="condition-card">
-        <img src="download.jpeg" alt="Sports Injuries" class="condition-icon" />
+        <img src="images/sport.png" alt="Sports Injuries" class="condition-icon" />
         <div class="condition-label">Sport Related Injuries</div>
       </div>
 
       <div class="condition-card">
-        <img src="download.jpeg" alt="Migraine" class="condition-icon" />
+        <img src="images/migraine.png" alt="Migraine" class="condition-icon" />
         <div class="condition-label">Migraine Headache</div>
       </div>
 
       <div class="condition-card">
-        <img src="download.jpeg" alt="Post-op Rehab" class="condition-icon" />
+        <img src="images/rehab.png" alt="Post-op Rehab" class="condition-icon" />
         <div class="condition-label">Post Operative Rehab</div>
       </div>
 
       <div class="condition-card">
-        <img src="download.jpeg" alt="Osteoarthritis" class="condition-icon" />
+        <img src="images/arthritis.png" alt="Osteoarthritis" class="condition-icon" />
         <div class="condition-label">Osteoarthritis</div>
       </div>
 
       <div class="condition-card">
-        <img src="download.jpeg" alt="Post Gyne Rehab" class="condition-icon" />
+        <img src="images/women-health.png" alt="Post Gyne Rehab" class="condition-icon" />
         <div class="condition-label">Post Gynecological Rehab</div>
       </div>
 
       <div class="condition-card">
-        <img src="download.jpeg" alt="Urinary Incontinence" class="condition-icon" />
+        <img src="images/urinary.png" alt="Urinary Incontinence" class="condition-icon" />
         <div class="condition-label">Urinary Incontinence</div>
       </div>
     </div>
