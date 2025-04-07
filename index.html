@@ -1,192 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Choose Us</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conditions Treated</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #222;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fff;
-            color: #000;
-        }
+    .conditions-section {
+      position: relative;
+      background: url('images/bg.jpg') no-repeat center center/cover;
+      padding: 80px 20px;
+      color: #fff;
+    }
 
-        /* General Styles */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px 20px;
+      border-radius: 12px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        /* Why Choose Us Section */
-        .why-choose-us {
-            text-align: center;
-            padding: 4rem 0;
-        }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+    }
 
-        .why-choose-us h2 {
-            font-size: 2rem;
-            font-weight: 500; /* Lighter font weight */
-            color: #111;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
 
-        .why-choose-us p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
+    .condition-card {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      color: #222;
+      padding: 12px 16px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
 
-        /* Stats Counter */
-        .stats-counter {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            margin-top: 2rem;
-            gap: 30px; /* Adjusted gap between cards */
-        }
+    .condition-card:hover {
+      transform: translateY(-3px);
+    }
 
-        .stat-item {
-            background-color: #f7f7f7;
-            padding: 1rem;
-            width: 160px; /* Smaller width */
-            height: 160px; /* Smaller height */
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
+    .condition-icon {
+      width: 36px;
+      height: 36px;
+      margin-right: 12px;
+      border-radius: 50%;
+      object-fit: contain;
+      background-color: #fff;
+    }
 
-        .stat-item h3 {
-            font-size: 1.2rem;
-            font-weight: 500; /* Adjusted weight */
-            margin-bottom: 0.8rem;
-            color: #222;
-        }
+    .condition-label {
+      font-size: 1rem;
+      font-weight: 500;
+    }
 
-        .stat-item h3 span {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #000;
-        }
+    @media (max-width: 480px) {
+      .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
+      .section-title {
+        font-size: 1.5rem;
+      }
 
-        /* Download Brochure */
-        .download-brochure {
-            margin-top: 3rem;
-        }
+      .condition-card {
+        padding: 10px 12px;
+      }
 
-        .download-btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            margin: 0.5rem;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            border: 1px solid #000;
-            border-radius: 25px;
-            background-color: #fff;
-            color: #000;
-            transition: all 0.3s ease;
-        }
+      .condition-icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 10px;
+      }
 
-        .download-btn:hover {
-            background-color: #f0f0f0;
-            border-color: #333;
-        }
+      .condition-label {
+        font-size: 0.95rem;
+      }
 
-        @media (max-width: 768px) {
-            .stats-counter {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stat-item {
-                margin-bottom: 2rem;
-            }
-        }
-
-        /* Animation for the Counter */
-        .counter {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        @keyframes increase {
-            0% {
-                width: 0;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-
-        .counter span {
-            display: inline-block;
-            animation: increase 2s forwards;
-        }
-    </style>
+      .overlay {
+        padding: 25px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <section class="why-choose-us">
-        <div class="container">
-            <h2>Why Choose Us</h2>
-            <p>We are dedicated to providing you with the highest quality care. Here’s why we’re the best choice for your physiotherapy needs:</p>
-            
-            <div class="stats-counter">
-                <div class="stat-item">
-                    <h3><span id="experience-years" class="counter">0</span>+ Years of Experience</h3>
-                </div>
-                <div class="stat-item">
-                    <h3><span id="patients-treated" class="counter">0</span>+ Patients Treated</h3>
-                </div>
-                <div class="stat-item">
-                    <h3>Avg. Recovery Time: <span id="avg-recovery-time" class="counter">0</span> Weeks</h3>
-                </div>
-            </div>
 
-            <div class="download-brochure">
-                <p>Download our brochure to learn more about our services:</p>
-                <a href="https://drive.google.com/uc?export=download&id=1fv-AsU5RyTcfe2tH27U7KHgEjNGRCZd1" class="download-btn" download>Download Brochure</a>
-            </div>
+  <section class="conditions-section">
+    <div class="overlay">
+      <div class="section-title">Conditions Treated</div>
+
+      <div class="conditions-grid">
+        <div class="condition-card">
+          <img src="images/body.png" alt="Body Pain" class="condition-icon" />
+          <div class="condition-label">Body & Joint Pains</div>
         </div>
-    </section>
 
-    <script>
-        // Animate number counters
-        function animateCounter(id, start, end, duration) {
-            let current = start;
-            const increment = (end - start) / (duration / 100);
-            const element = document.getElementById(id);
+        <div class="condition-card">
+          <img src="images/sport.png" alt="Sports Injuries" class="condition-icon" />
+          <div class="condition-label">Sport Related Injuries</div>
+        </div>
 
-            const interval = setInterval(function () {
-                current += increment;
-                if (current >= end) {
-                    clearInterval(interval);
-                    element.innerText = end;
-                } else {
-                    element.innerText = Math.floor(current);
-                }
-            }, 100);
-        }
+        <div class="condition-card">
+          <img src="images/migraine.png" alt="Migraine" class="condition-icon" />
+          <div class="condition-label">Migraine Headache</div>
+        </div>
 
-        // Call the animateCounter function
-        window.onload = () => {
-            animateCounter("experience-years", 0, 15, 2000);
-            animateCounter("patients-treated", 0, 5000, 2000);
-            animateCounter("avg-recovery-time", 0, 6, 2000);
-        };
-    </script>
+        <div class="condition-card">
+          <img src="images/rehab.png" alt="Post-op Rehab" class="condition-icon" />
+          <div class="condition-label">Post Operative Rehab</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="images/arthritis.png" alt="Osteoarthritis" class="condition-icon" />
+          <div class="condition-label">Osteoarthritis</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="images/women-health.png" alt="Post Gyne Rehab" class="condition-icon" />
+          <div class="condition-label">Post Gynecological Rehab</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="images/urinary.png" alt="Urinary Incontinence" class="condition-icon" />
+          <div class="condition-label">Urinary Incontinence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
