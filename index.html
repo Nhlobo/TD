@@ -14,20 +14,11 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #fff;
+      color: #000;
     }
 
-    /* General Styles */
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #333;
-    }
-
-    /* Intro Section */
+    /* INTRO SECTION */
     .intro-section {
       display: flex;
       flex-wrap: wrap;
@@ -74,166 +65,102 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
-    /* Conditions Treated Section */
+    @media (max-width: 768px) {
+      .intro-section {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 20px;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .intro-image img {
+        height: 430px;
+      }
+    }
+
+    /* CONDITIONS SECTION */
     .conditions-section {
-      background-color: #f4f4f4;
-      padding: 50px 20px;
+      background: url('download (1).jpeg') no-repeat center center/cover;
+      width: 100%;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 15px;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
     }
 
     .conditions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      max-width: 100%;
     }
 
     .condition-card {
       display: flex;
       align-items: center;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      font-size: 1rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+      color: #222;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
     }
 
     .condition-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      transform: scale(1.03);
     }
 
     .condition-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 15px;
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
       border-radius: 50%;
-      background-color: #6a9d9f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      color: #fff;
+      object-fit: contain;
+      background-color: #fff;
     }
 
     .condition-label {
       font-weight: 500;
-      font-size: 1.1rem;
+      font-size: 0.92rem;
     }
 
-    /* Treatment Types Section */
-    .treatment-types-section {
-      background-color: #ffffff;
-      padding: 50px 20px;
-    }
-
-    .treatment-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .treatment-card {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
-    }
-
-    .treatment-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .treatment-icon {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 15px;
-      background-color: #3c8d99;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      border-radius: 50%;
-    }
-
-    .treatment-label {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-top: 10px;
-    }
-
-    /* Special Programs Section */
-    .special-programs-section {
-      background-color: #f4f4f4;
-      padding: 50px 20px;
-    }
-
-    .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .program-card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
-    }
-
-    .program-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-
-    .program-title {
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .program-description {
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-    }
-
-    .program-button {
-      display: inline-block;
-      text-decoration: none;
-      background-color: #3c8d99;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .program-button:hover {
-      background-color: #6a9d9f;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .intro-section {
-        flex-direction: column;
-        padding: 20px;
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 1.3rem;
       }
 
-      .conditions-grid,
-      .treatment-grid,
-      .programs-grid {
+      .condition-icon {
+        width: 22px;
+        height: 22px;
+        margin-right: 8px;
+      }
+
+      .condition-card {
+        padding: 8px 10px;
+      }
+
+      .condition-label {
+        font-size: 0.85rem;
+      }
+
+      .conditions-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .condition-card,
-      .treatment-card,
-      .program-card {
-        padding: 15px;
       }
     }
   </style>
@@ -255,59 +182,44 @@
 
   <!-- Conditions Treated Section -->
   <section class="conditions-section">
-    <div class="section-title">Conditions Treated</div>
-    <div class="conditions-grid">
-      <div class="condition-card">
-        <div class="condition-icon">💪</div>
-        <div class="condition-label">Body & Joint Pains</div>
-      </div>
-      <div class="condition-card">
-        <div class="condition-icon">⚽</div>
-        <div class="condition-label">Sports Injuries</div>
-      </div>
-      <div class="condition-card">
-        <div class="condition-icon">🤕</div>
-        <div class="condition-label">Migraine Headache</div>
-      </div>
-      <div class="condition-card">
-        <div class="condition-icon">🏥</div>
-        <div class="condition-label">Post Operative Rehab</div>
-      </div>
-    </div>
-  </section>
+    <div class="overlay">
+      <div class="section-title">Conditions Treated</div>
 
-  <!-- Treatment Types Section -->
-  <section class="treatment-types-section">
-    <div class="section-title">Treatment Types</div>
-    <div class="treatment-grid">
-      <div class="treatment-card">
-        <div class="treatment-icon">💆</div>
-        <div class="treatment-label">Massage Therapy</div>
-      </div>
-      <div class="treatment-card">
-        <div class="treatment-icon">🏋️</div>
-        <div class="treatment-label">Physical Therapy</div>
-      </div>
-      <div class="treatment-card">
-        <div class="treatment-icon">🏃</div>
-        <div class="treatment-label">Sports Rehabilitation</div>
-      </div>
-    </div>
-  </section>
+      <div class="conditions-grid">
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Body Pain" class="condition-icon" />
+          <div class="condition-label">Body & Joint Pains</div>
+        </div>
 
-  <!-- Special Programs Section -->
-  <section class="special-programs-section">
-    <div class="section-title">Special Programs</div>
-    <div class="programs-grid">
-      <div class="program-card">
-        <div class="program-title">Post-Surgery Recovery</div>
-        <div class="program-description">We offer tailored recovery programs for individuals after surgery, focusing on restoring mobility and strength.</div>
-        <a href="#" class="program-button">Learn More</a>
-      </div>
-      <div class="program-card">
-        <div class="program-title">Sports Injury Rehab</div>
-        <div class="program-description">Specialized rehabilitation programs for athletes recovering from sports injuries, enhancing strength and flexibility.</div>
-        <a href="#" class="program-button">Enroll Now</a>
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Sports Injuries" class="condition-icon" />
+          <div class="condition-label">Sport Related Injuries</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Migraine" class="condition-icon" />
+          <div class="condition-label">Migraine Headache</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Post-op Rehab" class="condition-icon" />
+          <div class="condition-label">Post Operative Rehab</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Osteoarthritis" class="condition-icon" />
+          <div class="condition-label">Osteoarthritis</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Post Gyne Rehab" class="condition-icon" />
+          <div class="condition-label">Post Gynecological Rehab</div>
+        </div>
+
+        <div class="condition-card">
+          <img src="download (1).jpeg" alt="Urinary Incontinence" class="condition-icon" />
+          <div class="condition-label">Urinary Incontinence</div>
+        </div>
       </div>
     </div>
   </section>
