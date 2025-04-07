@@ -1,71 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conditions Treated</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourfontawesomekit.js" crossorigin="anonymous"></script> <!-- Replace with your actual Font Awesome Kit -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
-
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #000;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      color: #222;
     }
 
     .conditions-section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
     .section-title {
-      font-size: 1.5rem;
-      border-left: 5px solid #000;
-      padding-left: 10px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-left: 4px solid #000;
+      padding-left: 12px;
       margin-bottom: 40px;
     }
 
-    .grid {
+    .conditions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .condition-card {
+      display: flex;
+      align-items: center;
+      background: #f7f7f7;
+      padding: 16px 20px;
       border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      background-color: #fafafa;
-      transition: transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
     }
 
     .condition-card:hover {
-      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .condition-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
+    .condition-icon {
+      font-size: 1rem;
+      margin-right: 16px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 50%;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
     }
 
     .condition-label {
-      padding: 15px;
-      text-align: center;
+      font-size: 1rem;
       font-weight: 500;
-      font-size: 1.05rem;
+      white-space: nowrap;
     }
 
-    @media (max-width: 768px) {
-      .condition-card img {
-        height: 160px;
+    @media (max-width: 480px) {
+      .condition-card {
+        padding: 14px 16px;
       }
 
       .condition-label {
-        font-size: 1rem;
-        padding: 12px;
+        font-size: 0.95rem;
+      }
+
+      .condition-icon {
+        font-size: 0.9rem;
+        width: 28px;
+        height: 28px;
+        margin-right: 12px;
       }
     }
   </style>
@@ -74,34 +92,34 @@
 
   <section class="conditions-section">
     <div class="section-title">Conditions Treated</div>
-    <div class="grid">
+    <div class="conditions-grid">
       <div class="condition-card">
-        <img src="https://via.placeholder.com/400x300?text=Back+Pain" alt="Back Pain">
-        <div class="condition-label">Back Pain</div>
+        <div class="condition-icon"><i class="fas fa-user-md"></i></div>
+        <div class="condition-label">Body & Joint Pains</div>
       </div>
       <div class="condition-card">
-        <img src="https://via.placeholder.com/400x300?text=Shoulder+Pain" alt="Shoulder Pain">
-        <div class="condition-label">Shoulder Pain</div>
+        <div class="condition-icon"><i class="fas fa-user-md"></i></div>
+        <div class="condition-label">Sport Related Injuries</div>
       </div>
       <div class="condition-card">
-        <img src="https://via.placeholder.com/400x300?text=Neck+Pain" alt="Neck Pain">
-        <div class="condition-label">Neck Pain</div>
+        <div class="condition-icon"><i class="fas fa-user-md"></i></div>
+        <div class="condition-label">Migraine Headache</div>
       </div>
       <div class="condition-card">
-        <img src="https://via.placeholder.com/400x300?text=Sport+Injuries" alt="Sport Injuries">
-        <div class="condition-label">Sport Injuries</div>
+        <div class="condition-icon"><i class="fas fa-user-md"></i></div>
+        <div class="condition-label">Post Operative Rehab</div>
       </div>
       <div class="condition-card">
-        <img src="https://via.placeholder.com/400x300?text=Spinal+Cord+Injuries" alt="Spinal Cord Injuries">
-        <div class="condition-label">Spinal Cord Injuries</div>
+        <div class="condition-icon"><i class="fas fa-user-md"></i></div>
+        <div class="condition-label">Osteoarthritis</div>
       </div>
       <div class="condition-card">
-        <img src="https://via.placeholder.com/400x300?text=Urinary+Incontinence" alt="Urinary Incontinence">
+        <div class="condition-icon"><i class="fas fa-user-md"></i></div>
+        <div class="condition-label">Post Gynecological Rehab</div>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon"><i class="fas fa-user-md"></i></div>
         <div class="condition-label">Urinary Incontinence</div>
-      </div>
-      <div class="condition-card">
-        <img src="https://via.placeholder.com/400x300?text=Migraine+Headaches" alt="Migraine Headaches">
-        <div class="condition-label">Migraine Headaches</div>
       </div>
     </div>
   </section>
