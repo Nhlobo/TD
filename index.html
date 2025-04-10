@@ -8,139 +8,133 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        .payment-container {
             background: #fff;
             padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
         }
-        .header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
+        .payment-container h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
         }
-        .payment-form {
-            display: grid;
-            grid-gap: 1em;
+        .payment-container .amount {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
-        .payment-form label {
-            margin-bottom: 5px;
+        .payment-container .amount span {
+            font-weight: bold;
+        }
+        .payment-container .form-group {
+            margin-bottom: 15px;
+        }
+        .payment-container .form-group label {
             display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
-        .payment-form input[type="text"],
-        .payment-form input[type="email"],
-        .payment-form input[type="tel"],
-        .payment-form select {
+        .payment-container .form-group input {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
+            border-radius: 4px;
         }
-        .payment-form input[type="submit"] {
-            background: #333;
+        .payment-container .form-group .cvv-input {
+            width: 60px;
+        }
+        .payment-container .expiry-date {
+            display: flex;
+            justify-content: space-between;
+        }
+        .payment-container .expiry-date select {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .payment-container .permission {
+            background: #004080;
             color: #fff;
-            border: 0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .payment-container .navigation {
+            display: flex;
+            justify-content: space-between;
+        }
+        .payment-container .navigation button {
             padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
         }
-        .payment-form input[type="submit"]:hover {
-            background: #555;
+        .payment-container .navigation .back {
+            background: #ddd;
+            color: #333;
         }
-        .order-summary {
+        .payment-container .navigation .next {
+            background: #FFA500;
+            color: #fff;
+        }
+        .payment-container .branding {
+            text-align: center;
             margin-top: 20px;
         }
-        .order-summary table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .order-summary th, .order-summary td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        .order-summary th {
-            background: #f4f4f4;
+        .payment-container .branding img {
+            width: 100px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Secure Payment Page</h1>
-    </div>
-    <div class="container">
-        <h2>Customer Information</h2>
-        <form id="paymentForm" class="payment-form">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" required>
-
-            <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="lastName" required>
-
-            <label for="address">Address *</label>
-            <input type="text" id="address" name="address" placeholder="Street Address" required>
-
-            <label for="city">City *</label>
-            <input type="text" id="city" name="city" required>
-
-            <label for="postcode">Postcode *</label>
-            <input type="text" id="postcode" name="postcode" required>
-
-            <label for="country">Country *</label>
-            <input type="text" id="country" name="country" required>
-
-            <label for="phone">Phone *</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <h2>Payment Method</h2>
-            <label for="paymentMethod">Select Payment Method</label>
-            <select id="paymentMethod" name="paymentMethod" required>
-                <option value="creditCard">Credit Card</option>
-                <option value="fastPay">Fast Pay</option>
+    <div class="payment-container">
+        <div class="amount">
+            <span>Amount</span>
+            <span>R 49.90 (ZAR)</span>
+        </div>
+        <div class="form-group">
+            <label for="cardHolder">Card Holder</label>
+            <input type="text" id="cardHolder" name="cardHolder" value="Nhlobo Mathebula">
+        </div>
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter Card number">
+        </div>
+        <div class="form-group expiry-date">
+            <label for="expiryDate">Expiry Date</label>
+            <select id="expiryMonth" name="expiryMonth">
+                <option value="01">01</option>
+                <!-- Add more months as needed -->
             </select>
-
-            <h2>Order Summary</h2>
-            <div class="order-summary">
-                <table>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr>
-                        <td>Product 1</td>
-                        <td>1</td>
-                        <td>R50.00</td>
-                    </tr>
-                    <!-- Add more items as needed -->
-                </table>
-                <p>Subtotal: R50.00</p>
-                <p>Shipping: R20.00</p>
-                <p>Total: R70.00 (includes R9.10 VAT)</p>
-            </div>
-
-            <input type="submit" value="Pay Now">
-        </form>
+            <select id="expiryYear" name="expiryYear">
+                <option value="2025">2025</option>
+                <!-- Add more years as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cvv">CVV Digits</label>
+            <input type="text" id="cvv" name="cvv" class="cvv-input" placeholder="CVV">
+        </div>
+        <div class="permission">
+            By continuing I hereby give permission for DPO Group and any Third Party commissioned by DPO Group to use Personal Information provided for the sole purpose of processing the requested transaction and conducting necessary fraud and risk screening.
+        </div>
+        <div class="navigation">
+            <button class="back">&lt; Back</button>
+            <button class="next">Next</button>
+        </div>
+        <div class="branding">
+            <img src="https://www.payfast.co.za/images/logos/payfast.png" alt="PayFast Logo">
+        </div>
     </div>
-
-    <script>
-        document.getElementById('paymentForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const paymentMethod = document.getElementById('paymentMethod').value;
-            if (paymentMethod === 'fastPay') {
-                window.location.href = 'confirmation.html'; // Redirect to confirmation page
-            } else {
-                alert('Processing credit card payment...');
-                // Add logic for credit card payment processing
-            }
-        });
-    </script>
 </body>
 </html>
