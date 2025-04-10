@@ -1,296 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Physio Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    /* INTRO SECTION */
-    .intro-section {
-      padding: 60px 0;
-      text-align: center;
-      background-color: #fff;
-    }
-
-    .intro-text {
-      max-width: 600px;
-      margin: 0 auto 20px;
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    .intro-text a {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      color: #fff;
-      background-color: #007BFF;
-      padding: 14px 30px;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-    }
-
-    .intro-text a:hover {
-      background-color: #0056b3;
-    }
-
-    .intro-image img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    /* CONDITIONS SECTION */
-    .conditions-section {
-      padding: 60px 0;
-      background-color: #fff;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 30px;
-      color: #333;
-    }
-
-    .conditions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .condition-card {
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .condition-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .condition-icon {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 15px;
-      border-radius: 50%;
-      object-fit: contain;
-    }
-
-    .condition-label {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #444;
-    }
-
-    /* WHY CHOOSE US SECTION */
-    .why-choose-us {
-      padding: 60px 0;
-      text-align: center;
-      background-color: #f4f4f9;
-    }
-
-    .why-choose-us h2 {
-      font-size: 2rem;
-      font-weight: 500;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .why-choose-us p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      color: #666;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .stats-counter {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      background-color: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .stat-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .stat-item h3 {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #444;
-    }
-
-    .stat-item h3 span {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #007BFF;
-    }
-
-    .download-brochure {
-      margin-top: 30px;
-    }
-
-    .download-btn {
-      display: inline-block;
-      padding: 14px 30px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      border: 2px solid #007BFF;
-      border-radius: 30px;
-      background-color: #007BFF;
-      color: #fff;
-      transition: background-color 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background-color: #0056b3;
-      border-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        .header ul {
+            padding: 0;
+            list-style: none;
+        }
+        .header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .header #branding {
+            float: left;
+        }
+        .header #branding h1 {
+            margin: 0;
+        }
+        .header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .payment-container {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .payment-container h2 {
+            margin-top: 0;
+        }
+        .payment-container form {
+            display: grid;
+            grid-gap: 1em;
+        }
+        .payment-container label {
+            margin-bottom: 5px;
+            display: block;
+        }
+        .payment-container input[type="text"],
+        .payment-container input[type="email"],
+        .payment-container input[type="tel"],
+        .payment-container select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .payment-container input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: 0;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .payment-container input[type="submit"]:hover {
+            background: #555;
+        }
+        .order-summary {
+            margin-top: 20px;
+        }
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .order-summary th, .order-summary td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .order-summary th {
+            background: #f4f4f4;
+        }
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <div id="branding">
+                <h1>BRM Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="container">
-    <!-- Intro Section -->
-    <section class="intro-section">
-      <div class="intro-text">
-        <p>
-          Highly driven and passionate about quality treatment, we provide specialized physiotherapy services for individuals of all ages — from sports injuries to post-surgical recovery and developmental care.
-        </p>
-        <a href="about-us.html">Read more</a>
-      </div>
-      <div class="intro-image">
-        <img src="images/physiotherapist.jpg" alt="Physiotherapist Portrait" />
-      </div>
-    </section>
+    <div class="container payment-container">
+        <h2>Returning customer? <a href="#">Click here to login</a></h2>
+        <h2>Customer Information</h2>
+        <form id="paymentForm">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" value="dfhfhxgzg@gmail.com" required>
 
-    <!-- Conditions Treated Section -->
-    <section class="conditions-section">
-      <div class="section-title">Conditions Treated</div>
-      <div class="conditions-grid">
-        <div class="condition-card">
-          <img src="images/body.png" alt="Body Pain" class="condition-icon" />
-          <div class="condition-label">Body & Joint Pains</div>
+            <label for="createAccount">Create an account?</label>
+            <input type="checkbox" id="createAccount" name="createAccount">
+
+            <label for="firstName">First name *</label>
+            <input type="text" id="firstName" name="firstName" value="John" required>
+
+            <label for="lastName">Last name *</label>
+            <input type="text" id="lastName" name="lastName" value="Doe" required>
+
+            <label for="streetAddress">Street address *</label>
+            <input type="text" id="streetAddress" name="streetAddress" placeholder="House Number and Street Name" required>
+
+            <label for="city">Town / City *</label>
+            <input type="text" id="city" name="city" value="Albany" required>
+
+            <label for="postcode">Postcode *</label>
+            <input type="text" id="postcode" name="postcode" value="12084" required>
+
+            <label for="country">Country *</label>
+            <input type="text" id="country" name="country" value="South Africa" required>
+
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" value="Gauteng">
+
+            <label for="differentBilling">Use a different billing address</label>
+            <input type="checkbox" id="differentBilling" name="differentBilling">
+
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="phone" value="+27 999-999-9999" required>
+
+            <h2>Shipping Method</h2>
+            <p>Shipping: Flat rate: R100.00</p>
+
+            <h2>Order Summary</h2>
+            <p><a href="#">Have a coupon? Click here to enter your code</a></p>
+            <div class="order-summary">
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>11.2KG BRM PERI-PERI SPATCHCOCK CHICKEN</td>
+                        <td>1</td>
+                        <td>R95.00</td>
+                    </tr>
+                </table>
+                <p>Subtotal: R95.00</p>
+                <p>Shipping: R100.00</p>
+                <p>Total: R195.00 (includes R25.43 VAT)</p>
+            </div>
+
+            <h2>Payment Information</h2>
+            <p>All transactions are secure and encrypted. Credit card information is never stored on our servers.</p>
+
+            <label for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="creditCard">Secure Credit Card Payment</option>
+                <option value="bankTransfer">Bank2Bank EFT</option>
+            </select>
+
+            <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
+
+            <input type="submit" value="PLACE ORDER NOW">
+        </form>
+
+        <h2>We Respect Your Privacy & Information</h2>
+        <h2>Your Cart</h2>
+        <div class="order-summary">
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>11.2KG BRM PERI-PERI SPATCHCOCK CHICKEN</td>
+                    <td>1</td>
+                    <td>R95.00</td>
+                </tr>
+            </table>
+            <p>Coupon code: <input type="text" id="couponCode" name="couponCode" placeholder="Coupon code"> <button type="button" onclick="applyCoupon()">Apply</button></p>
+            <p>Subtotal: R95.00</p>
+            <p>Shipping: R100.00</p>
+            <p>Total: R195.00 (includes R25.43 VAT)</p>
         </div>
 
-        <div class="condition-card">
-          <img src="images/sport.png" alt="Sports Injuries" class="condition-icon" />
-          <div class="condition-label">Sport Related Injuries</div>
-        </div>
+        <h2>100% Safe and Secure Shopping</h2>
+        <p>Fast Delivery</p>
+        <p>Customer Support</p>
+        <p>Quick Order Processing and Tracking</p>
+        <p>Orders before 2pm will be delivered the next day</p>
+    </div>
 
-        <div class="condition-card">
-          <img src="images/migraine.png" alt="Migraine" class="condition-icon" />
-          <div class="condition-label">Migraine Headache</div>
-        </div>
+    <footer class="footer">
+        <p>Copyright © 2020 BRM – All Rights Reserved</p>
+    </footer>
 
-        <div class="condition-card">
-          <img src="images/rehab.png" alt="Post-op Rehab" class="condition-icon" />
-          <div class="condition-label">Post Operative Rehab</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="images/arthritis.png" alt="Osteoarthritis" class="condition-icon" />
-          <div class="condition-label">Osteoarthritis</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="images/women-health.png" alt="Post Gyne Rehab" class="condition-icon" />
-          <div class="condition-label">Post Gynecological Rehab</div>
-        </div>
-
-        <div class="condition-card">
-          <img src="images/urinary.png" alt="Urinary Incontinence" class="condition-icon" />
-          <div class="condition-label">Urinary Incontinence</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-      <h2>Why Choose Us</h2>
-      <p>We are dedicated to providing you with the highest quality care. Here’s why we’re the best choice for your physiotherapy needs:</p>
-
-      <div class="stats-counter">
-        <div class="stat-item">
-          <h3><span id="experience-years" class="counter">0</span>+ Years of Experience</h3>
-        </div>
-        <div class="stat-item">
-          <h3><span id="patients-treated" class="counter">0</span>+ Patients Treated</h3>
-        </div>
-        <div class="stat-item">
-          <h3>Avg. Recovery Time: <span id="avg-recovery-time" class="counter">0</span> Weeks</h3>
-        </div>
-      </div>
-
-      <div class="download-brochure">
-        <p>Download our brochure to learn more about our services:</p>
-        <a href="https://drive.google.com/uc?export=download&id=1fv-AsU5RyTcfe2tH27U7KHgEjNGRCZd1" class="download-btn" download>Download Brochure</a>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    // Animate number counters
-    function animateCounter(id, start, end, duration) {
-      let current = start;
-      const increment = (end - start) / (duration / 100);
-      const element = document.getElementById(id);
-
-      const interval = setInterval(function () {
-        current += increment;
-        if (current >= end) {
-          clearInterval(interval);
-          element.innerText = end;
-        } else {
-          element.innerText = Math.floor(current);
+    <script>
+        function applyCoupon() {
+            const couponCode = document.getElementById('couponCode').value;
+            alert(`Coupon code ${couponCode} applied!`);
+            // Add logic to apply the coupon code to the total price
         }
-      }, 100);
-    }
 
-    // Call the animateCounter function
-    window.onload = () => {
-      animateCounter("experience-years", 0, 15, 2000);
-      animateCounter("patients-treated", 0, 5000, 2000);
-      animateCounter("avg-recovery-time", 0, 6, 2000);
-    };
-  </script>
-
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Order placed successfully!');
+            // Add logic to process the payment and submit the order
+        });
+    </script>
 </body>
 </html>
