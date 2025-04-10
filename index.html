@@ -7,79 +7,48 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .header {
             background: #333;
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
+            padding: 10px 0;
+            text-align: center;
         }
-        .header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        .header ul {
-            padding: 0;
-            list-style: none;
-        }
-        .header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        .header #branding {
-            float: left;
-        }
-        .header #branding h1 {
-            margin: 0;
-        }
-        .header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        .payment-container {
-            background: #fff;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        .payment-container h2 {
-            margin-top: 0;
-        }
-        .payment-container form {
+        .payment-form {
             display: grid;
             grid-gap: 1em;
         }
-        .payment-container label {
+        .payment-form label {
             margin-bottom: 5px;
             display: block;
         }
-        .payment-container input[type="text"],
-        .payment-container input[type="email"],
-        .payment-container input[type="tel"],
-        .payment-container select {
+        .payment-form input[type="text"],
+        .payment-form input[type="email"],
+        .payment-form input[type="tel"],
+        .payment-form select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
         }
-        .payment-container input[type="submit"] {
+        .payment-form input[type="submit"] {
             background: #333;
             color: #fff;
             border: 0;
             padding: 10px 20px;
             cursor: pointer;
         }
-        .payment-container input[type="submit"]:hover {
+        .payment-form input[type="submit"]:hover {
             background: #555;
         }
         .order-summary {
@@ -97,73 +66,47 @@
         .order-summary th {
             background: #f4f4f4;
         }
-        .footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div id="branding">
-                <h1>BRM Store</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container payment-container">
-        <h2>Returning customer? <a href="#">Click here to login</a></h2>
+    <div class="header">
+        <h1>Secure Payment Page</h1>
+    </div>
+    <div class="container">
         <h2>Customer Information</h2>
-        <form id="paymentForm">
+        <form id="paymentForm" class="payment-form">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" value="dfhfhxgzg@gmail.com" required>
+            <input type="email" id="email" name="email" required>
 
-            <label for="createAccount">Create an account?</label>
-            <input type="checkbox" id="createAccount" name="createAccount">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
 
-            <label for="firstName">First name *</label>
-            <input type="text" id="firstName" name="firstName" value="John" required>
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
 
-            <label for="lastName">Last name *</label>
-            <input type="text" id="lastName" name="lastName" value="Doe" required>
+            <label for="address">Address *</label>
+            <input type="text" id="address" name="address" placeholder="Street Address" required>
 
-            <label for="streetAddress">Street address *</label>
-            <input type="text" id="streetAddress" name="streetAddress" placeholder="House Number and Street Name" required>
-
-            <label for="city">Town / City *</label>
-            <input type="text" id="city" name="city" value="Albany" required>
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" required>
 
             <label for="postcode">Postcode *</label>
-            <input type="text" id="postcode" name="postcode" value="12084" required>
+            <input type="text" id="postcode" name="postcode" required>
 
             <label for="country">Country *</label>
-            <input type="text" id="country" name="country" value="South Africa" required>
-
-            <label for="state">State</label>
-            <input type="text" id="state" name="state" value="Gauteng">
-
-            <label for="differentBilling">Use a different billing address</label>
-            <input type="checkbox" id="differentBilling" name="differentBilling">
+            <input type="text" id="country" name="country" required>
 
             <label for="phone">Phone *</label>
-            <input type="tel" id="phone" name="phone" value="+27 999-999-9999" required>
+            <input type="tel" id="phone" name="phone" required>
 
-            <h2>Shipping Method</h2>
-            <p>Shipping: Flat rate: R100.00</p>
+            <h2>Payment Method</h2>
+            <label for="paymentMethod">Select Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="creditCard">Credit Card</option>
+                <option value="fastPay">Fast Pay</option>
+            </select>
 
             <h2>Order Summary</h2>
-            <p><a href="#">Have a coupon? Click here to enter your code</a></p>
             <div class="order-summary">
                 <table>
                     <tr>
@@ -172,73 +115,31 @@
                         <th>Price</th>
                     </tr>
                     <tr>
-                        <td>11.2KG BRM PERI-PERI SPATCHCOCK CHICKEN</td>
+                        <td>Product 1</td>
                         <td>1</td>
-                        <td>R95.00</td>
+                        <td>R50.00</td>
                     </tr>
+                    <!-- Add more items as needed -->
                 </table>
-                <p>Subtotal: R95.00</p>
-                <p>Shipping: R100.00</p>
-                <p>Total: R195.00 (includes R25.43 VAT)</p>
+                <p>Subtotal: R50.00</p>
+                <p>Shipping: R20.00</p>
+                <p>Total: R70.00 (includes R9.10 VAT)</p>
             </div>
 
-            <h2>Payment Information</h2>
-            <p>All transactions are secure and encrypted. Credit card information is never stored on our servers.</p>
-
-            <label for="paymentMethod">Payment Method</label>
-            <select id="paymentMethod" name="paymentMethod" required>
-                <option value="creditCard">Secure Credit Card Payment</option>
-                <option value="bankTransfer">Bank2Bank EFT</option>
-            </select>
-
-            <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
-
-            <input type="submit" value="PLACE ORDER NOW">
+            <input type="submit" value="Pay Now">
         </form>
-
-        <h2>We Respect Your Privacy & Information</h2>
-        <h2>Your Cart</h2>
-        <div class="order-summary">
-            <table>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-                <tr>
-                    <td>11.2KG BRM PERI-PERI SPATCHCOCK CHICKEN</td>
-                    <td>1</td>
-                    <td>R95.00</td>
-                </tr>
-            </table>
-            <p>Coupon code: <input type="text" id="couponCode" name="couponCode" placeholder="Coupon code"> <button type="button" onclick="applyCoupon()">Apply</button></p>
-            <p>Subtotal: R95.00</p>
-            <p>Shipping: R100.00</p>
-            <p>Total: R195.00 (includes R25.43 VAT)</p>
-        </div>
-
-        <h2>100% Safe and Secure Shopping</h2>
-        <p>Fast Delivery</p>
-        <p>Customer Support</p>
-        <p>Quick Order Processing and Tracking</p>
-        <p>Orders before 2pm will be delivered the next day</p>
     </div>
 
-    <footer class="footer">
-        <p>Copyright © 2020 BRM – All Rights Reserved</p>
-    </footer>
-
     <script>
-        function applyCoupon() {
-            const couponCode = document.getElementById('couponCode').value;
-            alert(`Coupon code ${couponCode} applied!`);
-            // Add logic to apply the coupon code to the total price
-        }
-
         document.getElementById('paymentForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Order placed successfully!');
-            // Add logic to process the payment and submit the order
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            if (paymentMethod === 'fastPay') {
+                window.location.href = 'confirmation.html'; // Redirect to confirmation page
+            } else {
+                alert('Processing credit card payment...');
+                // Add logic for credit card payment processing
+            }
         });
     </script>
 </body>
