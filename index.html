@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Carousel</title>
+  <title>Centered Carousel</title>
   <style>
     * {
       margin: 0;
@@ -15,6 +15,10 @@
       background: #121212;
       overflow-x: hidden;
       font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .showcase-wrapper {
@@ -31,7 +35,7 @@
 
     .showcase-item {
       flex: 0 0 auto;
-      width: 80vw; /* Makes images responsive */
+      width: 80vw;
       max-width: 400px;
       margin-right: 2vw;
       border-radius: 1.5rem;
@@ -72,7 +76,7 @@
       <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
       <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
 
-      <!-- Repeat for smooth looping -->
+      <!-- Repeat for seamless loop -->
       <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
       <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
       <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
@@ -82,4 +86,3 @@
 
 </body>
 </html>
-
