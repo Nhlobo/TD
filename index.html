@@ -3,6 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Carousel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #121212;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .showcase-wrapper {
+      width: 100%;
+      overflow: hidden;
+      padding: 2rem 0;
+    }
+
+    .showcase-track {
+      display: flex;
+      animation: scrollLoop 20s linear infinite;
+      width: fit-content;
+    }
+
+    .showcase-item {
+      flex: 0 0 auto;
+      width: 80vw; /* Makes images responsive */
+      max-width: 400px;
+      margin-right: 2vw;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: #1f1f1f;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border: 2px solid #2a2a2a;
+    }
+
+    .showcase-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes scrollLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (min-width: 768px) {
+      .showcase-item {
+        width: 350px;
+      }
+      .showcase-track {
+        animation-duration: 30s;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="showcase-wrapper">
+    <div class="showcase-track">
+      <!-- 4 Images -->
+      <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
+      <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
+      <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
+      <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
+
+      <!-- Repeat for smooth looping -->
+      <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
+      <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
+      <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
+      <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Loop Showcase</title>
   <style>
     * {
