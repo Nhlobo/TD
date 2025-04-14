@@ -12,7 +12,7 @@
     }
 
     body {
-      background: #121212;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
@@ -135,6 +135,49 @@
         font-size: 1.1rem;
       }
     }
+
+    /* Companies Section */
+    .companies-section {
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .companies-title {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .companies-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .companies-logos a img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: brightness(0.9);
+    }
+
+    .companies-logos a:hover img {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+
+    @media (max-width: 600px) {
+      .companies-logos {
+        gap: 1.2rem;
+      }
+
+      .companies-logos a img {
+        height: 50px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -143,16 +186,29 @@
   <div class="showcase-wrapper">
     <div class="showcase-track">
       <!-- Your 4 Images (repeat for loop) -->
-      <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
-      <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
-      <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
-      <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
+      <div class="showcase-item"><img src="your-image1.png" alt="Image 1" /></div>
+      <div class="showcase-item"><img src="your-image2.png" alt="Image 2" /></div>
+      <div class="showcase-item"><img src="your-image3.png" alt="Image 3" /></div>
+      <div class="showcase-item"><img src="your-image4.png" alt="Image 4" /></div>
 
       <!-- Duplicate for infinite loop -->
       <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
       <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
       <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
       <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
+    </div>
+  </div>
+
+   <!-- Companies Section -->
+  <div class="companies-section">
+    <h2 class="companies-title">Companies We've Worked With</h2>
+    <div class="companies-logos">
+      <a href="https://examplecompany1.com" target="_blank">
+        <img src="Pest-Control.png" alt="Company 1 Logo" />
+      </a>
+      <a href="https://examplecompany2.com" target="_blank">
+        <img src="company2-logo.png" alt="Company 2 Logo" />
+      </a>
     </div>
   </div>
 
@@ -164,19 +220,19 @@
   <!-- Stats Section -->
   <div class="stats-section">
     <div class="stat-box">
-      <div class="stat-number">3+</div>
+      <div class="stat-number">5+</div>
       <div class="stat-label">Years of Industry Experience</div>
     </div>
     <div class="stat-box">
-      <div class="stat-number">7+</div>
+      <div class="stat-number">20+</div>
       <div class="stat-label">Client Organizations Served</div>
     </div>
     <div class="stat-box">
-      <div class="stat-number">2</div>
+      <div class="stat-number">12</div>
       <div class="stat-label">Business Partnerships</div>
     </div>
     <div class="stat-box">
-      <div class="stat-number">7+</div>
+      <div class="stat-number">30+</div>
       <div class="stat-label">Digital Solutions Delivered</div>
     </div>
   </div>
