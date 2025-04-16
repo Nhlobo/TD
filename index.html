@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Work – Professional Tech Company</title>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -16,29 +12,16 @@
     }
 
     body {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1));
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.1)); /* Darker gradient */
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
-      padding: 2rem 1rem;
-    }
-
-    .container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+      min-height: 100vh;
+      padding: 2rem 1rem;
     }
 
     /* Carousel */
@@ -92,11 +75,65 @@
     /* Tagline */
     .tagline {
       font-size: 1.4rem;
-      margin: 3rem auto 2rem;
+      margin-bottom: 2rem;
       text-align: center;
       max-width: 700px;
       color: #ccc;
       line-height: 1.5;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .stat-box {
+      background: #1d1d1d;
+      padding: 2rem;
+      border-radius: 1rem;
+      flex: 1 1 200px;
+      min-width: 180px;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+      border: 1px solid #2c2c2c;
+      transition: transform 0.3s;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
+      border-color: #00d4ff;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 500px) {
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .stat-label {
+        font-size: 0.95rem;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+      }
     }
 
     /* Companies Section */
@@ -141,145 +178,64 @@
         height: 50px;
       }
     }
-
-     /* Stats Section */
-    .stats-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      max-width: 1000px;
-      width: 100%;
-      text-align: center;
-      margin-top: -200px;
-      z-index: 2;
-      position: relative;
-    }
-
-     .stat-number {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #00d4ff;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    @media (max-width: 500px) {
-      .stat-number {
-        font-size: 2rem;
-      }
-
-      .stat-label {
-        font-size: 0.95rem;
-      }
-
-      .tagline {
-        font-size: 1.1rem;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <!-- Carousel -->
+  <div class="showcase-wrapper">
+    <div class="showcase-track">
+      <!-- Your 4 Images (repeat for loop) -->
+      <div class="showcase-item"><img src="your-image1.png" alt="Image 1" /></div>
+      <div class="showcase-item"><img src="your-image2.png" alt="Image 2" /></div>
+      <div class="showcase-item"><img src="your-image3.png" alt="Image 3" /></div>
+      <div class="showcase-item"><img src="your-image4.png" alt="Image 4" /></div>
 
-    <!-- Carousel -->
-    <div class="showcase-wrapper fade-in">
-      <div class="showcase-track">
-        <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
-        <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
-        <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
-        <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
-        <!-- Loop -->
-        <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
-        <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
-        <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
-        <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
-      </div>
-    </div>
-
-    <!-- Companies Section -->
-    <div class="companies-section fade-in">
-      <h2 class="companies-title">Companies We've Worked With</h2>
-      <div class="companies-logos">
-        <a href="https://examplecompany1.com" target="_blank">
-          <img src="Pest-Control.png" alt="Company 1 Logo" />
-        </a>
-        <a href="https://examplecompany2.com" target="_blank">
-          <img src="Pest-Control.png" alt="Company 2 Logo" />
-        </a>
-      </div>
-    </div>
-
-    <!-- Tagline -->
-    <div class="tagline fade-in">
-      Empowering businesses through innovative web and mobile solutions tailored to your goals.
-    </div>
-
-    <!-- White Background -->
-    <div class="white-section"></div>
-
-    <!-- Stats Section -->
-    <div class="stats-section fade-in">
-      <div class="stat-box">
-        <div class="stat-number" data-target="5" data-suffix="+">0</div>
-        <div class="stat-label">Years of Industry Experience</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number" data-target="20" data-suffix="+">0</div>
-        <div class="stat-label">Client Organizations Served</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number" data-target="12">0</div>
-        <div class="stat-label">Business Partnerships</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number" data-target="30" data-suffix="+">0</div>
-        <div class="stat-label">Digital Solutions Delivered</div>
-      </div>
+      <!-- Duplicate for infinite loop -->
+      <div class="showcase-item"><img src="one.png" alt="Image 1" /></div>
+      <div class="showcase-item"><img src="two.png" alt="Image 2" /></div>
+      <div class="showcase-item"><img src="three.png" alt="Image 3" /></div>
+      <div class="showcase-item"><img src="four.png" alt="Image 4" /></div>
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script>
-    // Count up animation
-    document.addEventListener("DOMContentLoaded", () => {
-      const counters = document.querySelectorAll(".stat-number");
-      const statsSection = document.querySelector(".white-section");
-      let animated = false;
+   <!-- Companies Section -->
+  <div class="companies-section">
+    <h2 class="companies-title">Companies We've Worked With</h2>
+    <div class="companies-logos">
+      <a href="https://examplecompany1.com" target="_blank">
+        <img src="Pest-Control.png" alt="Company 1 Logo" />
+      </a>
+      <a href="https://examplecompany2.com" target="_blank">
+        <img src="company2-logo.png" alt="Company 2 Logo" />
+      </a>
+    </div>
+  </div>
 
-      const animateCount = (el, endValue) => {
-        let start = 0;
-        const duration = 2000;
-        const stepTime = Math.abs(Math.floor(duration / endValue));
-        
-        const counter = setInterval(() => {
-          start++;
-          el.textContent = start + (el.dataset.suffix || "");
-          if (start >= endValue) {
-            el.textContent = endValue + (el.dataset.suffix || "");
-            clearInterval(counter);
-          }
-        }, stepTime);
-      };
+  <!-- Tagline -->
+  <div class="tagline">
+    Empowering businesses through innovative web and mobile solutions tailored to your goals.
+  </div>
 
-      const observer = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting && !animated) {
-          counters.forEach(counter => {
-            const target = parseInt(counter.dataset.target);
-            animateCount(counter, target);
-          });
-          animated = true;
-        }
-      }, { threshold: 0.5 });
+  <!-- Stats Section -->
+  <div class="stats-section">
+    <div class="stat-box">
+      <div class="stat-number">5+</div>
+      <div class="stat-label">Years of Industry Experience</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">Client Organizations Served</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">12</div>
+      <div class="stat-label">Business Partnerships</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">30+</div>
+      <div class="stat-label">Digital Solutions Delivered</div>
+    </div>
+  </div>
 
-      observer.observe(statsSection);
-    });
-
-  </script>
 </body>
 </html>
