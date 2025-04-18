@@ -192,386 +192,147 @@ body {
 @media (max-width: 480px) {
   /* Adjust any further styles for smaller screens if needed */
 }
- .container {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 32px;
-        }
-
-        .wrapper {
-            max-width: 1200px;
-            margin: 50px auto;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            padding: 20px;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: space-evenly;
-            padding: 20px;
-            background: #808080;
-            border-radius: 16px 16px 0 0;
-            position: relative;
-        }
-
-        .tabs label {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .tabs .slider {
-            position: absolute;
-            height: 4px;
-            background-color: #fff;
-            bottom: 0;
-            transition: all 0.3s ease;
-        }
-
-        /* Centered card layout */
-        .pricing-card {
-            width: 80%;
-            max-width: 400px;
-            margin: 50px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            text-align: center;
-            padding: 30px;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .pricing-card .card-header {
-            background: #808080;
-            padding: 20px;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .pricing-card .price {
-            font-size: 40px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .pricing-card .price span {
-            font-size: 16px;
-        }
-
-        .pricing-card ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .pricing-card ul li {
-            padding: 12px;
-            font-size: 16px;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-        }
-
-        .pricing-card ul li i {
-            margin-right: 10px;
-            color: #808080;
-        }
-
-        .pricing-card button {
-            width: 100%;
-            padding: 15px;
-            background: #808080;
-            color: #fff;
-            border: none;
-            border-radius: 0 0 8px 8px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .pricing-card button:hover {
-            transform: scale(0.98);
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .pricing-card {
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .pricing-card {
-                width: 100%;
-            }
-
-            .tabs {
-                flex-direction: column;
-            }
-
-            .tabs label {
-                font-size: 16px;
-                padding: 12px;
-            }
-        }      
- /* Section Styles */
-section {
-    padding: 80px 20px;
-    background: rgba(255, 255, 255, 0.1); /* Light transparent background */
-    backdrop-filter: blur(20px); /* Add background blur */
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
-    margin-top: 80px;
-    text-align: center;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-/* Heading for Sections */
-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1.5rem;
-}
-
-/* Paragraph styling for Sections */
-section p {
-    font-size: 1.1rem;
-    color: #ddd; /* Lighter text for descriptions */
-    line-height: 1.8; /* Improved readability */
-    max-width: 900px;
-    margin: 0 auto; /* Center align text */
-}
-
-/* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    background-color: #FFD700; /* Golden background */
-    color: #333; /* Dark text color */
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover effect for Buttons */
-.btn:hover {
-    background-color: #ffcc00; /* Slightly darker yellow */
-    transform: translateY(-5px); /* Hover lift effect */
-}
-        
-/* Expertise Section */
-.expertise {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); /* Darker gradient */
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
-    color: white;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
-    margin-top: 80px;
-    text-align: center;
-}
-        
-.expertise h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 1rem;
-}
-
-.expertise p {
-    font-size: 1.2rem;
-    color: #ddd;
-    line-height: 1.8;
-    max-width: 900px;
+  /* Layout */
+.container {
+    width: 90%;
     margin: 0 auto;
-    margin-bottom: 2rem;
 }
 
-/* Expertise Grid Container */
-.expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Makes the cards responsive */
-    gap: 30px;
-    justify-items: center; /* Center the items horizontally */
-    max-width: 1200px;
-    margin: 0 auto; /* Center the entire grid */
-    padding: 0 15px; /* Padding to avoid touching the screen edges */
-}
-
-/* Expertise Item */
-.expertise-item {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 20px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensure cards are fully responsive */
-    max-width: 350px; /* Control maximum size of each card */
-    margin-bottom: 20px; /* Space between cards */
-}
-
-/* Expertise Image Container */
-.expertise-img-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-/* Expertise Image */
-.expertise-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.expertise-item:hover .expertise-img {
-    transform: scale(1.05);
-}
-
-/* Expertise Item Title */
-.expertise h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #1e293b;
-}
-
-/* Expertise Item Paragraph */
-.expertise-item p {
-    font-size: 1rem;
-    color: #ddd;
-    margin-bottom: 1rem;
-}
-
-/* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    background-color: #FFD700; /* Golden background */
-    color: #333; /* Dark text color */
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover effect for Buttons */
-.btn:hover {
-    background-color: #ffcc00; /* Slightly darker yellow */
-    transform: translateY(-5px); /* Hover lift effect */
-}
-
-/* Media Queries for Larger Screens (Optional) */
-@media screen and (min-width: 768px) {
-    .expertise-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensure cards are responsive on tablets */
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .expertise-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* On larger screens, cards are in a flexible grid */
-        justify-items: center; /* Center the cards horizontally */
-    }
-}    
-
- /* Footer Styles */
-footer {
+h2 {
     text-align: center;
-    padding: 20px;
-    background: #f8f8f8;
-    color: #666;
-    font-size: 14px;
+    margin-top: 50px;
+    font-size: 32px;
 }
 
-/* Social Media Icons */
 .wrapper {
+    max-width: 1200px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Tabs */
+.tabs {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 0;
-    list-style: none;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    background: #808080;
+    border-radius: 16px 16px 0 0;
+    position: relative;
 }
 
-.wrapper .icon {
-    width: 3em;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.tabs label {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
 }
 
-.wrapper .icon:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.tooltip {
+.tabs .slider {
     position: absolute;
-    top: -40px;
-    background: #333;
-    color: white;
-    font-size: 0.9em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    height: 4px;
+    background-color: #fff;
+    bottom: 0;
+    transition: all 0.3s ease;
 }
 
-.icon:hover .tooltip {
-    opacity: 1;
+/* Pricing cards */
+.pricing-card {
+    width: 80%;
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 30px;
 }
 
-/* Footer Links */
-.footer-links {
-    margin-top: 15px;
-    font-size: 14px;
+.pricing-card:hover {
+    transform: translateY(-10px);
 }
 
-.footer-links a {
-    color: #666;
-    text-decoration: none;
-    margin: 0 10px;
+.card-header {
+    background: #808080;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
 }
 
-.footer-links a:hover {
-    color: #1e293b;
+.price {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
 }
 
-/* Chatbot Container with Glassmorphism */
+.price span {
+    font-size: 16px;
+}
+
+.pricing-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pricing-card ul li {
+    padding: 12px;
+    font-size: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-card ul li i {
+    margin-right: 10px;
+    color: #808080;
+}
+
+.pricing-card button {
+    width: 100%;
+    padding: 15px;
+    background: #808080;
+    color: #fff;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.pricing-card button:hover {
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pricing-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-card {
+        width: 100%;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tabs label {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+ /* Chatbot Container with Glassmorphism */
 #chatbot-container {
     background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
     backdrop-filter: blur(10px); /* Blurring the background behind the container */
@@ -734,10 +495,9 @@ button:hover {
 #whatsapp-icon:hover {
     background-color: rgba(37, 211, 102, 1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}      
-    </style>
+}
+</style>     
 </head>
-
 <body>
 <header class="navbar" id="navbar">
         <div class="logo">
@@ -794,137 +554,104 @@ button:hover {
             document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
-
-<section id="pricing-plans">
-    <div class="container">
+    <section class="container">
         <h2>Website & App Development Pricing</h2>
         <div class="wrapper">
             <div class="tabs">
                 <input type="radio" id="website-tab" name="tab" checked>
                 <input type="radio" id="app-tab" name="tab">
-
                 <label for="website-tab" class="tab-label">Website Development</label>
                 <label for="app-tab" class="tab-label">App Development</label>
-
                 <div class="slider"></div>
             </div>
 
-            <!-- Website Development Tab -->
             <div class="tab-content">
                 <div id="website" class="tab-section">
+                    <!-- Basic Website -->
                     <div class="pricing-card" id="website-basic">
                         <div class="card-header">Basic Website</div>
                         <div class="price">R3,000 <span>From</span></div>
                         <ul>
-                            <li>Pages: 1–3 pages</li>
-                            <li>For individuals, bloggers, personal portfolios</li>
-                            <li>Custom landing page design</li>
-                            <li>Contact form integration</li>
-                            <li>Basic SEO setup</li>
-                            <li>Mobile responsive design</li>
+                            <li><i class="fas fa-check"></i> Pages: 1-3 pages</li>
+                            <li><i class="fas fa-check"></i> Individuals, bloggers, personal portfolios</li>
+                            <li><i class="fas fa-check"></i> Custom landing page design</li>
+                            <li><i class="fas fa-check"></i> Contact form integration</li>
+                            <li><i class="fas fa-check"></i> Basic SEO setup</li>
+                            <li><i class="fas fa-check"></i> Responsive design (mobile-friendly)</li>
                         </ul>
                         <button onclick="nextCard('website')">Next Plan</button>
                     </div>
 
+                    <!-- Standard Website -->
                     <div class="pricing-card" id="website-standard" style="display:none;">
                         <div class="card-header">Standard Website</div>
                         <div class="price">R6,000 <span>From</span></div>
                         <ul>
-                            <li>Pages: 4–8 pages</li>
-                            <li>Ideal for small businesses & consultants</li>
-                            <li>Homepage + inner page design</li>
-                            <li>Blog, gallery or contact section</li>
-                            <li>SEO optimization</li>
-                            <li>Social media integration</li>
+                            <li><i class="fas fa-check"></i> Pages: 4-8 pages</li>
+                            <li><i class="fas fa-check"></i> Small businesses, consultants, or non-profits.</li>
+                            <li><i class="fas fa-check"></i> Custom homepage and inner page design</li>
+                            <li><i class="fas fa-check"></i> Contact form, gallery, or blog</li>
+                            <li><i class="fas fa-check"></i> Basic SEO optimization</li>
+                            <li><i class="fas fa-check"></i> Social media integration</li>
+                            <li><i class="fas fa-check"></i> Mobile responsiveness</li>
                         </ul>
                         <button onclick="nextCard('website')">Next Plan</button>
                     </div>
 
+                    <!-- Premium Website -->
                     <div class="pricing-card" id="website-premium" style="display:none;">
                         <div class="card-header">Premium Website</div>
                         <div class="price">R12,000 <span>From</span></div>
                         <ul>
-                            <li>Pages: 8–16 pages</li>
-                            <li>For growing businesses</li>
-                            <li>Multiple service/product pages</li>
-                            <li>Advanced SEO setup</li>
-                            <li>Newsletter, chat, social media</li>
-                            <li>Portfolio/blog section</li>
+                            <li><i class="fas fa-check"></i> Pages: 8-16 pages</li>
+                            <li><i class="fas fa-check"></i> Growing businesses, service providers, or organizations.</li>
+                            <li><i class="fas fa-check"></i> Custom homepage and multiple service/product pages</li>
+                            <li><i class="fas fa-check"></i> Blog or portfolio section</li>
+                            <li><i class="fas fa-check"></i> Advanced SEO setup</li>
+                            <li><i class="fas fa-check"></i> Social media, chat integration, and more</li>
+                            <li><i class="fas fa-check"></i> Newsletter subscription form</li>
                         </ul>
                         <button onclick="nextCard('website')">Next Plan</button>
                     </div>
 
+                    <!-- E-commerce Package -->
                     <div class="pricing-card" id="website-ecommerce" style="display:none;">
                         <div class="card-header">E-commerce Package</div>
                         <div class="price">R10,000 <span>From</span></div>
                         <ul>
-                            <li>Custom pages based on catalog</li>
-                            <li>WooCommerce / Shopify setup</li>
-                            <li>Payment gateway & cart</li>
-                            <li>Inventory & order management</li>
-                            <li>SEO, reviews, shipping, login system</li>
+                            <li><i class="fas fa-check"></i> Pages: Custom (varies by product catalog)</li>
+                            <li><i class="fas fa-check"></i> Retail businesses, online stores</li>
+                            <li><i class="fas fa-check"></i> Store setup with WooCommerce/Shopify/Wix</li>
+                            <li><i class="fas fa-check"></i> Payment gateway integration</li>
+                            <li><i class="fas fa-check"></i> Inventory management system</li>
+                            <li><i class="fas fa-check"></i> Product pages with reviews</li>
+                            <li><i class="fas fa-check"></i> Basic SEO, shipping, tax setup</li>
                         </ul>
                         <button onclick="nextCard('website')">Next Plan</button>
                     </div>
                 </div>
 
-                <!-- App Development Tab -->
+                <!-- App Development Section -->
                 <div id="app" class="tab-section" style="display:none;">
+                    <!-- Basic App -->
                     <div class="pricing-card" id="app-basic">
                         <div class="card-header">Basic App</div>
                         <div class="price">R50,000 <span>From</span></div>
                         <ul>
-                            <li>2–4 months dev time</li>
-                            <li>Simple functionality</li>
-                            <li>User login & registration</li>
-                            <li>Basic UI/UX</li>
-                            <li>Push notifications (optional)</li>
+                            <li><i class="fas fa-check"></i> Development Time: 2-4 months</li>
+                            <li><i class="fas fa-check"></i> Simple apps with limited features</li>
+                            <li><i class="fas fa-check"></i> User login and registration</li>
+                            <li><i class="fas fa-check"></i> Basic UI/UX design</li>
+                            <li><i class="fas fa-check"></i> Form submission, calculators</li>
+                            <li><i class="fas fa-check"></i> Optional push notifications</li>
                         </ul>
                         <button onclick="nextCard('app')">Next Plan</button>
                     </div>
-
-                    <div class="pricing-card" id="app-standard" style="display:none;">
-                        <div class="card-header">Standard App</div>
-                        <div class="price">R75,000 <span>From</span></div>
-                        <ul>
-                            <li>4–6 months dev time</li>
-                            <li>Medium-complexity features</li>
-                            <li>Login, profiles, dashboard</li>
-                            <li>API integration</li>
-                            <li>Interactive UI</li>
-                        </ul>
-                        <button onclick="nextCard('app')">Next Plan</button>
-                    </div>
-
-                    <!-- Add more plans if needed -->
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<script>
-    function nextCard(category) {
-        const cards = document.querySelectorAll(`#${category} .pricing-card`);
-        let visibleIndex = Array.from(cards).findIndex(card => card.style.display !== 'none');
-        cards[visibleIndex].style.display = 'none';
-        let nextIndex = (visibleIndex + 1) % cards.length;
-        cards[nextIndex].style.display = 'block';
-    }
-
-    document.getElementById('website-tab').addEventListener('change', () => {
-        document.getElementById('website').style.display = 'block';
-        document.getElementById('app').style.display = 'none';
-    });
-
-    document.getElementById('app-tab').addEventListener('change', () => {
-        document.getElementById('website').style.display = 'none';
-        document.getElementById('app').style.display = 'block';
-    });
-</script>
-
-
-   <!-- WhatsApp Icon -->
+    </section>
+      <!-- WhatsApp Icon -->
 <a href="https://wa.me/0665520197" id="whatsapp-icon" target="_blank" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
@@ -1110,49 +837,31 @@ button:hover {
         chatbotContainer.style.display = "none"; // Hide the chatbot
         });
 
-    </script>
-
-
-   
-   <footer>
+    </script> 
+      <section>
+      <!--================= FOOTER ================ -->
+<footer>
     <ul class="wrapper">
-      <li class="icon facebook" onclick="redirectTo('https://facebook.com')">
-        <span class="tooltip">Facebook</span>
-        <svg
-          viewBox="0 0 320 512"
-          height="1.2em"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+        <li class="icon facebook" onclick="redirectTo('https://facebook.com')">
+            <span class="tooltip">Facebook</span>
+            <svg viewBox="0 0 320 512" height="1.2em" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+            </svg>
+        </li>
+        <li class="icon twitter" onclick="redirectTo('https://twitter.com')">
+            <span class="tooltip">Twitter</span>
+            <svg height="1.8em" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
+            </svg>
+        </li>
+        <li class="icon instagram" onclick="redirectTo('https://instagram.com')">
+            <span class="tooltip">Instagram</span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
         </svg>
-      </li>
-      <li class="icon twitter" onclick="redirectTo('https://twitter.com')">
-        <span class="tooltip">Twitter</span>
-        <svg
-          height="1.8em"
-          fill="currentColor"
-          viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
-        </svg>
-      </li>
-      <li class="icon instagram" onclick="redirectTo('https://instagram.com')">
-        <span class="tooltip">Instagram</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="1.2em"
-          fill="currentColor"
-          class="bi bi-instagram"
-          viewBox="0 0 16 16"
-        >
-          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-        </svg>
-      </li>
+        </li>
     </ul>
-    
-    <!-- Privacy & Terms Links -->
+   <!-- Privacy & Terms Links -->
     <div class="footer-links">
       <a href="privacy.html">Privacy Policy</a> | 
       <a href="terms.html">Terms of Service</a>
@@ -1160,14 +869,7 @@ button:hover {
     
     <p>© 2025 Mapengo Innovations. All rights reserved.</p>
   </footer>
-
-  <script>
-    function redirectTo(url) {
-      setTimeout(() => {
-        window.location.href = url;
-      }, 300);  // Delay of 0.3 seconds
-    }
-  </script>
+   </section>
 </body>
-
 </html>
+
