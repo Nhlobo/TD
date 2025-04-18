@@ -634,64 +634,91 @@ button:hover {
       font-size: 1rem;
     }
     </style>
-</head>
-
-<body>
-<header class="navbar" id="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="Mapengo Innovations">
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
-                <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
-                <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
-                <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
-             </ul>
-        </nav>
-        <div class="toggle-button" id="toggleButton">&#9776;</div>
-    </header>
-
-    <!-- Sliding Menu -->
-    <div id="mainMenu" class="main-menu">
-        <span class="close-btn" id="closeMenuButton">&#215;</span>
-        <ul>
-            <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
-            <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
-            <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
-            <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
-            <li><a href="contact" onclick="closeMenuAndNavigate('contact')">Contact</a></li>
-        </ul>
+   <body>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Mapengo Innovations">
     </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
+        <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
+        <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
+        <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-button" id="toggleButton">&#9776;</div>
+  </header>
 
-    <script>
-        const toggleButton = document.querySelector("#toggleButton");
-        const mainMenu = document.querySelector("#mainMenu");
-        const closeMenuButton = document.querySelector("#closeMenuButton");
+  <!-- Banner Image (Below Navbar) -->
+  <div class="header-img">
+    <img src="20250418_174645.jpg" alt="Mapengo Innovations Banner">
+  </div>
 
-        toggleButton.addEventListener('click', function () {
-            mainMenu.classList.toggle('active');
-            toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
-        });
+  <!-- Mobile Menu -->
+  <div id="mainMenu" class="main-menu">
+    <span class="close-btn" id="closeMenuButton">&#215;</span>
+    <ul>
+      <li><a href="index.html" onclick="closeMenuAndNavigate('index.html')">Home</a></li>
+      <li><a href="about.html" onclick="closeMenuAndNavigate('about.html')">About</a></li>
+      <li><a href="services.html" onclick="closeMenuAndNavigate('services.html')">Services</a></li>
+      <li><a href="pricing.html" onclick="closeMenuAndNavigate('pricing.html')">Pricing</a></li>
+      <li><a href="contact.html" onclick="closeMenuAndNavigate('contact.html')">Contact</a></li>
+    </ul>
+  </div>
 
-        closeMenuButton.addEventListener('click', function () {
-            mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;";
-        });
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h2>Who We Are</h2>
+      <p>Mapengo Innovations is a creative tech company specializing in the development of modern websites and mobile applications. Our mission is to empower businesses and individuals through innovative, user-focused digital solutions.</p>
+    </section>
 
-        document.addEventListener('click', function(event) {
-            if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
-                mainMenu.classList.remove('active');
-                toggleButton.innerHTML = "&#9776;";
-            }
-        });
+    <section>
+      <h2>What We Do</h2>
+      <p>From sleek, responsive websites to powerful mobile apps, we bring your ideas to life. Whether you're launching a startup, growing a brand, or streamlining your operations, we provide tailored solutions that align with your goals.</p>
+    </section>
 
-        function closeMenuAndNavigate(target) {
-            mainMenu.classList.remove('active');
-            toggleButton.innerHTML = "&#9776;";
-            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <section>
+      <h2>Our Approach</h2>
+      <p>At Mapengo Innovations, we combine technology with creativity. We focus on clean design, smooth user experience, and efficient development to deliver products that not only work flawlessly but also look stunning.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Mapengo Innovations. All rights reserved.
+  </footer>
+
+  <!-- JavaScript for menu toggle -->
+  <script>
+    const toggleButton = document.querySelector("#toggleButton");
+    const mainMenu = document.querySelector("#mainMenu");
+    const closeMenuButton = document.querySelector("#closeMenuButton");
+
+    toggleButton.addEventListener('click', () => {
+      mainMenu.classList.toggle('active');
+      toggleButton.innerHTML = mainMenu.classList.contains("active") ? "&#215;" : "&#9776;";
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+      mainMenu.classList.remove('active');
+      toggleButton.innerHTML = "&#9776;";
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!mainMenu.contains(event.target) && !toggleButton.contains(event.target)) {
+        mainMenu.classList.remove('active');
+        toggleButton.innerHTML = "&#9776;";
+      }
+    });
+
+    function closeMenuAndNavigate(target) {
+      mainMenu.classList.remove('active');
+      toggleButton.innerHTML = "&#9776;";
+      window.location.href = target;
+    }
+  </script>
 
 
 
