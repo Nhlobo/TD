@@ -50,7 +50,7 @@
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
    <style>
-   /* Global Reset */
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
@@ -190,8 +190,7 @@
 @media (max-width: 480px) {
   /* Adjust any further styles for smaller screens if needed */
 }
-
-  /* Wrapper with Gradient Background */
+    /* Wrapper with Gradient Background */
     .gradient-wrapper {
       background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.4)); /* Darker gradient */
       min-height: 100vh;
@@ -423,39 +422,55 @@ footer {
       p {
       margin-bottom: 20px; /* Adds space between paragraphs */
     }
+/* Header Image Below Navbar */
+    .header-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 100px;
+    }
 
-     /* Ensure body content starts below the navbar */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+    /* About Section */
+    .about-section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-/* Header image styling */
-.header-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-top: 100px; /* Push below the fixed navbar height */
-}
+    .about-section h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ccc;
+    }
 
-  .toggle-button {
-    display: block;
-  }
-}
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
 
-@media (max-width: 768px) {
-  .header-img img {
-    margin-top: 120px; /* More top space for mobile navbar */
-  }
-}
+      .toggle-button {
+        display: block;
+      }
 
+      .header-img img {
+        margin-top: 120px;
+      }
+
+      .about-section h1 {
+        font-size: 28px;
+      }
+
+      .about-section p {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -476,11 +491,10 @@ body {
         </nav>
         <div class="toggle-button" id="toggleButton">&#9776;</div>
     </header>
-
-      <!-- Header Image -->
-  <div class="header-img">
-    <img src="20250418_174645.jpg" alt="Mapengo Innovations">
-  </div>
+   <!-- Header Image BELOW the navbar -->
+    <div class="header-img">
+        <img src="20250418_174645.jpg" alt="Mapengo Innovations">
+    </div>
 
     <!-- Sliding Menu -->
     <div id="mainMenu" class="main-menu">
@@ -523,56 +537,15 @@ body {
             document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
-  
-
-   <div class="gradient-wrapper">
-  <section>
-    <div class="about-img">
-      <img src="images/20250418_174645.jpg" alt="Mapengo Landscape">
-      <div class="overlay"></div>
-    </div>
+  <!-- About Content -->
+  <section class="about-section">
     <h1>About Mapengo Innovations</h1>
-    <p>Mapengo Innovations is a future-focused tech company committed to delivering innovative, scalable, and user-friendly digital solutions. Founded by Novice Nhlovo Mathebula, we empower businesses with custom software, responsive websites, and mobile apps that drive success in the digital age.</p>
+    <p>
+      At Mapengo Innovations, we specialize in crafting high-performance websites and powerful mobile and web apps. 
+      Our mission is to empower businesses and individuals by delivering innovative, user-friendly digital solutions 
+      that not only meet modern standards but also exceed expectations. From idea to deployment, we build with purpose, passion, and precision.
+    </p>
   </section>
-
-  <section>
-    <h2 class="subheading">Meet the Founder</h2>
-    <div class="section-img">
-      <img src="your-founder-image.jpg" alt="Founder: Novice Nhlovo Mathebula">
-    </div>
-    <p>Novice Nhlovo Mathebula is a Software Engineer and ALX graduate with a passion for solving real-world problems through technology. His mission is to make digital solutions more accessible, impactful, and tailored to businesses of all sizes.</p>
-  </section>
-
-  <section>
-    <h2 class="subheading">What We Do</h2>
-    <p><strong>Web Development:</strong> Building modern, secure, and responsive websites.</p>
-    <p><strong>Mobile Apps:</strong> Designing innovative and user-friendly apps for iOS and Android.</p>
-    <p><strong>Custom Software:</strong> Tailored solutions to solve unique business challenges and optimize performance.</p>
-  </section>
-
-  <section>
-    <h2 class="subheading">Our Process</h2>
-    <p>We collaborate closely with clients to bring their vision to life—ensuring quality, security, and a smooth user experience in every project.</p>
-  </section>
-
-  <section>
-    <h2 class="subheading">Why Choose Us</h2>
-    <ul>
-      <li>Client-focused and collaborative</li>
-      <li>Led by a qualified and passionate software engineer</li>
-      <li>Scalable and affordable digital solutions</li>
-      <li>Commitment to quality and innovation</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 class="subheading">Join Our Journey</h2>
-    <p>We're excited about shaping the future of digital innovation. Let’s create something impactful together.</p>
-    <a href="#" class="cta-button">Join Us Now</a>
-  </section>
-</div>
-
-
 <footer>
     <ul class="wrapper">
       <li class="icon facebook" onclick="redirectTo('https://facebook.com')">
@@ -629,4 +602,3 @@ body {
   </script>
 </body>
 </html>
-
