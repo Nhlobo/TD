@@ -24,49 +24,41 @@
         /* Popup Styles */
         .popup {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 0;
-            background: rgba(0, 0, 0, 0.8);
+            bottom: -200px; /* Start off-screen */
+            left: 20px;
+            background: #0056b3; /* Blue background */
+            color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            transition: bottom 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            width: 300px;
         }
 
         .popup.active {
+            bottom: 20px; /* Slide in from the bottom */
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
         }
 
         .popup-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
+            text-align: left;
         }
 
         .popup-content h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .popup-content p {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
         .popup-content button {
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 14px;
             background-color: #007BFF;
             color: #fff;
             border: none;
@@ -83,7 +75,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
             color: #fff;
         }
@@ -99,8 +91,8 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 90px; /* Position below the popup */
+            left: 20px;
         }
 
         #triggerBtn:hover {
@@ -165,9 +157,10 @@
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-btn">&times;</span>
-            <h2>Do You Have a Budget?</h2>
-            <p>We develop stunning websites and innovative apps tailored to your needs. Let's turn your ideas into reality!</p>
-            <button id="contactBtn">Contact Us</button>
+            <h2>Creatives Unleashed</h2>
+            <p>The Ultimate Virtual Hangout for Africa's Boldest Creative Talent</p>
+            <p><strong>24 April 2025</strong></p>
+            <button id="joinBtn">Join Webinar</button>
         </div>
     </div>
 
@@ -201,7 +194,7 @@
             const popup = document.getElementById('popup');
             const triggerBtn = document.getElementById('triggerBtn');
             const closeBtn = document.querySelector('.close-btn');
-            const contactBtn = document.getElementById('contactBtn');
+            const joinBtn = document.getElementById('joinBtn');
 
             // Show the popup when the trigger button is clicked
             triggerBtn.addEventListener('click', function () {
@@ -213,8 +206,8 @@
                 popup.classList.remove('active');
             });
 
-            // Smooth scroll to the contact section when the contact button is clicked
-            contactBtn.addEventListener('click', function () {
+            // Smooth scroll to the contact section when the join button is clicked
+            joinBtn.addEventListener('click', function () {
                 popup.classList.remove('active');
                 setTimeout(function () {
                     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
