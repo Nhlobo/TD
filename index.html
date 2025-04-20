@@ -3,217 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Example</title>
+    <title>Nail Studio</title>
     <style>
-        /* Global Reset */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Popup Styles */
-        .popup {
-            position: fixed;
-            bottom: -200px; /* Start off-screen */
-            left: 20px;
-            background: #0056b3; /* Blue background */
-            color: #fff;
+        header {
+            background-color: #fff;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            transition: bottom 0.3s ease, opacity 0.3s ease;
-            opacity: 0;
-            width: 300px;
+            text-align: center;
         }
 
-        .popup.active {
-            bottom: 20px; /* Slide in from the bottom */
-            opacity: 1;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .popup-content {
-            text-align: left;
+        .logo img {
+            height: 50px;
         }
 
-        .popup-content h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
         }
 
-        .popup-content p {
-            font-size: 14px;
-            margin-bottom: 15px;
+        .nav-links li {
+            margin: 0;
         }
 
-        .popup-content button {
-            padding: 10px 20px;
-            font-size: 14px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
         }
 
-        .popup-content button:hover {
-            background-color: #0056b3;
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
         }
 
-        .close-btn {
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-text {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #fff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
 
-        /* Trigger Button Styles */
-        #triggerBtn {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: #fff;
+        .hero-text h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+        }
+
+        .hero-text button {
+            background-color: #fff;
+            color: #ff69b4;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            position: fixed;
-            bottom: 90px; /* Position below the popup */
-            left: 20px;
         }
 
-        #triggerBtn:hover {
-            background-color: #0056b3;
+        .attention-section {
+            padding: 20px;
+            text-align: center;
         }
 
-        /* Contact Section Styles */
-        .contact-section {
-            padding: 40px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 40px auto;
-        }
-
-        .contact-section h2 {
-            font-size: 24px;
+        .attention-section h2 {
+            font-size: 2em;
             margin-bottom: 20px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
+        .attention-section p {
+            font-size: 1.2em;
+            margin: 10px 0;
         }
 
-        .form-group label {
+        .attention-section img {
+            width: 50%;
+            margin: 20px auto;
             display: block;
-            margin-bottom: 5px;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .services {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .price-list {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .service h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .service ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service ul li {
+            margin: 5px 0;
+        }
+
+        .appointment {
+            background-color: #ff69b4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .appointment button {
+            background-color: #fff;
+            color: #ff69b4;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .reviews {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .review {
+            margin-bottom: 20px;
+        }
+
+        .review p {
+            font-size: 1.2em;
+        }
+
+        .review h4 {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .stars {
+            color: #ffd700;
+        }
+
+        .blog {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .blog-posts {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .blog-post img {
             width: 100%;
+            height: auto;
+        }
+
+        .blog-post h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .blog-post p {
+            font-size: 1em;
+        }
+
+        .blog-post button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+        }
+
+        .footer-contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-contact input, .footer-contact textarea {
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+            font-size: 1em;
         }
 
-        .form-group textarea {
-            resize: vertical;
-        }
-
-        .contact-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: #fff;
+        .footer-contact button {
+            background-color: #ff69b4;
+            color: white;
             border: none;
-            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .contact-button:hover {
-            background-color: #0056b3;
+        .footer-social a img {
+            height: 30px;
+            margin: 0 5px;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <!-- Popup Structure -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h2>Creatives Unleashed</h2>
-            <p>The Ultimate Virtual Hangout for Africa's Boldest Creative Talent</p>
-            <p><strong>24 April 2025</strong></p>
-            <button id="joinBtn">Join Webinar</button>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Nail Studio Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <img src="hero.jpg" alt="Hero Image">
+            <div class="hero-text">
+                <h1>Clean Relaxing Modern & Sleek Salon</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <button>Make an Appointment</button>
+            </div>
         </div>
-    </div>
-
-    <!-- Trigger Button for Popup -->
-    <button id="triggerBtn">Join Webinar</button>
-
-    <!-- Contact Section (for smooth scrolling) -->
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/xwpkkvnk" class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required minlength="2" maxlength="50"
-                    pattern="[a-zA-Z ]+" aria-label="Name field" title="Please enter a valid name (letters and spaces only)">
+    </header>
+    <main>
+        <section class="attention-section">
+            <h2>Get Professional and Creative Nail Art</h2>
+            <p>ATTENTION AND PERSONAL ONE-ON-ONE SERVICE, CLEANLINESS AND THE BEST QUALITY PRODUCTS.</p>
+            <img src="attention.jpg" alt="Attention Image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </section>
+        <section class="services">
+            <h2>Our Nail Services Price List</h2>
+            <div class="price-list">
+                <div class="service">
+                    <h3>Nails</h3>
+                    <ul>
+                        <li>Nails - $45</li>
+                        <li>Nexgen - $99</li>
+                        <li>SNS - $12</li>
+                        <li>Solar Nail - $34</li>
+                        <li>Solar Pink & White - $45</li>
+                        <li>SolarGel Nail - $99</li>
+                        <li>ColorGel Nail - $12</li>
+                        <li>Shellac - $45</li>
+                        <li>Manicure - $99</li>
+                        <li>Pedicure - $12</li>
+                        <li>Gel Manicure - $567</li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <h3>Color Manicure & Pedicure</h3>
+                    <ul>
+                        <li>Color Manicure & Pedicure - $45</li>
+                        <li>French Manicure & Pedicure - $99</li>
+                        <li>Gelcolor Polish - $12</li>
+                        <li>Reflexology - $34</li>
+                        <li>Deep Tissue - $45</li>
+                        <li>Swedish Massage - $99</li>
+                        <li>Healing Stone - $12</li>
+                        <li>Acupressure - $45</li>
+                        <li>A Shiatsu - $99</li>
+                        <li>Prenatal Massage - $12</li>
+                        <li>Deep Tissue - $567</li>
+                    </ul>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required aria-label="Email field" title="Please enter a valid email address">
+        </section>
+        <section class="appointment">
+            <h2>Appointment are preferred to ensure best of services.</h2>
+            <button>Make Appointment</button>
+            <p>Or Call: 800-123-456-78</p>
+        </section>
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h4>Amanda Sultana (Housewife)</h4>
+                <div class="stars">★★★★★</div>
             </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500"
-                    aria-label="Message field" title="Message should be between 10 and 500 characters"></textarea>
+            <div class="review">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h4>Samantha Morris (Yoga Specialist)</h4>
+                <div class="stars">★★★★★</div>
             </div>
-            <button type="submit" class="contact-button">Send Message</button>
-        </form>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const popup = document.getElementById('popup');
-            const triggerBtn = document.getElementById('triggerBtn');
-            const closeBtn = document.querySelector('.close-btn');
-            const joinBtn = document.getElementById('joinBtn');
-
-            // Show the popup when the trigger button is clicked
-            triggerBtn.addEventListener('click', function () {
-                popup.classList.add('active');
-            });
-
-            // Hide the popup when the close button is clicked
-            closeBtn.addEventListener('click', function () {
-                popup.classList.remove('active');
-            });
-
-            // Smooth scroll to the contact section when the join button is clicked
-            joinBtn.addEventListener('click', function () {
-                popup.classList.remove('active');
-                setTimeout(function () {
-                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-                }, 300); // Match the transition duration
-            });
-        });
-    </script>
+        </section>
+        <section class="blog">
+            <h2>Read Blog Posts</h2>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <img src="blog1.jpg" alt="Blog Post 1">
+                    <h3>Beautiful rooms for everyone with hitech services.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Read More</button>
+                </div>
+                <div class="blog-post">
+                    <img src="blog2.jpg" alt="Blog Post 2">
+                    <h3>Stay with confidence and free of hassle with your partner.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Read More</button>
+                </div>
+                <div class="blog-post">
+                    <img src="blog3.jpg" alt="Blog Post 3">
+                    <h3>Give a surprise to your loved ones on this valentines day.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Nail Studio Logo">
+                <p>Nail Studio<br>Where Nails Meet Art</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact for Further Information</h3>
+                <form>
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Type Message"></textarea>
+                    <button>Get a Free Quote</button>
+                </form>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="pinterest.png" alt="Pinterest"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 All Rights Reserved Nail Art Studio. Designed & Developed by Template.net</p>
+        </div>
+    </footer>
 </body>
 </html>
