@@ -1,115 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section Design</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .section {
-            width: 100%; /* Full width */
-            height: 50vh; /* Adjust the height as needed (50% of viewport height) */
-            background: url('hero image.jpg') no-repeat center center/cover;
-            color: #FFFFFF;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-        }
-        .card {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 100%; /* Match the width of the section */
-            height: 100%; /* Match the height of the section */
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px; /* Padding inside the card */
-            text-align: center;
-        }
-        .column {
-            flex: 1;
-            margin: 0 10px; /* Horizontal spacing between columns */
-            text-align: center;
-        }
-        .column .number {
-            font-size: 48px;
-            color: #FFA500;
-            margin-bottom: 10px;
-        }
-        .column p {
-            font-size: 18px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Footer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
-    <div class="section">
-        <div class="card">
-            <div class="column">
-                <div class="number" data-target="250">0</div>
-                <p>Projects Completed</p>
-            </div>
-            <div class="column">
-                <div class="number" data-target="302">0</div>
-                <p>Staff Members</p>
-            </div>
-            <div class="column">
-                <div class="number" data-target="99">0</div>
-                <p>Awards Won</p>
-            </div>
-        </div>
+<body class="bg-gray-900 text-white">
+
+  <!-- Footer -->
+  <footer class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('footer-bg.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-16 text-gray-300 grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+      <!-- About -->
+      <div>
+        <h2 class="text-xl font-semibold text-yellow-400 mb-4">About</h2>
+        <p class="text-sm leading-relaxed">
+          I develop modern, user-focused solutions that bridge ideas and technology with impact.
+        </p>
+        <img src="logo.png" alt="Logo" class="mt-4 w-20">
+      </div>
+
+      <!-- Navigation + Newsletter -->
+      <div>
+        <h2 class="text-xl font-semibold text-yellow-400 mb-4">Navigation</h2>
+        <ul class="text-sm space-y-2 mb-6">
+          <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Projects</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Portfolio</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+        <h3 class="text-yellow-400 text-sm mb-2 font-semibold">Newsletter</h3>
+        <form class="flex flex-col gap-3">
+          <input type="email" placeholder="Enter your email" class="p-2 rounded text-black" />
+          <button class="bg-yellow-400 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-500">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Contact Form -->
+      <div>
+        <h2 class="text-xl font-semibold text-yellow-400 mb-4">Contact</h2>
+        <p class="text-sm">Email: nhlobo365@gmail.com</p>
+        <p class="text-sm mb-4">Phone: +27 66 552 0197</p>
+        <form class="flex flex-col gap-3">
+          <input type="text" placeholder="Your name" class="p-2 rounded text-black" />
+          <input type="email" placeholder="Your email" class="p-2 rounded text-black" />
+          <textarea rows="3" placeholder="Your message" class="p-2 rounded text-black"></textarea>
+          <button class="bg-yellow-400 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-500">Send Message</button>
+        </form>
+      </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const numbers = document.querySelectorAll('.number');
-            const section = document.querySelector('.section');
+    <!-- Footer Bottom -->
+    <div class="relative z-10 border-t border-gray-700 text-center py-4 text-sm text-gray-400">
+      <p>&copy; 2025 Novice Mathebula. All rights reserved.</p>
+      <div class="flex justify-center gap-5 mt-2 text-lg">
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
 
-            // Function to start the counting animation
-            function startCounting(number) {
-                const target = parseInt(number.getAttribute('data-target'));
-                let current = 0;
-                const increment = target / 50; // Adjust for faster/slower animation
-
-                function updateNumber() {
-                    if (current < target) {
-                        current += increment;
-                        number.textContent = Math.floor(current);
-                        requestAnimationFrame(updateNumber);
-                    } else {
-                        number.textContent = target;
-                    }
-                }
-
-                updateNumber();
-            }
-
-            // Intersection Observer to detect when the section is in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        numbers.forEach(number => startCounting(number));
-                    }
-                });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the section is visible
-            });
-
-            observer.observe(section);
-        });
-    </script>
 </body>
 </html>
