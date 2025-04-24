@@ -403,6 +403,179 @@
 </head>
 <body class="bg-gray-900 text-white">
 
+  <!-- ABOUT US -->
+  <section class="about-us">
+    <h1>ABOUT US</h1>
+    <div class="container">
+      <div class="left-section">
+        <p>We are known for our excellence and commitment to delivering high-quality projects. Our team of professionals builds strong partnerships and ensures that every project meets the highest standards.</p>
+        <div class="icons">
+          <div class="icon-item">
+            <div class="icon-circle">
+              <img src="images/professionals.png" alt="Excellence">
+            </div>
+            <h4>REPUTATION FOR EXCELLENCE</h4>
+          </div>
+          <div class="icon-item">
+            <div class="icon-circle">
+              <img src="images/collaboration_16743854.png" alt="Partnerships">
+            </div>
+            <h4>BUILD PARTNERSHIPS</h4>
+          </div>
+          <div class="icon-item">
+            <div class="icon-circle">
+              <img src="images/con committment.png" alt="Commitment">
+            </div>
+            <h4>GUIDED BY COMMITMENT</h4>
+          </div>
+          <div class="icon-item">
+            <div class="icon-circle">
+              <img src="images/con proffessonals.png" alt="Professionals">
+            </div>
+            <h4>TEAM OF PROFESSIONALS</h4>
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <h2>Our Values</h2>
+        <div class="values">
+          <h3 class="value-header active">SAFETY</h3>
+          <p>We prioritize safety in all our projects to ensure the well-being of our team and clients.</p>
+          <h3 class="value-header">CUSTOMER SERVICE</h3>
+          <p>Our dedicated customer service ensures that all client needs are met promptly and efficiently.</p>
+          <h3 class="value-header">INTEGRITY</h3>
+          <p>We uphold the highest standards of integrity in all our actions and decisions.</p>
+        </div>
+        <div class="glass-card-container">
+          <div class="glass-card-background">
+            <img src="images/background gellary.jpg" alt="Why Choose Us Background">
+          </div>
+          <div class="glass-card">
+            <h3>Why Choose Us?</h3>
+            <p>Driven by experience, dedication, and excellence in every project we deliver.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section">
+      <div class="card">
+        <div class="column">
+          <div class="number" data-target="38">0</div>
+          <p>Projects Completed</p>
+        </div>
+        <div class="column">
+          <div class="number" data-target="13">0</div>
+          <p>Years of Exprience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const numbers = document.querySelectorAll('.number');
+      const section = document.querySelector('.section');
+
+      // Function to start the counting animation
+      function startCounting(number) {
+        const target = parseInt(number.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 50; // Adjust for faster/slower animation
+
+        function updateNumber() {
+          if (current < target) {
+            current += increment;
+            number.textContent = Math.floor(current);
+            requestAnimationFrame(updateNumber);
+          } else {
+            number.textContent = target;
+          }
+        }
+
+        updateNumber();
+      }
+
+      // Intersection Observer to detect when the section is in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            numbers.forEach(number => startCounting(number));
+          }
+        });
+      }, {
+        threshold: 0.1 // Trigger when 10% of the section is visible
+      });
+
+      observer.observe(section);
+    });
+  </script>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <h1>OUR SERVICES</h1>
+    <p>We offer quality and affordable services for both residential and commercial needs.</p>
+
+    <div class="content-container">
+      <div class="image-container">
+        <img src="images/Paving.jpg" alt="Construction Image" />
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <div class="service-card">PAVING</div>
+        <div class="service-card">TILING</div>
+        <div class="service-card">PAINTING</div>
+        <div class="service-card">BUILDING & RENOVATIONS</div>
+        <div class="service-card">CEILING & CORNICE FITTING & DECO</div>
+        <div class="service-card">WATERPROOFING & DAMP-PROOFING</div>
+        <div class="service-card">INTERIOR DECO</div>
+      </div>
+
+      <div class="view-btn-container">
+        <button class="view-btn">View All Services</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Reveal on scroll
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section').forEach(section => sectionObserver.observe(section));
+
+    // Toggle value descriptions
+    document.querySelectorAll(".value-header").forEach(header => {
+      header.addEventListener("click", () => {
+        // Close others
+        document.querySelectorAll(".value-header").forEach(h => {
+          if (h !== header) {
+            h.classList.remove("active");
+          }
+        });
+
+        // Toggle the clicked header
+        header.classList.toggle("active");
+      });
+    });
+
+    // Ensure the "SAFETY" value is always open
+    document.addEventListener("DOMContentLoaded", () => {
+      const safetyHeader = document.querySelector(".value-header");
+      if (safetyHeader) {
+        safetyHeader.classList.add("active");
+      }
+    });
+  </script>
+
   <!-- Footer -->
   <footer class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('hero image.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-80"></div>
