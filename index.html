@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
         }
         .section {
-            background: url('hero image.jpg') no-repeat center center/cover;
+            background: url('landscape-image.jpg') no-repeat center center/cover;
             color: #FFFFFF;
             padding: 50px 20px;
             text-align: center;
@@ -31,9 +31,10 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 20px;
+            padding: 50px 20px; /* Increased padding for a larger card */
             background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
+            width: 100%; /* Full width */
+            border: none; /* No rounded corners */
         }
         .column {
             flex: 1;
@@ -54,18 +55,57 @@
     <div class="section">
         <div class="card">
             <div class="column">
-                <div class="number">250</div>
+                <div class="number" data-target="250">0</div>
                 <p>Projects Completed</p>
             </div>
             <div class="column">
-                <div class="number">302</div>
+                <div class="number" data-target="302">0</div>
                 <p>Staff Members</p>
             </div>
             <div class="column">
-                <div class="number">99</div>
+                <div class="number" data-target="99">0</div>
                 <p>Awards Won</p>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const numbers = document.querySelectorAll('.number');
+            const section = document.querySelector('.section');
+
+            // Function to start the counting animation
+            function startCounting(number) {
+                const target = parseInt(number.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 50; // Adjust for faster/slower animation
+
+                function updateNumber() {
+                    if (current < target) {
+                        current += increment;
+                        number.textContent = Math.floor(current);
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        number.textContent = target;
+                    }
+                }
+
+                updateNumber();
+            }
+
+            // Intersection Observer to detect when the section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        numbers.forEach(number => startCounting(number));
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
