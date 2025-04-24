@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
         }
         .section {
-            background: url('landscape-image.jpg') no-repeat center center/cover;
+            background: url('hero image.jpg') no-repeat center center/cover;
             color: #FFFFFF;
             padding: 50px 20px;
             text-align: center;
@@ -27,21 +27,22 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
-        .column {
-            display: inline-block;
-            width: 30%;
-            margin: 1%;
+        .card {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
         }
+        .column {
+            flex: 1;
+            margin: 10px;
+            text-align: center;
+        }
         .column .number {
             font-size: 48px;
             color: #FFA500;
-            margin-bottom: 10px;
-        }
-        .column h2 {
-            font-size: 24px;
             margin-bottom: 10px;
         }
         .column p {
@@ -51,20 +52,19 @@
 </head>
 <body>
     <div class="section">
-        <div class="column">
-            <div class="number">250</div>
-            <h2>Experience</h2>
-            <p>Projects Completed</p>
-        </div>
-        <div class="column">
-            <div class="number">302</div>
-            <h2>Projects</h2>
-            <p>Staff Members</p>
-        </div>
-        <div class="column">
-            <div class="number">99</div>
-            <h2>Collaboration</h2>
-            <p>Awards Won</p>
+        <div class="card">
+            <div class="column">
+                <div class="number">250</div>
+                <p>Projects Completed</p>
+            </div>
+            <div class="column">
+                <div class="number">302</div>
+                <p>Staff Members</p>
+            </div>
+            <div class="column">
+                <div class="number">99</div>
+                <p>Awards Won</p>
+            </div>
         </div>
     </div>
 </body>
