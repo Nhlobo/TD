@@ -152,3 +152,20 @@ footer a:hover {
 .cookie-popup a:hover {
     color: #ffeb3b;
 }
+}
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    footer {
+      margin-top: auto;
+    }
+    .success-message {
+      color: #16a34a;
+      font-weight: bold;
+    }
+    .error-message {
+      color: #dc2626;
+      font-weight: bold;
+    }
