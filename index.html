@@ -2,38 +2,371 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Construction Footer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services</title>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
     body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #222;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .our-services {
+      background: #fff;
+      text-align: center;
+    }
+
+    .service-cards {
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
     }
-    footer {
-      margin-top: auto;
+
+    .card {
+      width: 300px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .success-message {
-      color: #16a34a;
-      font-weight: bold;
+
+    .card img {
+      width: 100%;
+      height: auto;
     }
-    .error-message {
-      color: #dc2626;
-      font-weight: bold;
+
+    .card button {
+      background: #ffc107;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      margin: 15px;
+      cursor: pointer;
     }
   </style>
 </head>
-<body> 
-  <!-- Footer -->
-  <footer>
-  <footer class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('hero image.jpg');">
+<body>
+  <!-- OUR SERVICES -->
+  <section class="our-services">
+    <h2>OUR SERVICES</h2>
+    <div class="service-cards">
+      <div class="card">
+        <img src="images/Painting.jpg" alt="Painting">
+        <h3>PAINTING</h3>
+        <p>We offer professional painting services for both interior and exterior spaces.</p>
+      </div>
+      <div class="card">
+        <img src="images/Tiling (3).jpg" alt="Tiling">
+        <h3>TILING</h3>
+        <p>Our tiling services ensure a perfect finish for your floors and walls.</p>
+      </div>
+      <div class="card">
+        <img src="images/Paving.jpg" alt="Paving.jpg">
+        <h3>PAVING</h3>
+        <p>We specialize in paving solutions for driveways, patios, and walkways.</p>
+      </div>
+      <div class="card">
+        <img src="images/IMG-20250423-WA0043 (1) (1).jpg" alt="Building & Renovations">
+        <h3>BUILDING & RENOVATIONS</h3>
+        <p>Our building and renovation services transform your spaces to meet your needs.</p>
+      </div>
+      <div class="card">
+        <img src="images/Ceiling & Cornice Fitting & Deco.jpg" alt="Ceiling & Cornice Fitting & Deco">
+        <h3>CEILING & CORNICE FITTING & DECO</h3>
+        <p>We provide expert ceiling and cornice fitting and decoration services.</p>
+      </div>
+      <div class="card">
+        <img src="images/Waterproofing & Damp-proofing.jpg" alt="Waterproofing & Damp-proofing">
+        <h3>WATERPROOFING & DAMP-PROOFING</h3>
+        <p>Our waterproofing and damp-proofing services protect your property from moisture damage.</p>
+      </div>
+      <div class="card">
+        <img src="images/Interior Deco.jpg" alt="Interior Deco">
+        <h3>INTERIOR DECO</h3>
+        <p>We offer interior decoration services to enhance the aesthetics of your spaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <form action="https://formspree.io/f/xwpkkvnk" class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="50" pattern="[a-zA-Z ]+" aria-label="Name field" title="Please enter a valid name (letters and spaces only)">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required aria-label="Email field" title="Please enter a valid email address">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" aria-label="Message field" title="Message should be between 10 and 500 characters"></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                    <label for="privacyPolicy">I agree to the <a href="privacy.html">Privacy Policy</a>.</label>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="communicationOptIn" name="communicationOptIn">
+                    <label for="communicationOptIn">I would like to receive updates and promotional communications.</label>
+                </div>
+                <button type="submit" class="button contact-button">Send Message</button>
+            </form>
+            <div id="loader" style="display:none;" aria-live="polite">
+                <img src="loader.gif" alt="Loading...">
+            </div>
+            <div id="response" style="display:none;" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('loader').style.display = 'block';
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const privacyPolicy = document.getElementById('privacyPolicy').checked;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                showResponse('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            if (!privacyPolicy) {
+                showResponse('You must agree to the Privacy Policy before submitting.', 'error');
+                return;
+            }
+
+            if (!name || !email || !message) {
+                showResponse('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            if (!navigator.onLine) {
+                showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
+                return;
+            }
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    Accept: 'application/json'
+                }
+            })
+            .then(response => {
+                document.getElementById('loader').style.display = 'none';
+                if (response.ok) {
+                    showResponse('Thank you! Your message has been successfully sent.', 'success');
+                    this.reset();
+                } else {
+                    showResponse('Oops! There was an issue with your submission. Please try again later.', 'error');
+                }
+            })
+            .catch(error => {
+                document.getElementById('loader').style.display = 'none';
+                if (!navigator.onLine) {
+                    showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
+                } else {
+                    showResponse('There was a problem with your submission. Please try again later.', 'error');
+                }
+            });
+        });
+
+        function showResponse(message, type) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.style.display = 'block';
+            responseDiv.textContent = message;
+            responseDiv.className = type === 'success' ? 'success-message' : 'error-message';
+            setTimeout(() => {
+                responseDiv.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/0665520197" id="whatsapp-icon" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+    <div id="chatbot-container">
+        <div id="close-chatbot"><span>&#10006;</span></div>
+        <div id="chatbot-body">
+            <div class="chatbot-message">
+                <p>Hi! I can help you learn more about our process, services, and pricing. What would you like to know?</p>
+            </div>
+        </div>
+        <div id="chatbot-options">
+            <button onclick="showProcessOptions()">Our Process</button>
+            <button onclick="showServices()">Our Services</button>
+            <button onclick="showPricing()">Pricing</button>
+            <button onclick="showLinks()">Terms & Privacy Policy</button>
+        </div>
+    </div>
+
+    <script>
+        let previousMessages = [];
+        let previousOptions = [];
+
+        function toggleChatbot() {
+            const chatbotContainer = document.getElementById('chatbot-container');
+            chatbotContainer.style.display = (chatbotContainer.style.display === "none" || chatbotContainer.style.display === "") ? "block" : "none";
+        }
+
+        function showProcessOptions() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = `
+                <div class="chatbot-message">
+                    <p><strong>Step 1: Initial Meeting</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>We start with either an in-person or online meeting to discuss your project requirements in detail.</p>
+                        <p><strong>Outcome:</strong> We provide recommendations to help you achieve the best results.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 2: Agreement & Payment</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>After the meeting, we prepare and send you an online contract outlining the agreed terms. Once you sign it, we send you an invoice.</p>
+                        <p><strong>Payment:</strong> You pay 50% upfront to start the project.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 3: Development Phase</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>We keep you updated regularly during the development process to ensure the project aligns with your expectations.</p>
+                        <p>We welcome your feedback to make necessary adjustments.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 4: Testing & Finalization</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>Before finalizing, we conduct thorough testing to ensure the project meets our high standards.</p>
+                        <p>We provide a comprehensive walkthrough of the finished product to confirm it’s what you envisioned.</p>
+                    </div>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Step 5: Final Payment & Delivery</strong></p>
+                    <button class="collapsible">Click to know more</button>
+                    <div class="content">
+                        <p>Once the project is ready, you pay the remaining 50% balance, and we either deploy it live or hand it over to you based on your preference.</p>
+                    </div>
+                </div>`;
+
+            chatbotOptions.innerHTML = `<button onclick="goBack()">Back</button>`;
+
+            document.querySelectorAll(".collapsible").forEach((coll) => {
+                coll.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const content = this.nextElementSibling;
+                    content.style.display = content.style.display === "block" ? "none" : "block";
+                });
+            });
+        }
+
+        function showServices() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = `
+                <div class="chatbot-message">
+                    <p><strong>Web Development</strong></p>
+                    <p>Custom websites built with performance, security, and user experience in mind.</p>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>Mobile Apps</strong></p>
+                    <p>Innovative mobile apps for Android and iOS that engage and retain users.</p>
+                </div>
+                <div class="chatbot-message">
+                    <p><strong>E-Commerce</strong></p>
+                    <p>Scalable e-commerce platforms with seamless integration and user-friendly designs.</p>
+                </div>`;
+
+            chatbotOptions.innerHTML = `
+                <button onclick="goBack()">Back</button>
+                <button onclick="goToPage('services.html')">Learn More About Our Services</button>`;
+        }
+
+        function showPricing() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = `<p>To view our pricing information, please click the button below.</p>`;
+            chatbotOptions.innerHTML = `
+                <button onclick="goBack()">Back</button>
+                <button onclick="goToPage('pricing.html')">View Pricing</button>`;
+        }
+
+        function showLinks() {
+            previousMessages.push(document.getElementById('chatbot-body').innerHTML);
+            previousOptions.push(document.getElementById('chatbot-options').innerHTML);
+
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = `<p>For our Terms of Service and Privacy Policy, click the links below:</p>`;
+            chatbotOptions.innerHTML = `
+                <button onclick="goToPage('terms.html')">Terms of Service</button>
+                <button onclick="goToPage('privacy.html')">Privacy Policy</button>
+                <button onclick="goBack()">Back</button>`;
+        }
+
+        function goBack() {
+            const chatbotBody = document.getElementById('chatbot-body');
+            const chatbotOptions = document.getElementById('chatbot-options');
+
+            chatbotBody.innerHTML = previousMessages.pop();
+            chatbotOptions.innerHTML = previousOptions.pop();
+        }
+
+        function goToPage(url) {
+            window.location.href = url;
+        }
+
+        document.getElementById("close-chatbot").addEventListener("click", function() {
+            document.getElementById('chatbot-container').style.display = "none";
+        });
+    </script>
+
+    <!-- Footer -->
+   <footer>
+    
+      <footer class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('hero image.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-80"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 py-16 text-gray-300 grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -46,8 +379,112 @@
         </p>
         <img src="logo-Photoroom.png" alt="Company Logo" class="mt-4 w-20" />
       </div>
+             
+            <h1>Contact Us</h1>
+               <h2 class="text-xl font-semibold text-yellow-400 mb-4">Contact Us</h2>
+        <p class="text-sm">Email: info@constructionco.co.za</p>
+        <p class="text-sm mb-4">Phone: +27 66 552 0197</p>
+            <form action="https://formspree.io/f/xwpkkvnk" class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required minlength="2" maxlength="50" pattern="[a-zA-Z ]+" aria-label="Name field" title="Please enter a valid name (letters and spaces only)">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required aria-label="Email field" title="Please enter a valid email address">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" aria-label="Message field" title="Message should be between 10 and 500 characters"></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                    <label for="privacyPolicy">I agree to the <a href="privacy.html">Privacy Policy</a>.</label>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="communicationOptIn" name="communicationOptIn">
+                    <label for="communicationOptIn">I would like to receive updates and promotional communications.</label>
+                </div>
+                <button type="submit" class="button contact-button">Send Message</button>
+            </form>
+            <div id="loader" style="display:none;" aria-live="polite">
+                <img src="loader.gif" alt="Loading...">
+            </div>
+            <div id="response" style="display:none;" aria-live="polite"></div>
+        </div>
+    </section>
 
-      <!-- Navigation + Newsletter -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('loader').style.display = 'block';
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const privacyPolicy = document.getElementById('privacyPolicy').checked;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                showResponse('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            if (!privacyPolicy) {
+                showResponse('You must agree to the Privacy Policy before submitting.', 'error');
+                return;
+            }
+
+            if (!name || !email || !message) {
+                showResponse('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            if (!navigator.onLine) {
+                showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
+                return;
+            }
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    Accept: 'application/json'
+                }
+            })
+            .then(response => {
+                document.getElementById('loader').style.display = 'none';
+                if (response.ok) {
+                    showResponse('Thank you! Your message has been successfully sent.', 'success');
+                    this.reset();
+                } else {
+                    showResponse('Oops! There was an issue with your submission. Please try again later.', 'error');
+                }
+            })
+            .catch(error => {
+                document.getElementById('loader').style.display = 'none';
+                if (!navigator.onLine) {
+                    showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
+                } else {
+                    showResponse('There was a problem with your submission. Please try again later.', 'error');
+                }
+            });
+        });
+
+        function showResponse(message, type) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.style.display = 'block';
+            responseDiv.textContent = message;
+            responseDiv.className = type === 'success' ? 'success-message' : 'error-message';
+            setTimeout(() => {
+                responseDiv.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+
+     <!-- Navigation + Newsletter -->
       <div>
         <h2 class="text-xl font-semibold text-yellow-400 mb-4">Navigation</h2>
         <ul class="text-sm space-y-2 mb-6">
@@ -66,120 +503,60 @@
         </form>
       </div>
 
-      <!-- Contact Form -->
-      <div>
-        <h2 class="text-xl font-semibold text-yellow-400 mb-4">Contact Us</h2>
-        <p class="text-sm">Email: info@constructionco.co.za</p>
-        <p class="text-sm mb-4">Phone: +27 66 552 0197</p>
-        <form id="contactForm" action="https://formspree.io/f/yourformid" method="POST" class="flex flex-col gap-3">
-          <input type="text" name="name" id="name" placeholder="Your name" class="p-2 rounded text-black" required />
-          <input type="email" name="email" id="email" placeholder="Your email" class="p-2 rounded text-black" required />
-          <textarea name="message" id="message" rows="3" placeholder="Your message" class="p-2 rounded text-black" required></textarea>
-          <label class="flex items-center gap-2 text-sm">
-            <input type="checkbox" id="privacyPolicy" class="accent-yellow-400" />
-            I agree to the <a href="privacy.html" class="text-yellow-400 underline">Privacy Policy</a>
-          </label>
-          <button type="submit" class="bg-yellow-400 text-black font-semibold py-2 px-4 rounded hover:bg-yellow-500">Send Message</button>
-          <div id="loader" style="display:none;" class="text-sm text-gray-400">Sending...</div>
-          <div id="response" class="text-sm mt-2 hidden"></div>
-        </form>
+     
+      <ul class="wrapper">
+         <!-- Social Media Icons -->
+         <li class="icon facebook" onclick="redirectTo('https://www.facebook.com/profile.php?id=61567006325174')">
+            <span class="tooltip">Facebook</span>
+            <svg
+               viewBox="0 0 320 512"
+               height="1.2em"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+            >
+               <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+            </svg>
+         </li>
+         <li class="icon twitter" onclick="redirectTo('https://x.com/M_Innovations2?t=Bj_3X40gmvRchMK0ZlFzYw&s=08')">
+            <span class="tooltip">Twitter</span>
+            <svg
+               height="1.8em"
+               fill="currentColor"
+               viewBox="0 0 48 48"
+               xmlns="http://www.w3.org/2000/svg"
+            >
+               <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
+            </svg>
+         </li>
+         <li class="icon instagram" onclick="redirectTo('https://www.instagram.com/mapengo_innovations?igsh=YzljYTk1ODg3Zg==')">
+            <span class="tooltip">Instagram</span>
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               height="1.2em"
+               fill="currentColor"
+               class="bi bi-instagram"
+               viewBox="0 0 16 16"
+            >
+               <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+            </svg>
+         </li>
+      </ul>
+
+      <!-- Privacy & Terms Links -->
+      <div class="footer-links">
+         <a href="privacy.html">Privacy Policy</a> |
+         <a href="terms.html">Terms of Service</a>
       </div>
-    </div>
+      <p>© 2025 Mapengo Innovations. All rights reserved.</p>
+   </footer>
 
-    <!-- Footer Bottom -->
-    <div class="relative z-10 border-t border-gray-700 text-center py-4 text-sm text-gray-400">
-      <p>&copy; 2025 ConstructionCo (Pty) Ltd. All rights reserved.</p>
-      
-      <!-- Socials -->
-      <div class="flex justify-center gap-5 mt-2 text-lg">
-        <a href="#" class="hover:text-yellow-400" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="hover:text-yellow-400" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-
-      <!-- Developer Credit -->
-      <div class="mt-3 flex justify-center items-center gap-2 text-xs">
-        <a href="https://www.mapengoinnovations.com" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
-          <img src="mapengo-logo.png" alt="Mapengo Logo" class="w-6 h-6" />
-          <span>Developed & Maintained by Mapengo Innovations</span>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      document.getElementById('loader').style.display = 'block';
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      const privacyPolicy = document.getElementById('privacyPolicy').checked;
-      const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-
-      if (!emailPattern.test(email)) {
-        showResponse('Please enter a valid email address.', 'error');
-        return;
+   <script>
+      // Redirect Function
+      function redirectTo(url) {
+         setTimeout(() => {
+            window.location.href = url;
+         }, 300);  // Delay of 0.3 seconds
       }
-
-      if (!privacyPolicy) {
-        showResponse('You must agree to the Privacy Policy before submitting.', 'error');
-        return;
-      }
-
-      if (!name || !email || !message) {
-        showResponse('Please fill in all required fields.', 'error');
-        return;
-      }
-
-      if (!navigator.onLine) {
-        showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
-        return;
-      }
-
-      const formData = new FormData(this);
-
-      fetch(this.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          Accept: 'application/json'
-        }
-      })
-      .then(response => {
-        document.getElementById('loader').style.display = 'none';
-        if (response.ok) {
-          showResponse('Thank you! Your message has been successfully sent.', 'success');
-          this.reset();
-        } else {
-          showResponse('Oops! There was an issue with your submission. Please try again later.', 'error');
-        }
-      })
-      .catch(error => {
-        document.getElementById('loader').style.display = 'none';
-        if (!navigator.onLine) {
-          showResponse('It seems there’s an issue with your internet connection. Please check your connection and try again.', 'error');
-        } else {
-          showResponse('There was a problem with your submission. Please try again later.', 'error');
-        }
-      });
-    });
-
-    function showResponse(message, type) {
-      const responseDiv = document.getElementById('response');
-      responseDiv.style.display = 'block';
-      responseDiv.textContent = message;
-      responseDiv.className = type === 'success' ? 'success-message' : 'error-message';
-      setTimeout(() => {
-        responseDiv.style.display = 'none';
-      }, 5000);
-    }
-  </script>
-
+   </script>
 </body>
 </html>
