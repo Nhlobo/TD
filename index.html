@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Styled Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
@@ -43,7 +44,7 @@
       }
     }
 
-    h2, h3 {
+    h2 {
       color: #facc15;
       margin-bottom: 1rem;
     }
@@ -61,10 +62,11 @@
     .contact-form textarea {
       width: 100%;
       padding: 0.5rem;
-      border-radius: 0.375rem;
       border: none;
       margin-top: 0.25rem;
       margin-bottom: 1rem;
+      background-color: #1f1f1f;
+      color: #e0e0e0;
     }
 
     .contact-form label {
@@ -76,7 +78,6 @@
       color: #000;
       padding: 0.75rem 1.25rem;
       font-weight: 600;
-      border-radius: 0.375rem;
       cursor: pointer;
       border: none;
     }
@@ -87,7 +88,7 @@
 
     .checkbox-group {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.5rem;
       margin-bottom: 1rem;
     }
@@ -99,37 +100,22 @@
       padding-bottom: 2rem;
     }
 
-    .icon {
-      cursor: pointer;
-      position: relative;
-      font-size: 1.5rem;
+    .contact-info p {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .icon svg {
-      fill: #facc15;
-      height: 1.5rem;
+    .contact-info i {
+      color: #facc15;
+      width: 20px;
     }
 
-    .tooltip {
-      visibility: hidden;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 4px;
-      padding: 0.25rem 0.5rem;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 0.75rem;
-    }
-
-    .icon:hover .tooltip {
-      visibility: visible;
-      opacity: 1;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
 
     .success-message {
@@ -141,11 +127,42 @@
       color: #ef4444;
       padding-top: 1rem;
     }
+
+    .footer-bottom {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid #333;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+      color: #aaa;
+    }
+
+    .footer-bottom .social {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-bottom .credit {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .footer-bottom .credit img {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <body>
 
-<!-- Footer -->
 <footer>
   <div class="footer-container">
     
@@ -153,14 +170,17 @@
     <div>
       <h2>About</h2>
       <p>We are a Gauteng-based construction company delivering high-quality services with integrity and precision.</p>
-      <img src="logo-Photoroom.png" alt="Company Logo" class="mt-4" style="width: 80px;" />
+      <img src="logo-Photoroom.png" alt="Company Logo" style="width: 80px; margin-top: 1rem;" />
     </div>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Section -->
     <div>
       <h2>Contact Us</h2>
-      <p>Email:  mabasojuta@gmail.com</p>
-      <p>Phone: +27 71 742 6995/+27 67 026 0642</p>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> mabasojuta@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +27 71 742 6995 / +27 67 026 0642</p>
+        <p><i class="fab fa-whatsapp"></i> Chat on WhatsApp</p>
+      </div>
 
       <form action="https://formspree.io/f/xwpkkvnk" class="contact-form" id="contactForm">
         <div>
@@ -169,11 +189,11 @@
         </div>
         <div>
           <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" required title="Enter a valid email.">
+          <input type="email" id="email" name="email" required>
         </div>
         <div>
           <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" title="Message should be between 10 and 500 characters"></textarea>
+          <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500"></textarea>
         </div>
         <div class="checkbox-group">
           <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
@@ -189,10 +209,10 @@
       <div id="response" style="display:none;"></div>
     </div>
 
-    <!-- Navigation-->
+    <!-- Navigation Section -->
     <div>
       <h2>Navigation</h2>
-      <ul style="list-style-type: none; padding: 0;">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Our Services</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -201,32 +221,24 @@
         <li><a href="terms.html">Terms & Conditions</a></li>
         <li><a href="blog.html">Blog</a></li>
       </ul>
-      </form>
     </div>
   </div>
 
   <!-- Footer Bottom -->
-    <div class="relative z-10 border-t border-gray-700 text-center py-4 text-sm text-gray-400">
-      <p>&copy; 2025 Juta Daco Constraction (Pty) Ltd. Reg N 2018/242354/07 All rights reserved.</p>
-      
-      <!-- Socials -->
-      <div class="flex justify-center gap-5 mt-2 text-lg">
-        <a href="#" class="hover:text-yellow-400" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="hover:text-yellow-400" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-
-      <!-- Developer Credit -->
-      <div class="mt-3 flex justify-center items-center gap-2 text-xs">
-        <a href="https://www.mapengoinnovations.com" target="_blank" class="flex items-center gap-2 hover:text-yellow-400">
-          <img src="mapengo-logo.png" alt="Mapengo Logo" class="w-6 h-6" />
-          <span>Developed & Maintained by Mapengo Innovations</span>
-        </a>
-      </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Juta Daco Construction (Pty) Ltd. Reg No: 2018/242354/07. All rights reserved.</p>
+    <div class="social">
+      <a href="#" class="hover:text-yellow-400" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="hover:text-yellow-400" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/27717426995" target="_blank" class="hover:text-yellow-400" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
+    <div class="credit">
+      <a href="https://www.mapengoinnovations.com" target="_blank" class="hover:text-yellow-400">
+        <img src="mapengo-logo.png" alt="Mapengo Logo" />
+        Developed & Maintained by Mapengo Innovations
+      </a>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -238,7 +250,7 @@
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
     const privacyPolicy = document.getElementById('privacyPolicy').checked;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
 
     if (!emailPattern.test(email)) {
       showResponse('Please enter a valid email address.', 'error');
@@ -289,10 +301,6 @@
     setTimeout(() => {
       responseDiv.style.display = 'none';
     }, 5000);
-  }
-
-  function redirectTo(url) {
-    window.open(url, '_blank');
   }
 </script>
 
