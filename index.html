@@ -128,6 +128,41 @@
       padding-top: 1rem;
     }
 
+    .checkbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.checkbox-group input {
+  margin-top: 0.3rem;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #facc15;
+}
+
     .footer-bottom {
       position: relative;
       z-index: 10;
@@ -177,11 +212,22 @@
     <div>
       <h2>Contact Us</h2>
       <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> mabasojuta@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +27 71 742 6995 / +27 67 026 0642</p>
-        <p><i class="fab fa-whatsapp"></i> Chat on WhatsApp</p>
-      </div>
-
+      <p>
+    <a href="mailto:mabasojuta@gmail.com">
+      <i class="fas fa-envelope"></i> mabasojuta@gmail.com
+    </a>
+  </p>
+  <p>
+    <a href="tel:+27717426995">
+      <i class="fas fa-phone"></i> +27 71 742 6995 / +27 67 026 0642
+    </a>
+  </p>
+  <p>
+    <a href="https://wa.me/27717426995" target="_blank">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </p>
+</div>
       <form action="https://formspree.io/f/xwpkkvnk" class="contact-form" id="contactForm">
         <div>
           <label for="name">Your Name</label>
@@ -195,14 +241,17 @@
           <label for="message">Your Message</label>
           <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500"></textarea>
         </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
-          <label for="privacyPolicy">I agree to the <a href="privacy.html">Privacy Policy</a>.</label>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="communicationOptIn" name="communicationOptIn">
-          <label for="communicationOptIn">I would like to receive updates and promotional communications.</label>
-        </div>
+        <div class="checkbox-wrapper">
+  <div class="checkbox-group">
+    <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+    <label for="privacyPolicy">I agree to the <a href="privacy.html">Privacy Policy</a>.</label>
+  </div>
+
+  <div class="checkbox-group">
+    <input type="checkbox" id="communicationOptIn" name="communicationOptIn">
+    <label for="communicationOptIn">I would like to receive updates and promotional communications.</label>
+  </div>
+</div>
         <button type="submit">Send Message</button>
       </form>
       <div id="loader" style="display:none;"><img src="loader.gif" alt="Loading..."></div>
